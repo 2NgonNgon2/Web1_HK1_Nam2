@@ -6,63 +6,100 @@
 
 .card-products {
   background: #f1f1f1;
-  padding: 20px 40px;
+  padding: 100px;
   min-height: 100vh;
 }
 
 .card-products-container {
   display: flex;
   flex-wrap: wrap;
-  align-content: stretch;
   margin-left: -30px;
-
 }
 
 .card-product-item {
+  display: flex;
+  flex-direction: column;
   background: white;
-
   margin-left: 30px;
-
   min-height: 300px;
   width: calc(25% - 30px);
-  transition: all .3s;
+  transition: all 0.3s;
   margin-bottom: 30px;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
 }
 
 .card-product-item:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card-img {
+  height: 275px;
+  /* Dùng để cố định image luôn ở height: 275px; */
+  flex-shrink: 0;
 }
 
 .card-product-item:hover .card-title {
-    color: rgb(250,128,114)
- }
+  color: rgb(250, 128, 114);
+}
 .card-product-content {
-  
   padding: 10px 20px;
+  display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
 .card-product-content-title {
- 
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   padding: 4px 0;
 }
 
 .label-card-title {
-    padding-bottom: 14px;
+  padding-bottom: 14px;
+}
+
+.card-product-content-bottom {
+  margin-top: auto;
+}
+
+.card-product-content-bottom-buying {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #9d9b9b;
+  border-bottom: 2px solid #9d9b9b;
+  padding: 14px 0;
+  line-height: 30px;
+  margin-top: auto;
+}
+
+.card-product-content-bottom-buying-price {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.card-product-content-bottom-buying-btn {
+  padding: 3px 9px;
+  background: black;
+  color: white;
+  font-weight: 600;
+
+}
+
+.card-product-content-midle-btn:hover {
+  background:rgb(250, 128, 114);
 }
 
 
-.card-product-content-price {
-    border-top: 2px solid #9d9b9b;
-  border-bottom: 2px solid #9d9b9b;
-  padding: 14px 0;
-
+.icon-btn-shop {
+  margin-right: 4px;
+  font-size: 15px;
 }
 
 .card-product-status {
-    padding: 4px 0;
-    text-align: center;
+  padding: 4px 0;
+  text-align: center;
+  color: green;
+  font-size: 16px;
+  line-height: 25px;
 }
