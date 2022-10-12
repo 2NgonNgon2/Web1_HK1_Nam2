@@ -17,6 +17,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Roboto";
 }
 
 /* Reapply the pointer cursor for anchor tags */

@@ -4,19 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="NHÓM 7">
+    <meta name="description" content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... .">
     <title>Products</title>
     <link rel="stylesheet" href="products.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="menu-product.css" />
   </head>
   <body>
+
     <div class="menu">
-      <div class="menu-product" id="product-1">bàn phím</div>
-      <div class="menu-product" id="product-2">chuột</div>
-      <div class="menu-product" id="product-3">tai nghe</div>
-      <div class="menu-product" id="product-4">loa</div>
-      <div class="menu-product" id="product-5">lót chuột</div>
+
+      <div class="menu-items" id="item-1">
+        <a  href="#product-display" class="overlay"></a>
+        <img src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
+      </div>
+
+      <div class="menu-items" id="item-2">
+        <a  href="#product-display" class="overlay"></a>
+        <img src="picture/headphone.png" alt="keyboard image" loading="lazy">
+      </div>
+
+      <div class="menu-items" id="item-3">
+        <a  href="#product-display" class="overlay"></a>
+        <img src="picture/mouse.png" alt="keyboard image" loading="lazy">
+      </div>
+
+      <div class="menu-items" id="item-4">
+        <a  href="#product-display" class="overlay"></a>
+        <img src="picture/speaker.png" alt="keyboard image" loading="lazy">
+      </div>
+
+      <div class="menu-items" id="item-5">
+        <a  href="#product-display" class="overlay"></a>
+        <img src="picture/mousepads.png" alt="keyboard image" loading="lazy">
+      </div>
+
     </div>
+
+    <div id="product-display"></div>  <!-- mark lại chỗ để khi click vào menu-items web sẽ trượt xuống đây -->
+
+
     <div class="products">
       <div class="product-item">
         <div class="product-img">
