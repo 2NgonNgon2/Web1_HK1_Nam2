@@ -15,10 +15,8 @@
 /* Preferred box-sizing value */
 *,
 *::after {
- 
- 
- 
- 
+  box-sizing:border-box;
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-family: "Roboto",sans-serif;
 }
