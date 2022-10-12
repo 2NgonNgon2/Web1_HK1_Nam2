@@ -17,6 +17,7 @@
 *::after {
   box-sizing:border-box;
   scroll-behavior: smooth;
+  font-family: "Roboto",sans-serif;
 }
 
 /* Reapply the pointer cursor for anchor tags */
