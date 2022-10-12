@@ -15,8 +15,8 @@
 /* Preferred box-sizing value */
 *,
 *::after {
-  box-sizing: border-box;
-  font-family: "Roboto";
+  box-sizing:border-box;
+  scroll-behavior: smooth;
 }
 
 /* Reapply the pointer cursor for anchor tags */
