@@ -30,6 +30,8 @@
 
 .card-product-item:hover {
   transform: translateY(-5px);
+
+  pointer-events: auto;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -49,17 +51,19 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  pointer-events: none;
+ 
 }
 
-.card-product-content:hover {
-  background: rgb(250, 128, 114);
-  color: white;
+.card-product-item:hover .card-product-content {
+  background: linear-gradient(45deg,red,orange);
+  color: rgb(238, 234, 234);
 }
 
 .card-product-content-title {
   font-weight: 600;
   font-size: 18px;
-  margin: 2px 0;
+  margin: 0 0 8px;
   /* -webkit- is use for Chrome and Safari */
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -67,6 +71,7 @@
   overflow: hidden;
   /* Khi tràn chữ ra thì sẽ đổi thành ... */
   text-overflow: ellipsis;
+  color: black;
 }
 
 .label-card-title {
@@ -76,6 +81,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
+  transition: .4s;
 }
 
 .card-product-content-bottom {
@@ -91,10 +97,13 @@
 
 .card-product-content-bottom-buying-price {
   font-weight: bolder;
+  transition: .4s;
 }
+
 
 .card-product-priceNumber {
   font-size: 18px;
+  
 }
 
 .card-product-priceIcon {
@@ -113,6 +122,7 @@
   transform: translateX(40px);
   opacity: 0;
   transition: all .25s ease;
+  pointer-events: none;
 }
 
 .icon-btn-shop {
@@ -140,6 +150,7 @@
 .card-product-item:hover .card-product-content-bottom-buying-btn {
   transform: translateX(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 .card-product-content-bottom-buying-btn:active {
@@ -153,9 +164,13 @@
 }
 
 .card-product-status {
-  padding: 4px 0;
   text-align: center;
   color: green;
   font-size: 16px;
   line-height: 25px;
+  transition: .4s;
+}
+
+.card-product-item:hover .card-product-status {
+  color: rgb(255, 255, 255);
 }
