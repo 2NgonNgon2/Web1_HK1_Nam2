@@ -152,22 +152,7 @@
   
 }
 
-/* @keyframes color-changing {
-  1%{
-    background: linear-gradient(to bottom,rgb(251, 131, 131),rgb(131, 131, 250));
-    
-  }
-  50%{
-    
 
-  }
-  100%
-  {
-    
-    background: linear-gradient(to bottom,rgb(131, 249, 131)),rgb(251, 131, 131);
-
-  }
-} */
 .back-to-menu
 {
   width: 50px;
@@ -188,11 +173,20 @@
 
 
 }
-@keyframes test {
-  from{
-    background: red;
+
+/* @keyframes color-changing {
+  1%{
+    background: linear-gradient(to bottom,rgb(251, 131, 131),rgb(131, 131, 250));
+    
   }
-  to{
-    background: blue;
+  50%{
+    
+
   }
-}
+  100%
+  {
+    
+    background: linear-gradient(to bottom,rgb(131, 249, 131)),rgb(251, 131, 131);
+
+  }
+} */
