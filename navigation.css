@@ -146,7 +146,7 @@ header.sticky .dropdown .dropdown-select {
 .dropdown-list::before
 {
 	content: "";
-	height: 20px;
+	height: 24px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -184,7 +184,7 @@ header.sticky .dropdown .dropdown-select {
 	border-left: 10px solid transparent ;
 	border-right: 10px solid transparent ;
 	border-bottom: 10px solid #fff;
-	transform: translateY(-100%);
+	transform: translateY(-90%);
 	transition: border-color .2s linear;	
 }
 .dropdown-item:first-child:hover:before
@@ -203,32 +203,6 @@ header.sticky .dropdown-list
 {
 	margin-top: 24px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 @media (max-width: 991px)
 {
