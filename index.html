@@ -11,10 +11,28 @@
     <link rel="stylesheet" href="card-products.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="menu-product.css" />
+    <link rel="stylesheet" href="header.css">
   </head>
   <body>
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo">logoName</a>
+      <ul class="navigation" id="navigation">
+          <li><a href="#banner">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#menu">Product</a></li>
+          <li><a href="#footer">Contact</a></li>   
+      </ul>
+      
+  </header>
+  <section class="banner" id="banner">
+      <div class="content">
+          <h2>Text here</h2>
+          <p>Details here</p>
+          <a href="#" class="btn">Link here</a>
+      </div>
+  </section>
 
-    
     <div class="menu" id="menu">
 
       <div class="menu-items" id="item-1">
@@ -43,7 +61,9 @@
       </div>
     </div>
 
-    <a class="back-to-menu" href="#menu"><i class="fa-solid fa-arrow-up"></i></a>
+    
+    <a class="back-to-menu"   ><i class="fa-solid fa-arrow-up"></i></a>
+
 
     <div id="product-display"></div>  <!-- mark lại chỗ để khi click vào menu-items web sẽ trượt xuống đây -->
 
@@ -99,6 +119,7 @@
           <div class="card-product-content">
             <div class="card-product-content-top">
               <div class="card-product-content-title card-title">
+
                 Bàn phím cơ không dây Bàn phím cơ không dâyBàn phím cơ không dây Bàn phím cơ không dâyBàn phím cơ không dây Bàn phím cơ không dây
               </div>
               <div class="label-card-title card-title">Keyboard for gamer Keyboard for gamerKeyboard for gamerKeyboard for gamerKeyboard for gamer</div>
@@ -133,8 +154,9 @@
             <div class="card-product-content-top">
               <div class="card-product-content-title card-title">
                 Bàn phím cơ không dây
+                Bàn phím cơ không dây Bàn phím cơ không dây
               </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
+              <div class="label-card-title card-title">Keyboard for gamer Keyboard for gamer</div>
             </div>
 
             <div class="card-product-content-bottom">
@@ -155,7 +177,6 @@
             </div>
           </div>
         </div>
-
         <div class="card-product-item">
           <img
             class="card-img"
@@ -188,7 +209,6 @@
             </div>
           </div>
         </div>
-
         <div class="card-product-item">
           <img
             class="card-img"
@@ -221,7 +241,6 @@
             </div>
           </div>
         </div>
-
         <div class="card-product-item">
           <img
             class="card-img"
@@ -254,7 +273,6 @@
             </div>
           </div>
         </div>
-
         <div class="card-product-item">
           <img
             class="card-img"
@@ -321,8 +339,17 @@
           </div>
         </div>
 
-        
       </div>
     </div>
+    <script type="text/javascript">
+      window.addEventListener('scroll',function () {
+          const header = document.querySelector('header');
+          header.classList.toggle("sticky",window.scrollY > 0);
+      });
+      
+  </script>
+  <script src="menu-product.js"></script>
+
+
   </body>
 </html>
