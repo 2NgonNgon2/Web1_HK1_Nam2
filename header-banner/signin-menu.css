@@ -1,4 +1,4 @@
-.signup
+.signin
 {
     display: none;
     position: fixed;
@@ -11,44 +11,46 @@
 	transform: scale(65%);
 	right: 22%;
 }
-.signup-icon
+.signin-icon
 {
-    display: flex;
     cursor: pointer;
-    justify-content: flex-end;
+    position: absolute;
+    right: 6%;
+    top: 8%;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    display: flex;
+    justify-content: center;align-items: center;
+    font-size: 25px;
+    font-weight: 500;
 }
-.signup-heading
+.signin-heading
 {
     font-size: 4rem;
     text-align: center;
     font-weight: bold;
     margin-bottom: 2rem;
 }
-.signup-already
+.signin-already
 {
     text-align: center;
     font-size: 1.6rem;
     margin-bottom: 3.5rem;
 }
-.signup-link
+.signin-link-underline
 {
     color: #00aefd;
     font-size: inherit;
     text-decoration: none;
-}
-.signup-link--underline
-{
     text-decoration: underline;
-}
-.form-group
-{
-    margin-bottom: 1.5rem;
 }
 .form-input
 {
     font-family: 'Poppins',sans-serif;
     color: black;
     padding: 1.5rem;
+    margin-bottom: 1.8rem;
     border-radius: 1rem;
     outline: none;
     font-size: 1.6rem;
@@ -56,7 +58,7 @@
     border: 1px soild #eee;
     background-color: #eee;
     transition: .25s linear;
-    width: 90%;
+    width: 100%;
 }
 .form-input:focus
 {
@@ -79,7 +81,7 @@
     text-align: center;
     cursor: pointer;
     border: 0;
-    width: 90%;
+    width: 100%;
     background-color: #00aefd ;
     display: flex;
     align-items: center;
