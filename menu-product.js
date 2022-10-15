@@ -1,6 +1,6 @@
 const anchorBtn = document.querySelector(".back-to-menu");
 
-anchorBtn.addEventListener("click",function changeLocation(event)
+/* anchorBtn.addEventListener("click",function changeLocation(event)
 {
   let y = event.pageY;
   console.log(y);
@@ -19,6 +19,6 @@ anchorBtn.addEventListener("click",function changeLocation(event)
     console.log(y);
     anchorBtn.setAttribute("href","#menu");
   }
-})
+}) */
 
 console.log(123);
