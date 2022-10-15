@@ -1,12 +1,12 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 .card-products {
   background: #f1f1f1;
-  padding: 100px 170px;
+  padding: 0 170px 100px;
   min-height: 200vh;
 }
 
@@ -23,24 +23,28 @@
   margin-left: 30px;
   min-height: 460px;
   flex: 0 0 calc(25% - 30px);
-  transition: all 0.3s;
+  transform: translateY(0);
+  transition: 0.3s;
   margin-bottom: 30px;
-  
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .card-product-item:hover {
-  transform: translateY(-5px);
-
-  pointer-events: auto;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(45deg,red,orange);
+  color: rgb(238, 234, 234);
+  pointer-events: auto;
 }
+
 
 .card-product-item:active {
   opacity: .8;
 }
 
 .card-img {
+  padding: 10px;
   height: 230px;
   /* Dùng để cố định image luôn ở height: 230px; */
   flex-shrink: 0;
@@ -56,8 +60,7 @@
 }
 
 .card-product-item:hover .card-product-content {
-  background: linear-gradient(45deg,red,orange);
-  color: rgb(238, 234, 234);
+  
 }
 
 .card-product-content-title {
@@ -119,7 +122,7 @@
   position: relative;
   font-weight: 600;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  transform: translateX(40px);
+  transform: translateX(15px);
   opacity: 0;
   transition: all .25s ease;
   pointer-events: none;
@@ -130,7 +133,6 @@
   left: 0;
   top: 10px;
   transform: translateX(0);
-  opacity: 0;
   color: black;
   z-index: 2;
   transition: .5s;
@@ -173,4 +175,28 @@
 
 .card-product-item:hover .card-product-status {
   color: rgb(255, 255, 255);
+}
+
+
+.menu-card-products-page-number {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: -20px;
+}
+
+.pageNumber {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 20px;
+  line-height: 40px;
+  background: white;
+}
+
+.pageNumber:hover {
+  background: linear-gradient(45deg,red,orange);
+  color: rgb(238, 234, 234);
+  cursor: pointer;
 }
