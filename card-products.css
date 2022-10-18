@@ -6,16 +6,20 @@
 
 .card-products {
   background: #f1f1f1;
-  padding: 50px 80px 100px 0;
+  padding: 50px 60px 0 10px;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 20% 80%;
+  margin-bottom: 250px;
 }
 
 .card-products-container {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   margin-left: -30px;
+  padding: 0 0 50px 0; 
+  margin-left: 10px; 
 }
 
 .card-product-item {
@@ -23,7 +27,7 @@
   flex-direction: column;
   background: white;
   margin-left: 30px;
-  min-height: 460px;
+  min-height: 440px;
   flex: 0 0 calc(25% - 30px);
   transform: translateY(0);
   transition: 0.3s;
@@ -34,7 +38,7 @@
 
 .card-product-item:hover {
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   background: linear-gradient(45deg,red,orange);
   color: rgb(238, 234, 234);
   pointer-events: auto;
@@ -81,12 +85,12 @@
 
 .label-card-title {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
-  transition: .4s;
+  transition: .3s;
 }
 
 .card-product-content-bottom {
@@ -102,7 +106,7 @@
 
 .card-product-content-bottom-buying-price {
   font-weight: bolder;
-  transition: .4s;
+  transition: .3s;
 }
 
 
@@ -134,7 +138,6 @@
   position: absolute;
   left: 0;
   top: 10px;
-  transform: translateX(0);
   color: black;
   z-index: 2;
   transition: .5s;
@@ -164,7 +167,7 @@
 
 .card-product-item:hover .icon-btn-shop {
   opacity: 1;
-  left: 32px;
+  left: 12%;
 }
 
 .card-product-status {
@@ -182,23 +185,26 @@
 
 .menu-card-products-page-number {
   display: flex;
-  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  margin-left: -20px;
 }
 
 .pageNumber {
   width: 40px;
   height: 40px;
+  margin-left: 30px;
   font-size: 18px;
   font-weight: 500;
-  margin-left: 20px;
   line-height: 40px;
   background: white;
 }
 
 .pageNumber:hover {
   background: linear-gradient(45deg,red,orange);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   color: rgb(238, 234, 234);
   cursor: pointer;
 }
