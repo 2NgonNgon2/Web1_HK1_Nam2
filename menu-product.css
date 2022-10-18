@@ -1,31 +1,43 @@
 
 .menu
 {
-  padding: 0 2rem;
-  height:150px;
+  box-sizing: content-box;
+  height:500px;
   width: 100%;
+
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
+
+  background: #f1f1f1;
 
 
+  position: sticky;
+  left: 0;
+  top: 100px;
+
+  z-index: 6999;
 }
+.menu .menu-title
+{
+  font-weight: bolder;
+  text-align: center;
+  font-size: 20px;
+}
+
 .menu .menu-items
 {
   height: 100px;
-  transition: all 0.5s ease ;
+  margin: 20px ;
+
   position: relative;
+  text-align: center;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 5px solid black;
+  border-bottom: 1px solid rgb(187, 187, 187);
   border-radius: 10px;
-  margin: 0 30px;
+  transition: all 0.5s ease ;
 }
+
 .menu .menu-items:hover 
 {
   box-shadow:0 0 10px 5px rgb(171, 170, 170);
@@ -41,8 +53,8 @@
 
 .menu .menu-items:hover img
 {
-  width: 70%;
-  height: 180px;
+  width: 40%;
+  height: 80px;
   filter: blur(2px);
 }
 
@@ -55,6 +67,8 @@
   background: black;
   opacity: 0.5;
   position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 10px;
   transition: all 0.5s ease;
   font-family: "Roboto";
@@ -124,29 +138,49 @@
 }
 
 
-.menu #item-1
+.menu #item-1 img
 {
-  flex:1;
-    
+  width: 30%;
+  height: 60px;
 }
+
+.menu #item-1:hover img
+{
+  width: 50%;
+  height: 100px;
+  filter: blur(2px);
+}
+
 .menu #item-2
 {
-  flex:1;
+
 }
 .menu #item-3
 {
-  flex:1;
-  
+
 }
 .menu #item-4
 {
-  flex:1;
   
 }
+
+.menu #item-4 img
+{
+  width: 30%;
+  height: 50px;
+}
+
+.menu #item-4:hover img
+{
+  width: 50%;
+  height: 80px;
+  filter: blur(2px);
+}
+
 .menu #item-5
 {
   flex:1;
-  
+
 }
 
 

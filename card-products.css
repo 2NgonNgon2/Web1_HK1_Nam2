@@ -6,8 +6,10 @@
 
 .card-products {
   background: #f1f1f1;
-  padding: 0 170px 100px;
-  min-height: 200vh;
+  padding: 50px 80px 100px 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 20% 80%;
 }
 
 .card-products-container {
