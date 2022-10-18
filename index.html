@@ -91,15 +91,19 @@
     <a class="back-to-menu" href="#"   ><i class="fa-solid fa-arrow-up"></i></a>
 
 
-    <div id="product-display"></div>  <!-- mark lại chỗ để khi click vào menu-items web sẽ trượt xuống đây -->
 
 
     <div class="products">
+
+
+<!-- Card products -->
+    <div class="card-products">
       
       <div class="menu" id="menu">
-
+        <div class="menu-title">Danh mục sản phẩm</div>
+        
         <div class="menu-items" id="item-1">
-          <a  href="#product-display" class="overlay"></a>
+          <a  href="#product-display" class="overlay" onclick="renderProduct()"></a>
           <img src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
         </div>
   
@@ -124,8 +128,6 @@
         </div>
       </div>
 
-<!-- Card products -->
-    <div class="card-products">
       <div class="card-products-container">
         <div class="card-product-item">
           <img
