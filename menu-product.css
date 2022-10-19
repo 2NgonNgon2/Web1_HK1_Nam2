@@ -190,19 +190,33 @@
   height: 50px;
   background: seagreen;
   border-radius: 20px;
-
   position: fixed;
+  opacity: 0;
+  display: flex;
   right:50px;
   bottom: 50px;
-  
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
-
   z-index: 99;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .6) ;
+  transition: ease .3s;
+  pointer-events: none;
+}
 
+.back-to-menu:hover {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .8) ;
+  
+}
 
+.open {
+  pointer-events: visible;
+  opacity: 1;
 }
 
 /* @keyframes color-changing {
