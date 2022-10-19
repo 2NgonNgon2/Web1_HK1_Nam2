@@ -166,13 +166,13 @@
 
 .menu #item-4 img
 {
-  width: 30%;
+  width: 25%;
   height: 50px;
 }
 
 .menu #item-4:hover img
 {
-  width: 50%;
+  width: 40%;
   height: 80px;
   filter: blur(2px);
 }
