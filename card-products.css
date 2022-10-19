@@ -27,7 +27,7 @@
   flex-direction: column;
   background: white;
   margin-left: 30px;
-  min-height: 440px;
+  min-height: 380px;
   flex: 0 0 calc(25% - 30px);
   transform: translateY(0);
   transition: 0.3s;
@@ -51,7 +51,7 @@
 
 .card-img {
   padding: 10px;
-  height: 230px;
+  height: 180px;
   /* Dùng để cố định image luôn ở height: 230px; */
   flex-shrink: 0;
 }
@@ -65,17 +65,13 @@
  
 }
 
-.card-product-item:hover .card-product-content {
-  
-}
-
 .card-product-content-title {
   font-weight: 600;
   font-size: 18px;
   margin: 0 0 8px;
   /* -webkit- is use for Chrome and Safari */
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   /* Khi tràn chữ ra thì sẽ đổi thành ... */
@@ -94,7 +90,6 @@
 }
 
 .card-product-content-bottom {
-  margin-top: auto;
   text-align: center;
 }
 
@@ -208,3 +203,16 @@
   color: rgb(238, 234, 234);
   cursor: pointer;
 }
+
+
+/* .products-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(59, 54, 54, 0.4);
+  z-index: 99;
+
+} */
+
