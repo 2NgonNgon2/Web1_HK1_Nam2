@@ -132,40 +132,51 @@ let product = [
     "img": "/picture/headphone.png",
     "price": "569.000",
   },
-  
+  {
+    "id": "17",
+    "type": "keyboard",
+    "name": "ban phim vjp pro max 69",
+    "description": "Keyboard for gamer",
+    "img": "/picture/keyboard.jpg",
+    "price": "699.000",
+  },
 ];
 
 function filterProduct(typeProduct){
-  console.log(typeof(typeProduct) );
-  console.log(typeof(product[1].type));
   let item = "";
   switch(typeProduct){
     case "keyboard":{
-      for(let i=1; i<product.length; i++){
+      let tmpProduct=[];
+      for(let i=0; i<product.length; i++){
         if(product[i].type === typeProduct)
-          renderProduct(product[i]);
-     }; break;
+          {
+            tmpProduct.push(product[i]);
+          }
+      };
+      console.log(tmpProduct);
+      console.log(tmpProduct.length);
+      break;
     }
     case "headphone":{
-      for(let i=1; i< product.length; i++){
+      for(let i=0; i< product.length; i++){
         if(product[i].type === "headphone")
           renderProduct(product[i]);
       };break;
     }
     case "mouse":{
-      for(let i=1; i<product.length; i++){
+      for(let i=0; i<product.length; i++){
         if(product[i].type === "mouse")
           renderProduct(product[i]);
       };break;
     }
     case "speaker":{
-      for(let i=1; i<product.length; i++){
+      for(let i=0; i<product.length; i++){
         if(product[i].type === "speaker")
           renderProduct(product[i]);
       };break;
     }
     case "mousepad":{
-      for(let i=1; i<product.length; i++){
+      for(let i=0; i<product.length; i++){
         if(product[i].type === "mousepad")
           renderProduct(product[i]);
       };break;
