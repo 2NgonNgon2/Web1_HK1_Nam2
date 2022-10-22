@@ -219,4 +219,67 @@ function renderProduct(product)
   cardProduct.innerHTML = item;
 }
 
+// Adjust quantity product
 
+let quantityProduct = document.getElementById("adjustProductQuantity-number");
+let btnIncreaseQuantity = document.getElementById("adjustProductQuantity-increase");
+let btnDecreaseQuantity = document.getElementById("adjustProductQuantity-decrease");
+let btnSubmitQuantity = document.getElementById("product-info-item-content-bottom-buying-btn");
+let cardProductItem = document.getElementsByClassName("card-product-item");
+let productInfo = document.getElementById("products-info");
+let closeInfoProduct = document.querySelector(".prodcts-info-container-close");
+let productInfoContainer = document.querySelector(".prodcts-info-container");
+let cardProductItemBuyingBtn = document.querySelectorAll(".card-product-content-bottom-buying-btn");
+let valueQuantityProduct = parseInt(quantityProduct.value);
+let quantity;
+
+
+  // check if quantity input equal 1 ,clock decrease button .
+if(valueQuantityProduct == 1 ) {
+  btnDecreaseQuantity.classList.add("clockBtn");
+} 
+  // click to increase quantity product
+btnIncreaseQuantity.addEventListener('click',function() {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct + 1 ;
+  quantityProduct.value = quantity;
+  if(quantityProduct.value > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  }
+});
+  // click to decrease quantity product
+btnDecreaseQuantity.addEventListener('click',function() {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct - 1 ;
+  quantityProduct.value = quantity;
+  if(quantityProduct.value == 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
+});
+
+// click card product item to open info product
+
+for (let index = 0; index < cardProductItem.length; index++) {
+  cardProductItem[index].addEventListener('click', function () {
+    console.log(productInfo);
+    productInfo.classList.add("openInfoProduct");
+  });
+  cardProductItemBuyingBtn[index].addEventListener("click",function(e) {
+    e.stopPropagation();
+  });
+}
+
+function hideInfoProduct() {
+  productInfo.classList.remove("openInfoProduct");
+}
+
+closeInfoProduct.addEventListener('click', hideInfoProduct);
+productInfo.addEventListener('click',hideInfoProduct);
+productInfoContainer.addEventListener("click",function(e) {
+  e.stopPropagation();
+});
+
+
+// let x = 
+// navigator.keyboard.lock();
+// cosol.log(KeyboardEvent.key("Subtract"));
