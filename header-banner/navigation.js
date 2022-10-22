@@ -1,4 +1,5 @@
-var signMenu = document.getElementById("signin");
+var signinMenu = document.getElementById("signin");
+var signupMenu = document.getElementById("signup");
 
 
 
@@ -7,23 +8,24 @@ window.addEventListener('scroll',function () {
     header.classList.toggle("sticky",window.scrollY > 0);
 });
 function displaySignMenu(input){
-    
-    var headingtxt = document.getElementById('signin-heading');
-    var submittxt = document.getElementById('form-submit-text');
-    var signin = document.getElementById('signin-already');
-
-    signMenu.style.display="block";
-    if(input=="Sign in"){
-        signin.style.display="none";
+    if(input=="Sign in")
+    {
+        signinMenu.style.display="block";
     }
-    else{
-        signin.style.display="block";
+    else
+    {
+        signupMenu.style.display="block";
     }
-    headingtxt.innerHTML=input;
-    submittxt.innerHTML=input;
 }
-function disableMenu(){
-    signMenu.style.display="none";
+function disableMenu(input){
+    if(input=="Sign in")
+    {
+        signinMenu.style.display="none";
+    }
+    else
+    {
+        signupMenu.style.display="none";
+    }
 }
 
 

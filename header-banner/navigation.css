@@ -204,7 +204,7 @@ header.sticky .dropdown-list
 	background:#FFFFFF;	
 	border-radius: 30px;
 	display: flex;
-	transform: scale(90%);
+	transform: scale(85%);
 }
 #search_box #search_text{
 	width: 0;
