@@ -17,7 +17,7 @@
   <body>
     <!-- Header -->
     <header>
-      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;">Cyberpunk</span></a>
+      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
         <form action="" id="search_box">	
@@ -103,8 +103,8 @@
       <div class="menu" id="menu">
         <div class="menu-title">Danh mục sản phẩm</div>
         
-        <div class="menu-items" id="item-1">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('keyboard')"></a>
+        <div class="menu-items" id="item-1" onclick="activeItem(1)">
+          <a  href="#product-display" class="overlay" onclick="filterProduct('keyboard') " ></a>
           <img src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
         </div>
   
@@ -130,7 +130,7 @@
       </div>
 
       <div class="card-products-container">
-        <div class="card-product-item">
+        <!-- <div class="card-product-item">
           <img
             class="card-img"
             src="picture/Gaming keyboard.webp"
@@ -389,13 +389,13 @@
                 Còn hàng
               </div>
             </div>
-          </div>
-        </div>
+          </div>-->
+        </div> 
 
         <div class="menu-card-products-page-number">
-          <div class="pageNumber">1</div>
-          <div class="pageNumber">2</div>
-          <div class="pageNumber">3</div>
+          <!-- <div class="pageNumber" onclick="pageRender(1)"></div>
+          <div class="pageNumber" onclick="pageRender(2)">2</div>
+          <div class="pageNumber" onclick="pageRender(3)">3</div> -->
         </div>
       </div>
     </div>
