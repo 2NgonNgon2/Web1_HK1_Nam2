@@ -17,6 +17,7 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  max-height: 830px;
   margin-left: -30px;
   padding: 0 0 50px 0;
   margin-left: 10px;
@@ -27,10 +28,10 @@
   flex-direction: column;
   background: white;
   margin-left: 30px;
-  height: 380px;
+  height: 350px;
   flex: 0 0 calc(25% - 30px);
   transform: translateY(0);
-  transition: 0.3s;
+  transition: all 0.2s;
   margin-bottom: 30px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -42,10 +43,6 @@
   background: linear-gradient(45deg, red, orange);
   color: rgb(238, 234, 234);
   pointer-events: auto;
-}
-
-.card-product-item:active {
-  opacity: 0.8;
 }
 
 .card-img {
@@ -61,6 +58,7 @@
   flex: 1;
   flex-direction: column;
   pointer-events: none;
+  justify-content: space-between;
 }
 
 .card-product-content-title {
@@ -86,7 +84,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
-  transition: 0.3s;
 }
 
 .card-product-content-bottom {
@@ -94,14 +91,15 @@
 }
 
 .card-product-content-bottom-buying {
-  padding: 14px 0;
+  padding: 14px 0 0;
   line-height: 30px;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-product-content-bottom-buying-price {
   font-weight: bolder;
-  transition: 0.3s;
 }
 
 .card-product-priceNumber {
@@ -113,7 +111,7 @@
 }
 
 .card-product-content-bottom-buying-btn {
-  padding: 3px 9px;
+  padding: 8px 0;
   border: 2px solid black;
   border-radius: 10px;
   background: white;
@@ -167,7 +165,6 @@
   color: green;
   font-size: 16px;
   line-height: 25px;
-  transition: 0.4s;
 }
 
 .card-product-item:hover .card-product-status {
@@ -220,7 +217,6 @@
 }
 
 .prodcts-info-container {
-  position: relative;
   min-height: 450px;
   width: 900px;
   max-width: calc(100%-32px);
@@ -242,16 +238,20 @@
 
 .prodcts-info-container-close {
   position: absolute;
-  right: 25px;
-  top: 15px;
-  width: 30px;
-  height: 30px;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   font-size:24px;
   cursor: pointer;
-  line-height: 30px;
+  line-height: 40px;
   text-align: center;
 }
 
+.prodcts-info-container-close:active {
+  background-color: rgba(93, 88, 88, 0.4);
+}
 
 
 .product-info-item {
@@ -266,6 +266,7 @@
 }
 
 .product-info-item-content {
+  position: relative;
   padding: 30px 22px;
   display: flex;
   flex-direction: column;
@@ -391,11 +392,15 @@
 }
 
 #product-info-item-content-bottom-buying-btn {
-  padding: 10px 8px;
+  padding: 0 0 0 10px;
   border-radius: 5px;
   color: white;
   background-color: #fe6d38;
   opacity: 0.8;
+}
+
+#product-info-item-content-bottom-buying-btn-input {
+  padding: 10px 10px 10px 0;
 }
 
 #product-info-item-content-bottom-buying-btn:hover {
