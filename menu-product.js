@@ -1,139 +1,138 @@
 const cardProduct = document.querySelector(".card-products-container");
 const pageNumber = document.querySelector(".menu-card-products-page-number");
+
 let isLastPage = 0;
 let tmpProduct = [];
 let item = "";
 
 let product = [
   {
-    "id": "1",
-    "type": "keyboard",
-    "name": "ban phim co 69",
-    "price": "699.000",
-    "description": "Keyboard for gamer",
-    "img": "/picture/ban-phim-co-dareu-a98-rgb-04-400x400.jpg",
-    
+    id: "1",
+    type: "keyboard",
+    name: "ban phim co 69",
+    price: "699.000",
+    description: "Keyboard for gamer",
+    img: "/picture/ban-phim-co-dareu-a98-rgb-04-400x400.jpg",
   },
   {
-    "id": "2",
-    "type": "mouse",
-    "name": "chuot gaming 69",
-    "description": "Mouse for magaming",
-    "img": "/picture/mouse.png",
-    "price": "369.000",
+    id: "2",
+    type: "mouse",
+    name: "chuot gaming 69",
+    description: "Mouse for magaming",
+    img: "/picture/mouse.png",
+    price: "369.000",
   },
   {
-    "id": "3",
-    "type": "keyboard",
-    "name": "ban phim vjp pro max 69",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    "price": "699.000",
+    id: "3",
+    type: "keyboard",
+    name: "ban phim vjp pro max 69",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
+    price: "699.000",
   },
   {
-    "id": "4",
-    "type": "mousepad",
-    "name": "lót chuột pro max",
-    "description": "Mouse pad for wibu ",
-    "img": "/picture/mousepads.png",
-    "price": "169.000",
+    id: "4",
+    type: "mousepad",
+    name: "lót chuột pro max",
+    description: "Mouse pad for wibu ",
+    img: "/picture/mousepads.png",
+    price: "169.000",
   },
   {
-    "id": "5",
-    "type": "speaker",
-    "name": "loa xập xình",
-    "description": " loa cho dan choi",
-    "img": "/picture/speaker.png",
-    "price": "569.000",
+    id: "5",
+    type: "speaker",
+    name: "loa xập xình",
+    description: " loa cho dan choi",
+    img: "/picture/speaker.png",
+    price: "569.000",
   },
   {
-    "id": "6",
-    "type": "mousepad",
-    "name": "lót chuột siêu vjp pro",
-    "description": "lot chuot cho dan vjp",
-    "img": "/picture/mousepads.png",
-    "price": "569.000",
+    id: "6",
+    type: "mousepad",
+    name: "lót chuột siêu vjp pro",
+    description: "lot chuot cho dan vjp",
+    img: "/picture/mousepads.png",
+    price: "569.000",
   },
   {
-    "id": "7",
-    "type": "headphone",
-    "name": "tai nghe vjp pro cho dân quẩy",
-    "description": "tai nghe hiphop",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "7",
+    type: "headphone",
+    name: "tai nghe vjp pro cho dân quẩy",
+    description: "tai nghe hiphop",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "8",
-    "type": "headphone",
-    "name": "tai nghe cho người điếc",
-    "description": "tai nghe magaming",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "8",
+    type: "headphone",
+    name: "tai nghe cho người điếc",
+    description: "tai nghe magaming",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "9",
-    "type": "keyboard",
-    "name": "ban phim co 69",
-    "price": "699.000",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    
+    id: "9",
+    type: "keyboard",
+    name: "ban phim co 69",
+    price: "699.000",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
   },
   {
-    "id": "10",
-    "type": "mouse",
-    "name": "chuot gaming 69",
-    "description": "Mouse for magaming",
-    "img": "/picture/mouse.png",
-    "price": "369.000",
+    id: "10",
+    type: "mouse",
+    name: "chuot gaming 69",
+    description: "Mouse for magaming",
+    img: "/picture/mouse.png",
+    price: "369.000",
   },
   {
-    "id": "11",
-    "type": "keyboard",
-    "name": "ban phim vjp pro max 69",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    "price": "699.000",
+    id: "11",
+    type: "keyboard",
+    name: "ban phim vjp pro max 69",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
+    price: "699.000",
   },
   {
-    "id": "12",
-    "type": "mousepad",
-    "name": "lót chuột pro max",
-    "description": "Mouse pad for wibu ",
-    "img": "/picture/mousepads.png",
-    "price": "169.000",
+    id: "12",
+    type: "mousepad",
+    name: "lót chuột pro max",
+    description: "Mouse pad for wibu ",
+    img: "/picture/mousepads.png",
+    price: "169.000",
   },
   {
-    "id": "13",
-    "type": "speaker",
-    "name": "loa xập xình",
-    "description": " loa cho dan choi",
-    "img": "/picture/speaker.png",
-    "price": "569.000",
+    id: "13",
+    type: "speaker",
+    name: "loa xập xình",
+    description: " loa cho dan choi",
+    img: "/picture/speaker.png",
+    price: "569.000",
   },
   {
-    "id": "14",
-    "type": "mousepad",
-    "name": "lót chuột siêu vjp pro",
-    "description": "lot chuot cho dan vjp",
-    "img": "/picture/mousepads.png",
-    "price": "569.000",
+    id: "14",
+    type: "mousepad",
+    name: "lót chuột siêu vjp pro",
+    description: "lot chuot cho dan vjp",
+    img: "/picture/mousepads.png",
+    price: "569.000",
   },
   {
-    "id": "15",
-    "type": "headphone",
-    "name": "tai nghe vjp pro cho dân quẩy",
-    "description": "tai nghe hiphop",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "15",
+    type: "headphone",
+    name: "tai nghe vjp pro cho dân quẩy",
+    description: "tai nghe hiphop",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "16",
-    "type": "headphone",
-    "name": "tai nghe cho người điếc",
-    "description": "tai nghe magaming",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "16",
+    type: "headphone",
+    name: "tai nghe cho người điếc",
+    description: "tai nghe magaming",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
     "id": "17",
@@ -342,7 +341,6 @@ function filterProduct(typeProduct){
       pageOneHandle();
       break;
     }
-
   }
 }
 
@@ -434,10 +432,8 @@ function pageOneHandle()
       pageRender(1);
 }
 
-function renderProduct(product)
-{
-  item += 
-    `
+  function renderProduct(product) {
+    item += `
       <div class="card-product-item">
         <img
           class="card-img"
@@ -468,10 +464,6 @@ function renderProduct(product)
           </div>
         </div>
       </div>
-    `
-}
-
-
 
 
 
@@ -479,49 +471,34 @@ function renderProduct(product)
 // Adjust quantity product
 
 let quantityProduct = document.getElementById("adjustProductQuantity-number");
-let btnIncreaseQuantity = document.getElementById("adjustProductQuantity-increase");
-let btnDecreaseQuantity = document.getElementById("adjustProductQuantity-decrease");
-let btnSubmitQuantity = document.getElementById("product-info-item-content-bottom-buying-btn");
+let btnIncreaseQuantity = document.getElementById(
+  "adjustProductQuantity-increase"
+);
+let btnDecreaseQuantity = document.getElementById(
+  "adjustProductQuantity-decrease"
+);
+let btnSubmitQuantity = document.getElementById(
+  "product-info-item-content-bottom-buying-btn"
+);
 let cardProductItem = document.getElementsByClassName("card-product-item");
 let productInfo = document.getElementById("products-info");
 let closeInfoProduct = document.querySelector(".prodcts-info-container-close");
 let productInfoContainer = document.querySelector(".prodcts-info-container");
-let cardProductItemBuyingBtn = document.querySelectorAll(".card-product-content-bottom-buying-btn");
-let valueQuantityProduct = parseInt(quantityProduct.value);
+let cardProductItemBuyingBtn = document.querySelectorAll(
+  ".card-product-content-bottom-buying-btn"
+);
+let inputProductInfoBtn = document.getElementById("product-info-item-content-bottom-buying-btn-input");
+
 let quantity;
-
-
-  // check if quantity input equal 1 ,clock decrease button .
-if(valueQuantityProduct == 1 ) {
-  btnDecreaseQuantity.classList.add("clockBtn");
-} 
-  // click to increase quantity product
-btnIncreaseQuantity.addEventListener('click',function() {
-  valueQuantityProduct = parseInt(quantityProduct.value);
-  quantity = valueQuantityProduct + 1 ;
-  quantityProduct.value = quantity;
-  if(quantityProduct.value > 1) {
-    btnDecreaseQuantity.classList.remove("clockBtn");
-  }
-});
-  // click to decrease quantity product
-btnDecreaseQuantity.addEventListener('click',function() {
-  valueQuantityProduct = parseInt(quantityProduct.value);
-  quantity = valueQuantityProduct - 1 ;
-  quantityProduct.value = quantity;
-  if(quantityProduct.value == 1) {
-    btnDecreaseQuantity.classList.add("clockBtn");
-  }
-});
 
 // click card product item to open info product
 
 for (let index = 0; index < cardProductItem.length; index++) {
-  cardProductItem[index].addEventListener('click', function () {
-    console.log(productInfo);
+  cardProductItem[index].addEventListener("click", function () {
     productInfo.classList.add("openInfoProduct");
+    
   });
-  cardProductItemBuyingBtn[index].addEventListener("click",function(e) {
+  cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
     e.stopPropagation();
   });
 }
@@ -530,13 +507,56 @@ function hideInfoProduct() {
   productInfo.classList.remove("openInfoProduct");
 }
 
-closeInfoProduct.addEventListener('click', hideInfoProduct);
-productInfo.addEventListener('click',hideInfoProduct);
-productInfoContainer.addEventListener("click",function(e) {
+closeInfoProduct.addEventListener("click", hideInfoProduct);
+productInfo.addEventListener("click", hideInfoProduct);
+productInfoContainer.addEventListener("click", function (e) {
   e.stopPropagation();
 });
 
 
-// let x = 
-// navigator.keyboard.lock();
-// cosol.log(KeyboardEvent.key("Subtract"));
+
+// click to increase quantity product
+btnIncreaseQuantity.addEventListener("click", function () {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct + 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  }
+});
+
+// click to decrease quantity product
+btnDecreaseQuantity.addEventListener("click", function () {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct - 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value == 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
+});
+
+// check if quantity input <= 1 ,clock decrease button .
+if (quantityProduct.value <= 1) {
+  btnDecreaseQuantity.classList.add("clockBtn");
+  
+} 
+// get value when user enter value to input
+quantityProduct.addEventListener("keypress",function(e) {
+  if (parseInt(quantityProduct.value + e.key) > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  } else {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!")
+    btnDecreaseQuantity.classList.add("clockBtn");
+
+  }
+})
+
+
+    console.log(parseInt(quantityProduct.value));
+ 
+inputProductInfoBtn.onclick = function() {
+  let x = parseInt(quantityProduct.value)
+if( x < 0)
+   x =  Math.abs(x);  
+   console.log(x);
+}
