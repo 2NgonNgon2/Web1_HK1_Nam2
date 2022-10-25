@@ -143,7 +143,7 @@ let product = [
     "price": "699.000",
   },
   {
-    "id": "2",
+    "id": "18",
     "type": "mouse",
     "name": "chuot gaming 69",
     "description": "Mouse for magaming",
@@ -151,7 +151,7 @@ let product = [
     "price": "369.000",
   },
   {
-    "id": "3",
+    "id": "19",
     "type": "keyboard",
     "name": "ban phim vjp pro max 69",
     "description": "Keyboard for gamer",
@@ -159,7 +159,7 @@ let product = [
     "price": "699.000",
   },
   {
-    "id": "4",
+    "id": "20",
     "type": "mousepad",
     "name": "lót chuột pro max",
     "description": "Mouse pad for wibu ",
@@ -167,7 +167,7 @@ let product = [
     "price": "169.000",
   },
   {
-    "id": "5",
+    "id": "21",
     "type": "speaker",
     "name": "loa xập xình",
     "description": " loa cho dan choi",
@@ -175,7 +175,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "6",
+    "id": "22",
     "type": "mousepad",
     "name": "lót chuột siêu vjp pro",
     "description": "lot chuot cho dan vjp",
@@ -183,7 +183,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "7",
+    "id": "23",
     "type": "headphone",
     "name": "tai nghe vjp pro cho dân quẩy",
     "description": "tai nghe hiphop",
@@ -191,7 +191,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "8",
+    "id": "24",
     "type": "headphone",
     "name": "tai nghe cho người điếc",
     "description": "tai nghe magaming",
@@ -199,7 +199,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "9",
+    "id": "25",
     "type": "keyboard",
     "name": "ban phim co 69",
     "price": "699.000",
@@ -208,7 +208,7 @@ let product = [
     
   },
   {
-    "id": "10",
+    "id": "26",
     "type": "mouse",
     "name": "chuot gaming 69",
     "description": "Mouse for magaming",
@@ -216,7 +216,7 @@ let product = [
     "price": "369.000",
   },
   {
-    "id": "11",
+    "id": "27",
     "type": "keyboard",
     "name": "ban phim nhu con cac",
     "description": "Keyboard for gamer",
@@ -224,7 +224,7 @@ let product = [
     "price": "699.000",
   },
   {
-    "id": "12",
+    "id": "28",
     "type": "mousepad",
     "name": "lót chuột pro max",
     "description": "Mouse pad for wibu ",
@@ -232,7 +232,7 @@ let product = [
     "price": "169.000",
   },
   {
-    "id": "13",
+    "id": "29",
     "type": "speaker",
     "name": "loa xập xình",
     "description": " loa cho dan choi",
@@ -240,7 +240,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "14",
+    "id": "30",
     "type": "mousepad",
     "name": "lót chuột siêu vjp pro",
     "description": "lot chuot cho dan vjp",
@@ -248,7 +248,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "15",
+    "id": "31",
     "type": "headphone",
     "name": "tai nghe vjp pro cho dân quẩy",
     "description": "tai nghe hiphop",
@@ -256,7 +256,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "16",
+    "id": "32",
     "type": "headphone",
     "name": "tai nghe cho người điếc",
     "description": "tai nghe magaming",
@@ -264,7 +264,7 @@ let product = [
     "price": "569.000",
   },
   {
-    "id": "17",
+    "id": "33",
     "type": "keyboard",
     "name": "ban phim du ma js nhu l",
     "description": "Keyboard for gamer",
@@ -434,7 +434,7 @@ function pageOneHandle()
 
   function renderProduct(product) {
     item += `
-      <div class="card-product-item">
+      <div class="card-product-item" id="${product.id}" onclick="productInfomation(${product.id})">
         <img
           class="card-img"
           src="${product.img}"
@@ -494,55 +494,159 @@ let quantity;
 
 // click card product item to open info product
 
-for (let index = 0; index < cardProductItem.length; index++) {
-  cardProductItem[index].addEventListener("click", function () {
-    productInfo.classList.add("openInfoProduct");
-    
-  });
-  cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
-    e.stopPropagation();
-  });
+function productInfomation(id)
+{
+  for(let i=0; i<product.length; i++)
+  {
+    if(product[i].id == id)
+    {
+      productInfo.innerHTML  = 
+      `
+        <div class="prodcts-info-container" onclick="stopPropagate(event);">
+          
+          <div class="product-info-item" >
+            <img src="${product[i].img}" class="product-info-img" alt="">
+            <div class="product-info-item-content">
+              <div class="prodcts-info-container-close" onclick="hideInfoProduct()">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <div class="product-info-item-content-top">
+                <div class="product-info-item-content-top-title card-title">
+                  ${product[i].name}</div>
+                <div class="product-info-item-content-top-label-card-title card-title">${product[i].description}</div>
+              </div>
+
+              <div class="product-info-item-content-middle">
+                  <div class="product-info-item-content-middle-title">
+                      Product info
+                  </div>
+
+                  <div class="product-info-item-content-middle-content">
+                      ${product[i].description}
+                  </div>
+              </div>
+
+              <form action="" class="product-info-item-content-bottom">
+
+                <div class="adjustProductQuantity">
+                  <div class="adjustProductQuantity-title">Số lượng : </div>
+                    <div class="adjustProductQuantity-btn">
+                      <button  type="button" id="adjustProductQuantity-decrease" onclick="decreaseQuantity()"><i class="fa-sharp fa-solid fa-minus adjustProductQuantity-decrease-icon"></i></button>
+                      <input name="quantity" id="adjustProductQuantity-number" type="text" value="1" onkeypress="getValueUserEntered(event)" >
+                      <button type="button" id="adjustProductQuantity-increase" onclick="increaseQuantity()";><i class="fa-regular fa-plus adjustProductQuantity-increase-icon"></i></button>
+                    </div>
+                </div>
+
+                <div class="product-info-item-content-bottom-buying">
+                  <div class="product-info-item-content-bottom-buying-price">
+                    <span class="product-info-item-content-priceNumber">${product[i].price}</span> 
+                    <span class="product-info-item-content-priceIcon">₫</span>
+                  </div>
+                  <div id="product-info-item-content-bottom-buying-btn" onclick="themSanPhamBtn">
+
+                    <i class="fa-solid fa-cart-shopping product-info-item-icon-btn-shop"></i>
+                    <input type="button" value="Thêm giỏ hàng" id="product-info-item-content-bottom-buying-btn-input">
+                    
+                  </div>
+                </div>
+              
+              </form>
+            </div>
+          </div>
+        </div>
+      `
+    }
+  }
+  productInfoContainer = document.querySelector(".prodcts-info-container");
+  closeInfoProduct = document.querySelector(".prodcts-info-container-close");
+  quantityProduct = document.getElementById("adjustProductQuantity-number");
+  btnIncreaseQuantity = document.getElementById(
+  "adjustProductQuantity-increase"
+);
+  btnDecreaseQuantity = document.getElementById(
+  "adjustProductQuantity-decrease"
+);
+  btnSubmitQuantity = document.getElementById(
+  "product-info-item-content-bottom-buying-btn"
+);
+
+
+  productInfo.classList.add("openInfoProduct");
 }
 
+
+  /* for (let index = 0; index < cardProductItem.length; index++) {
+    cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
+      e.stopPropagation();
+  });
+} 
+ */
 function hideInfoProduct() {
   productInfo.classList.remove("openInfoProduct");
 }
 
-closeInfoProduct.addEventListener("click", hideInfoProduct);
-productInfo.addEventListener("click", hideInfoProduct);
-productInfoContainer.addEventListener("click", function (e) {
+
+  /* closeInfoProduct.addEventListener("click", hideInfoProduct); */
+  closeInfoProduct.addEventListener("click",hideInfoProduct);
+  productInfo.addEventListener("click", hideInfoProduct);
+  productInfoContainer.addEventListener("click", function (e) {
   e.stopPropagation();
-});
+  });
 
 
+  function stopPropagate(e)
+  {
+    e.stopPropagation();
+  }
 
 // click to increase quantity product
-btnIncreaseQuantity.addEventListener("click", function () {
+function increaseQuantity() {
   valueQuantityProduct = parseInt(quantityProduct.value);
   quantity = valueQuantityProduct + 1;
   quantityProduct.value = quantity;
   if (quantityProduct.value > 1) {
     btnDecreaseQuantity.classList.remove("clockBtn");
   }
-});
+}
+
+/* btnIncreaseQuantity.addEventListener("click", function () {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct + 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  }
+}); */
+
 
 // click to decrease quantity product
-btnDecreaseQuantity.addEventListener("click", function () {
+
+function decreaseQuantity() {
   valueQuantityProduct = parseInt(quantityProduct.value);
   quantity = valueQuantityProduct - 1;
   quantityProduct.value = quantity;
   if (quantityProduct.value == 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
-});
+}
+
+/* btnDecreaseQuantity.addEventListener("click", function () {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct - 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value == 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
+}); */
 
 // check if quantity input <= 1 ,clock decrease button .
 if (quantityProduct.value <= 1) {
   btnDecreaseQuantity.classList.add("clockBtn");
   
 } 
+
 // get value when user enter value to input
-quantityProduct.addEventListener("keypress",function(e) {
+function getValueUserEntered(e) {
   if (parseInt(quantityProduct.value + e.key) > 1) {
     btnDecreaseQuantity.classList.remove("clockBtn");
   } else {
@@ -550,11 +654,29 @@ quantityProduct.addEventListener("keypress",function(e) {
     btnDecreaseQuantity.classList.add("clockBtn");
 
   }
-})
+}
+
+/* quantityProduct.addEventListener("keypress",function(e) {
+  if (parseInt(quantityProduct.value + e.key) > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  } else {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!")
+    btnDecreaseQuantity.classList.add("clockBtn");
+
+  }
+}) */
 
 
     console.log(parseInt(quantityProduct.value));
  
+
+function  themSanPhamBtn() {
+  let x = parseInt(quantityProduct.value)
+  if( x < 0)
+   x =  Math.abs(x);  
+   console.log(x);
+}
+
 inputProductInfoBtn.onclick = function() {
   let x = parseInt(quantityProduct.value)
 if( x < 0)
