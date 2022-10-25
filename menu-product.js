@@ -447,27 +447,50 @@ function pageOneHandle()
             <div class="label-card-title card-title">${product.description}</div>
           </div>
           <div class="card-product-content-bottom">
-            <div class="card-product-content-bottom-buying">
-              <div class="card-product-content-bottom-buying-price">
-                <span class="card-product-priceNumber">${product.price}</span> 
-                <span class="card-product-priceIcon">₫</span>
-              </div>
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
+
+          <div class="card-product-content-bottom-buying-btn">
+            <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
+            Thêm giỏ hàng
+          </div>
+
+          <div class="card-product-content-bottom-buying">
+            <div class="card-product-content-bottom-buying-price">
+              <span class="card-product-priceNumber">${product.price}</span> 
+              <span class="card-product-priceIcon">₫</span>
             </div>
             <div class="card-product-status">
-              <i class="fa-solid fa-check icon-check-status"></i>
               Còn hàng
+              <i class="fa-solid fa-check icon-check-status"></i>
             </div>
           </div>
+          
+        </div>
         </div>
       </div>
+    </div>
     `
   }
 
-
+// hold active menu-items
+  const menuItems = document.querySelectorAll(".menu-items");
+  const menuItemsImg = document.querySelectorAll(".menu-items-img");
+  const menuItemsOverlay = document.querySelectorAll(".overlay");
+  
+  
+  menuItems.forEach((menuItem,index) => {
+      const menuItemImg = menuItemsImg[index];
+      const menuItemOverlay = menuItemsOverlay[index];
+      console.log(menuItem);
+        menuItem.onclick = function() {
+            document.querySelector(".menu-items.activeMenuItems").classList.remove("activeMenuItems");
+            document.querySelector(".overlay.activeMenuItemOverlay").classList.remove("activeMenuItemOverlay");
+            document.querySelector(".menu-items-img.activeMenuItemImg").classList.remove("activeMenuItemImg");
+  
+            this.classList.add("activeMenuItems");
+            menuItemOverlay.classList.add("activeMenuItemOverlay");
+            menuItemImg.classList.add("activeMenuItemImg");
+        }
+  });
 
 // Adjust quantity product
 
@@ -492,7 +515,10 @@ let inputProductInfoBtn = document.getElementById("product-info-item-content-bot
 
 let quantity;
 
+
+
 // click card product item to open info product
+
 
 function productInfomation(id)
 {
@@ -572,6 +598,7 @@ function productInfomation(id)
 
 
   productInfo.classList.add("openInfoProduct");
+
 }
 
 
@@ -683,3 +710,6 @@ if( x < 0)
    x =  Math.abs(x);  
    console.log(x);
 }
+
+
+let menuItem
