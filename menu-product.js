@@ -1,5 +1,4 @@
 const cardProduct = document.querySelector(".card-products-container");
-const pageNumber = document.querySelector(".menu-card-products-page-number");
 
 let isLastPage = 0;
 let tmpProduct = [];
@@ -135,157 +134,154 @@ let product = [
     price: "569.000",
   },
   {
-    "id": "17",
-    "type": "keyboard",
-    "name": "ban phim vjp pro max 69",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    "price": "699.000",
+    id: "17",
+    type: "keyboard",
+    name: "ban phim vjp pro max 69",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
+    price: "699.000",
   },
   {
-    "id": "18",
-    "type": "mouse",
-    "name": "chuot gaming 69",
-    "description": "Mouse for magaming",
-    "img": "/picture/mouse.png",
-    "price": "369.000",
+    id: "18",
+    type: "mouse",
+    name: "chuot gaming 69",
+    description: "Mouse for magaming",
+    img: "/picture/mouse.png",
+    price: "369.000",
   },
   {
-    "id": "19",
-    "type": "keyboard",
-    "name": "ban phim vjp pro max 69",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    "price": "699.000",
+    id: "19",
+    type: "keyboard",
+    name: "ban phim vjp pro max 69",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
+    price: "699.000",
   },
   {
-    "id": "20",
-    "type": "mousepad",
-    "name": "lót chuột pro max",
-    "description": "Mouse pad for wibu ",
-    "img": "/picture/mousepads.png",
-    "price": "169.000",
+    id: "20",
+    type: "mousepad",
+    name: "lót chuột pro max",
+    description: "Mouse pad for wibu ",
+    img: "/picture/mousepads.png",
+    price: "169.000",
   },
   {
-    "id": "21",
-    "type": "speaker",
-    "name": "loa xập xình",
-    "description": " loa cho dan choi",
-    "img": "/picture/speaker.png",
-    "price": "569.000",
+    id: "21",
+    type: "speaker",
+    name: "loa xập xình",
+    description: " loa cho dan choi",
+    img: "/picture/speaker.png",
+    price: "569.000",
   },
   {
-    "id": "22",
-    "type": "mousepad",
-    "name": "lót chuột siêu vjp pro",
-    "description": "lot chuot cho dan vjp",
-    "img": "/picture/mousepads.png",
-    "price": "569.000",
+    id: "22",
+    type: "mousepad",
+    name: "lót chuột siêu vjp pro",
+    description: "lot chuot cho dan vjp",
+    img: "/picture/mousepads.png",
+    price: "569.000",
   },
   {
-    "id": "23",
-    "type": "headphone",
-    "name": "tai nghe vjp pro cho dân quẩy",
-    "description": "tai nghe hiphop",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "23",
+    type: "headphone",
+    name: "tai nghe vjp pro cho dân quẩy",
+    description: "tai nghe hiphop",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "24",
-    "type": "headphone",
-    "name": "tai nghe cho người điếc",
-    "description": "tai nghe magaming",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "24",
+    type: "headphone",
+    name: "tai nghe cho người điếc",
+    description: "tai nghe magaming",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "25",
-    "type": "keyboard",
-    "name": "ban phim co 69",
-    "price": "699.000",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    
+    id: "25",
+    type: "keyboard",
+    name: "ban phim co 69",
+    price: "699.000",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
   },
   {
-    "id": "26",
-    "type": "mouse",
-    "name": "chuot gaming 69",
-    "description": "Mouse for magaming",
-    "img": "/picture/mouse.png",
-    "price": "369.000",
+    id: "26",
+    type: "mouse",
+    name: "chuot gaming 69",
+    description: "Mouse for magaming",
+    img: "/picture/mouse.png",
+    price: "369.000",
   },
   {
-    "id": "27",
-    "type": "keyboard",
-    "name": "ban phim nhu con cac",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    "price": "699.000",
+    id: "27",
+    type: "keyboard",
+    name: "ban phim nhu con cac",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
+    price: "699.000",
   },
   {
-    "id": "28",
-    "type": "mousepad",
-    "name": "lót chuột pro max",
-    "description": "Mouse pad for wibu ",
-    "img": "/picture/mousepads.png",
-    "price": "169.000",
+    id: "28",
+    type: "mousepad",
+    name: "lót chuột pro max",
+    description: "Mouse pad for wibu ",
+    img: "/picture/mousepads.png",
+    price: "169.000",
   },
   {
-    "id": "29",
-    "type": "speaker",
-    "name": "loa xập xình",
-    "description": " loa cho dan choi",
-    "img": "/picture/speaker.png",
-    "price": "569.000",
+    id: "29",
+    type: "speaker",
+    name: "loa xập xình",
+    description: " loa cho dan choi",
+    img: "/picture/speaker.png",
+    price: "569.000",
   },
   {
-    "id": "30",
-    "type": "mousepad",
-    "name": "lót chuột siêu vjp pro",
-    "description": "lot chuot cho dan vjp",
-    "img": "/picture/mousepads.png",
-    "price": "569.000",
+    id: "30",
+    type: "mousepad",
+    name: "lót chuột siêu vjp pro",
+    description: "lot chuot cho dan vjp",
+    img: "/picture/mousepads.png",
+    price: "569.000",
   },
   {
-    "id": "31",
-    "type": "headphone",
-    "name": "tai nghe vjp pro cho dân quẩy",
-    "description": "tai nghe hiphop",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "31",
+    type: "headphone",
+    name: "tai nghe vjp pro cho dân quẩy",
+    description: "tai nghe hiphop",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "32",
-    "type": "headphone",
-    "name": "tai nghe cho người điếc",
-    "description": "tai nghe magaming",
-    "img": "/picture/headphone.png",
-    "price": "569.000",
+    id: "32",
+    type: "headphone",
+    name: "tai nghe cho người điếc",
+    description: "tai nghe magaming",
+    img: "/picture/headphone.png",
+    price: "569.000",
   },
   {
-    "id": "33",
-    "type": "keyboard",
-    "name": "ban phim du ma js nhu l",
-    "description": "Keyboard for gamer",
-    "img": "/picture/keyboard.jpg",
-    "price": "699.000",
+    id: "33",
+    type: "keyboard",
+    name: "ban phim du ma js nhu l",
+    description: "Keyboard for gamer",
+    img: "/picture/keyboard.jpg",
+    price: "699.000",
   },
 ];
-
 
 // mặc định khi khởi động web sẽ load trang 1 keyboard
 filterProduct("keyboard");
 
-function filterProduct(typeProduct){
-  item="";
-  tmpProduct=[];
-  switch(typeProduct){
-    case "keyboard":{
-      for(let i=0; i < product.length; i++){
-        if(product[i].type == typeProduct)
-        {
-            tmpProduct.push(product[i]);
+function filterProduct(typeProduct) {
+  item = "";
+  tmpProduct = [];
+  switch (typeProduct) {
+    case "keyboard": {
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].type == typeProduct) {
+          tmpProduct.push(product[i]);
         }
       }
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
@@ -293,11 +289,10 @@ function filterProduct(typeProduct){
       pageOneHandle();
       break;
     }
-    case "headphone":{
-      for(let i=0; i < product.length; i++){
-        if(product[i].type == typeProduct)
-        {
-            tmpProduct.push(product[i]);
+    case "headphone": {
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].type == typeProduct) {
+          tmpProduct.push(product[i]);
         }
       }
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
@@ -305,11 +300,10 @@ function filterProduct(typeProduct){
       pageOneHandle();
       break;
     }
-    case "mouse":{
-      for(let i=0; i < product.length; i++){
-        if(product[i].type == typeProduct)
-        {
-            tmpProduct.push(product[i]);
+    case "mouse": {
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].type == typeProduct) {
+          tmpProduct.push(product[i]);
         }
       }
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
@@ -317,11 +311,10 @@ function filterProduct(typeProduct){
       pageOneHandle();
       break;
     }
-    case "speaker":{
-      for(let i=0; i < product.length; i++){
-        if(product[i].type == typeProduct)
-        {
-            tmpProduct.push(product[i]);
+    case "speaker": {
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].type == typeProduct) {
+          tmpProduct.push(product[i]);
         }
       }
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
@@ -329,11 +322,10 @@ function filterProduct(typeProduct){
       pageOneHandle();
       break;
     }
-    case "mousepad":{
-      for(let i=0; i < product.length; i++){
-        if(product[i].type == typeProduct)
-        {
-            tmpProduct.push(product[i]);
+    case "mousepad": {
+      for (let i = 0; i < product.length; i++) {
+        if (product[i].type == typeProduct) {
+          tmpProduct.push(product[i]);
         }
       }
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
@@ -344,96 +336,98 @@ function filterProduct(typeProduct){
   }
 }
 
+function createPageNum(tmpProduct) {
+  let quantity = tmpProduct.length / 8;
 
-
-function createPageNum(tmpProduct)
-{
-  let quantity = tmpProduct.length/8;
-  
-
-  if(quantity % 1 != 0)
-  {
-    console.log("decimal");
+  if (quantity % 1 != 0) {
     quantity++;
   }
 
-  if(quantity == 0)
-  {
+  if (quantity == 0) {
     quantity = 1;
   }
   quantity = Math.floor(quantity);
-  console.log(quantity);
   let pageNum = `<div class="menu-card-products-page-number">`;
-  let count=0;
+  let count = 0;
   isLastPage = 0;
-  do{
+  do {
     count++;
-    if(count === quantity)
-    {
+    if (count === quantity) {
       isLastPage = count;
-      pageNum +=
-      `
+      if(count == 1) {
+        pageNum += `
+        <div class="pageNumber activePageNumber" onclick="pageRender(${count},true)">${count}</div>
+        `;
+      } else {
+      pageNum += `
       <div class="pageNumber" onclick="pageRender(${count},true)">${count}</div>
-      `
+      `;
+      }
+    } else {
+      if(count == 1) {
+        pageNum += `
+        <div class="pageNumber activePageNumber" onclick="pageRender(${count},false)">${count}</div>
+        `;
+      } else {
+        pageNum += `
+        <div class="pageNumber" onclick="pageRender(${count},false)">${count}</div>
+        `;
+      }
     }
-    else
-    {
-      pageNum +=
-      `
-      <div class="pageNumber" onclick="pageRender(${count},false)">${count}</div>
-      `
-    }
-  }
-  while(count < quantity);
+  } while (count < quantity);
   pageNum += `</div>`;
-
   return pageNum;
 }
+  // const pageNumBers = document.querySelectorAll(".pageNumber");
+  //   pageNumBers.forEach((pageNumber,index) => {
+    
+  //       pageNumber.onclick = function() {
+  //           document.querySelector(".pageNumber.activePageNumber").classList.remove("activePageNumber");
+  //           this.classList.add("activePageNumber");
+  //         }
+  //       });      
 
-function pageRender(pageNumberClicked,lastPage)
-{
+    // const pageNumber = document.querySelector("pageNumber");
+ 
+
+
+
+function pageRender(pageNumberClicked, lastPage) {
   item = "";
   //tmpProduct.push(product[product.length-1]);
-  let positionLoad = (pageNumberClicked-1)*8;
-  if(positionLoad < 0){ positionLoad = 0}
-  if(lastPage == true)
-  {
-    for(let k=positionLoad; k < tmpProduct.length; k++)
-    {
+  let positionLoad = (pageNumberClicked - 1) * 8;
+  if (positionLoad < 0) {
+    positionLoad = 0;
+  }
+  if (lastPage == true) {
+    for (let k = positionLoad; k < tmpProduct.length; k++) {
       renderProduct(tmpProduct[k]);
     }
 
-    item += createPageNum(tmpProduct);  // thêm vào lại 3 cục div pageNumber
-    cardProduct.innerHTML = item ;
-  }
-  else
-  {
-
-    for(let k=positionLoad; k < (positionLoad + 8); k++)
-    {
+    item += createPageNum(tmpProduct); // thêm vào lại 3 cục div pageNumber
+    cardProduct.innerHTML = item;
+  } else {
+    for (let k = positionLoad; k < positionLoad + 8; k++) {
       renderProduct(tmpProduct[k]);
     }
 
     item += createPageNum(tmpProduct);
-    cardProduct.innerHTML = item ;
+    cardProduct.innerHTML = item;
   }
+  
 }
 
-function pageOneHandle()
-{
-  if(isLastPage == 1)
-      {
-        pageRender(1,true);
-      }
-      else
-      {
-        pageRender(1,false);
-      }
-      pageRender(1);
+function pageOneHandle() {
+  if (isLastPage == 1) {
+    pageRender(1, true);
+  } else {
+    pageRender(1, false);
+  }
+  pageRender(1);
 }
 
-  function renderProduct(product) {
-    item += `
+function renderProduct(product) {
+  item += `
       <div class="card-product-item" id="${product.id}" onclick="productInfomation(${product.id})">
         <img
           class="card-img"
@@ -448,7 +442,7 @@ function pageOneHandle()
           </div>
           <div class="card-product-content-bottom">
 
-          <div class="card-product-content-bottom-buying-btn">
+          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event)">
             <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
             Thêm giỏ hàng
           </div>
@@ -468,29 +462,34 @@ function pageOneHandle()
         </div>
       </div>
     </div>
-    `
-  }
+    `;
+}
 
 // hold active menu-items
-  const menuItems = document.querySelectorAll(".menu-items");
-  const menuItemsImg = document.querySelectorAll(".menu-items-img");
-  const menuItemsOverlay = document.querySelectorAll(".overlay");
-  
-  
-  menuItems.forEach((menuItem,index) => {
-      const menuItemImg = menuItemsImg[index];
-      const menuItemOverlay = menuItemsOverlay[index];
-      console.log(menuItem);
-        menuItem.onclick = function() {
-            document.querySelector(".menu-items.activeMenuItems").classList.remove("activeMenuItems");
-            document.querySelector(".overlay.activeMenuItemOverlay").classList.remove("activeMenuItemOverlay");
-            document.querySelector(".menu-items-img.activeMenuItemImg").classList.remove("activeMenuItemImg");
-  
-            this.classList.add("activeMenuItems");
-            menuItemOverlay.classList.add("activeMenuItemOverlay");
-            menuItemImg.classList.add("activeMenuItemImg");
-        }
-  });
+const menuItems = document.querySelectorAll(".menu-items");
+const menuItemsImg = document.querySelectorAll(".menu-items-img");
+const menuItemsOverlay = document.querySelectorAll(".overlay");
+
+menuItems.forEach((menuItem, index) => {
+  const menuItemImg = menuItemsImg[index];
+  const menuItemOverlay = menuItemsOverlay[index];
+
+  menuItem.onclick = function () {
+    document
+      .querySelector(".menu-items.activeMenuItems")
+      .classList.remove("activeMenuItems");
+    document
+      .querySelector(".overlay.activeMenuItemOverlay")
+      .classList.remove("activeMenuItemOverlay");
+    document
+      .querySelector(".menu-items-img.activeMenuItemImg")
+      .classList.remove("activeMenuItemImg");
+
+    this.classList.add("activeMenuItems");
+    menuItemOverlay.classList.add("activeMenuItemOverlay");
+    menuItemImg.classList.add("activeMenuItemImg");
+  };
+});
 
 // Adjust quantity product
 
@@ -504,31 +503,26 @@ let btnDecreaseQuantity = document.getElementById(
 let btnSubmitQuantity = document.getElementById(
   "product-info-item-content-bottom-buying-btn"
 );
+let inputProductInfoBtn = document.getElementById(
+  "product-info-item-content-bottom-buying-btn-input"
+);
+let quantity;
+
+
+// click card product item to open info product
 let cardProductItem = document.getElementsByClassName("card-product-item");
 let productInfo = document.getElementById("products-info");
 let closeInfoProduct = document.querySelector(".prodcts-info-container-close");
 let productInfoContainer = document.querySelector(".prodcts-info-container");
-let cardProductItemBuyingBtn = document.querySelectorAll(
+let cardProductItemBuyingBtn = document.querySelector(
   ".card-product-content-bottom-buying-btn"
 );
-let inputProductInfoBtn = document.getElementById("product-info-item-content-bottom-buying-btn-input");
 
-let quantity;
-
-
-
-// click card product item to open info product
-
-
-function productInfomation(id)
-{
-  for(let i=0; i<product.length; i++)
-  {
-    if(product[i].id == id)
-    {
-      productInfo.innerHTML  = 
-      `
-        <div class="prodcts-info-container" onclick="stopPropagate(event);">
+function productInfomation(id) {
+  for (let i = 0; i < product.length; i++) {
+    if (product[i].id == id) {
+      productInfo.innerHTML = `
+        <div class="prodcts-info-container" onclick="stopPropagate(event)">
           
           <div class="product-info-item" >
             <img src="${product[i].img}" class="product-info-img" alt="">
@@ -568,7 +562,7 @@ function productInfomation(id)
                     <span class="product-info-item-content-priceNumber">${product[i].price}</span> 
                     <span class="product-info-item-content-priceIcon">₫</span>
                   </div>
-                  <div id="product-info-item-content-bottom-buying-btn" onclick="themSanPhamBtn">
+                  <div id="product-info-item-content-bottom-buying-btn" onclick="themSanPhamBtn()">
 
                     <i class="fa-solid fa-cart-shopping product-info-item-icon-btn-shop"></i>
                     <input type="button" value="Thêm giỏ hàng" id="product-info-item-content-bottom-buying-btn-input">
@@ -580,29 +574,31 @@ function productInfomation(id)
             </div>
           </div>
         </div>
-      `
+      `;
     }
   }
   productInfoContainer = document.querySelector(".prodcts-info-container");
   closeInfoProduct = document.querySelector(".prodcts-info-container-close");
   quantityProduct = document.getElementById("adjustProductQuantity-number");
   btnIncreaseQuantity = document.getElementById(
-  "adjustProductQuantity-increase"
-);
+    "adjustProductQuantity-increase"
+  );
   btnDecreaseQuantity = document.getElementById(
-  "adjustProductQuantity-decrease"
-);
+    "adjustProductQuantity-decrease"
+  );
   btnSubmitQuantity = document.getElementById(
-  "product-info-item-content-bottom-buying-btn"
-);
-
+    "product-info-item-content-bottom-buying-btn"
+  );
 
   productInfo.classList.add("openInfoProduct");
-
+ 
+  // check if quantity input <= 1 ,clock decrease button .
+  if (quantityProduct.value <= 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
 }
 
-
-  /* for (let index = 0; index < cardProductItem.length; index++) {
+/* for (let index = 0; index < cardProductItem.length; index++) {
     cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
       e.stopPropagation();
   });
@@ -612,19 +608,11 @@ function hideInfoProduct() {
   productInfo.classList.remove("openInfoProduct");
 }
 
+productInfo.addEventListener("click", hideInfoProduct);
 
-  /* closeInfoProduct.addEventListener("click", hideInfoProduct); */
-  closeInfoProduct.addEventListener("click",hideInfoProduct);
-  productInfo.addEventListener("click", hideInfoProduct);
-  productInfoContainer.addEventListener("click", function (e) {
+function stopPropagate(e) {
   e.stopPropagation();
-  });
-
-
-  function stopPropagate(e)
-  {
-    e.stopPropagation();
-  }
+}
 
 // click to increase quantity product
 function increaseQuantity() {
@@ -644,7 +632,6 @@ function increaseQuantity() {
     btnDecreaseQuantity.classList.remove("clockBtn");
   }
 }); */
-
 
 // click to decrease quantity product
 
@@ -666,20 +653,13 @@ function decreaseQuantity() {
   }
 }); */
 
-// check if quantity input <= 1 ,clock decrease button .
-if (quantityProduct.value <= 1) {
-  btnDecreaseQuantity.classList.add("clockBtn");
-  
-} 
-
 // get value when user enter value to input
 function getValueUserEntered(e) {
   if (parseInt(quantityProduct.value + e.key) > 1) {
     btnDecreaseQuantity.classList.remove("clockBtn");
-  } else {
-    alert("Số lượng sản phẩm không nhỏ hơn 1!")
+  } else if(parseInt(quantityProduct.value + e.key) < 1) {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!");
     btnDecreaseQuantity.classList.add("clockBtn");
-
   }
 }
 
@@ -693,23 +673,9 @@ function getValueUserEntered(e) {
   }
 }) */
 
-
-    console.log(parseInt(quantityProduct.value));
- 
-
-function  themSanPhamBtn() {
-  let x = parseInt(quantityProduct.value)
-  if( x < 0)
-   x =  Math.abs(x);  
-   console.log(x);
+function themSanPhamBtn() {
+  let x = parseInt(quantityProduct.value);
+  if (x < 0) x = Math.abs(x);
+  console.log(x);
 }
 
-inputProductInfoBtn.onclick = function() {
-  let x = parseInt(quantityProduct.value)
-if( x < 0)
-   x =  Math.abs(x);  
-   console.log(x);
-}
-
-
-let menuItem

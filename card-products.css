@@ -180,6 +180,13 @@
   text-align: center;
 }
 
+.activePageNumber {
+  background: linear-gradient(45deg, red, orange)!important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  color: rgb(238, 234, 234);
+  cursor: pointer;
+}
+
 .pageNumber {
   width: 40px;
   height: 40px;
@@ -271,7 +278,7 @@
   position: relative;
   padding: 30px 22px;
   display: flex;
-  flex: 1.5;
+  flex: 1.25;
   flex-direction: column;
   background: rgb(235, 229, 229);
   border-top-left-radius: 70px;
