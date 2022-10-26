@@ -352,30 +352,32 @@ function createPageNum(tmpProduct) {
   isLastPage = 0;
   do {
     count++;
+    
     if (count === quantity) {
-      isLastPage = count;
+      /* isLastPage = count;
       if(count == 1) {
         pageNum += `
         <div class="pageNumber activePageNumber" onclick="pageRender(${count},true)">${count}</div>
         `;
-      } else {
+      } else { */
       pageNum += `
       <div class="pageNumber" onclick="pageRender(${count},true)">${count}</div>
       `;
       }
-    } else {
+    /* } else {
       if(count == 1) {
         pageNum += `
         <div class="pageNumber activePageNumber" onclick="pageRender(${count},false)">${count}</div>
         `;
-      } else {
+      }  */else {
         pageNum += `
         <div class="pageNumber" onclick="pageRender(${count},false)">${count}</div>
         `;
       }
     }
-  } while (count < quantity);
+  while (count < quantity);
   pageNum += `</div>`;
+  activePageNumber(1);
   return pageNum;
 }
   // const pageNumBers = document.querySelectorAll(".pageNumber");
@@ -394,11 +396,13 @@ function createPageNum(tmpProduct) {
 
 function pageRender(pageNumberClicked, lastPage) {
   item = "";
-  //tmpProduct.push(product[product.length-1]);
-  let positionLoad = (pageNumberClicked - 1) * 8;
+  const positionLoad = (pageNumberClicked - 1) * 8;
+  
+  // vị trí sản phẩm load không âm 
   if (positionLoad < 0) {
     positionLoad = 0;
   }
+  // kiểm tra nếu là trang cuối thì duyệt tới hết mảng 
   if (lastPage == true) {
     for (let k = positionLoad; k < tmpProduct.length; k++) {
       renderProduct(tmpProduct[k]);
@@ -406,7 +410,9 @@ function pageRender(pageNumberClicked, lastPage) {
 
     item += createPageNum(tmpProduct); // thêm vào lại 3 cục div pageNumber
     cardProduct.innerHTML = item;
-  } else {
+  }
+  // nếu không thì duyệt đến 8 vị trí cách từ positionLoad 
+  else {
     for (let k = positionLoad; k < positionLoad + 8; k++) {
       renderProduct(tmpProduct[k]);
     }
@@ -414,7 +420,27 @@ function pageRender(pageNumberClicked, lastPage) {
     item += createPageNum(tmpProduct);
     cardProduct.innerHTML = item;
   }
+  activePageNumber(pageNumberClicked);
   
+}
+
+function activePageNumber(pageNumberClicked)
+{
+  const pageNumBers = document.querySelectorAll(".pageNumber");
+
+  pageNumBers.forEach((pageNumber,index) => {
+    console.log(index + pageNumber);
+      if((index+1) != pageNumberClicked){
+        console.log("remove thang thu: "+ index);
+      pageNumber.classList.remove("activePageNumber");
+        console.log("class thang thu "+index+": "+pageNumber);
+      }
+      else{
+        console.log("add thang thu: "+ index);
+        pageNumber.classList.add("activePageNumber");
+        console.log("class thang thu "+index+": "+pageNumber);
+      }
+  }); 
 }
 
 function pageOneHandle() {
