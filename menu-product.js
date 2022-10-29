@@ -4,6 +4,8 @@ let isLastPage = 0;
 let tmpProduct = [];
 let item = "";
 
+// mảng sản phẩm
+
 let product = [
   {
     id: "1",
@@ -271,6 +273,8 @@ let product = [
   },
 ];
 
+
+
 // mặc định khi khởi động web sẽ load trang 1 keyboard
 filterProduct("keyboard");
 
@@ -307,6 +311,7 @@ function filterProduct(typeProduct) {
         }
       }
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
+      console.log(tmpProduct);
       createPageNum(tmpProduct);
       pageOneHandle();
       break;
@@ -342,57 +347,44 @@ function createPageNum(tmpProduct) {
   if (quantity % 1 != 0) {
     quantity++;
   }
-
-  if (quantity == 0) {
-    quantity = 1;
-  }
+  
   quantity = Math.floor(quantity);
+  console.log("quantity = " + quantity);
+  
   let pageNum = `<div class="menu-card-products-page-number">`;
   let count = 0;
+
   isLastPage = 0;
+
   do {
     count++;
-    
     if (count === quantity) {
-      /* isLastPage = count;
-      if(count == 1) {
+        lastPageIs = count;
         pageNum += `
-        <div class="pageNumber activePageNumber" onclick="pageRender(${count},true)">${count}</div>
+        <div class="pageNumber" onclick="pageRender(${count},true)">${count}</div>
         `;
-      } else { */
-      pageNum += `
-      <div class="pageNumber" onclick="pageRender(${count},true)">${count}</div>
-      `;
       }
-    /* } else {
-      if(count == 1) {
-        pageNum += `
-        <div class="pageNumber activePageNumber" onclick="pageRender(${count},false)">${count}</div>
-        `;
-      }  */else {
+    else {
         pageNum += `
         <div class="pageNumber" onclick="pageRender(${count},false)">${count}</div>
         `;
       }
     }
   while (count < quantity);
+
   pageNum += `</div>`;
+
   activePageNumber(1);
   return pageNum;
 }
-  // const pageNumBers = document.querySelectorAll(".pageNumber");
-  //   pageNumBers.forEach((pageNumber,index) => {
-    
-  //       pageNumber.onclick = function() {
-  //           document.querySelector(".pageNumber.activePageNumber").classList.remove("activePageNumber");
-  //           this.classList.add("activePageNumber");
-  //         }
-  //       });      
 
-    // const pageNumber = document.querySelector("pageNumber");
- 
-
-
+function pageOneHandle() {
+  if (lastPageIs === 1) {
+    pageRender(1, true);
+  } else {
+    pageRender(1, false);
+  }
+}
 
 function pageRender(pageNumberClicked, lastPage) {
   item = "";
@@ -404,6 +396,7 @@ function pageRender(pageNumberClicked, lastPage) {
   }
   // kiểm tra nếu là trang cuối thì duyệt tới hết mảng 
   if (lastPage == true) {
+    console.log(pageNumberClicked + " yo im trang cuoi !");
     for (let k = positionLoad; k < tmpProduct.length; k++) {
       renderProduct(tmpProduct[k]);
     }
@@ -429,27 +422,13 @@ function activePageNumber(pageNumberClicked)
   const pageNumBers = document.querySelectorAll(".pageNumber");
 
   pageNumBers.forEach((pageNumber,index) => {
-    console.log(index + pageNumber);
       if((index+1) != pageNumberClicked){
-        console.log("remove thang thu: "+ index);
-      pageNumber.classList.remove("activePageNumber");
-        console.log("class thang thu "+index+": "+pageNumber);
+        pageNumber.classList.remove("activePageNumber");
       }
       else{
-        console.log("add thang thu: "+ index);
         pageNumber.classList.add("activePageNumber");
-        console.log("class thang thu "+index+": "+pageNumber);
       }
   }); 
-}
-
-function pageOneHandle() {
-  if (isLastPage == 1) {
-    pageRender(1, true);
-  } else {
-    pageRender(1, false);
-  }
-  pageRender(1);
 }
 
 function renderProduct(product) {
