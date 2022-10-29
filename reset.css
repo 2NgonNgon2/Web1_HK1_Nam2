@@ -20,7 +20,9 @@
   font-family: "Roboto",sans-serif;
 }
 
-
+::selection {
+  background: #eeb7dd; /* WebKit/Blink Browsers */
+}
 
 /* Reapply the pointer cursor for anchor tags */
 a, button {
