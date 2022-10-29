@@ -64,7 +64,7 @@ header.sticky .navigation li a
 }
 header .navigation li a:hover
 {
-	color: #DD2C00;
+	color: #66ff33;
 }
 .banner
 {
@@ -186,7 +186,7 @@ header.sticky .dropdown .dropdown-select {
 }
 .dropdown-item:first-child:hover:before
 {
-	border-bottom: 10px solid #0091EA;
+	border-bottom: 10px solid #33ccff;
 }
 .dropdown-item:last-child
 {
@@ -194,7 +194,7 @@ header.sticky .dropdown .dropdown-select {
 }
 .dropdown-item:hover
 {
-	background-color: #0091EA;
+	background-color: #33ccff;
 }
 header.sticky .dropdown-list
 {
