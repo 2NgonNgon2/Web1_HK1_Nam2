@@ -17,11 +17,11 @@
   <body>
     <!-- Header -->
     <header>
-      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;">Cyberpunk</span></a>
+      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
         <form action="" id="search_box">	
-          <input type="text" id="search_text" placeholder="Bạn muốn tìm gì !!!!"> 
+          <input type="text" id="search_text" placeholder="Bạn muốn tìm gì !!!!" onkeydown="searchGetValue()"> 
           <button id="search_button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>							
@@ -117,46 +117,44 @@
       <a class="" href="#"   ><i class="fa-solid fa-arrow-up"></i></a>
     </div>
 
-
-
-
-    <div class="products">
-
+<!-- Cart products -->
 
 <!-- Card products -->
-    <div class="card-products">
+    <div class="card-products" id="card-products">
       
       <div class="menu" id="menu">
         <div class="menu-title">Danh mục sản phẩm</div>
         
-        <div class="menu-items" id="item-1">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('keyboard')"></a>
-          <img src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
+        <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
+          <a  href="#product-display" class="overlay activeMenuItemOverlay " onclick="filterProduct('keyboard') " ></a>
+          <img class="menu-items-img activeMenuItemImg" src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-2">
           <a  href="#product-display" class="overlay" onclick="filterProduct('headphone')"></a>
-          <img src="picture/headphone.png" alt="keyboard image" loading="lazy">
+          <img class="menu-items-img" src="picture/headphone.png" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-3">
           <a  href="#product-display" class="overlay" onclick="filterProduct('mouse')"></a>
-          <img src="picture/mouse.png" alt="keyboard image" loading="lazy">
+          <img class="menu-items-img" src="picture/mouse.png" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-4">
           <a  href="#product-display" class="overlay" onclick="filterProduct('speaker')"></a>
-          <img src="picture/speaker.png" alt="keyboard image" loading="lazy">
+          <img class="menu-items-img" src="picture/speaker.png" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-5">
           <a  href="#product-display" class="overlay" onclick="filterProduct('mousepad')"></a>
-          <img src="picture/mousepads.png" alt="keyboard image" loading="lazy">
+          <img class="menu-items-img" src="picture/mousepads.png" alt="keyboard image" loading="lazy">
         </div>
       </div>
 
       <div class="card-products-container">
-        <div class="card-product-item">
+        <!-- 
+        <div class="card-product-item" title="Ban phim co khhong day">
+
           <img
             class="card-img"
             src="picture/Gaming keyboard.webp"
@@ -171,279 +169,97 @@
             </div>
 
             <div class="card-product-content-bottom">
+
+              <div class="card-product-content-bottom-buying-btn">
+                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
+                Thêm giỏ hàng
+              </div>
+
               <div class="card-product-content-bottom-buying">
                 <div class="card-product-content-bottom-buying-price">
                   <span class="card-product-priceNumber">500.000</span> 
                   <span class="card-product-priceIcon">₫</span>
                 </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
+                <div class="card-product-status">
+                  Còn hàng
+                  <i class="fa-solid fa-check icon-check-status"></i>
                 </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-
-                Bàn phím cơ không dây Bàn phím cơ không dâyBàn phím cơ không dây Bàn phím cơ không dâyBàn phím cơ không dây Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer Keyboard for gamerKeyboard for gamerKeyboard for gamerKeyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-                Bàn phím cơ không dây Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>  
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-product-item">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây 
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-content-bottom-buying-btn">
-                  <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                  Thêm giỏ hàng
-                </div>
-              </div>
-              <div class="card-product-status">
-                <i class="fa-solid fa-check icon-check-status"></i>
-                Còn hàng
-              </div>
-            </div>
-          </div>
-        </div>
+        </div>  
 
         <div class="menu-card-products-page-number">
-          <div class="pageNumber">1</div>
-          <div class="pageNumber">2</div>
-          <div class="pageNumber">3</div>
-        </div>
+          <div class="pageNumber" onclick="pageRender(1)"></div>
+          <div class="pageNumber" onclick="pageRender(2)">2</div>
+          <div class="pageNumber" onclick="pageRender(3)">3</div> 
+        </div> -->
       </div>
     </div>
 
-    <div class="products-info">
-      <div class="prodcts-info-container">
+    
+    <!-- Products info -->
+
+
+    <div  id="products-info" onclick="hideInfoProduct()">
+      <!-- <div class="prodcts-info-container">
+        
         <div class="product-info-item">
-          <img src="" alt="">
+          <img src="picture/Gaming keyboard.webp" class="product-info-img" alt="">
           <div class="product-info-item-content">
-            <div class="product-info-item-content-top">
-              <div class="product-info-item-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="product-info-item-content-label-card-title card-title">Keyboard for gamer</div>
+            <div class="prodcts-info-container-close" onclick="hideInfoProduct()">
+              <i class="fa-solid fa-xmark"></i>
             </div>
+            <div class="product-info-item-content-top">
+              <div class="product-info-item-content-top-title card-title">
+                Bàn phím cơ không dây</div>
+              <div class="product-info-item-content-top-label-card-title card-title">Keyboard for gamer</div>
+            </div>
+
+            <div class="product-info-item-content-middle">
+                <div class="product-info-item-content-middle-title">
+                    Product info
+                </div>
+
+                <div class="product-info-item-content-middle-content">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, a voluptatibus recusandae commodi culpa voluptas repellat maiores quis modi quia aut tenetur dignissimos aperiam sed fugiat nemo praesentium laudantium quas.
+                </div>
+            </div>
+
+            <form action="" class="product-info-item-content-bottom">
+
+              <div class="adjustProductQuantity">
+                <div class="adjustProductQuantity-title">Số lượng : </div>
+                  <div class="adjustProductQuantity-btn">
+                    <button  type="button" id="adjustProductQuantity-decrease"><i class="fa-sharp fa-solid fa-minus adjustProductQuantity-decrease-icon"></i></button>
+                    <input name="quantity" id="adjustProductQuantity-number" type="text" value="1">
+                    <button type="button" id="adjustProductQuantity-increase"><i class="fa-regular fa-plus adjustProductQuantity-increase-icon"></i></button>
+                  </div>
+              </div>
+
+              <div class="product-info-item-content-bottom-buying">
+                <div class="product-info-item-content-bottom-buying-price">
+                  <span class="product-info-item-content-priceNumber">500.000</span> 
+                  <span class="product-info-item-content-priceIcon">₫</span>
+                </div>
+                <div id="product-info-item-content-bottom-buying-btn">
+
+                  <i class="fa-solid fa-cart-shopping product-info-item-icon-btn-shop"></i>
+                  <input type="button" value="Thêm giỏ hàng" id="product-info-item-content-bottom-buying-btn-input">
+                  
+                </div>
+              </div>
+             
+            </form>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
-      <script src="/header-banner/navigation.js"></script>
-
+    
+  <!-- Java Script -->
+  <script src="/header-banner/navigation.js"></script>
   <script src="menu-product.js"></script>
-<script src="/backToHome-button.js"></script>
+  <script src="/backToHome-button.js"></script>
+  <script src="search-engine.js"></script>
   </body>
 </html>
