@@ -273,8 +273,6 @@ let product = [
   },
 ];
 
-
-
 // mặc định khi khởi động web sẽ load trang 1 keyboard
 filterProduct("keyboard");
 
@@ -347,10 +345,10 @@ function createPageNum(tmpProduct) {
   if (quantity % 1 != 0) {
     quantity++;
   }
-  
+
   quantity = Math.floor(quantity);
   console.log("quantity = " + quantity);
-  
+
   let pageNum = `<div class="menu-card-products-page-number">`;
   let count = 0;
 
@@ -359,18 +357,16 @@ function createPageNum(tmpProduct) {
   do {
     count++;
     if (count === quantity) {
-        lastPageIs = count;
-        pageNum += `
+      lastPageIs = count;
+      pageNum += `
         <div class="pageNumber" onclick="pageRender(${count},true)">${count}</div>
         `;
-      }
-    else {
-        pageNum += `
+    } else {
+      pageNum += `
         <div class="pageNumber" onclick="pageRender(${count},false)">${count}</div>
         `;
-      }
     }
-  while (count < quantity);
+  } while (count < quantity);
 
   pageNum += `</div>`;
 
@@ -389,12 +385,12 @@ function pageOneHandle() {
 function pageRender(pageNumberClicked, lastPage) {
   item = "";
   const positionLoad = (pageNumberClicked - 1) * 8;
-  
-  // vị trí sản phẩm load không âm 
+
+  // vị trí sản phẩm load không âm
   if (positionLoad < 0) {
     positionLoad = 0;
   }
-  // kiểm tra nếu là trang cuối thì duyệt tới hết mảng 
+  // kiểm tra nếu là trang cuối thì duyệt tới hết mảng
   if (lastPage == true) {
     console.log(pageNumberClicked + " yo im trang cuoi !");
     for (let k = positionLoad; k < tmpProduct.length; k++) {
@@ -404,7 +400,7 @@ function pageRender(pageNumberClicked, lastPage) {
     item += createPageNum(tmpProduct); // thêm vào lại 3 cục div pageNumber
     cardProduct.innerHTML = item;
   }
-  // nếu không thì duyệt đến 8 vị trí cách từ positionLoad 
+  // nếu không thì duyệt đến 8 vị trí cách từ positionLoad
   else {
     for (let k = positionLoad; k < positionLoad + 8; k++) {
       renderProduct(tmpProduct[k]);
@@ -414,21 +410,18 @@ function pageRender(pageNumberClicked, lastPage) {
     cardProduct.innerHTML = item;
   }
   activePageNumber(pageNumberClicked);
-  
 }
 
-function activePageNumber(pageNumberClicked)
-{
+function activePageNumber(pageNumberClicked) {
   const pageNumBers = document.querySelectorAll(".pageNumber");
 
-  pageNumBers.forEach((pageNumber,index) => {
-      if((index+1) != pageNumberClicked){
-        pageNumber.classList.remove("activePageNumber");
-      }
-      else{
-        pageNumber.classList.add("activePageNumber");
-      }
-  }); 
+  pageNumBers.forEach((pageNumber, index) => {
+    if (index + 1 != pageNumberClicked) {
+      pageNumber.classList.remove("activePageNumber");
+    } else {
+      pageNumber.classList.add("activePageNumber");
+    }
+  });
 }
 
 function renderProduct(product) {
@@ -513,7 +506,6 @@ let inputProductInfoBtn = document.getElementById(
 );
 let quantity;
 
-
 // click card product item to open info product
 let cardProductItem = document.getElementsByClassName("card-product-item");
 let productInfo = document.getElementById("products-info");
@@ -596,19 +588,13 @@ function productInfomation(id) {
   );
 
   productInfo.classList.add("openInfoProduct");
- 
+
   // check if quantity input <= 1 ,clock decrease button .
   if (quantityProduct.value <= 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
 }
-
-/* for (let index = 0; index < cardProductItem.length; index++) {
-    cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
-      e.stopPropagation();
-  });
-} 
- */
+// hide info products
 function hideInfoProduct() {
   productInfo.classList.remove("openInfoProduct");
 }
@@ -629,15 +615,6 @@ function increaseQuantity() {
   }
 }
 
-/* btnIncreaseQuantity.addEventListener("click", function () {
-  valueQuantityProduct = parseInt(quantityProduct.value);
-  quantity = valueQuantityProduct + 1;
-  quantityProduct.value = quantity;
-  if (quantityProduct.value > 1) {
-    btnDecreaseQuantity.classList.remove("clockBtn");
-  }
-}); */
-
 // click to decrease quantity product
 
 function decreaseQuantity() {
@@ -649,38 +626,26 @@ function decreaseQuantity() {
   }
 }
 
-/* btnDecreaseQuantity.addEventListener("click", function () {
-  valueQuantityProduct = parseInt(quantityProduct.value);
-  quantity = valueQuantityProduct - 1;
-  quantityProduct.value = quantity;
-  if (quantityProduct.value == 1) {
-    btnDecreaseQuantity.classList.add("clockBtn");
-  }
-}); */
-
 // get value when user enter value to input
 function getValueUserEntered(e) {
-  if (parseInt(quantityProduct.value + e.key) > 1) {
+  const x =parseInt(quantityProduct.value + e.key) ;
+  if ( x > 1) {
     btnDecreaseQuantity.classList.remove("clockBtn");
-  } else if(parseInt(quantityProduct.value + e.key) < 1) {
+  } else if (x < 1) {
     alert("Số lượng sản phẩm không nhỏ hơn 1!");
     btnDecreaseQuantity.classList.add("clockBtn");
-  }
+  } 
 }
 
-/* quantityProduct.addEventListener("keypress",function(e) {
-  if (parseInt(quantityProduct.value + e.key) > 1) {
-    btnDecreaseQuantity.classList.remove("clockBtn");
-  } else {
-    alert("Số lượng sản phẩm không nhỏ hơn 1!")
-    btnDecreaseQuantity.classList.add("clockBtn");
-
-  }
-}) */
-
+// nút thêm sản phẩm và chuyển số âm thành dương nếu user cố tình nhập số âm
 function themSanPhamBtn() {
   let x = parseInt(quantityProduct.value);
-  if (x < 0) x = Math.abs(x);
+  if(isNaN(x)) {
+    alert("Số lượng sản phârm phải là số!");
+  }
+  if (x < 0) {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!");
+    x = Math.abs(x);
+  }
   console.log(x);
 }
-

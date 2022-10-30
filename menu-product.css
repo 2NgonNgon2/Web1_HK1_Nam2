@@ -202,20 +202,17 @@
 }
 
 
-.back-to-menu
+.back-to-top
 {
   width: 50px;
   height: 50px;
-  background: seagreen;
+  background: rgb(252,238,3);
   border-radius: 20px;
   position: fixed;
   opacity: 0;
   transform: translateY(15px);
-  display: flex;
   right:50px;
   bottom: 50px;
-  justify-content: center;
-  align-items: center;
   font-size: 20px;
   z-index: 99;
   box-shadow: 0 4px 6px rgba(0, 0, 0, .6) ;
@@ -223,9 +220,20 @@
   pointer-events: none;
 }
 
-.back-to-menu:hover {
+.back-top-top-icon {
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.back-to-top:hover .back-top-top-icon {
+  width: 55px;
+  line-height: 55px;
+}
+
+.back-to-top:hover {
   cursor: pointer;
-  color: white;
+  color: rgb(137,211,231);
   font-size: 24px;
   width: 55px;
   height: 55px;
