@@ -498,27 +498,19 @@ menuItems.forEach((menuItem, index) => {
 
 // Adjust quantity product
 
-let quantityProduct = document.getElementById("adjustProductQuantity-number");
-let btnIncreaseQuantity = document.getElementById(
-  "adjustProductQuantity-increase"
-);
-let btnDecreaseQuantity = document.getElementById(
-  "adjustProductQuantity-decrease"
-);
-let btnSubmitQuantity = document.getElementById(
-  "product-info-item-content-bottom-buying-btn"
-);
-let inputProductInfoBtn = document.getElementById(
-  "product-info-item-content-bottom-buying-btn-input"
-);
+let quantityProduct;
+let btnIncreaseQuantity ;
+let btnDecreaseQuantity;
+let btnSubmitQuantity;
+let inputProductInfoBtn;
 let quantity;
 
 
 // click card product item to open info product
 let cardProductItem = document.getElementsByClassName("card-product-item");
 let productInfo = document.getElementById("products-info");
-let closeInfoProduct = document.querySelector(".prodcts-info-container-close");
-let productInfoContainer = document.querySelector(".prodcts-info-container");
+let closeInfoProduct ;
+let productInfoContainer ;
 let cardProductItemBuyingBtn = document.querySelector(
   ".card-product-content-bottom-buying-btn"
 );
@@ -582,8 +574,12 @@ function productInfomation(id) {
       `;
     }
   }
+  
+  // click card product item to open info product
   productInfoContainer = document.querySelector(".prodcts-info-container");
   closeInfoProduct = document.querySelector(".prodcts-info-container-close");
+
+  // Adjust quantity product
   quantityProduct = document.getElementById("adjustProductQuantity-number");
   btnIncreaseQuantity = document.getElementById(
     "adjustProductQuantity-increase"
@@ -594,7 +590,9 @@ function productInfomation(id) {
   btnSubmitQuantity = document.getElementById(
     "product-info-item-content-bottom-buying-btn"
   );
-
+  inputProductInfoBtn = document.getElementById(
+    "product-info-item-content-bottom-buying-btn-input"
+  );
   productInfo.classList.add("openInfoProduct");
  
   // check if quantity input <= 1 ,clock decrease button .
@@ -603,17 +601,9 @@ function productInfomation(id) {
   }
 }
 
-/* for (let index = 0; index < cardProductItem.length; index++) {
-    cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
-      e.stopPropagation();
-  });
-} 
- */
 function hideInfoProduct() {
   productInfo.classList.remove("openInfoProduct");
 }
-
-productInfo.addEventListener("click", hideInfoProduct);
 
 function stopPropagate(e) {
   e.stopPropagation();
@@ -629,34 +619,16 @@ function increaseQuantity() {
   }
 }
 
-/* btnIncreaseQuantity.addEventListener("click", function () {
-  valueQuantityProduct = parseInt(quantityProduct.value);
-  quantity = valueQuantityProduct + 1;
-  quantityProduct.value = quantity;
-  if (quantityProduct.value > 1) {
-    btnDecreaseQuantity.classList.remove("clockBtn");
-  }
-}); */
-
 // click to decrease quantity product
 
 function decreaseQuantity() {
-  valueQuantityProduct = parseInt(quantityProduct.value);
+  let valueQuantityProduct = parseInt(quantityProduct.value);
   quantity = valueQuantityProduct - 1;
   quantityProduct.value = quantity;
   if (quantityProduct.value == 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
 }
-
-/* btnDecreaseQuantity.addEventListener("click", function () {
-  valueQuantityProduct = parseInt(quantityProduct.value);
-  quantity = valueQuantityProduct - 1;
-  quantityProduct.value = quantity;
-  if (quantityProduct.value == 1) {
-    btnDecreaseQuantity.classList.add("clockBtn");
-  }
-}); */
 
 // get value when user enter value to input
 function getValueUserEntered(e) {
@@ -667,16 +639,6 @@ function getValueUserEntered(e) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
 }
-
-/* quantityProduct.addEventListener("keypress",function(e) {
-  if (parseInt(quantityProduct.value + e.key) > 1) {
-    btnDecreaseQuantity.classList.remove("clockBtn");
-  } else {
-    alert("Số lượng sản phẩm không nhỏ hơn 1!")
-    btnDecreaseQuantity.classList.add("clockBtn");
-
-  }
-}) */
 
 function themSanPhamBtn() {
   let x = parseInt(quantityProduct.value);
