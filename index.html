@@ -28,6 +28,7 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
+          <li><a href="#footer">Contact</a></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -35,10 +36,10 @@
               <i class="fa fa-caret-down dropdown-caret"></i>
             </div>
             <ul class="dropdown-list">
-              <li class="dropdown-item" onclick="displaySignMenu('Sign in')">
+              <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
                 <span class="dropdown-text" id="sign-in">Đăng nhập</span>
               </li>
-              <li class="dropdown-item" onclick="displaySignMenu('Sign up')">
+              <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
                 <span class="dropdown-text" id="sign-up">Đăng kí</span>
               </li>
               <li class="dropdown-item">
@@ -48,31 +49,56 @@
                 <span class="dropdown-text">Đăng xuất</span>
               </li>
             </ul>
-          </div>
-          <li><a href="#footer">Contact</a></li>   
+          </div>   
       </ul>
     </header>
     <!-- Sign in menu -->
-    <div class="signin" id="signin">
-        <a class="signin-icon" onclick="disableMenu()">X</a>
-        <h2 class="signin-heading" id="signin-heading"></h2>
+    <div class="signin" id="login">
+        <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
+        <h2 class="signin-heading">Log in</h2>
         <p class="signin-already" id="signin-already">
-          Already have an account ? 
-          <a href="#" class="signin-link-underline" onclick="displaySignMenu('Sign in')">Sign In</a>
+          You don't have an account?
+          <a href="#" class="signin-link-underline" onclick="displaySignMenu('Sign up')">Create now</a>
         </p>
-        <form action="#">
-          <div id="form-user-name">
-              <input type="text" class="form-input" placeholder="Name">
+        <form onsubmit="dangnhap()">
+          <div class="form-user-name">
+              <input type="text" class="form-input" placeholder="Name" id="name">
           </div>
-          <div id="form-password">
-              <input type="password" class="form-input" placeholder="Password">
-          </div>
-          <div id="form-email">
-              <input type="text" class="form-input" placeholder="E-mail">
+          <div class="form-password">
+              <input type="password" class="form-input" placeholder="Password" id="pass">
           </div>
           <div >
-              <button type="button" class="form-submit">
-                  <span class="form-submit-text" id="form-submit-text"></span>             
+              <button type="submit" class="form-submit">
+                  <span class="form-submit-text" >Sign in</span>             
+                  <i class="fa fa-long-arrow-right form-submit-icon"></i>      
+                </button>
+          </div>
+        </form>
+      </div>
+      <!-- Sign up menu -->
+      <div class="signin" id="create">
+        <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
+        <h2 class="signin-heading" >Create account</h2>
+        <p class="signin-already" id="signin-already">
+          Already have an account ? 
+          <a href="#" class="signin-link-underline" onclick="displaySignMenu('Sign in')">Login now</a>
+        </p>
+        <form onsubmit="createAcc()">
+          <div class="form-user-name">
+              <input type="text" class="form-input" placeholder="Name" id="form-Name">
+          </div>
+          <div class="form-password">
+              <input type="password" class="form-input" placeholder="Password" id="form-Password">
+          </div>
+          <div class="form-phone">
+            <input type="text" class="form-input" placeholder="Phone" id="form-Phone">
+          </div>
+          <div class="form-email">
+              <input type="text" class="form-input" placeholder="E-mail" id="form-E-mail">
+          </div>
+          <div >
+              <button type="submit" class="form-submit">
+                  <span class="form-submit-text" >Sign up</span>             
                   <i class="fa fa-long-arrow-right form-submit-icon"></i>      
                 </button>
           </div>
