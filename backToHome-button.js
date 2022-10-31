@@ -1,4 +1,4 @@
-const backToTop = document.querySelector('.back-to-menu');
+const backToTop = document.querySelector('.back-to-top');
 
       window.addEventListener('scroll' , () => {
         if (window.pageYOffset > 500) {
