@@ -231,6 +231,15 @@ header.sticky #search_box
 	background: #eee;
 	border: 1px solid #eee;
 }
+.shopping-icon
+{
+	color: white;
+	scale: 130%;
+}
+.shopping-icon:hover
+{
+	color: #FF6F00;
+}
 /*
 @media (max-width: 991px)
 {
