@@ -1,278 +1,37 @@
 const cardProduct = document.querySelector(".card-products-container");
 
-let isLastPage = 0;
-let tmpProduct = [];
-let item = "";
+let isSignedin = false  // check xem đã đăng nhập chưa 
+let isLastPage = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
+let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
+let item = "";          // dùng để chứa các html product-items
 
-// mảng sản phẩm
+// Adjust quantity product
 
-let product = [
-  {
-    id: "1",
-    type: "keyboard",
-    name: "ban phim co 69",
-    price: "699.000",
-    description: "Keyboard for gamer",
-    img: "/picture/ban-phim-co-dareu-a98-rgb-04-400x400.jpg",
-  },
-  {
-    id: "2",
-    type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
-  },
-  {
-    id: "3",
-    type: "keyboard",
-    name: "ban phim vjp pro max 69",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-    price: "699.000",
-  },
-  {
-    id: "4",
-    type: "mousepad",
-    name: "lót chuột pro max",
-    description: "Mouse pad for wibu ",
-    img: "/picture/mousepads.png",
-    price: "169.000",
-  },
-  {
-    id: "5",
-    type: "speaker",
-    name: "loa xập xình",
-    description: " loa cho dan choi",
-    img: "/picture/speaker.png",
-    price: "569.000",
-  },
-  {
-    id: "6",
-    type: "mousepad",
-    name: "lót chuột siêu vjp pro",
-    description: "lot chuot cho dan vjp",
-    img: "/picture/mousepads.png",
-    price: "569.000",
-  },
-  {
-    id: "7",
-    type: "headphone",
-    name: "tai nghe vjp pro cho dân quẩy",
-    description: "tai nghe hiphop",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "8",
-    type: "headphone",
-    name: "tai nghe cho người điếc",
-    description: "tai nghe magaming",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "9",
-    type: "keyboard",
-    name: "ban phim co 69",
-    price: "699.000",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-  },
-  {
-    id: "10",
-    type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
-  },
-  {
-    id: "11",
-    type: "keyboard",
-    name: "ban phim vjp pro max 69",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-    price: "699.000",
-  },
-  {
-    id: "12",
-    type: "mousepad",
-    name: "lót chuột pro max",
-    description: "Mouse pad for wibu ",
-    img: "/picture/mousepads.png",
-    price: "169.000",
-  },
-  {
-    id: "13",
-    type: "speaker",
-    name: "loa xập xình",
-    description: " loa cho dan choi",
-    img: "/picture/speaker.png",
-    price: "569.000",
-  },
-  {
-    id: "14",
-    type: "mousepad",
-    name: "lót chuột siêu vjp pro",
-    description: "lot chuot cho dan vjp",
-    img: "/picture/mousepads.png",
-    price: "569.000",
-  },
-  {
-    id: "15",
-    type: "headphone",
-    name: "tai nghe vjp pro cho dân quẩy",
-    description: "tai nghe hiphop",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "16",
-    type: "headphone",
-    name: "tai nghe cho người điếc",
-    description: "tai nghe magaming",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "17",
-    type: "keyboard",
-    name: "ban phim vjp pro max 69",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-    price: "699.000",
-  },
-  {
-    id: "18",
-    type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
-  },
-  {
-    id: "19",
-    type: "keyboard",
-    name: "ban phim vjp pro max 69",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-    price: "699.000",
-  },
-  {
-    id: "20",
-    type: "mousepad",
-    name: "lót chuột pro max",
-    description: "Mouse pad for wibu ",
-    img: "/picture/mousepads.png",
-    price: "169.000",
-  },
-  {
-    id: "21",
-    type: "speaker",
-    name: "loa xập xình",
-    description: " loa cho dan choi",
-    img: "/picture/speaker.png",
-    price: "569.000",
-  },
-  {
-    id: "22",
-    type: "mousepad",
-    name: "lót chuột siêu vjp pro",
-    description: "lot chuot cho dan vjp",
-    img: "/picture/mousepads.png",
-    price: "569.000",
-  },
-  {
-    id: "23",
-    type: "headphone",
-    name: "tai nghe vjp pro cho dân quẩy",
-    description: "tai nghe hiphop",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "24",
-    type: "headphone",
-    name: "tai nghe cho người điếc",
-    description: "tai nghe magaming",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "25",
-    type: "keyboard",
-    name: "ban phim co 69",
-    price: "699.000",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-  },
-  {
-    id: "26",
-    type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
-  },
-  {
-    id: "27",
-    type: "keyboard",
-    name: "ban phim nhu con cac",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-    price: "699.000",
-  },
-  {
-    id: "28",
-    type: "mousepad",
-    name: "lót chuột pro max",
-    description: "Mouse pad for wibu ",
-    img: "/picture/mousepads.png",
-    price: "169.000",
-  },
-  {
-    id: "29",
-    type: "speaker",
-    name: "loa xập xình",
-    description: " loa cho dan choi",
-    img: "/picture/speaker.png",
-    price: "569.000",
-  },
-  {
-    id: "30",
-    type: "mousepad",
-    name: "lót chuột siêu vjp pro",
-    description: "lot chuot cho dan vjp",
-    img: "/picture/mousepads.png",
-    price: "569.000",
-  },
-  {
-    id: "31",
-    type: "headphone",
-    name: "tai nghe vjp pro cho dân quẩy",
-    description: "tai nghe hiphop",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "32",
-    type: "headphone",
-    name: "tai nghe cho người điếc",
-    description: "tai nghe magaming",
-    img: "/picture/headphone.png",
-    price: "569.000",
-  },
-  {
-    id: "33",
-    type: "keyboard",
-    name: "ban phim du ma js nhu l",
-    description: "Keyboard for gamer",
-    img: "/picture/keyboard.jpg",
-    price: "699.000",
-  },
-];
+let quantityProduct;
+let btnIncreaseQuantity ;
+let btnDecreaseQuantity;
+let btnSubmitQuantity;
+let inputProductInfoBtn;
+let quantity;
 
+
+// click card product item to open info product
+let cardProductItem = document.getElementsByClassName("card-product-item");
+let productInfo = document.getElementById("products-info");
+let closeInfoProduct ;
+let productInfoContainer ;
+let cardProductItemBuyingBtn = document.querySelector(
+  ".card-product-content-bottom-buying-btn"
+);
+
+// TODO: thêm hàm kiểm tra xem đăng nhập thành công không, nếu thành công thì bật cờ isSignedin
+
+if(isSignedin === false)
+{
+  cardProductItemBuyingBtn.onclick = alert("Vui lòng đăng nhập để thêm vào giỏ hàng !");
+}
+
+// trong trường hợp là acc admin
 
 
 // mặc định khi khởi động web sẽ load trang 1 keyboard
@@ -496,25 +255,6 @@ menuItems.forEach((menuItem, index) => {
   };
 });
 
-// Adjust quantity product
-
-let quantityProduct;
-let btnIncreaseQuantity ;
-let btnDecreaseQuantity;
-let btnSubmitQuantity;
-let inputProductInfoBtn;
-let quantity;
-
-
-// click card product item to open info product
-let cardProductItem = document.getElementsByClassName("card-product-item");
-let productInfo = document.getElementById("products-info");
-let closeInfoProduct ;
-let productInfoContainer ;
-let cardProductItemBuyingBtn = document.querySelector(
-  ".card-product-content-bottom-buying-btn"
-);
-
 function productInfomation(id) {
   for (let i = 0; i < product.length; i++) {
     if (product[i].id == id) {
@@ -574,12 +314,8 @@ function productInfomation(id) {
       `;
     }
   }
-  
-  // click card product item to open info product
   productInfoContainer = document.querySelector(".prodcts-info-container");
   closeInfoProduct = document.querySelector(".prodcts-info-container-close");
-
-  // Adjust quantity product
   quantityProduct = document.getElementById("adjustProductQuantity-number");
   btnIncreaseQuantity = document.getElementById(
     "adjustProductQuantity-increase"
@@ -590,9 +326,7 @@ function productInfomation(id) {
   btnSubmitQuantity = document.getElementById(
     "product-info-item-content-bottom-buying-btn"
   );
-  inputProductInfoBtn = document.getElementById(
-    "product-info-item-content-bottom-buying-btn-input"
-  );
+
   productInfo.classList.add("openInfoProduct");
  
   // check if quantity input <= 1 ,clock decrease button .
@@ -601,9 +335,17 @@ function productInfomation(id) {
   }
 }
 
+/* for (let index = 0; index < cardProductItem.length; index++) {
+    cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
+      e.stopPropagation();
+  });
+} 
+ */
 function hideInfoProduct() {
   productInfo.classList.remove("openInfoProduct");
 }
+
+productInfo.addEventListener("click", hideInfoProduct);
 
 function stopPropagate(e) {
   e.stopPropagation();
@@ -619,16 +361,34 @@ function increaseQuantity() {
   }
 }
 
+/* btnIncreaseQuantity.addEventListener("click", function () {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct + 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  }
+}); */
+
 // click to decrease quantity product
 
 function decreaseQuantity() {
-  let valueQuantityProduct = parseInt(quantityProduct.value);
+  valueQuantityProduct = parseInt(quantityProduct.value);
   quantity = valueQuantityProduct - 1;
   quantityProduct.value = quantity;
   if (quantityProduct.value == 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
 }
+
+/* btnDecreaseQuantity.addEventListener("click", function () {
+  valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct - 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value == 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
+}); */
 
 // get value when user enter value to input
 function getValueUserEntered(e) {
@@ -639,6 +399,16 @@ function getValueUserEntered(e) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
 }
+
+/* quantityProduct.addEventListener("keypress",function(e) {
+  if (parseInt(quantityProduct.value + e.key) > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
+  } else {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!")
+    btnDecreaseQuantity.classList.add("clockBtn");
+
+  }
+}) */
 
 function themSanPhamBtn() {
   let x = parseInt(quantityProduct.value);

@@ -20,7 +20,10 @@
   font-family: "Roboto",sans-serif;
 }
 
-
+/* chỉnh màu nền khi scan chuột lên chữ */
+::selection {
+  background: #eeb7dd; /* WebKit/Blink Browsers */
+}
 
 /* Reapply the pointer cursor for anchor tags */
 a, button {

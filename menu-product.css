@@ -2,7 +2,7 @@
 
 .activeMenuItems {
   box-shadow:0 0 10px 5px rgb(171, 170, 170);
-  background: linear-gradient(to bottom,rgb(131, 131, 250),rgb(131, 249, 131));
+  background: linear-gradient(45deg,rgba(255, 0, .7),rgba(255, 165, .7));
 }
 .activeMenuItemImg {
   width: 20%;
@@ -12,8 +12,6 @@
 .activeMenuItemOverlay {
   width: 100%;
   height: 100%;
-  background: black;
-  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
@@ -28,19 +26,17 @@
   box-sizing: content-box;
   height:450px;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-
   background: #f1f1f1;
-
   position: sticky;
   left: 0;
   top: 100px;
-
   z-index: 1;
+  margin-bottom: 80px;
 }
+
 .menu .menu-title
 {
   font-weight: bolder;
@@ -64,7 +60,7 @@
 .menu .menu-items:hover
 {
   box-shadow:0 0 10px 5px rgb(171, 170, 170);
-  background: linear-gradient(to bottom,rgb(131, 131, 250),rgb(131, 249, 131));
+  background: linear-gradient(45deg,red,orange);
 }
 
 .menu .menu-items img
@@ -87,8 +83,7 @@
 {
   width: 100%;
   height: 100%;
-  background: black;
-  opacity: 0.5;
+  background: rgba(0, 0, 0, .3);
   position: absolute;
   top: 0;
   left: 0;
@@ -207,20 +202,17 @@
 }
 
 
-.back-to-menu
+.back-to-top
 {
   width: 50px;
   height: 50px;
-  background: seagreen;
+  background: rgb(252,238,3);
   border-radius: 20px;
   position: fixed;
   opacity: 0;
   transform: translateY(15px);
-  display: flex;
   right:50px;
   bottom: 50px;
-  justify-content: center;
-  align-items: center;
   font-size: 20px;
   z-index: 99;
   box-shadow: 0 4px 6px rgba(0, 0, 0, .6) ;
@@ -228,9 +220,20 @@
   pointer-events: none;
 }
 
-.back-to-menu:hover {
+.back-top-top-icon {
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.back-to-top:hover .back-top-top-icon {
+  width: 55px;
+  line-height: 55px;
+}
+
+.back-to-top:hover {
   cursor: pointer;
-  color: white;
+  color: rgb(137,211,231);
   font-size: 24px;
   width: 55px;
   height: 55px;
