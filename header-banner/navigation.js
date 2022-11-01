@@ -38,6 +38,12 @@ function dangnhap(){
         isSignedin = true;
         console.log("you are admin");
     }
+    
+    else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
+        alert("Dang nhap thanh cong");
+        isSignedin = true;
+        console.log("you are user");
+    }
     else{
         alert("Error!");
     }
