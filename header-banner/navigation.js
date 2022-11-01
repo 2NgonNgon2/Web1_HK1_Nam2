@@ -1,36 +1,3 @@
-
-let account = [
-    {
-        id:"1",
-        username:"admin",
-        password:"123",
-        email:"admin123@gmail.com",
-        phone:"123456"
-    },
-    {
-        id:"2",
-        username:"admin2",
-        password:"123",
-        email:"admin123@gmail.com",
-        phone:"123456"
-    }
-    ,
-    {
-        id:"3",
-        username:"admin3",
-        password:"123",
-        email:"admin123@gmail.com",
-        phone:"123456"
-    }
-    ,
-    {
-        id:"4",
-        username:"admin4",
-        password:"123",
-        email:"admin123@gmail.com",
-        phone:"123456"
-    }
-];
 $(document).ready(function(){
     account.forEach(element => {
         var json = JSON.stringify(element);
@@ -61,16 +28,27 @@ function displaySignMenu(input){
         createMenu.style.display="none";
     }
 }
-function dangnhap(){
+function dangnhap(event){
     var username = document.getElementById("name").value;
 	var password = document.getElementById("pass").value;
     var userLocal=JSON.parse(localStorage.getItem(username));
-    if(username==userLocal.username&&password==userLocal.password){
-        alert("Dang nhap thanh cong")
+
+    if(username==userLocal.username && password==userLocal.password && userLocal.authority =="admin"){
+        alert("Dang nhap admin thanh cong");
+        event.preventDefault(); // ngăn form không bị reload sau khi submit
+        window.location.href = '/admin.html' ;
+
+    }
+    
+    else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
+        isSignedin = true;
+        alert("Dang nhap user thanh cong");
+        event.preventDefault();
+        console.log("you are user");
     }
     else{
         alert("Error!");
-    }
+    }   
 }
 
 
