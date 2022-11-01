@@ -1,7 +1,6 @@
 const cardProduct = document.querySelector(".card-products-container");
 
-let isSignedin = false  // check xem đã đăng nhập chưa 
-let isAdmin =  false    // check xem có phải admin không
+let isSignedin = false  // check xem đã đăng nhập chưa   
 let isLastPage = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
 let item = "";          // dùng để chứa các html product-items
@@ -30,7 +29,7 @@ let cardProductItemBuyingBtn = document.querySelector(
 
 function checkSignin()
 {
-  if(isSignedin === false)
+  if(isSignedin == false)
   {
     alert("đăng nhập đi thằng đầu buồi!");
   }

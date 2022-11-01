@@ -1,5 +1,13 @@
 // mảng sản phẩm
-let product = [
+const productInLocalStorage = localStorage.getItem("product");
+let product;
+if(productInLocalStorage != null) // kiêm tra xem localstore có mảng product chưa
+{
+  product =JSON.parse(localStorage.getItem("product"));
+}
+else
+{
+  product = [
   {
     id: "1",
     type: "keyboard",
@@ -265,3 +273,5 @@ let product = [
     price: "699.000",
   },
 ];
+localStorage.setItem("product",JSON.stringify(product));
+}
