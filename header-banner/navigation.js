@@ -1,3 +1,9 @@
+$(document).ready(function(){
+    account.forEach(element => {
+        var json = JSON.stringify(element);
+	    localStorage.setItem(element.username,json);
+    });
+});
 // scoll header menu bar
 window.addEventListener('scroll',function () {
     var header = document.querySelector('header');
@@ -22,31 +28,27 @@ function displaySignMenu(input){
         createMenu.style.display="none";
     }
 }
-function createAcc() {
-	var username = document.getElementById("form-Name").value;
-	var password = document.getElementById("form-Password").value;
-	var phone = document.getElementById("form-Phone").value;
-	var email = document.getElementById("form-E-mail").value;
-    var user = {
-        username : username,
-        password : password,
-        phone : phone,
-        email : email,
-    } 
-	var json = JSON.stringify(user);
-	localStorage.setItem(username,json);
-}
 function dangnhap(){
     var username = document.getElementById("name").value;
 	var password = document.getElementById("pass").value;
     var userLocal=JSON.parse(localStorage.getItem(username));
-    if(username==userLocal.username&&password==userLocal.password){
-        alert("dntk")
+
+    if(username==userLocal.username && password==userLocal.password && userLocal.authority =="admin"){
+        alert("Dang nhap thanh cong");
+        isSignedin = true;
+        console.log("you are admin");
+    }
+    
+    else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
+        alert("Dang nhap thanh cong");
+        isSignedin = true;
+        console.log("you are user");
     }
     else{
-        alert("njnki");
+        alert("Error!");
     }
 }
+
 
 
 

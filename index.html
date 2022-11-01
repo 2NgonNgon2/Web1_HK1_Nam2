@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="menu-product.css" />
     <link rel="stylesheet" href="/header-banner/navigation.css">
     <link rel="stylesheet" href="/header-banner/signin-menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- Header -->
@@ -28,7 +29,7 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
-          <li><a href="#footer">Contact</a></li>
+          <li><i class="fa fa-cart-shopping shopping-icon"></i></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -76,7 +77,7 @@
         </form>
       </div>
       <!-- Sign up menu -->
-      <div class="signin" id="create">
+      <!--<div class="signin" id="create">
         <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
         <h2 class="signin-heading" >Create account</h2>
         <p class="signin-already" id="signin-already">
@@ -103,7 +104,7 @@
                 </button>
           </div>
         </form>
-      </div>
+      </div>-->
       <!-- Banner -->
       <section class="banner" id="banner">
         <div class="content">
@@ -176,7 +177,7 @@
 
             <div class="card-product-content-bottom">
 
-              <div class="card-product-content-bottom-buying-btn">
+              <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event)">
                 <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
                 Thêm giỏ hàng
               </div>
@@ -196,257 +197,7 @@
           </div>
         </div>
 
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-
-                Bàn phím cơ không dây Bàn phím cơ không dâyBàn phím cơ không dây Bàn phím cơ không dâyBàn phím cơ không dây Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer Keyboard for gamerKeyboard for gamerKeyboard for gamerKeyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-                Bàn phím cơ không dây Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>  
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
-        <div class="card-product-item" title="Ban phim co khhong day">
-          <img
-            class="card-img"
-            src="picture/Gaming keyboard.webp"
-          />
-
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây 
-              </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
-            </div>
-          </div> 
-        </div>-->
-
-        <!-- <div class="menu-card-products-page-number">
+        <div class="menu-card-products-page-number">
           <div class="pageNumber" onclick="pageRender(1)"></div>
           <div class="pageNumber" onclick="pageRender(2)">2</div>
           <div class="pageNumber" onclick="pageRender(3)">3</div> 
@@ -514,8 +265,9 @@
     </div>
     
   <!-- Java Script -->
-  <script src="/header-banner/navigation.js"></script>
   <script src="product.js"></script>
+  <script src="account.js"></script>
+  <script src="/header-banner/navigation.js"></script>
   <script src="menu-product.js"></script>
   <script src="/backToHome-button.js"></script>
   <!-- <script src="search-engine.js"></script> -->

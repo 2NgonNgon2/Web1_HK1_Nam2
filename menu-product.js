@@ -14,6 +14,8 @@ let btnSubmitQuantity;
 let inputProductInfoBtn;
 let quantity;
 
+// mặc định khi khởi động web sẽ load trang 1 keyboard
+filterProduct("keyboard");
 
 // click card product item to open info product
 let cardProductItem = document.getElementsByClassName("card-product-item");
@@ -26,16 +28,16 @@ let cardProductItemBuyingBtn = document.querySelector(
 
 // TODO: thêm hàm kiểm tra xem đăng nhập thành công không, nếu thành công thì bật cờ isSignedin
 
-if(isSignedin === false)
+
+function checkSignin()
 {
-  cardProductItemBuyingBtn.onclick = alert("Vui lòng đăng nhập để thêm vào giỏ hàng !");
+  if(isSignedin === false)
+  {
+    alert("đăng nhập đi thằng đầu buồi!");
+  }
 }
 
-// trong trường hợp là acc admin
 
-
-// mặc định khi khởi động web sẽ load trang 1 keyboard
-filterProduct("keyboard");
 
 function filterProduct(typeProduct) {
   item = "";
@@ -206,7 +208,7 @@ function renderProduct(product) {
           </div>
           <div class="card-product-content-bottom">
 
-          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event)">
+          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);checkSignin();">
             <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
             Thêm giỏ hàng
           </div>
@@ -333,6 +335,7 @@ function productInfomation(id) {
   if (quantityProduct.value <= 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
+
 }
 
 /* for (let index = 0; index < cardProductItem.length; index++) {
@@ -411,6 +414,8 @@ function getValueUserEntered(e) {
 }) */
 
 function themSanPhamBtn() {
+  // check nếu chưa đăng nhập
+  checkSignin();
   let x = parseInt(quantityProduct.value);
   if (x < 0) x = Math.abs(x);
   console.log(x);
