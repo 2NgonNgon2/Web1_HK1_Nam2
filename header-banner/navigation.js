@@ -36,7 +36,7 @@ function dangnhap(){
     if(username==userLocal.username && password==userLocal.password && userLocal.authority =="admin"){
         alert("Dang nhap thanh cong");
         isSignedin = true;
-        console.log("you are admin");
+          
     }
     
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
