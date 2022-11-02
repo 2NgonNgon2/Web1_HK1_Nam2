@@ -434,3 +434,12 @@
 .product-info-item-icon-btn-shop {
   margin-right: 3px;
 }
+
+
+.card-products-container .card-plus-product 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  font-size: 30px;
+}
