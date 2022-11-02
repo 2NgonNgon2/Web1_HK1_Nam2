@@ -255,32 +255,6 @@ menuItems.forEach((menuItem, index) => {
 });
 
 
-// Adjust quantity product
-
-var quantityProduct = document.getElementById("adjustProductQuantity-number");
-let btnIncreaseQuantity = document.getElementById(
-  "adjustProductQuantity-increase"
-);
-let btnDecreaseQuantity = document.getElementById(
-  "adjustProductQuantity-decrease"
-);
-let btnSubmitQuantity = document.getElementById(
-  "product-info-item-content-bottom-buying-btn"
-);
-let inputProductInfoBtn = document.getElementById(
-  "product-info-item-content-bottom-buying-btn-input"
-);
-let quantity;
-
-// click card product item to open info product
-let cardProductItem = document.getElementsByClassName("card-product-item");
-let productInfo = document.getElementById("products-info");
-let closeInfoProduct = document.querySelector(".products-container-close");
-let productInfoContainer = document.querySelector(".prodcts-info-container");
-let cardProductItemBuyingBtn = document.querySelector(
-  ".card-product-content-bottom-buying-btn"
-);
-
 let cart = document.getElementById("cart");
 let shoppingIcon = document.querySelector(".shopping-icon");
 let cartContainerMiddle = document.querySelector(".cart-container-middle");
