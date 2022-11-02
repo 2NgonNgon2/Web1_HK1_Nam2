@@ -29,7 +29,7 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
-          <li><i class="fa fa-cart-shopping shopping-icon"></i></li>
+          <li title="Nhấn để xem giỏ hàng"><i class="fa fa-cart-shopping shopping-icon" onclick="showCart();hideInfoProduct()"></i></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -119,7 +119,60 @@
     </div>
 
 <!-- Cart products -->
+    <div class="cart" id="cart">
+      <div class="cart-container" onclick="stopPropagate(event)">
+        <div class="cart-container-top">
+          <i class="fa-solid fa-cart-shopping icon-btn-cart"></i>
+          Giỏ hàng
+        </div>
+        <div class="products-container-close" onclick="hideCart()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="cart-container-middle">
+          <!-- <div class="cart-container-middle-product">
+            <div class="cart-container-middle-product-img">
+              <img src="picture/Gaming keyboard.webp" alt="">
+            </div>
+            <div class="cart-container-middle-product-name">
+              <div class="cart-container-middle-product-name-title">
+                Bàn phím cơ không dây
+              </div>
+              <div class="cart-container-middle-product-name-label">
+                Keyboard for gamer
+              </div>
+            </div>
+            <div class="cart-container-middle-product-quantity">
+              <input type="number" value="" class="cart-container-middle-product-quantity-adjust"  min="1">
+            </div>
+            <div class="cart-container-middle-product-price">
+              <span class="cart-container-middle-product-priceNumber">500.000</span> 
+              <span class="cart-container-middle-product-priceIcon">₫</span>
+            </div>
+            <div class="cart-container-middle-product-remove">
+              <i class="fa-solid fa-xmark cart-remove-icon"></i>
+            </div>
+          </div>
 
+           -->
+        </div>
+
+
+        
+        <div class="cart-container-bottom">
+          <div class="cart-container-bottom-total">
+            Tổng thanh toán :
+            <div class="cart-container-bottom-total-amount">
+
+              <input type="text" id="cart-container-bottom-total-amount-number" class="cart-container-bottom-total-amount-number" disabled value="0" min="0">
+              <span class="cart-container-bottom-total-priceIcon">₫</span>
+            </div>
+          </div>
+          <button class="cart-container-bottom-buy" type="button">
+            Mua hàng 
+          </button>
+        </div>
+      </div>
+    </div>
 <!-- Card products -->
     <div class="card-products" id="card-products">
       
@@ -208,7 +261,7 @@
         <div class="product-info-item">
           <img src="picture/Gaming keyboard.webp" class="product-info-img" alt="">
           <div class="product-info-item-content">
-            <div class="prodcts-info-container-close" onclick="hideInfoProduct()">
+            <div class="products-container-close" onclick="hideInfoProduct()">
               <i class="fa-solid fa-xmark"></i>
             </div>
             <div class="product-info-item-content-top">
