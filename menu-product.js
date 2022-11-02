@@ -2,6 +2,7 @@ const cardProduct = document.querySelector(".card-products-container");
 
 let isSignedin = false  // check xem đã đăng nhập chưa   
 let isLastPage = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
+let isAdmin = false
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
 let item = "";          // dùng để chứa các html product-items
 
@@ -31,7 +32,7 @@ function checkSignin()
 {
   if(isSignedin == false)
   {
-    alert("đăng nhập đi thằng đầu buồi!");
+    alert("đăng nhập đi thằng đầu buồi");
   }
 }
 
@@ -47,8 +48,9 @@ function filterProduct(typeProduct) {
           tmpProduct.push(product[i]);
         }
       }
-      // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
+      // kiểm tra xem 1 có phải là trang cuối không
       createPageNum(tmpProduct);
+      // xử lý nếu 1 là trang cuối
       pageOneHandle();
       break;
     }
@@ -58,8 +60,9 @@ function filterProduct(typeProduct) {
           tmpProduct.push(product[i]);
         }
       }
-      // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
+      // kiểm tra xem 1 có phải là trang cuối không
       createPageNum(tmpProduct);
+      // xử lý nếu 1 là trang cuối
       pageOneHandle();
       break;
     }
@@ -69,6 +72,7 @@ function filterProduct(typeProduct) {
           tmpProduct.push(product[i]);
         }
       }
+      
       // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
       createPageNum(tmpProduct);
       pageOneHandle();
@@ -80,7 +84,6 @@ function filterProduct(typeProduct) {
           tmpProduct.push(product[i]);
         }
       }
-      // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
       createPageNum(tmpProduct);
       pageOneHandle();
       break;
@@ -91,7 +94,6 @@ function filterProduct(typeProduct) {
           tmpProduct.push(product[i]);
         }
       }
-      // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
       createPageNum(tmpProduct);
       pageOneHandle();
       break;
@@ -100,11 +102,21 @@ function filterProduct(typeProduct) {
 }
 
 function createPageNum(tmpProduct) {
-  let quantity = tmpProduct.length / 8;
-
+  let quantity;
+  if (isAdmin === false)              // nếu là trang admin thì +1 vào độ dài mảng tmp tương ứng với
+  {                                   // cục div thêm sản phẩm
+    quantity = tmpProduct.length / 8;
+  }
+  else
+  {
+    quantity = (++tmpProduct.length) / 8;
+  }
+  
   if (quantity % 1 != 0) {
     quantity++;
   }
+
+  
   
   quantity = Math.floor(quantity);
 

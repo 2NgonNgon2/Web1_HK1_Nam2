@@ -21,11 +21,11 @@
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
-        <form action="" id="search_box">	
+        <form action="" id="search_box" >	
           <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="" > 
-          <div id="search_button">
+          <a href="#product-display" id="search_button" onclick="searchEngine(event)">
             <i class="fa-solid fa-magnifying-glass"></i> 				
-          </div>			
+          </a>
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
@@ -206,7 +206,9 @@
         </div>
       </div>
 
-      <div class="card-products-container">
+      
+
+      <div class="card-products-container" id="product-display">
 
         <!-- <div class="card-product-item">
         
@@ -319,6 +321,7 @@
   <script src="arr-account.js"></script>
   <script src="menu-product.js"></script>
   <script src="/header-banner/navigation.js"></script>
+  <script src="search-engine.js"></script>
   <script src="/backToHome-button.js"></script>
   <!-- <script src="search-engine.js"></script> -->
   </body>

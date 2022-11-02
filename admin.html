@@ -157,7 +157,51 @@
       </div>
 
       <div class="card-products-container">
+        
+        <div class="card-product-item" id="${product.id}" onclick="productInfomation()">
+          <img
+            class="card-img"
+            src="${product.img}"
+          />
+          <div class="card-product-content">
+            <div class="card-product-content-top">
+              <div class="card-product-content-title card-title">
+                ${product.name}
+              </div>
+              <div class="label-card-title card-title">${product.description}</div>
+            </div>
+            <div class="card-product-content-bottom">
+  
+            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);editProduct()">
+              <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
+              Chỉnh sửa 
+            </div>
+  
+            <div class="card-product-content-bottom-buying">
+              <div class="card-product-content-bottom-buying-price">
+                <span class="card-product-priceNumber">${product.price}</span> 
+                <span class="card-product-priceIcon">₫</span>
+              </div>
+              <div class="card-product-status">
+                Còn hàng
+                <i class="fa-solid fa-check icon-check-status"></i>
+              </div>
+            </div>
+            
+          </div>
+          </div>
+        </div>
 
+        <div class="card-product-item card-plus-product" onclick="addProduct()">
+          <i class="fa-solid fa-plus"></i>
+          <span>ADD PRODUCT</span>
+      </div>
+
+      </div>
+      
+        
+        
+      </div>
         <!-- <div class="card-product-item">
         
         <div class="card-product-item" title="Ban phim co khhong day">
