@@ -71,6 +71,8 @@ function filterProduct(typeProduct) {
           tmpProduct.push(product[i]);
         }
       }
+      
+      // kiểm tra xem có phải trang cuối chưa, tránh trường hợp load vượt quá số lượng mảng
       createPageNum(tmpProduct);
       pageOneHandle();
       break;
@@ -108,8 +110,7 @@ function createPageNum(tmpProduct) {
   }
 
   quantity = Math.floor(quantity);
-  console.log("quantity = " + quantity);
-  
+
   let pageNum = `<div class="menu-card-products-page-number">`;
   let count = 0;
 
@@ -193,20 +194,28 @@ function activePageNumber(pageNumberClicked)
 }
 
 function renderProduct(product) {
-    item += `
-        <div class="card-product-item" id="${product.id}" onclick="productInfomation(${product.id})">
-          <img
-            class="card-img"
-            src="${product.img}"
-          />
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                ${product.name}
-              </div>
-              <div class="label-card-title card-title">${product.description}</div>
+
+  item += `
+      <div class="card-product-item" title=" ${product.name}" id="${product.id}" onclick="productInfomation(${product.id})">
+        <img
+          class="card-img"
+          src="${product.img}"
+        />
+        <div class="card-product-content">
+          <div class="card-product-content-top">
+            <div class="card-product-content-title card-title">
+              ${product.name}
             </div>
-            <div class="card-product-content-bottom">
+            <div class="label-card-title card-title">${product.description}</div>
+          </div>
+          <div class="card-product-content-bottom">
+
+
+          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);checkSignin();addProduct(${product.id});">
+
+            <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
+            Thêm giỏ hàng
+          </div>
 
             <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);checkSignin();">
               <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
@@ -257,6 +266,11 @@ menuItems.forEach((menuItem, index) => {
   };
 });
 
+
+let cart = document.getElementById("cart");
+let shoppingIcon = document.querySelector(".shopping-icon");
+let cartContainerMiddle = document.querySelector(".cart-container-middle");
+
 function productInfomation(id) {
   for (let i = 0; i < product.length; i++) {
     if (product[i].id == id) {
@@ -266,13 +280,16 @@ function productInfomation(id) {
           <div class="product-info-item" >
             <img src="${product[i].img}" class="product-info-img" alt="">
             <div class="product-info-item-content">
-              <div class="prodcts-info-container-close" onclick="hideInfoProduct()">
+              <div class="products-container-close" onclick="hideInfoProduct()">
                 <i class="fa-solid fa-xmark"></i>
               </div>
               <div class="product-info-item-content-top">
                 <div class="product-info-item-content-top-title card-title">
-                  ${product[i].name}</div>
-                <div class="product-info-item-content-top-label-card-title card-title">${product[i].description}</div>
+                  ${product[i].name}
+                </div>
+                <div class="product-info-item-content-top-label-card-title card-title">
+                ${product[i].description}
+                </div>
               </div>
 
               <div class="product-info-item-content-middle">
@@ -301,7 +318,7 @@ function productInfomation(id) {
                     <span class="product-info-item-content-priceNumber">${product[i].price}</span> 
                     <span class="product-info-item-content-priceIcon">₫</span>
                   </div>
-                  <div id="product-info-item-content-bottom-buying-btn" onclick="themSanPhamBtn()">
+                  <div id="product-info-item-content-bottom-buying-btn" onclick="addProductByInfoBtn(${product[i].id});addProduct(${product[i].id});">
 
                     <i class="fa-solid fa-cart-shopping product-info-item-icon-btn-shop"></i>
                     <input type="button" value="Thêm giỏ hàng" id="product-info-item-content-bottom-buying-btn-input">
@@ -317,7 +334,7 @@ function productInfomation(id) {
     }
   }
   productInfoContainer = document.querySelector(".prodcts-info-container");
-  closeInfoProduct = document.querySelector(".prodcts-info-container-close");
+  closeInfoProduct = document.querySelector(".products-container-close");
   quantityProduct = document.getElementById("adjustProductQuantity-number");
   btnIncreaseQuantity = document.getElementById(
     "adjustProductQuantity-increase"
@@ -329,8 +346,10 @@ function productInfomation(id) {
     "product-info-item-content-bottom-buying-btn"
   );
 
-  productInfo.classList.add("openInfoProduct");
- 
+
+  productInfo.classList.add("open");
+
+
   // check if quantity input <= 1 ,clock decrease button .
   if (quantityProduct.value <= 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
@@ -338,17 +357,24 @@ function productInfomation(id) {
 
 }
 
-/* for (let index = 0; index < cardProductItem.length; index++) {
-    cardProductItemBuyingBtn[index].addEventListener("click", function (e) {
-      e.stopPropagation();
-  });
-} 
- */
-function hideInfoProduct() {
-  productInfo.classList.remove("openInfoProduct");
+
+// show cart
+function showCart() {
+  cart.classList.add("open");
 }
 
+// hide info products
+
+function hideInfoProduct() {
+  productInfo.classList.remove("open");
+}
 productInfo.addEventListener("click", hideInfoProduct);
+
+// hide cart
+function hideCart() {
+  cart.classList.remove("open");
+}
+cart.addEventListener("click", hideCart);
 
 function stopPropagate(e) {
   e.stopPropagation();
@@ -356,7 +382,7 @@ function stopPropagate(e) {
 
 // click to increase quantity product
 function increaseQuantity() {
-  valueQuantityProduct = parseInt(quantityProduct.value);
+  var valueQuantityProduct = parseInt(quantityProduct.value);
   quantity = valueQuantityProduct + 1;
   quantityProduct.value = quantity;
   if (quantityProduct.value > 1) {
@@ -376,7 +402,7 @@ function increaseQuantity() {
 // click to decrease quantity product
 
 function decreaseQuantity() {
-  valueQuantityProduct = parseInt(quantityProduct.value);
+  var valueQuantityProduct = parseInt(quantityProduct.value);
   quantity = valueQuantityProduct - 1;
   quantityProduct.value = quantity;
   if (quantityProduct.value == 1) {
@@ -394,30 +420,121 @@ function decreaseQuantity() {
 }); */
 
 // get value when user enter value to input
+var x=1;
 function getValueUserEntered(e) {
-  if (parseInt(quantityProduct.value + e.key) > 1) {
+  x = parseInt(quantityProduct.value + e.key);
+  var y = parseInt(e.key);
+  // kiểm tra số lớn hơn 1 thì mở khóa nút giảm số lượng
+  if (x > 1 || y > 1) {
     btnDecreaseQuantity.classList.remove("clockBtn");
-  } else if(parseInt(quantityProduct.value + e.key) < 1) {
+  } 
+  // kiểm tra số nhỏ hơn 1 thì cảnh báo
+  else if (x < 1 || y < 1) {
     alert("Số lượng sản phẩm không nhỏ hơn 1!");
     btnDecreaseQuantity.classList.add("clockBtn");
+  } 
+  // kiểm tra không là số thì cảnh báo
+  else if( isNaN(x) || isNaN(y)) {
+    alert("Số lượng sản phẩm phải là số!");
   }
 }
 
-/* quantityProduct.addEventListener("keypress",function(e) {
-  if (parseInt(quantityProduct.value + e.key) > 1) {
-    btnDecreaseQuantity.classList.remove("clockBtn");
-  } else {
-    alert("Số lượng sản phẩm không nhỏ hơn 1!")
-    btnDecreaseQuantity.classList.add("clockBtn");
+// đổi tổng tiền khi thêm và xóa sản phẩm
+var cartTotalAmountNumber = document.getElementById('cart-container-bottom-total-amount-number');
+var cartTotalAmountNumberValue = parseInt(cartTotalAmountNumber.value);
+var numberTmp=0;
+console.log(cartTotalAmountNumber.value);
 
-  }
-}) */
-
-function themSanPhamBtn() {
-  // check nếu chưa đăng nhập
-  checkSignin();
-  let x = parseInt(quantityProduct.value);
-  if (x < 0) x = Math.abs(x);
-  console.log(x);
+function updateTotal(quantity,price) {
+  console.log(quantity);
+  console.log(price);
+  console.log();
+  numberTmp += quantity * price ;
+  cartTotalAmountNumber.value = numberTmp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + '.000' ;
+  console.log( cartTotalAmountNumber.value);
 }
+
+
+function addProductByInfoBtn(id) {  
+  x = parseInt(quantityProduct.value);
+  
+}
+ 
+// nút thêm sản phẩm vào giỏ hàng   
+let cartContainItem = "";
+var btnRemoveProductInCarts;
+var temp = [];
+
+function addProduct(id) { 
+  // kiểm tra quantity khi nhấn nút thêm sản phẩm trong product info 
+  if (isNaN(x)) {
+    alert("Số lượng sản phẩm phải là số!");
+    return;// thoát khỏi sự kiện click
+  }
+  if (x < 0) {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!");
+    return;// thoát khỏi sự kiện click
+  }
+  
+  
+  var savePrice;
+  // chạy for để thêm đúng sản phẩm vào giỏ hàng
+  for (let i = 0; i < product.length; i++) {
+    if (product[i].id == id) {
+      cartContainItem = `
+    <div class="cart-container-middle-product">
+      <div class="cart-container-middle-product-img">
+       <img src="${product[i].img}" alt="">
+      </div>
+      <div class="cart-container-middle-product-name">
+        <div class="cart-container-middle-product-name-title">
+          ${product[i].name}
+        </div>
+        <div class="cart-container-middle-product-name-label">
+          ${product[i].description}
+        </div>
+      </div>
+      <div class="cart-container-middle-product-quantity">
+        <input type="number" value="${x}" class="cart-container-middle-product-quantity-adjust" min="1">
+      </div>
+      <div class="cart-container-middle-product-price">
+        <span class="cart-container-middle-product-priceNumber">${product[i].price}</span> 
+        <span class="cart-container-middle-product-priceIcon">₫</span>
+      </div>
+      <div class="cart-container-middle-product-remove">
+        <i class="fa-solid fa-xmark cart-remove-icon"></i>
+      </div>
+    </div>
+    `;
+    temp[i]=1; 
+    savePrice = parseFloat(product[i].price);
+    
+    }
+  }
+  var cartQuantityAdjust = document.getElementsByClassName('cart-container-middle-product-quantity-adjust');
+  // console.log(cartQuantityAdjust[0].value);
+  updateTotal(x,savePrice);
+  
+  // đưa sản phẩm mới thêm lên đầu trong giỏ hàng
+  cartContainerMiddle.innerHTML = cartContainItem + cartContainerMiddle.innerHTML;
+  // chạy for để tìm nút xóa sản phẩm 
+
+  btnRemoveProductInCarts = document.getElementsByClassName("cart-container-middle-product-remove");
+  for (let index = 0; index < btnRemoveProductInCarts.length; index++) {
+    var btnRemoveProductInCart = btnRemoveProductInCarts[index];
+    btnRemoveProductInCart.addEventListener("click", function(e) {
+      var parent =this.parentElement;
+      numberTmp -= (parseInt(parent.children[2].children[0].value) * parseInt(parent.children[3].children[0].innerText));
+      cartTotalAmountNumber.value = (numberTmp).toString() ;
+      parent.remove();
+    })
+  }
+  x=1;//sau khi xong thì trả x về trạng thái ban đầu(x là input value trong cart) 
+}
+
+
+
+
+
+
 
