@@ -372,6 +372,7 @@ function hideCart() {
 cart.addEventListener("click", hideCart);
 
 function stopPropagate(e) {
+
   e.stopPropagation();
 }
 
