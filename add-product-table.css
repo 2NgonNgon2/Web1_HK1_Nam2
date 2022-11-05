@@ -1,0 +1,29 @@
+.add-product-container
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.231);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+}
+
+.add-product-container .add-product-table
+{
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  background: whitesmoke;
+  
+}
+
+.add-product-container .add-product-table input
+{
+  color: rgb(124, 123, 123);
+}

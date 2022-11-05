@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="menu-product.css" />
     <link rel="stylesheet" href="/header-banner/navigation.css">
     <link rel="stylesheet" href="/header-banner/signin-menu.css">
+    <link rel="stylesheet" href="/add-product-table.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -29,7 +30,6 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
-          <li><i class="fa fa-cart-shopping shopping-icon"></i></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -119,9 +119,29 @@
     </div>
 
 
-
-
-    <div class="products">
+    <!-- add products -->
+    <div class="add-product-container">
+      <div class="add-product-table">
+        <form action="" class="add-product-form" onclick="addProduct()"></form>
+          <label for="title">ADD PRODUCT</label>
+          <p>
+            <label for="productName">Name</label>
+          <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha">
+          </p>
+          <p>
+            <label for="productDescription">Description</label>
+            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
+          </p>
+          <p>
+            <label for="productImage">Image</label>  
+            <input type="text" name="productImage" id="productImage" value="" placeholder="https://www.facebook.com/photo?fbid=1690260927978735&set=a.103057450032432">
+          </p>
+          <p>
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
+          </p>
+      </div>
+    </div>
 
 
 <!-- Card products -->

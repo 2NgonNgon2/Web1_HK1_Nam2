@@ -33,6 +33,7 @@ function checkSignin()
   {
     alert("đăng nhập đi thằng đầu buồi");
   }
+
 }
 
 
@@ -102,7 +103,6 @@ function filterProduct(typeProduct) {
 
 function createPageNum(tmpProduct) {
   let quantity;
-  console.log(isAdmin);                           // cục div thêm sản phẩm
   quantity = tmpProduct.length / 8;
   
   if (quantity % 1 != 0) {
@@ -216,11 +216,6 @@ function renderProduct(product) {
             <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
             Thêm giỏ hàng
           </div>
-
-            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);checkSignin();">
-              <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-              Thêm giỏ hàng
-            </div>
 
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">

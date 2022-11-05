@@ -135,7 +135,7 @@ function pageRenderAdmin(pageNumberClicked, lastPage) {
     }
     item += 
     `
-    <div class="card-product-item card-plus-product" onclick="addProduct()">
+    <div class="card-product-item card-plus-product" onclick="addProductTable(${tmpProduct[1].type})">
           <i class="fa-solid fa-plus"></i>
           <span>ADD PRODUCT</span>
       </div>
