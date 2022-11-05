@@ -1,12 +1,13 @@
 const cardProduct = document.querySelector(".card-products-container");
-  
+const addProductContainer = document.querySelector(".add-product-container");
+
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
 let item = "";          // dùng để chứa các html product-items
 let isSignedin = true;
 let isAdmin = true;
 
-filterProductAdmin("keyboard")
+filterProductAdmin("keyboard");
 
 function filterProductAdmin(typeProduct) {
   item = "";
@@ -135,7 +136,7 @@ function pageRenderAdmin(pageNumberClicked, lastPage) {
     }
     item += 
     `
-    <div class="card-product-item card-plus-product" onclick="addProduct()">
+    <div class="card-product-item card-plus-product" onclick="openAddProductTable()">
           <i class="fa-solid fa-plus"></i>
           <span>ADD PRODUCT</span>
       </div>
@@ -216,3 +217,57 @@ function renderProductAdmin(product) {
       `;
   }
 }
+
+function addProductToProductArray(event)
+{
+  event.preventDefault();
+  const productType = document.querySelector("#select-type").value;
+  const productName = document.querySelector("#productName").value;
+  const productDescription = document.querySelector("#productDescription").value;
+  const productImage = document.querySelector("#productImage").value;
+  const productPrice = document.querySelector("#productPrice").value;
+  const productQuantity = document.querySelector("#productQuantity").value; 
+  
+  console.log(productType);
+  
+  let productAdd = {};
+  let length = product.length+1;
+  let maxLength = length +  parseInt(productQuantity) ;
+
+  for(let i = length; i < maxLength; i++)
+  {
+    console.log("add product");
+    productAdd = {
+      id: `${i}`,
+      type: productType,
+      name: productName,
+      description: productDescription,
+      img: productImage,
+      price: productPrice,
+    };
+
+    product.push(productAdd);
+  }
+  localStorage.setItem("product",JSON.stringify(product));
+  alert("Thêm sản phẩm thành công!");
+  location.reload();
+}
+
+function openAddProductTable()
+{
+  console.log("mở bảng thêm sản phẩm!");
+  addProductContainer.style.display = "flex";
+}
+
+function closeAddProductTable(event)
+{
+  console.log("đóng bảng thêm sản phẩm!");
+  addProductContainer.style.display = "none";
+}
+
+function stopPropagate(e) {
+  console.log("stopPropagate");
+  e.stopPropagation();
+}
+
+

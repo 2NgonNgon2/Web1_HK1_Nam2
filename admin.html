@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="menu-product.css" />
     <link rel="stylesheet" href="/header-banner/navigation.css">
     <link rel="stylesheet" href="/header-banner/signin-menu.css">
+    <link rel="stylesheet" href="/add-product-table.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -29,7 +30,6 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
-          <li><i class="fa fa-cart-shopping shopping-icon"></i></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -119,9 +119,38 @@
     </div>
 
 
+    <!-- add products -->
+    <div class="add-product-container" onclick="closeAddProductTable(event)">
+      
+        <form class="add-product-table" onclick="stopPropagate(event)" onsubmit="addProductToProductArray(event)">
+          <div class="exit-add-product-table" onclick="closeAddProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">EDIT PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="mousepad">mousepad</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="text" name="productImage" id="productImage" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
+            <label for="productQuantity">Số lượng:</label>
+            <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10">  
+            <div class="save-product-btn">
+              <button type="submit">SAVE</button>
+            </div>
+        </form>
 
-
-    <div class="products">
+    </div>
 
 
 <!-- Card products -->
