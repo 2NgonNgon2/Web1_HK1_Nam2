@@ -4,81 +4,124 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="authors" content="NHÓM 13">
-    <meta name="description" content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... .">
+    <meta name="authors" content="NHÓM 13" />
+    <meta
+      name="description"
+      content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... ."
+    />
     <title>Products</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="card-products.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="menu-product.css" />
-    <link rel="stylesheet" href="/header-banner/navigation.css">
-    <link rel="stylesheet" href="/header-banner/signin-menu.css">
-    <link rel="stylesheet" href="/header-banner/slider.css">
+    <link rel="stylesheet" href="/header-banner/navigation.css" />
+    <link rel="stylesheet" href="/header-banner/signin-menu.css" />
+    <link rel="stylesheet" href="/header-banner/slider.css" />
+    <link rel="stylesheet" href="info-product.css" />
+    <link rel="stylesheet" href="cart.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- Header -->
     <header>
-      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
-      
+      <a href="#" class="logo"
+        ><span style="color: #ffea00; font-style: italic"
+          ><img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png"
+            style="width: 200px"
+            alt="" /></span
+      ></a>
+
       <ul class="navigation" id="navigation">
-        <form action="" id="search_box" >	
-          <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="" > 
-          <a href="#product-display" id="search_button" onclick="searchEngine(event)">
-            <i class="fa-solid fa-magnifying-glass"></i> 				
+        <form action="" id="search_box">
+          <input
+            type="search"
+            id="search_text"
+            placeholder="Bạn muốn tìm gì !!!!"
+            value=""
+          />
+          <a
+            href="#product-display"
+            id="search_button"
+            onclick="searchEngine(event)"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
           </a>
         </form>
-          <li><a href="#banner">Home</a></li>
-          <li><a href="#menu">Product</a></li>
-          <li title="Nhấn để xem giỏ hàng"><i class="fa fa-cart-shopping shopping-icon" onclick="showCart();hideInfoProduct()"></i></li>
-          <div class="dropdown">
-            <div class="dropdown-select">
-              <i class="fa fa-user dropdown-user"></i>
-              <span class="dropdown-select">My Account</span>
-              <i class="fa fa-caret-down dropdown-caret"></i>
-            </div>
-            <ul class="dropdown-list">
-              <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
-                <span class="dropdown-text" id="sign-in">Đăng nhập</span>
-              </li>
-              <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
-                <span class="dropdown-text" id="sign-up">Đăng kí</span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">Xem giỏ hàng</span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">Đăng xuất</span>
-              </li>
-            </ul>
-          </div>   
+        <li><a href="#banner">Home</a></li>
+        <li><a href="#menu">Product</a></li>
+        <li title="Nhấn để xem giỏ hàng">
+          <i
+            class="fa fa-cart-shopping shopping-icon"
+            onclick="showCart();hideInfoProduct()"
+          ></i>
+        </li>
+        <div class="dropdown">
+          <div class="dropdown-select">
+            <i class="fa fa-user dropdown-user"></i>
+            <span class="dropdown-select">My Account</span>
+            <i class="fa fa-caret-down dropdown-caret"></i>
+          </div>
+          <ul class="dropdown-list">
+            <li class="dropdown-item" onclick="displaySignMenu('Sign in');hideInfoProduct();hideCart();">
+              <span class="dropdown-text" id="sign-in">Đăng nhập</span>
+            </li>
+            <li class="dropdown-item" onclick="displaySignMenu('Sign up')">
+              <span class="dropdown-text" id="sign-up">Đăng kí</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="dropdown-text">Xem giỏ hàng</span>
+            </li>
+            <li class="dropdown-item">
+              <span class="dropdown-text">Đăng xuất</span>
+            </li>
+          </ul>
+        </div>
       </ul>
     </header>
     <!-- Sign in menu -->
     <div class="signin" id="login">
-        <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
-        <h2 class="signin-heading">Log in</h2>
-        <p class="signin-already" id="signin-already">
-          You don't have an account?
-          <a href="#" class="signin-link-underline" onclick="displaySignMenu('Sign up')">Create now</a>
-        </p>
-        <form onsubmit="dangnhap(event)">
-          <div class="form-user-name">
-              <input type="text" class="form-input" placeholder="Name" id="name">
-          </div>
-          <div class="form-password">
-              <input type="password" class="form-input" placeholder="Password" id="pass">
-          </div>
-          <div >
-              <button type="submit" class="form-submit">
-                  <span class="form-submit-text" >Sign in</span>             
-                  <i class="fa fa-long-arrow-right form-submit-icon"></i>      
-                </button>
-          </div>
-        </form>
-      </div>
-      <!-- Sign up menu -->
-      <!--<div class="signin" id="create">
+      <a class="signin-icon" onclick="displaySignMenu('none')">
+        <i class="fa-solid fa-xmark"></i
+      ></a>
+      <h2 class="signin-heading">Log in</h2>
+      <p class="signin-already" id="signin-already">
+        You don't have an account?
+        <a
+          href="#"
+          class="signin-link-underline"
+          onclick="displaySignMenu('Sign up')"
+          >Create now</a
+        >
+      </p>
+      <form onsubmit="dangnhap(event)">
+        <div class="form-user-name">
+          <input type="text" class="form-input" placeholder="Name" id="name" />
+        </div>
+        <div class="form-password">
+          <input
+            type="password"
+            class="form-input"
+            placeholder="Password"
+            id="pass"
+          />
+        </div>
+        <div>
+          <button type="submit" class="form-submit">
+            <span class="form-submit-text">Sign in</span>
+            <i class="fa fa-long-arrow-right form-submit-icon"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Sign up menu -->
+    <!--<div class="signin" id="create">
         <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
         <h2 class="signin-heading" >Create account</h2>
         <p class="signin-already" id="signin-already">
@@ -106,57 +149,91 @@
           </div>
         </form>
       </div>-->
-      <!-- Banner -->
-      <section class="banner" id="banner">
-        <div class="content">
-            <h2>GeForce RTX 40 Series</h2>
-            <p>Bộ xử lý đồ họa NVIDIA® GeForce RTX® 40 Series nhanh hơn tất cả dành cho game thủ và nhà sáng tạo nội dung. Được thiết kế trên kiến trúc NVIDIA Ada Lovelace với hiệu năng siêu cao cung cấp sức mạnh nhảy vọt cho các ứng dụng đồ họa phát triển trên nền tảng trí tuệ nhân tạo. Trải nghiệm như thật trong môi trường thực tế ảo với công nghệ dò tia thời gian thực ray tracing, mượt mà với số khung hình siêu cao và độ trễ cực kỳ thấp. Hãy khám phá những cách thức sáng tạo hoàn toàn mới và quy trình thực thi các tác vụ vượt trội chưa từng có.</p>
-            <a href="#" class="btn">Mua ngay</a>
+    <!-- Banner -->
+    <section class="banner" id="banner">
+      <div class="content">
+        <h2>GeForce RTX 40 Series</h2>
+        <p>
+          Bộ xử lý đồ họa NVIDIA® GeForce RTX® 40 Series nhanh hơn tất cả dành
+          cho game thủ và nhà sáng tạo nội dung. Được thiết kế trên kiến trúc
+          NVIDIA Ada Lovelace với hiệu năng siêu cao cung cấp sức mạnh nhảy vọt
+          cho các ứng dụng đồ họa phát triển trên nền tảng trí tuệ nhân tạo.
+          Trải nghiệm như thật trong môi trường thực tế ảo với công nghệ dò tia
+          thời gian thực ray tracing, mượt mà với số khung hình siêu cao và độ
+          trễ cực kỳ thấp. Hãy khám phá những cách thức sáng tạo hoàn toàn mới
+          và quy trình thực thi các tác vụ vượt trội chưa từng có.
+        </p>
+        <a href="#" class="btn">Mua ngay</a>
+      </div>
+    </section>
+    <!-- Slide-->
+    <div class="slide">
+      <section class="slider">
+        <div class="container">
+          <div class="slider-content">
+            <div class="slider-content-left">
+              <div class="slider-content-left-top-container">
+                <div class="slider-content-left-top">
+                  <a href=""> <img src="/picture/slide1.jpg" alt="" /> </a>
+                  <a href=""> <img src="/picture/slide2.jpg" alt="" /> </a>
+                  <a href=""> <img src="/picture/slide3.jpg" alt="" /> </a>
+                  <a href=""> <img src="/picture/slide4.jpg" alt="" /> </a>
+                  <a href=""> <img src="/picture/slide5.jpg" alt="" /> </a>
+                </div>
+                <div class="slider-content-left-top-next">
+                  <i class="fa-solid fa-left-long"> </i>
+                  <i class="fa-solid fa-right-long"> </i>
+                </div>
+              </div>
+              <div class="slider-content-left-bottom">
+                <li class="color-click">
+                  Loa SOUNDBAR Xiaomi <br />
+                  Ưu đãi đến 1 triệu
+                </li>
+                <li>
+                  Logitech G733 LW <br />
+                  Ưu đãi khủng
+                </li>
+                <li>
+                  Bàn Phím Razer BlackWidow <br />
+                  Ưu đãi 10%
+                </li>
+                <li>
+                  Chuột Logitech G502 <br />
+                  Ưu đãi khủng
+                </li>
+                <li>
+                  Chuột Logitech G304 <br />
+                  Giá rẻ ưu đãi
+                </li>
+              </div>
+            </div>
+            <div class="slider-content-right">
+              <li>
+                <a> <img src="/picture/d1.jfif" alt="" /> </a>
+              </li>
+              <li>
+                <a> <img src="/picture/d2.jfif" alt="" /> </a>
+              </li>
+              <li>
+                <a> <img src="/picture/d3.jfif" alt="" /> </a>
+              </li>
+              <li>
+                <a> <img src="/picture/d4.png" alt="" /> </a>
+              </li>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- Slide-->
-      <div class="slide">
-        <section class="slider">
-          <div class="container">
-              <div class="slider-content">
-                <div class="slider-content-left">
-                    <div class="slider-content-left-top-container">
-                      <div class="slider-content-left-top">		
-                      <a href=""> <img src="/picture/slide1.jpg" alt=""> </a>
-                      <a href=""> <img src="/picture/slide2.jpg" alt=""> </a>
-                      <a href=""> <img src="/picture/slide3.jpg" alt=""> </a>
-                      <a href=""> <img src="/picture/slide4.jpg" alt=""> </a>
-                      <a href=""> <img src="/picture/slide5.jpg" alt=""> </a>
-                    </div>
-                    <div class="slider-content-left-top-next">
-                      <i class="fa-solid fa-left-long">  </i>
-                      <i class="fa-solid fa-right-long"> </i>
-                    </div>
-                    </div>  
-                    <div class="slider-content-left-bottom">
-                      <li class="color-click">  Loa SOUNDBAR Xiaomi <br> Ưu đãi đến 1 triệu </li>
-                      <li>Logitech G733 LW <br> Ưu đãi khủng </li>
-                      <li> Bàn Phím Razer BlackWidow <br> Ưu đãi 10%</li>
-                      <li> Chuột Logitech G502 <br> Ưu đãi khủng</li>
-                      <li> Chuột Logitech G304 <br> Giá rẻ ưu đãi</li>
-                    </div>
-                </div>
-                <div class="slider-content-right">
-                    <li> <a> <img src="/picture/d1.jfif" alt=""> </a> </li>
-                    <li> <a> <img src="/picture/d2.jfif" alt=""> </a> </li>
-                    <li> <a> <img src="/picture/d3.jfif" alt=""> </a> </li>
-                    <li> <a> <img src="/picture/d4.png" alt=""> </a> </li>
-                </div>
-            </div>
-          </div>  
-        </section>  
-      </div>
-<!-- Back to top button -->
+    </div>
+    <!-- Back to top button -->
     <div class="back-to-top">
-      <a class="" href="#"   ><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
+      <a class="" href="#"
+        ><i class="fa-solid fa-arrow-up back-top-top-icon"></i
+      ></a>
     </div>
 
-<!-- Cart products -->
+    <!-- Cart products -->
     <div class="cart" id="cart">
       <div class="cart-container" onclick="stopPropagate(event)">
         <div class="cart-container-top">
@@ -195,61 +272,109 @@
            -->
         </div>
 
-
-        
         <div class="cart-container-bottom">
           <div class="cart-container-bottom-total">
             Tổng thanh toán :
             <div class="cart-container-bottom-total-amount">
-
-              <input type="text" id="cart-container-bottom-total-amount-number" class="cart-container-bottom-total-amount-number" disabled value="0">
+              <input
+                type="text"
+                id="cart-container-bottom-total-amount-number"
+                class="cart-container-bottom-total-amount-number"
+                disabled
+                value="0"
+              />
               <span class="cart-container-bottom-total-priceIcon">₫</span>
             </div>
           </div>
           <button class="cart-container-bottom-buy" type="button">
-            Mua hàng 
+            Mua hàng
           </button>
         </div>
       </div>
     </div>
 
-<!-- Card products -->
+    <!-- Card products -->
 
     <div class="card-products">
-      
       <div class="menu" id="menu">
         <div class="menu-title">Danh mục sản phẩm</div>
-        
-        <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
-          <a  href="#product-display" class="overlay activeMenuItemOverlay " onclick="filterProduct('keyboard') " ></a>
-          <img class="menu-items-img activeMenuItemImg" src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
+
+        <div
+          class="menu-items activeMenuItems"
+          id="item-1"
+          onclick="activeItem(1)"
+        >
+          <a
+            href="#product-display"
+            class="overlay activeMenuItemOverlay"
+            onclick="filterProduct('keyboard') "
+          ></a>
+          <img
+            class="menu-items-img activeMenuItemImg"
+            src="picture/keyboard.jpg"
+            alt="keyboard image"
+            loading="lazy"
+          />
         </div>
-  
+
         <div class="menu-items" id="item-2">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('headphone')"></a>
-          <img class="menu-items-img" src="picture/headphone.png" alt="keyboard image" loading="lazy">
+          <a
+            href="#product-display"
+            class="overlay"
+            onclick="filterProduct('headphone')"
+          ></a>
+          <img
+            class="menu-items-img"
+            src="picture/headphone.png"
+            alt="keyboard image"
+            loading="lazy"
+          />
         </div>
-  
+
         <div class="menu-items" id="item-3">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('mouse')"></a>
-          <img class="menu-items-img" src="picture/mouse.png" alt="keyboard image" loading="lazy">
+          <a
+            href="#product-display"
+            class="overlay"
+            onclick="filterProduct('mouse')"
+          ></a>
+          <img
+            class="menu-items-img"
+            src="picture/mouse.png"
+            alt="keyboard image"
+            loading="lazy"
+          />
         </div>
-  
+
         <div class="menu-items" id="item-4">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('speaker')"></a>
-          <img class="menu-items-img" src="picture/speaker.png" alt="keyboard image" loading="lazy">
+          <a
+            href="#product-display"
+            class="overlay"
+            onclick="filterProduct('speaker')"
+          ></a>
+          <img
+            class="menu-items-img"
+            src="picture/speaker.png"
+            alt="keyboard image"
+            loading="lazy"
+          />
         </div>
-  
+
         <div class="menu-items" id="item-5">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('mousepad')"></a>
-          <img class="menu-items-img" src="picture/mousepads.png" alt="keyboard image" loading="lazy">
+          <a
+            href="#product-display"
+            class="overlay"
+            onclick="filterProduct('mousepad')"
+          ></a>
+          <img
+            class="menu-items-img"
+            src="picture/mousepads.png"
+            alt="keyboard image"
+            loading="lazy"
+          />
         </div>
       </div>
 
-      
-
       <div class="card-products-container" id="product-display">
-
         <!-- <div class="card-product-item">
         
         <div class="card-product-item" title="Ban phim co khhong day">
@@ -297,11 +422,9 @@
       </div>
     </div>
 
-    
     <!-- Products info -->
 
-
-    <div  id="products-info" onclick="hideInfoProduct()">
+    <div id="products-info" onclick="hideInfoProduct()">
       <!-- <div class="prodcts-info-container">
         
         <div class="product-info-item">
@@ -355,17 +478,17 @@
         </div>
       </div> -->
     </div>
-    
-  <!-- Java Script -->
-  <script src="arr-product.js"></script>
-  <script src="arr-account.js"></script>
-  <script src="menu-product.js"></script>
-  <script src="/header-banner/navigation.js"></script>
-  <script src="search-engine.js"></script>
-  <script src="/backToHome-button.js"></script>
-  <script src="/header-banner/slider.js"></script>
-  <script src="cart.js"></script>
-  <script src="info-products.js"></script>
-  <!-- <script src="search-engine.js"></script> -->
+
+    <!-- Java Script -->
+    <script src="arr-product.js"></script>
+    <script src="arr-account.js"></script>
+    <script src="menu-product.js"></script>
+    <script src="/header-banner/navigation.js"></script>
+    <script src="search-engine.js"></script>
+    <script src="/backToHome-button.js"></script>
+    <script src="/header-banner/slider.js"></script>
+    <script src="cart.js"></script>
+    <script src="info-products.js"></script>
+    <!-- <script src="search-engine.js"></script> -->
   </body>
 </html>

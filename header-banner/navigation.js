@@ -12,20 +12,20 @@ window.addEventListener('scroll',function () {
 // ham display ra menu dang nhap
 function displaySignMenu(input){
     var loginMenu = document.getElementById("login");
-    var createMenu = document.getElementById("create");
+    // var createMenu = document.getElementById("create");
     if(input=="Sign in")
     {
         loginMenu.style.display="block";
-        createMenu.style.display="none";
+        // createMenu.style.display="none";
     }
     else if(input=="Sign up")
     {
-        createMenu.style.display="block";
+        // createMenu.style.display="block";
         loginMenu.style.display="none";
     }
     else{
         loginMenu.style.display="none";
-        createMenu.style.display="none";
+        // createMenu.style.display="none";
     }
 }
 function dangnhap(event){
