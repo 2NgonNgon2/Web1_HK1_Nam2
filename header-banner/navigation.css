@@ -231,12 +231,20 @@ header.sticky #search_box
 	background: #eee;
 	border: 1px solid #eee;
 }
+.shopping-icon:hover
+{
+	color: #FF6F00;
+}
 .shopping-icon
 {
 	color: white;
 	scale: 130%;
 }
-.shopping-icon:hover
+header.sticky .shopping-icon
+{
+	color: black;
+}
+header.sticky .shopping-icon:hover
 {
 	color: #FF6F00;
 }

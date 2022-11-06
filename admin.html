@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="menu-product.css" />
     <link rel="stylesheet" href="/header-banner/navigation.css">
     <link rel="stylesheet" href="/header-banner/signin-menu.css">
+    <link rel="stylesheet" href="/add-product-table.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -29,7 +30,6 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
-          <li><i class="fa fa-cart-shopping shopping-icon"></i></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -119,9 +119,38 @@
     </div>
 
 
+    <!-- add products -->
+    <div class="add-product-container" onclick="closeAddProductTable(event)">
+      
+        <form class="add-product-table" onclick="stopPropagate(event)" onsubmit="addProductToProductArray(event)">
+          <div class="exit-add-product-table" onclick="closeAddProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">EDIT PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="mousepad">mousepad</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="text" name="productImage" id="productImage" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
+            <label for="productQuantity">Số lượng:</label>
+            <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10">  
+            <div class="save-product-btn">
+              <button type="submit">SAVE</button>
+            </div>
+        </form>
 
-
-    <div class="products">
+    </div>
 
 
 <!-- Card products -->
@@ -136,72 +165,73 @@
         </div>
   
         <div class="menu-items" id="item-2">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('headphone')"></a>
+          <a  href="#product-display" class="overlay" onclick="filterProductAdmin('headphone')"></a>
           <img class="menu-items-img" src="picture/headphone.png" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-3">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('mouse')"></a>
+          <a  href="#product-display" class="overlay" onclick="filterProductAdmin('mouse')"></a>
           <img class="menu-items-img" src="picture/mouse.png" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-4">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('speaker')"></a>
+          <a  href="#product-display" class="overlay" onclick="filterProductAdmin('speaker')"></a>
           <img class="menu-items-img" src="picture/speaker.png" alt="keyboard image" loading="lazy">
         </div>
   
         <div class="menu-items" id="item-5">
-          <a  href="#product-display" class="overlay" onclick="filterProduct('mousepad')"></a>
+          <a  href="#product-display" class="overlay" onclick="filterProductAdmin('mousepad')"></a>
           <img class="menu-items-img" src="picture/mousepads.png" alt="keyboard image" loading="lazy">
         </div>
       </div>
 
       <div class="card-products-container">
-
-        <!-- <div class="card-product-item">
         
-        <div class="card-product-item" title="Ban phim co khhong day">
-
+        <!-- <div class="card-product-item" id="${product.id}" onclick="productInfomation()">
           <img
             class="card-img"
-            src="picture/Gaming keyboard.webp"
+            src="${product.img}"
           />
-
           <div class="card-product-content">
             <div class="card-product-content-top">
               <div class="card-product-content-title card-title">
-                Bàn phím cơ không dây Bàn phím cơ không dây
+                ${product.name}
               </div>
-              <div class="label-card-title card-title">Keyboard for gamer</div>
+              <div class="label-card-title card-title">${product.description}</div>
             </div>
-
             <div class="card-product-content-bottom">
-
-              <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event)">
-                <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-                Thêm giỏ hàng
-              </div>
-
-              <div class="card-product-content-bottom-buying">
-                <div class="card-product-content-bottom-buying-price">
-                  <span class="card-product-priceNumber">500.000</span> 
-                  <span class="card-product-priceIcon">₫</span>
-                </div>
-                <div class="card-product-status">
-                  Còn hàng
-                  <i class="fa-solid fa-check icon-check-status"></i>
-                </div>
-              </div>
-              
+  
+            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);editProduct()">
+              <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
+              Chỉnh sửa 
             </div>
+  
+            <div class="card-product-content-bottom-buying">
+              <div class="card-product-content-bottom-buying-price">
+                <span class="card-product-priceNumber">${product.price}</span> 
+                <span class="card-product-priceIcon">₫</span>
+              </div>
+              <div class="card-product-status">
+                Còn hàng
+                <i class="fa-solid fa-check icon-check-status"></i>
+              </div>
+            </div>
+            
           </div>
+          </div>
+        </div> -->
+
+        
+        <!-- <div class="card-product-item card-plus-product" onclick="addProduct()">
+            <i class="fa-solid fa-plus"></i>
+            <span>ADD PRODUCT</span>
         </div>
 
         <div class="menu-card-products-page-number">
           <div class="pageNumber" onclick="pageRender(1)"></div>
           <div class="pageNumber" onclick="pageRender(2)">2</div>
           <div class="pageNumber" onclick="pageRender(3)">3</div> 
-        </div> -->
+        </div>  -->
       </div>
     </div>
 
@@ -267,7 +297,6 @@
   <!-- Java Script -->
   <script src="arr-product.js"></script>
   <script src="arr-account.js"></script>
-  <script src="menu-product.js"></script>
   <script src="menu-product-admin.js"></script>
   <script src="/header-banner/navigation.js"></script>
   <script src="/backToHome-button.js"></script>
