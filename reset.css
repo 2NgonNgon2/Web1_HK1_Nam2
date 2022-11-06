@@ -22,7 +22,7 @@
 
 /* chỉnh màu nền khi scan chuột lên chữ */
 ::selection {
-  background: #eeb7dd; /* WebKit/Blink Browsers */
+  background: rgb(63,72,184); 
 }
 
 /* Reapply the pointer cursor for anchor tags */
