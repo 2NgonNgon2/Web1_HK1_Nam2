@@ -9,15 +9,6 @@ let item = "";          // dùng để chứa các html product-items
 // mặc định khi khởi động web sẽ load trang 1 keyboard
 filterProduct("keyboard");
 
-// click card product item to open info product
-let cardProductItem = document.getElementsByClassName("card-product-item");
-let productInfo = document.getElementById("products-info");
-let closeInfoProduct ;
-let productInfoContainer ;
-let cardProductItemBuyingBtn = document.querySelector(
-  ".card-product-content-bottom-buying-btn"
-);
-
 
 function checkSignin()
 {

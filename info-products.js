@@ -1,23 +1,29 @@
 //info product
 let quantityProduct;
-let btnIncreaseQuantity ;
+let btnIncreaseQuantity;
 let btnDecreaseQuantity;
 let btnSubmitQuantity;
 let inputProductInfoBtn;
 let quantity;
-
-  
-  // hide info products
-  function hideInfoProduct() {
-    productInfo.classList.remove("open");
-  }
-  productInfo.addEventListener("click", hideInfoProduct);
- 
+// click card product item to open info product
+let cardProductItem = document.getElementsByClassName("card-product-item");
+let productInfo = document.getElementById("products-info");
+let closeInfoProduct ;
+let productInfoContainer ;
+let cardProductItemBuyingBtn = document.querySelector(
+  ".card-product-content-bottom-buying-btn"
+);
+// hide info products
+function hideInfoProduct() {
+  productInfo.classList.remove("open");
+  console.log(productInfo);
+}
+productInfo.addEventListener("click", hideInfoProduct);
 
 function productInfomation(id) {
-    for (let i = 0; i < product.length; i++) {
-      if (product[i].id == id) {
-        productInfo.innerHTML = `
+  for (let i = 0; i < product.length; i++) {
+    if (product[i].id == id) {
+      productInfo.innerHTML = `
           <div class="prodcts-info-container" onclick="stopPropagate(event)">
             
             <div class="product-info-item" >
@@ -74,66 +80,66 @@ function productInfomation(id) {
             </div>
           </div>
         `;
-      }
-    }
-    productInfoContainer = document.querySelector(".prodcts-info-container");
-    closeInfoProduct = document.querySelector(".products-container-close");
-    quantityProduct = document.getElementById("adjustProductQuantity-number");
-    btnIncreaseQuantity = document.getElementById(
-      "adjustProductQuantity-increase"
-    );
-    btnDecreaseQuantity = document.getElementById(
-      "adjustProductQuantity-decrease"
-    );
-    btnSubmitQuantity = document.getElementById(
-      "product-info-item-content-bottom-buying-btn"
-    );
-    productInfo.classList.add("open");
-  // check if quantity input <= 1 ,clock decrease button .
-    if (quantityProduct.value <= 1) {
-      btnDecreaseQuantity.classList.add("clockBtn");
     }
   }
+  productInfoContainer = document.querySelector(".prodcts-info-container");
+  closeInfoProduct = document.querySelector(".products-container-close");
+  quantityProduct = document.getElementById("adjustProductQuantity-number");
+  btnIncreaseQuantity = document.getElementById(
+    "adjustProductQuantity-increase"
+  );
+  btnDecreaseQuantity = document.getElementById(
+    "adjustProductQuantity-decrease"
+  );
+  btnSubmitQuantity = document.getElementById(
+    "product-info-item-content-bottom-buying-btn"
+  );
+  productInfo.classList.add("open");
+  // check if quantity input <= 1 ,clock decrease button .
+  if (quantityProduct.value <= 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
+}
 
 // Adjust quantity product
-  // click to increase quantity product
+// click to increase quantity product
 function increaseQuantity() {
-    var valueQuantityProduct = parseInt(quantityProduct.value);
-    quantity = valueQuantityProduct + 1;
-    quantityProduct.value = quantity;
-    if (quantityProduct.value > 1) {
-      btnDecreaseQuantity.classList.remove("clockBtn");
-    }
+  var valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct + 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
   }
-  
-  // click to decrease quantity product
-  
-  function decreaseQuantity() {
-    var valueQuantityProduct = parseInt(quantityProduct.value);
-    quantity = valueQuantityProduct - 1;
-    quantityProduct.value = quantity;
-    if (quantityProduct.value == 1) {
-      btnDecreaseQuantity.classList.add("clockBtn");
-    }
+}
+
+// click to decrease quantity product
+
+function decreaseQuantity() {
+  var valueQuantityProduct = parseInt(quantityProduct.value);
+  quantity = valueQuantityProduct - 1;
+  quantityProduct.value = quantity;
+  if (quantityProduct.value == 1) {
+    btnDecreaseQuantity.classList.add("clockBtn");
   }
-  
-  // get value when user enter value to input
-  var x=1;
-  var saveQuantity = 1;
-  function getValueUserEntered(e) {
-    x = parseInt(quantityProduct.value + e.key);
-    var y = parseInt(e.key);
-    // kiểm tra số lớn hơn 1 thì mở khóa nút giảm số lượng
-    if (x > 1 || y > 1) {
-      btnDecreaseQuantity.classList.remove("clockBtn");
-    } 
-    // kiểm tra số nhỏ hơn 1 thì cảnh báo
-    else if (x < 1 || y < 1) {
-      alert("Số lượng sản phẩm không nhỏ hơn 1!");
-      btnDecreaseQuantity.classList.add("clockBtn");
-    } 
-    // kiểm tra không là số thì cảnh báo
-    else if( isNaN(x) || isNaN(y)) {
-      alert("Số lượng sản phẩm phải là số!");
-    }
+}
+
+// get value when user enter value to input
+var x = 1;
+var saveQuantity = 1;
+function getValueUserEntered(e) {
+  x = parseInt(quantityProduct.value + e.key);
+  var y = parseInt(e.key);
+  // kiểm tra số lớn hơn 1 thì mở khóa nút giảm số lượng
+  if (x > 1 || y > 1) {
+    btnDecreaseQuantity.classList.remove("clockBtn");
   }
+  // kiểm tra số nhỏ hơn 1 thì cảnh báo
+  else if (x < 1 || y < 1) {
+    alert("Số lượng sản phẩm không nhỏ hơn 1!");
+    btnDecreaseQuantity.classList.add("clockBtn");
+  }
+  // kiểm tra không là số thì cảnh báo
+  else if (isNaN(x) || isNaN(y)) {
+    alert("Số lượng sản phẩm phải là số!");
+  }
+}
