@@ -3,7 +3,7 @@ const productInLocalStorage = localStorage.getItem("product");
 let product;
 if(productInLocalStorage != null) // kiểm tra xem localstore có mảng product chưa
 {
-  product =JSON.parse(localStorage.getItem("product"));
+  product = JSON.parse(localStorage.getItem("product"));
 }
 else
 {

@@ -456,6 +456,14 @@
 }
 
 
+
+.card-products-container .card-plus-product 
+{
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  font-size: 30px;
+
 .cart-container-top {
   text-align: center;
   line-height: 56.25px;
@@ -582,4 +590,5 @@
 
 .cart-container-bottom-buy:active {
   background: rgba(0, 0, 0, 0.8);
+
 }
