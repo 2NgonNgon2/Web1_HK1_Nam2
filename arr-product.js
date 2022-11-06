@@ -1,7 +1,7 @@
 // mảng sản phẩm
 const productInLocalStorage = localStorage.getItem("product");
 let product;
-if(productInLocalStorage != null) // kiêm tra xem localstore có mảng product chưa
+if(productInLocalStorage != null) // kiểm tra xem localstore có mảng product chưa
 {
   product =JSON.parse(localStorage.getItem("product"));
 }
