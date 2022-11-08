@@ -9,10 +9,10 @@
   width: 900px;
   max-width: calc(100% - 32px);
   display: flex;
-  animation: productInfoScrollDown 0.25s ease;
+  animation: ScrollDown 0.25s ease;
 }
 
-@keyframes productInfoScrollDown {
+@keyframes ScrollDown {
   from {
     opacity: 0;
     transform: translateY(-50px);

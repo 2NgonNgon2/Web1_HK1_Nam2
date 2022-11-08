@@ -16,7 +16,6 @@ let cardProductItemBuyingBtn = document.querySelector(
 // hide info products
 function hideInfoProduct() {
   productInfo.classList.remove("open");
-  console.log(productInfo);
 }
 productInfo.addEventListener("click", hideInfoProduct);
 

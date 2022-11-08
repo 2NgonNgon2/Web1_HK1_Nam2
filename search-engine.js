@@ -18,3 +18,9 @@ function searchEngine(event)
   createPageNum(tmpProduct);
   pageOneHandle();
 }
+
+function getEnterKey(event) {
+  if(event.keyCode == 13)
+  searchEngine(event);
+}
+search_inp.addEventListener('keypress',getEnterKey)

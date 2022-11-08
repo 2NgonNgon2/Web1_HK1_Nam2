@@ -10,10 +10,10 @@ let cartContainItem = "";
 let btnRemoveProductInCarts;
 let temp = []; // mảng đánh dấu sản phẩm đã có trong
 let k = 0;
-
 // show cart
 function showCart() {
   cart.classList.add("open");
+  backgroundLogin.style.display="none";
 }
 // hide cart
 function hideCart() {
@@ -120,30 +120,9 @@ function addProductToCartByInforProduct(id) {
   cartContainerMiddle.innerHTML =
     cartContainItem + cartContainerMiddle.innerHTML;
   // chạy for để tìm nút xóa sản phẩm
-  btnRemoveProductInCarts = document.getElementsByClassName(
-    "cart-container-middle-product-remove"
-  );
-  for (let index = 0; index < btnRemoveProductInCarts.length; index++) {
-    var btnRemoveProductInCart = btnRemoveProductInCarts[index];
-    btnRemoveProductInCart.addEventListener("click", function (e) {
-      // parent : thẻ cha của  btnRemoveProductInCarts
-      var parent = this.parentElement;
-      // sau đó từ parent suy ngược vào các thẻ con (children) để lấy giá trị
-      // parseInt thứ 1 trỏ tới  input value số lượng của product
-      // parseInt thứ 2 trỏ tới price của product
-      updateSubtractTotal(
-        parseInt(parent.children[2].children[0].value),
-        parseInt(parent.children[3].children[0].innerText)
-      );
-      // thay đổi tổng số tiền
-      updateTotal();
-      temp.splice(index, 1);
-
-      k--;
-      parent.remove();
-    });
-  }
+  removeCartItem()
   x = 1; //sau khi xong thì trả x về trạng thái ban đầu(x là input value trong cart)
+  hideInfoProduct();
 }
 
 function addProductToCartByCardProduct(id) {
@@ -216,12 +195,17 @@ function addProductToCartByCardProduct(id) {
   cartContainerMiddle.innerHTML =
     cartContainItem + cartContainerMiddle.innerHTML;
   // chạy for để tìm nút xóa sản phẩm
+  removeCartItem()
+}
+
+function removeCartItem() {
   btnRemoveProductInCarts = document.getElementsByClassName(
     "cart-container-middle-product-remove"
   );
   for (let index = 0; index < btnRemoveProductInCarts.length; index++) {
     var btnRemoveProductInCart = btnRemoveProductInCarts[index];
     btnRemoveProductInCart.addEventListener("click", function (e) {
+      temp.reverse();
       // parent : thẻ cha của  btnRemoveProductInCarts
       var parent = this.parentElement;
       // sau đó từ parent suy ngược vào các thẻ con (children) để lấy giá trị
@@ -234,7 +218,7 @@ function addProductToCartByCardProduct(id) {
       // thay đổi tổng số tiền
       updateTotal();
       temp.splice(index, 1);
-
+      temp.reverse();
       k--;
       parent.remove();
     });
