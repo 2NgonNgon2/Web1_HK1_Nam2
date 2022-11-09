@@ -17,14 +17,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="card-products.css" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="menu-product.css" />
-    <link rel="stylesheet" href="/header-banner/navigation.css" />
-    <link rel="stylesheet" href="/header-banner/signin-menu.css" />
-    <link rel="stylesheet" href="/header-banner/slider.css" />
-    <link rel="stylesheet" href="info-product.css" />
-    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="/assets/css/add-product-table.css">
+    <link rel="stylesheet" href="/assets/css/card-products.css">
+    <link rel="stylesheet" href="/assets/css/cart.css">
+    <link rel="stylesheet" href="/assets/css/info-product.css">
+    <link rel="stylesheet" href="/assets/css/menu-product.css">
+    <link rel="stylesheet" href="/assets/css/message.css">
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/signin-menu.css">
+    <link rel="stylesheet" href="/assets/css/slider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -33,21 +35,21 @@
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
-        <form action="" id="search_box">
-          <input
-            type="search"
-            id="search_text"
-            placeholder="Bạn muốn tìm gì !!!!"
-            value=""
-          />
-          <a
-            href="#product-display"
-            id="search_button"
-            onclick="searchEngine(event)"
-          >
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </a>
-        </form>
+          <form action="" id="search_box">
+            <input
+              type="search"
+              id="search_text"
+              placeholder="Bạn muốn tìm gì !!!!"
+              value=""
+            />
+            <a
+              href="#product-display"
+              id="search_button"
+              onclick="searchEngine(event)"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+          </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
           <li title="Nhấn để xem giỏ hàng"><i class="fa fa-cart-shopping shopping-icon" onclick="showCart();hideInfoProduct()"></i></li>
@@ -63,12 +65,6 @@
               </li>
               <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
                 <span class="dropdown-text" id="sign-up">Đăng kí</span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">Xem giỏ hàng</span>
-              </li>
-              <li class="dropdown-item">
-                <span class="dropdown-text">Đăng xuất</span>
               </li>
             </ul>
           </div>   
@@ -165,11 +161,11 @@
             <div class="slider-content-left">
               <div class="slider-content-left-top-container">
                 <div class="slider-content-left-top">
-                  <a href=""> <img src="/picture/slide1.jpg" alt="" /> </a>
-                  <a href=""> <img src="/picture/slide2.jpg" alt="" /> </a>
-                  <a href=""> <img src="/picture/slide3.jpg" alt="" /> </a>
-                  <a href=""> <img src="/picture/slide4.jpg" alt="" /> </a>
-                  <a href=""> <img src="/picture/slide5.jpg" alt="" /> </a>
+                  <a href=""> <img src="/assets/img/slide1.jpg" alt="" /> </a>
+                  <a href=""> <img src="/assets/img/slide2.jpg" alt="" /> </a>
+                  <a href=""> <img src="/assets/img/slide3.jpg" alt="" /> </a>
+                  <a href=""> <img src="/assets/img/slide4.jpg" alt="" /> </a>
+                  <a href=""> <img src="/assets/img/slide5.jpg" alt="" /> </a>
                 </div>
                 <div class="slider-content-left-top-next">
                   <i class="fa-solid fa-left-long"> </i>
@@ -201,16 +197,16 @@
             </div>
             <div class="slider-content-right">
               <li>
-                <a> <img src="/picture/d1.jfif" alt="" /> </a>
+                <a> <img src="/assets/img/d1.jfif" alt="" /> </a>
               </li>
               <li>
-                <a> <img src="/picture/d2.jfif" alt="" /> </a>
+                <a> <img src="/assets/img/d2.jfif" alt="" /> </a>
               </li>
               <li>
-                <a> <img src="/picture/d3.jfif" alt="" /> </a>
+                <a> <img src="/assets/img/d3.jfif" alt="" /> </a>
               </li>
               <li>
-                <a> <img src="/picture/d4.png" alt="" /> </a>
+                <a> <img src="/assets/img/d4.png" alt="" /> </a>
               </li>
             </div>
           </div>
@@ -237,7 +233,7 @@
         <div class="cart-container-middle">
           <!-- <div class="cart-container-middle-product">
             <div class="cart-container-middle-product-img">
-              <img src="picture/Gaming keyboard.webp" alt="">
+              <img src="/assets/img/Gaming keyboard.webp" alt="">
             </div>
             <div class="cart-container-middle-product-name">
               <div class="cart-container-middle-product-name-title">
@@ -302,7 +298,7 @@
           ></a>
           <img
             class="menu-items-img activeMenuItemImg"
-            src="picture/keyboard.jpg"
+            src="/assets/img/keyboard.jpg"
             alt="keyboard image"
             loading="lazy"
           />
@@ -316,7 +312,7 @@
           ></a>
           <img
             class="menu-items-img"
-            src="picture/headphone.png"
+            src="/assets/img/headphone.png"
             alt="keyboard image"
             loading="lazy"
           />
@@ -330,7 +326,7 @@
           ></a>
           <img
             class="menu-items-img"
-            src="picture/mouse.png"
+            src="/assets/img/mouse.png"
             alt="keyboard image"
             loading="lazy"
           />
@@ -344,7 +340,7 @@
           ></a>
           <img
             class="menu-items-img"
-            src="picture/speaker.png"
+            src="/assets/img/speaker.png"
             alt="keyboard image"
             loading="lazy"
           />
@@ -358,7 +354,7 @@
           ></a>
           <img
             class="menu-items-img"
-            src="picture/mousepads.png"
+            src="/assets/img/mousepads.png"
             alt="keyboard image"
             loading="lazy"
           />
@@ -372,7 +368,7 @@
 
           <img
             class="card-img"
-            src="picture/Gaming keyboard.webp"
+            src="/assets/img/Gaming keyboard.webp"
           />
 
           <div class="card-product-content">
@@ -419,7 +415,7 @@
       <!-- <div class="prodcts-info-container">
         
         <div class="product-info-item">
-          <img src="picture/Gaming keyboard.webp" class="product-info-img" alt="">
+          <img src="/assets/img/Gaming keyboard.webp" class="product-info-img" alt="">
           <div class="product-info-item-content">
             <div class="products-container-close" onclick="hideInfoProduct()">
               <i class="fa-solid fa-xmark"></i>
@@ -471,13 +467,17 @@
     </div>
     
   <!-- Java Script -->
-  <script src="arr-product.js"></script>
-  <script src="arr-account.js"></script>
-  <script src="menu-product.js"></script>
-  <script src="/header-banner/navigation.js"></script>
-  <script src="search-engine.js"></script>
-  <script src="/backToHome-button.js"></script>
-  <script src="/header-banner/slider.js"></script>
+    <script src="/assets/js/account.js"></script>
+    <script src="/assets/js/arr-account.js"></script>
+    <script src="/assets/js/arr-product.js"></script>
+    <script src="/assets/js/backToHome-button.js"></script>
+    <script src="/assets/js/cart.js"></script>
+    <script src="/assets/js/info-products.js"></script>
+    <script src="/assets/js/menu-product.js"></script>
+    <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/search-engine.js"></script>
+    <script src="/assets/js/slider.js"></script>
   <!-- <script src="search-engine.js"></script> -->
   </body>
 </html>

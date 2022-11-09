@@ -31,29 +31,7 @@ function displaySignMenu(input){
         // createMenu.style.display="none";
     }
 }
-function dangnhap(event){
-    var username = document.getElementById("name").value;
-	var password = document.getElementById("pass").value;
-    var userLocal=JSON.parse(localStorage.getItem(username));
 
-    if(username==userLocal.username && password==userLocal.password && userLocal.authority =="admin"){
-        alert("Dang nhap admin thanh cong");
-        event.preventDefault(); // ngăn form không bị reload sau khi submit
-        window.location.href = '/admin.html' ;
-
-    }
-    
-    else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
-        isSignedin = true;
-        isAdmin = false;
-        alert("Dang nhap user thanh cong");
-        event.preventDefault();
-        console.log("you are user");
-    }
-    else{
-        alert("Error!");
-    }   
-}
 
 
 
