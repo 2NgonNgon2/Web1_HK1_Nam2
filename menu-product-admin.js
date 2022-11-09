@@ -1,12 +1,13 @@
 const cardProduct = document.querySelector(".card-products-container");
-  
+const addProductContainer = document.querySelector(".add-product-container");
+
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
 let item = "";          // dùng để chứa các html product-items
 let isSignedin = true;
 let isAdmin = true;
 
-filterProductAdmin("keyboard")
+filterProductAdmin("keyboard");
 
 function filterProductAdmin(typeProduct) {
   item = "";
@@ -72,8 +73,7 @@ function filterProductAdmin(typeProduct) {
 function createPageNumAdmin(tmpProduct) {
   
   console.log(isAdmin);
-  let length = tmpProduct.length + 1;
-  let quantity = length / 8;
+  let quantity = tmpProduct.length / 8;
 
   if (quantity % 1 != 0) {
     quantity++;
@@ -133,13 +133,6 @@ function pageRenderAdmin(pageNumberClicked, lastPage) {
     for (let k = positionLoad; k < tmpProduct.length; k++) {
       renderProductAdmin(tmpProduct[k]);
     }
-    item += 
-    `
-    <div class="card-product-item card-plus-product" onclick="addProduct()">
-          <i class="fa-solid fa-plus"></i>
-          <span>ADD PRODUCT</span>
-      </div>
-    `
     item += createPageNumAdmin(tmpProduct); // thêm vào lại 3 cục div pageNumber
     cardProduct.innerHTML = item;
   }
@@ -179,7 +172,7 @@ function renderProductAdmin(product) {
   else
   {
     item += `
-        <div class="card-product-item" id="${product.id}" onclick="productInfomation(${product.id})">
+        <div class="card-product-item" id="${product.id}" >
           <img
             class="card-img"
             src="${product.img}"
@@ -193,7 +186,7 @@ function renderProductAdmin(product) {
             </div>
             <div class="card-product-content-bottom">
 
-            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);editProduct();">
+            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);openEditProductTable(${product.id});">
               <i class="fa-solid fa-gear"></i>
               CHỈNH SỬA
             </div>
@@ -216,3 +209,186 @@ function renderProductAdmin(product) {
       `;
   }
 }
+
+function addProductToProductArray(event)
+{
+  event.preventDefault();
+  const productType = document.querySelector("#select-type").value;
+  const productName = document.querySelector("#productName").value;
+  const productDescription = document.querySelector("#productDescription").value;
+  const productImage = document.querySelector("#productImage").value;
+  const productPrice = document.querySelector("#productPrice").value;
+  const productQuantity = document.querySelector("#productQuantity").value; 
+  console.log(productType);
+  
+  let productAdd = {};
+  let length = product.length+1;
+  let maxLength = length +  parseInt(productQuantity) ;
+  for(let i = length; i < maxLength; i++)
+  {
+    console.log("add product");
+    productAdd = {
+      id: `${i}`,
+      type: productType,
+      name: productName,
+      description: productDescription,
+      img: productImage,
+      price: productPrice,
+    };
+
+    product.push(productAdd);
+    }
+  
+  localStorage.setItem("product",JSON.stringify(product));
+  alert("Thêm sản phẩm thành công!");
+  location.reload();
+}
+
+function openAddProductTable()
+{
+  console.log("mở bảng thêm sản phẩm!");
+  addProductContainer.style.display = "flex";
+}
+
+function closeAddProductTable(event)
+{
+  console.log("đóng bảng thêm sản phẩm!");
+  addProductContainer.style.display = "none";
+}
+
+function stopPropagate(e) {
+  console.log("stopPropagate");
+  e.stopPropagation();
+}
+
+const editProductTable = document.querySelector(".edit-product-container");
+const productType = document.querySelector("#select-type-edit");
+const productName = document.querySelector("#productNameEdit");
+const productDescription = document.querySelector("#productDescriptionEdit");
+const productImage = document.querySelector("#productImageEdit");
+const productPrice = document.querySelector("#productPriceEdit");
+const id = document.querySelector("#productId");
+
+function openEditProductTable(productId)
+{
+
+  console.log(product[productId-1]);
+  productType.value = product[productId-1].type
+  productName.value = product[productId-1].name
+  productDescription.value = product[productId-1].description
+  productImage.value = product[productId-1].img;
+  productPrice.value = product[productId-1].price;
+  id.value = productId;
+  editProductTable.style.display = "flex";
+}
+
+function editProductToProductArray(event)
+{
+  event.preventDefault();
+  console.log(product[id.value - 1]);
+  product[id.value - 1].type = productType.value ;
+  product[id.value - 1].name = productName.value;
+  product[id.value - 1].description = productDescription.value ;
+  product[id.value - 1].img = productImage.value  ;
+  product[id.value - 1].price =productPrice.value  ;
+
+  localStorage.removeItem("product");
+  localStorage.setItem("product",JSON.stringify(product));
+  alert("Cập nhật sản phẩm thành công!");
+  window.location.reload();
+}
+
+function closeEditProductTable(event)
+{
+  console.log("đóng bảng thêm sản phẩm!");
+  editProductTable.style.display = "none";
+}
+
+
+const deleteProductTable = document.querySelector(".delete-product-container");
+const deleteItemContainer = document.querySelector(".delete-item-container");
+
+function deleteProductFromProductArray(event)
+{
+  event.preventDefault();
+  const deleteItem = document.querySelectorAll(".deleteItem");
+  let itemNeedToRemove = [];
+  deleteItem.forEach((element,index) => {
+    if(element.checked == true)
+    {
+      itemNeedToRemove.push(element.value);
+    }
+  });
+  console.log(itemNeedToRemove);
+
+  let k=0;
+  for(let i=0; i<product.length;i++)
+  {
+    if((product[i].id == itemNeedToRemove[k]) && k != itemNeedToRemove.length)
+    {
+      console.log("remove id: " + product[i].id);
+      product.splice(i,1);
+      k++;
+    }
+    
+  }
+  localStorage.removeItem("product");
+  localStorage.setItem("product",JSON.stringify(product));
+  alert("Xóa sản phẩm thành công!");
+  location.reload();
+}
+
+function openDeleteProductTable()
+{
+  console.log("mở bảng thêm sản phẩm!");
+  deleteProductTable.style.display = "flex";
+  let deleteItem="";
+
+  for(let i = 0; i < tmpProduct.length; i++)
+  {
+    deleteItem += 
+    `
+    <div class="input-label">
+            <input type="checkbox" name="deleteItem" class="deleteItem" value="${tmpProduct[i].id}">
+            <label for="deleteItem" class="delete-item">
+              <img class="delete-item-img" src="${tmpProduct[i].img}">
+              <div class="delete-item-name">${tmpProduct[i].name}</div>  
+              <div class="delete-item-price">${tmpProduct[i].price}</div>
+            </label>
+    </div>
+    `
+  }
+  deleteItemContainer.innerHTML = deleteItem;
+}
+
+function closeDeleteProductTable(event)
+{
+  console.log("đóng bảng thêm sản phẩm!");
+  deleteProductTable.style.display = "none";
+}
+
+// hold active menu-items
+const menuItems = document.querySelectorAll(".menu-items");
+const menuItemsImg = document.querySelectorAll(".menu-items-img");
+const menuItemsOverlay = document.querySelectorAll(".overlay");
+
+menuItems.forEach((menuItem, index) => {
+  const menuItemImg = menuItemsImg[index];
+  const menuItemOverlay = menuItemsOverlay[index];
+
+  menuItem.onclick = function () {
+    document
+      .querySelector(".menu-items.activeMenuItems")
+      .classList.remove("activeMenuItems");
+    document
+      .querySelector(".overlay.activeMenuItemOverlay")
+      .classList.remove("activeMenuItemOverlay");
+    document
+      .querySelector(".menu-items-img.activeMenuItemImg")
+      .classList.remove("activeMenuItemImg");
+
+    this.classList.add("activeMenuItems");
+    menuItemOverlay.classList.add("activeMenuItemOverlay");
+    menuItemImg.classList.add("activeMenuItemImg");
+  };
+});

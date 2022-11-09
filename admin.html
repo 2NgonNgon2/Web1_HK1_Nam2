@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="menu-product.css" />
     <link rel="stylesheet" href="/header-banner/navigation.css">
     <link rel="stylesheet" href="/header-banner/signin-menu.css">
+    <link rel="stylesheet" href="/add-product-table.css">
+    <link rel="stylesheet" href="/edit-product-table.css">
+    <link rel="stylesheet" href="/delete-product-table.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -29,7 +33,6 @@
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
-          <li><i class="fa fa-cart-shopping shopping-icon"></i></li>
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
@@ -37,14 +40,17 @@
               <i class="fa fa-caret-down dropdown-caret"></i>
             </div>
             <ul class="dropdown-list">
-              <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
+              <!-- <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
                 <span class="dropdown-text" id="sign-in">Đăng nhập</span>
               </li>
               <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
                 <span class="dropdown-text" id="sign-up">Đăng kí</span>
+              </li> -->
+              <li class="dropdown-item">
+                <span class="dropdown-text">Xem đơn hàng</span>
               </li>
               <li class="dropdown-item">
-                <span class="dropdown-text">Xem giỏ hàng</span>
+                <span class="dropdown-text">Quản lí khách hàng</span>
               </li>
               <li class="dropdown-item">
                 <span class="dropdown-text">Đăng xuất</span>
@@ -54,7 +60,7 @@
       </ul>
     </header>
     <!-- Sign in menu -->
-    <div class="signin" id="login">
+    <!-- <div class="signin" id="login">
         <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
         <h2 class="signin-heading">Log in</h2>
         <p class="signin-already" id="signin-already">
@@ -75,7 +81,7 @@
                 </button>
           </div>
         </form>
-      </div>
+      </div> -->
       <!-- Sign up menu -->
       <!--<div class="signin" id="create">
         <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
@@ -119,10 +125,94 @@
     </div>
 
 
+    <!-- add products -->
+    <div class="add-product-container" onclick="closeAddProductTable(event)">
+      
+        <form class="add-product-table" onclick="stopPropagate(event)" onsubmit="addProductToProductArray(event)">
+          <div class="exit-add-product-table" onclick="closeAddProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">ADD PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="mousepad">mousepad</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="text" name="productImage" id="productImage" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
+            <label for="productQuantity">Số lượng:</label>
+            <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10">  
+            <div class="save-product-btn">
+              <button type="submit">SAVE</button>
+            </div>
+        </form>
 
+    </div>
 
-    <div class="products">
+    <div class="edit-product-container" onclick="closeEditProductTable(event)">
+      
+        <form class="edit-product-table" onclick="stopPropagate(event)" onsubmit="editProductToProductArray(event)">
+          <div class="exit-edit-product-table" onclick="closeEditProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">EDIT PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type-edit">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="mousepad">mousepad</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productNameEdit" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescriptionEdit" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="text" name="productImage" id="productImageEdit" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">              
+            <input type="number" name="productId" value="" id="productId" style="display: none;">
+            <div class="save-product-btn">
+              <button type="submit">SAVE CHANGE</button>
+            </div>
+        </form>
 
+    </div>
+
+    <div class="delete-product-container" onclick="closeDeleteProductTable()">
+      
+      <form class="delete-product-table" onclick="stopPropagate(event)" onsubmit="deleteProductFromProductArray(event)">
+        <div class="exit-delete-product-table" onclick="closeDeleteProductTable()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="title">DELETE PRODUCT</div>
+        <div class="delete-item-container">
+          <!-- <div class="input-label">
+            <input type="checkbox" name="deleteItem" id="item-id" value="productid">
+            <label for="deleteItem" class="delete-item">
+              <img class="delete-item-img" src="/picture/Gaming keyboard.webp">
+              <div class="delete-item-name">haha123</div>  
+              <div class="delete-item-price">69999</div>
+            </label>
+          </div> -->
+        </div>
+
+        <div class="save-product-btn">
+          <button type="submit">DELETE</button>
+        </div>
+
+      </form>
+    </div>
 
 <!-- Card products -->
     <div class="card-products">
@@ -131,7 +221,7 @@
         <div class="menu-title">Danh mục sản phẩm</div>
         
         <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
-          <a  href="#product-display" class="overlay activeMenuItemOverlay " onclick="filterProduct('keyboard') " ></a>
+          <a  href="#product-display" class="overlay activeMenuItemOverlay " onclick="filterProductAdmin('keyboard') " ></a>
           <img class="menu-items-img activeMenuItemImg" src="picture/keyboard.jpg" alt="keyboard image" loading="lazy">
         </div>
   
@@ -154,6 +244,19 @@
           <a  href="#product-display" class="overlay" onclick="filterProductAdmin('mousepad')"></a>
           <img class="menu-items-img" src="picture/mousepads.png" alt="keyboard image" loading="lazy">
         </div>
+      </div>
+
+      <div class="add-delete-product-button">
+        <abbr title="DELETE PRODUCT">
+          <div class="delete-button" onclick="openDeleteProductTable()" >
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </abbr>
+        <abbr title="ADD PRODUCT">
+          <div class="add-button" onclick="openAddProductTable()" >
+            <i class="fa-regular fa-square-plus"></i>
+          </div>
+        </abbr>
       </div>
 
       <div class="card-products-container">
@@ -192,77 +295,12 @@
           </div>
         </div> -->
 
-        
-        <!-- <div class="card-product-item card-plus-product" onclick="addProduct()">
-            <i class="fa-solid fa-plus"></i>
-            <span>ADD PRODUCT</span>
-        </div>
-
         <div class="menu-card-products-page-number">
-          <div class="pageNumber" onclick="pageRender(1)"></div>
+          <!-- <div class="pageNumber" onclick="pageRender(1)"></div>
           <div class="pageNumber" onclick="pageRender(2)">2</div>
-          <div class="pageNumber" onclick="pageRender(3)">3</div> 
-        </div>  -->
+          <div class="pageNumber" onclick="pageRender(3)">3</div>  -->
+        </div> 
       </div>
-    </div>
-
-    
-    <!-- Products info -->
-
-
-    <div  id="products-info" onclick="hideInfoProduct()">
-      <!-- <div class="prodcts-info-container">
-        
-        <div class="product-info-item">
-          <img src="picture/Gaming keyboard.webp" class="product-info-img" alt="">
-          <div class="product-info-item-content">
-            <div class="prodcts-info-container-close" onclick="hideInfoProduct()">
-              <i class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="product-info-item-content-top">
-              <div class="product-info-item-content-top-title card-title">
-                Bàn phím cơ không dây</div>
-              <div class="product-info-item-content-top-label-card-title card-title">Keyboard for gamer</div>
-            </div>
-
-            <div class="product-info-item-content-middle">
-                <div class="product-info-item-content-middle-title">
-                    Product info
-                </div>
-
-                <div class="product-info-item-content-middle-content">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam, a voluptatibus recusandae commodi culpa voluptas repellat maiores quis modi quia aut tenetur dignissimos aperiam sed fugiat nemo praesentium laudantium quas.
-                </div>
-            </div>
-
-            <form action="" class="product-info-item-content-bottom">
-
-              <div class="adjustProductQuantity">
-                <div class="adjustProductQuantity-title">Số lượng : </div>
-                  <div class="adjustProductQuantity-btn">
-                    <button  type="button" id="adjustProductQuantity-decrease"><i class="fa-sharp fa-solid fa-minus adjustProductQuantity-decrease-icon"></i></button>
-                    <input name="quantity" id="adjustProductQuantity-number" type="text" value="1">
-                    <button type="button" id="adjustProductQuantity-increase"><i class="fa-regular fa-plus adjustProductQuantity-increase-icon"></i></button>
-                  </div>
-              </div>
-
-              <div class="product-info-item-content-bottom-buying">
-                <div class="product-info-item-content-bottom-buying-price">
-                  <span class="product-info-item-content-priceNumber">500.000</span> 
-                  <span class="product-info-item-content-priceIcon">₫</span>
-                </div>
-                <div id="product-info-item-content-bottom-buying-btn">
-
-                  <i class="fa-solid fa-cart-shopping product-info-item-icon-btn-shop"></i>
-                  <input type="button" value="Thêm giỏ hàng" id="product-info-item-content-bottom-buying-btn-input">
-                  
-                </div>
-              </div>
-             
-            </form>
-          </div>
-        </div>
-      </div> -->
     </div>
     
   <!-- Java Script -->
