@@ -36,6 +36,7 @@
   font-size: 20px;
   font-weight: bold;
   background: linear-gradient(21deg, rgba(179,184,40,1) 0%, rgba(14,79,75,1) 30%, rgba(0,0,0,1) 100%);
+  border-radius: 29px 29px 0 0;
   color: whitesmoke;
 }
 
