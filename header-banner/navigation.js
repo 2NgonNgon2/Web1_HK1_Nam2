@@ -42,10 +42,9 @@ function dangnhap(event){
     
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         isSignedin = true;
-        isAdmin = false;
         alert("Dang nhap user thanh cong");
+        var loginMenu = document.getElementById("login").style.display = "none";
         event.preventDefault();
-        console.log("you are user");
     }
     else{
         alert("Error!");

@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/header-banner/navigation.css">
     <link rel="stylesheet" href="/header-banner/signin-menu.css">
     <link rel="stylesheet" href="/add-product-table.css">
+    <link rel="stylesheet" href="/edit-product-table.css">
+    <link rel="stylesheet" href="/delete-product-table.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -126,7 +129,7 @@
           <div class="exit-add-product-table" onclick="closeAddProductTable()">
             <i class="fa-solid fa-xmark"></i>
           </div>
-            <div class="title">EDIT PRODUCT</div>
+            <div class="title">ADD PRODUCT</div>
             <label for="type">Type: </label>
             <select name="productType" id="select-type">
               <option value="keyboard">keyboard</option>
@@ -152,6 +155,61 @@
 
     </div>
 
+    <div class="edit-product-container" onclick="closeEditProductTable(event)">
+      
+        <form class="edit-product-table" onclick="stopPropagate(event)" onsubmit="editProductToProductArray(event)">
+          <div class="exit-edit-product-table" onclick="closeEditProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">EDIT PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type-edit">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="mousepad">mousepad</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productNameEdit" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescriptionEdit" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="text" name="productImage" id="productImageEdit" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">              
+            <input type="number" name="productId" value="" id="productId" style="display: none;">
+            <div class="save-product-btn">
+              <button type="submit">SAVE CHANGE</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="delete-product-container" onclick="closeDeleteProductTable()">
+      
+      <form class="delete-product-table" onclick="stopPropagate(event)" onsubmit="deleteProductFromProductArray(event)">
+        <div class="exit-delete-product-table" onclick="closeDeleteProductTable()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="title">DELETE PRODUCT</div>
+        <div class="delete-item-container">
+          <!-- <div class="input-label">
+            <input type="checkbox" name="deleteItem" id="item-id" value="productid">
+            <label for="deleteItem" class="delete-item">
+              <img class="delete-item-img" src="/picture/Gaming keyboard.webp">
+              <div class="delete-item-name">haha123</div>  
+              <div class="delete-item-price">69999</div>
+            </label>
+          </div> -->
+        </div>
+
+        <div class="save-product-btn">
+          <button type="submit">DELETE</button>
+        </div>
+
+      </form>
+    </div>
 
 <!-- Card products -->
     <div class="card-products">
@@ -183,6 +241,19 @@
           <a  href="#product-display" class="overlay" onclick="filterProductAdmin('mousepad')"></a>
           <img class="menu-items-img" src="picture/mousepads.png" alt="keyboard image" loading="lazy">
         </div>
+      </div>
+
+      <div class="add-delete-product-button">
+        <abbr title="DELETE PRODUCT">
+          <div class="delete-button" onclick="openDeleteProductTable()" >
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </abbr>
+        <abbr title="ADD PRODUCT">
+          <div class="add-button" onclick="openAddProductTable()" >
+            <i class="fa-regular fa-square-plus"></i>
+          </div>
+        </abbr>
       </div>
 
       <div class="card-products-container">
@@ -220,12 +291,6 @@
           </div>
           </div>
         </div> -->
-
-        
-        <!-- <div class="card-product-item card-plus-product" onclick="addProduct()">
-            <i class="fa-solid fa-plus"></i>
-            <span>ADD PRODUCT</span>
-        </div>
 
         <div class="menu-card-products-page-number">
           <div class="pageNumber" onclick="pageRender(1)"></div>
