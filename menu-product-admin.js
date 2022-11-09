@@ -73,8 +73,7 @@ function filterProductAdmin(typeProduct) {
 function createPageNumAdmin(tmpProduct) {
   
   console.log(isAdmin);
-  let length = tmpProduct.length + 1;
-  let quantity = length / 8;
+  let quantity = tmpProduct.length / 8;
 
   if (quantity % 1 != 0) {
     quantity++;
@@ -173,7 +172,7 @@ function renderProductAdmin(product) {
   else
   {
     item += `
-        <div class="card-product-item" id="${product.id}" onclick="productInfomation(${product.id})">
+        <div class="card-product-item" id="${product.id}" >
           <img
             class="card-img"
             src="${product.img}"
@@ -367,3 +366,29 @@ function closeDeleteProductTable(event)
   console.log("đóng bảng thêm sản phẩm!");
   deleteProductTable.style.display = "none";
 }
+
+// hold active menu-items
+const menuItems = document.querySelectorAll(".menu-items");
+const menuItemsImg = document.querySelectorAll(".menu-items-img");
+const menuItemsOverlay = document.querySelectorAll(".overlay");
+
+menuItems.forEach((menuItem, index) => {
+  const menuItemImg = menuItemsImg[index];
+  const menuItemOverlay = menuItemsOverlay[index];
+
+  menuItem.onclick = function () {
+    document
+      .querySelector(".menu-items.activeMenuItems")
+      .classList.remove("activeMenuItems");
+    document
+      .querySelector(".overlay.activeMenuItemOverlay")
+      .classList.remove("activeMenuItemOverlay");
+    document
+      .querySelector(".menu-items-img.activeMenuItemImg")
+      .classList.remove("activeMenuItemImg");
+
+    this.classList.add("activeMenuItems");
+    menuItemOverlay.classList.add("activeMenuItemOverlay");
+    menuItemImg.classList.add("activeMenuItemImg");
+  };
+});
