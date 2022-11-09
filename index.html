@@ -56,7 +56,7 @@
         </form>
         <li><a href="#banner">Home</a></li>
         <li><a href="#menu">Product</a></li>
-        <li title="Nhấn để xem giỏ hàng">
+        <li title="Nhấn để xem giỏ hàng" class="shopping-icon-header">
           <i
             class="fa fa-cart-shopping shopping-icon"
             onclick="showCart();hideInfoProduct()"
@@ -76,9 +76,6 @@
               <span class="dropdown-text" id="sign-up">Đăng kí</span>
             </li>
             <li class="dropdown-item">
-              <span class="dropdown-text">Xem giỏ hàng</span>
-            </li>
-            <li class="dropdown-item">
               <span class="dropdown-text">Đăng xuất</span>
             </li>
           </ul>
@@ -86,7 +83,8 @@
       </ul>
     </header>
     <!-- Sign in menu -->
-    <div class="signin" id="login">
+    <div id="sigin-background">
+      <div class="signin" id="login">
       <a class="signin-icon" onclick="displaySignMenu('none')">
         <i class="fa-solid fa-xmark"></i
       ></a>
@@ -119,6 +117,7 @@
           </button>
         </div>
       </form>
+      </div>
     </div>
     <!-- Sign up menu -->
     <!--<div class="signin" id="create">
@@ -478,6 +477,9 @@
         </div>
       </div> -->
     </div>
+
+    <!-- message -->
+    <div ></div>
 
     <!-- Java Script -->
     <script src="arr-product.js"></script>
