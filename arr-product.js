@@ -19,10 +19,10 @@ else
   {
     id: "2",
     type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
+    name: "Chuột Gaming Yindiao A5",
+    description: "Bluetooth/Wireless,pin Sạc E-sports, Led RBG 7 màu - Chính Hãng",
+    img: "/picture/ChuộtGamingYindiaoA5.webp",
+    price: "269.000",
   },
   {
     id: "3",
@@ -83,10 +83,10 @@ else
   {
     id: "10",
     type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
+    name: "Chuột gaming không dây DARE-U RGB",
+    description: "Độ trễ thấp, phạm vi hoạt động hiệu quả 10m không vật cản",
+    img: "/picture/Chuột gaming không dây DARE-U RGB.webp",
+    price: "719.000",
   },
   {
     id: "11",
@@ -147,10 +147,10 @@ else
   {
     id: "18",
     type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
+    name: "Chuột gaming Newmen G11 ",
+    description: "Bi trọng lực tích hợp giúp chuột định vị chính xác trong game",
+    img: "/picture/Chuột gaming Newmen G11.webp",
+    price: "179.000",
   },
   {
     id: "19",
@@ -211,10 +211,10 @@ else
   {
     id: "26",
     type: "mouse",
-    name: "chuot gaming 69",
-    description: "Mouse for magaming",
-    img: "/picture/mouse.png",
-    price: "369.000",
+    name: "Chuột gaming Logitech G502 HERO",
+    description: "Cảm biến: HERO ,độ phân giải: 16000 DPI",
+    img: "/picture/Chuột gaming Logitech G502 HERO.webp",
+    price: "999.000",
   },
   {
     id: "27",
