@@ -49,8 +49,8 @@ header .navigation
 header .navigation li 
 {
 	list-style: none;
-	padding-left: 20px;
-	
+	padding-left: 10px;
+	padding-right: 10px;
 }
 header .navigation li a 
 {
@@ -64,7 +64,7 @@ header.sticky .navigation li a
 }
 header .navigation li a:hover
 {
-	color: #66ff33;
+	color: #FF6F00;
 }
 .banner
 {
@@ -115,7 +115,7 @@ header .navigation li a:hover
 {
 	width: 100%;
 	max-width: 100rem;
-	margin-left: 30px;
+	position: relative;
 }
 .dropdown-select
 {
@@ -132,13 +132,14 @@ header.sticky .dropdown .dropdown-select {
 }
 .dropdown-select .dropdown-user
 {
-	padding-right: 5px;
+	padding-right: 10px;
 }
 .dropdown-list
 {
 	margin-top: 20px;
 	position: absolute;
 	display: none;
+	width: 100%;
 }
 .dropdown-list::before
 {
@@ -186,7 +187,7 @@ header.sticky .dropdown .dropdown-select {
 }
 .dropdown-item:first-child:hover:before
 {
-	border-bottom: 10px solid #33ccff;
+	border-bottom: 10px solid #FF6F00;
 }
 .dropdown-item:last-child
 {
@@ -194,7 +195,7 @@ header.sticky .dropdown .dropdown-select {
 }
 .dropdown-item:hover
 {
-	background-color: #33ccff;
+	background-color: #FF6F00;
 }
 header.sticky .dropdown-list
 {
@@ -229,7 +230,7 @@ header.sticky .dropdown-list
 header.sticky #search_box
 {
 	background: #eee;
-	border: 1px solid #eee;
+	border: 0.25px solid #eee;
 }
 .shopping-icon:hover
 {
@@ -239,6 +240,7 @@ header.sticky #search_box
 {
 	color: white;
 	scale: 130%;
+	cursor: pointer;
 }
 header.sticky .shopping-icon
 {
