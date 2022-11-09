@@ -55,6 +55,7 @@ function dangnhap(event){
         var loginMenu = document.getElementById("login").style.display = "none";
         event.preventDefault();
         backgroundLogin.style.display="none";
+        console.log("you are user");
     }
     else{
         alert("Error!");
