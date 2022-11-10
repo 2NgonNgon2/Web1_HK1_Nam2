@@ -30,7 +30,7 @@ function dangnhap(event){
     if(isSignedin){
         document.querySelector("span.dropdown-select").innerHTML=userLocal.username;  
         var dropdown_list = document.querySelector(".dropdown .dropdown-list");
-            dropdown_list.innerHTML+=`
+            dropdown_list.innerHTML=`
                 <li class="dropdown-item">
                     <span class="dropdown-text">Thông tin cá nhân</span>
                 </li>
@@ -69,7 +69,7 @@ function dangnhap(event){
         }  
         document.querySelector("span.dropdown-select").innerHTML="My account"; 
     }); 
-    
+    backgroundLogin.style.display="none";
 }
 
 

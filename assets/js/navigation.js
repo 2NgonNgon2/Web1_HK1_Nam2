@@ -20,6 +20,7 @@ function displaySignMenu(input){
     {
         backgroundLogin.style.display="flex";
         // createMenu.style.display="none";
+        hideInfoProduct();
     }
     else if(input=="Sign up")
     {
@@ -30,6 +31,7 @@ function displaySignMenu(input){
         backgroundLogin.style.display="none";
         // createMenu.style.display="none";
     }
+  
 }
 
 

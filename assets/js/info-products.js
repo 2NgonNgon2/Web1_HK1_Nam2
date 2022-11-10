@@ -46,7 +46,7 @@ function productInfomation(id) {
                     </div>
   
                     <div class="product-info-item-content-middle-content">
-                        ${product[i].description}
+                        ${product[i].detail}
                     </div>
                 </div>
   
