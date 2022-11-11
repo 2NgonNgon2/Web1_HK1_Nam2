@@ -209,7 +209,7 @@ function removeCartItem() {
       // parent : thẻ cha của  btnRemoveProductInCarts
       var parent = this.parentElement;
       // sau đó từ parent suy ngược vào các thẻ con (children) để lấy giá trị
-      // parseInt thứ 1 trỏ tới  input value số lượng của product
+      // parseInt thứ 1 trỏ tới  input value số lượng của product trong cart
       // parseInt thứ 2 trỏ tới price của product
       updateSubtractTotal(
         parseInt(parent.children[2].children[0].value),

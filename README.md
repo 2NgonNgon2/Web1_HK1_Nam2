@@ -1,7 +1,15 @@
-# git-project-banlinhkien
-WEB PROJECT bán linh kiện điện tử
+# Đồ án môn lập trình web 1
+
+## WEB PROJECT bán linh kiện điện tử
 
 ## project description
+## Thành viên nhóm 13:
+|STT  |MSSV        |Họ và tên       |
+|:--:|:----------:|----------------|
+|1    |3121560051  |[Nguyễn Hoàng Luân]|
+|2    |3121410271  |[Nguyễn Anh Khoa]|
+|3    |3121410212  |[Nguyễn Huy Hoàng]|
+|4    |3121410182  |[Trần Vĩ Hào]|
 
 Project cua nhom 13 mon LT. WEB
 
