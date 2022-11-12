@@ -14,7 +14,7 @@ else
     id: "1",
     type: "keyboard",
     name: "ban phim co 69",
-    price: "699.000",
+    price: "699000",
     description: "Keyboard for gamer",
     img: "/assets/img/ban-phim-co-dareu-a98-rgb-04-400x400.jpg",
   },
@@ -24,7 +24,7 @@ else
     name: "Chuột Gaming Yindiao A5",
     description: "Bluetooth/Wireless,pin Sạc E-sports, Led RBG 7 màu - Chính Hãng",
     img: "/assets/img/ChuộtGamingYindiaoA5.webp",
-    price: "269.000",
+    price: "269000",
   },
   {
     id: "3",
@@ -32,7 +32,7 @@ else
     name: "ban phim vjp pro max 69",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "4",
@@ -40,7 +40,7 @@ else
     name: "lót chuột pro max",
     description: "Mouse pad for wibu ",
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "5",
@@ -48,7 +48,7 @@ else
     name: "loa xập xình",
     description: " loa cho dan choi",
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "6",
@@ -56,7 +56,7 @@ else
     name: "lót chuột siêu vjp pro",
     description: "lot chuot cho dan vjp",
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "7",
@@ -64,7 +64,7 @@ else
     name: "tai nghe vjp pro cho dân quẩy",
     description: "tai nghe hiphop",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "8",
@@ -72,13 +72,13 @@ else
     name: "tai nghe cho người điếc",
     description: "tai nghe magaming",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "9",
     type: "keyboard",
     name: "ban phim co 69",
-    price: "699.000",
+    price: "699000",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
   },
@@ -88,7 +88,7 @@ else
     name: "Chuột gaming không dây DARE-U RGB",
     description: "Độ trễ thấp, phạm vi hoạt động hiệu quả 10m không vật cản",
     img: "/assets/img/Chuột gaming không dây DARE-U RGB.webp",
-    price: "719.000",
+    price: "719000",
   },
   {
     id: "11",
@@ -96,7 +96,7 @@ else
     name: "ban phim vjp pro max 69",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "12",
@@ -104,7 +104,7 @@ else
     name: "lót chuột pro max",
     description: "Mouse pad for wibu ",
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "13",
@@ -112,7 +112,7 @@ else
     name: "loa xập xình",
     description: " loa cho dan choi",
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "14",
@@ -120,7 +120,7 @@ else
     name: "lót chuột siêu vjp pro",
     description: "lot chuot cho dan vjp",
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "15",
@@ -128,7 +128,7 @@ else
     name: "tai nghe vjp pro cho dân quẩy",
     description: "tai nghe hiphop",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "16",
@@ -136,7 +136,7 @@ else
     name: "tai nghe cho người điếc",
     description: "tai nghe magaming",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "17",
@@ -144,7 +144,7 @@ else
     name: "ban phim vjp pro max 69",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "18",
@@ -152,7 +152,7 @@ else
     name: "Chuột gaming Newmen G11 ",
     description: "Bi trọng lực tích hợp giúp chuột định vị chính xác trong game",
     img: "/assets/img/Chuột gaming Newmen G11.webp",
-    price: "179.000",
+    price: "179000",
   },
   {
     id: "19",
@@ -160,7 +160,7 @@ else
     name: "ban phim vjp pro max 69",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "20",
@@ -168,7 +168,7 @@ else
     name: "lót chuột pro max",
     description: "Mouse pad for wibu ",
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "21",
@@ -176,7 +176,7 @@ else
     name: "loa xập xình",
     description: " loa cho dan choi",
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "22",
@@ -184,7 +184,7 @@ else
     name: "lót chuột siêu vjp pro",
     description: "lot chuot cho dan vjp",
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "23",
@@ -192,7 +192,7 @@ else
     name: "tai nghe vjp pro cho dân quẩy",
     description: "tai nghe hiphop",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "24",
@@ -200,13 +200,13 @@ else
     name: "tai nghe cho người điếc",
     description: "tai nghe magaming",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "25",
     type: "keyboard",
     name: "ban phim co 69",
-    price: "699.000",
+    price: "699000",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
   },
@@ -216,7 +216,7 @@ else
     name: "Chuột gaming Logitech G502 HERO",
     description: "Cảm biến: HERO ,độ phân giải: 16000 DPI",
     img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
-    price: "999.000",
+    price: "999000",
   },
   {
     id: "27",
@@ -224,7 +224,7 @@ else
     name: "ban phim nhu con cac",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "28",
@@ -232,7 +232,7 @@ else
     name: "lót chuột pro max",
     description: "Mouse pad for wibu ",
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "29",
@@ -240,7 +240,7 @@ else
     name: "loa xập xình",
     description: " loa cho dan choi",
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "30",
@@ -248,7 +248,7 @@ else
     name: "lót chuột siêu vjp pro",
     description: "lot chuot cho dan vjp",
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "31",
@@ -256,7 +256,7 @@ else
     name: "tai nghe vjp pro cho dân quẩy",
     description: "tai nghe hiphop",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "32",
@@ -264,7 +264,7 @@ else
     name: "tai nghe cho người điếc",
     description: "tai nghe magaming",
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "33",
@@ -272,7 +272,7 @@ else
     name: "ban phim du ma js nhu l",
     description: "Keyboard for gamer",
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
 ];
 localStorage.setItem("product",JSON.stringify(product));

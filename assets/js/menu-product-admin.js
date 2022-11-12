@@ -210,30 +210,42 @@ function renderProductAdmin(product) {
   }
 }
 
-function addProductToProductArray(event)
+async function addProductToProductArray(event)
 {
   event.preventDefault();
   const productType = document.querySelector("#select-type").value;
   const productName = document.querySelector("#productName").value;
   const productDescription = document.querySelector("#productDescription").value;
-  const productImage = document.querySelector("#productImage").value;
+  //const productImage = document.querySelector("#productImage").files[0].name  ;
   const productPrice = document.querySelector("#productPrice").value;
   const productQuantity = document.querySelector("#productQuantity").value; 
-  console.log(productType);
-  
+  console.log(productImage);
+
+  let priceFormated = format1(productPrice);
+
   let productAdd = {};
   let length = product.length+1;
   let maxLength = length +  parseInt(productQuantity) ;
   for(let i = length; i < maxLength; i++)
   {
+    // thao tác image
+    /* let cmd = "copy "+ productImage+" "+ "../assets/img"
+    console.log(cmd); */
+    /* var a = document.createElement('img');
+    img.href = productImage;
+    img.download = "../img/";
+    document.body.appendChild(img);
+    img.click();
+    document.body.removeChild(img); */
+
     console.log("add product");
     productAdd = {
       id: `${i}`,
       type: productType,
       name: productName,
       description: productDescription,
-      img: productImage,
-      price: productPrice,
+      //img: productImage,
+      price: priceFormated,
     };
 
     product.push(productAdd);
@@ -289,7 +301,7 @@ function editProductToProductArray(event)
   product[id.value - 1].type = productType.value ;
   product[id.value - 1].name = productName.value;
   product[id.value - 1].description = productDescription.value ;
-  product[id.value - 1].img = productImage.value  ;
+  product[id.value - 1].img = format1(productImage.value)  ;
   product[id.value - 1].price =productPrice.value  ;
 
   localStorage.removeItem("product");
@@ -322,20 +334,48 @@ function deleteProductFromProductArray(event)
   console.log(itemNeedToRemove);
 
   let k=0;
-  for(let i=0; i<product.length;i++)
+  let i=0;
+  while(i < product.length && k < itemNeedToRemove.length)
   {
-    if((product[i].id == itemNeedToRemove[k]) && k != itemNeedToRemove.length)
+    if(product[i].id == itemNeedToRemove[k])
     {
-      console.log("remove id: " + product[i].id);
+      console.log("xoa: "+product[i].id+" i: "+i);
       product.splice(i,1);
       k++;
     }
+    else
+    {
+      console.log("pass: "+product[i].id + "i: "+i);
+      i++;
+    }
+    
     
   }
-  localStorage.removeItem("product");
-  localStorage.setItem("product",JSON.stringify(product));
-  alert("Xóa sản phẩm thành công!");
-  location.reload();
+
+  /* for(let i=0; i<product.length;i++)
+  {
+    
+    if((product[i].id == itemNeedToRemove[k]))
+    {
+      console.log("remove id: " + product[i].id);
+      console.log("here go k: "+ k);
+      product.splice(i,1);
+      k+=1;
+    }
+    else
+    {
+      console.log("pass: "+product[i].id);
+    }
+  } */
+
+  if(confirm("Bạn có chắc muốn xóa những sản phẩm này?") == true)
+  {
+    localStorage.removeItem("product");
+    localStorage.setItem("product",JSON.stringify(product));
+    alert("Xóa sản phẩm thành công!");
+    location.reload();
+  }
+  
 }
 
 function openDeleteProductTable()
@@ -397,4 +437,8 @@ function dangXuat()
 {
   isSignedin = false;
   window.location.href = "/index.html";
+}
+function format1(currency)
+{
+  return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
