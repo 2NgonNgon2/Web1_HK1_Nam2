@@ -34,6 +34,9 @@ function dangnhap(event){
                 <li class="dropdown-item">
                     <span class="dropdown-text">Thông tin cá nhân</span>
                 </li>
+                <li class="dropdown-item ">
+                    <span class="dropdown-text">Lịch sử mua hàng</span>
+                </li>
                 <li class="dropdown-item">
                     <span class="dropdown-text">Đăng xuất</span>
                 </li>

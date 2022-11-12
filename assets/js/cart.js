@@ -4,12 +4,28 @@ let shoppingIcon = document.querySelector(".shopping-icon");
 let cartContainerMiddle = document.querySelector(".cart-container-middle");
 let cartTotalAmountNumber = document.getElementById(
   "cart-container-bottom-total-amount-number"
-);
-let numberTmp = 0;
+);// tổng tiền dưới dạng string
+let numberTmp = 0;// tổng tiền dạng số
 let cartContainItem = "";
 let btnRemoveProductInCarts;
-let temp = []; // mảng đánh dấu sản phẩm đã có trong
+let temp = []; // mảng đánh dấu sản phẩm đã có trong cart
 let k = 0;
+let btnBuyCart = document.querySelector(".cart-container-bottom-buy");
+
+function buyProdcutInCart() {
+  if (!checkSignin()) return;
+  if(numberTmp == 0) {
+    alert("Bạn chưa thêm sản phẩm vào giỏ hàng");
+    return;
+  }
+  // sau khi nhấn mua hàng các biến trở về trạng thái ban đầu
+  temp = [];
+  cartContainerMiddle.innerHTML = '';
+  cartTotalAmountNumber.value = '0';
+  numberTmp = 0;
+  alert("Bạn đã mua hàng thành công");
+}
+
 // show cart
 function showCart() {
   cart.classList.add("open");
@@ -133,12 +149,13 @@ function addProductToCartByCardProduct(id) {
   for (let i = 0; i < product.length; i++) {
     if (product[i].id == id) {
       for (let i = temp.length - 1; i >= 0; i--) {
-        if (temp[i] == id) {
+        // tìm trong temp có id này chưa nếu có thì tăng số lượng của id product lên 
+        if (temp[i] == id) { 
           temp.reverse();
           for (let i = temp.length - 1; i >= 0; i--) {
             if (temp[i] == id) {
               let tmpSaveValue =
-                parseInt(
+                parseInt( 
                   cartContainerMiddle.children[i].children[2].children[0].value
                 ) + 1;
               updateAddTotal(
@@ -189,6 +206,7 @@ function addProductToCartByCardProduct(id) {
       k++;
     }
   }
+  console.log(savePrice);
   updateAddTotal(1, savePrice);
   updateTotal();
   // đưa sản phẩm mới thêm lên đầu trong giỏ hàng
