@@ -1,6 +1,19 @@
 /* open infomation product */
 .open {
-  display: flex !important;
+  display: flex!important;
+}
+
+#products-info {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(59, 54, 54, 0.6);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .prodcts-info-container {
@@ -25,7 +38,7 @@
 
 .products-container-close {
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 10px;
   width: 40px;
   height: 40px;
