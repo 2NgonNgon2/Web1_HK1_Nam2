@@ -1,14 +1,14 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
+document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
 let item = "";          // dùng để chứa các html product-items
 let isSignedin = true;
-let isAdmin = true;
+isAdmin = true;
 
 filterProductAdmin("keyboard");
-
 function filterProductAdmin(typeProduct) {
   item = "";
   tmpProduct = [];
@@ -392,3 +392,9 @@ menuItems.forEach((menuItem, index) => {
     menuItemImg.classList.add("activeMenuItemImg");
   };
 });
+
+function dangXuat()
+{
+  isSignedin = false;
+  window.location.href = "/index.html";
+}
