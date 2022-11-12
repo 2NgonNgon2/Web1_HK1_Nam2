@@ -1,6 +1,4 @@
-
 let isAdmin;
-let dadangnhap;
 
 $(document).ready(function(){
     account.forEach(element => {
@@ -24,10 +22,8 @@ function dangnhap(event){
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         isSignedin = true;
         isAdmin = false;
-        dadangnhap = true ;
-        localStorage.setItem("dadangnhap",dadangnhap);
         event.preventDefault();
-        console.log("you are user");        
+        console.log("you are user");   
     }
     else{
         alert("Error!");
@@ -39,14 +35,11 @@ function dangnhap(event){
                 <li class="dropdown-item">
                     <span class="dropdown-text">Thông tin cá nhân</span>
                 </li>
-                <li class="dropdown-item ">
-                    <span class="dropdown-text">Lịch sử mua hàng</span>
-                </li>
-                <li class="dropdown-item">
+                <li class="dropdown-item" onclick="showViewOrder()">
                     <span class="dropdown-text">Xem đơn hàng đã đặt</span>
                 </li>
                 <li class="dropdown-item">
-                    <span class="dropdown-text">Đăng xuất</span>
+                    <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
                 </li>
                     `;
     } 
@@ -64,9 +57,26 @@ function dangnhap(event){
           `; 
         }  
         document.querySelector("span.dropdown-select").innerHTML="My account"; 
+        localStorage.removeItem("userSignIn");
     }); 
     backgroundLogin.style.display="none";
 }
+
+function dangXuat()
+{
+    dropdown_list.innerHTML=`
+                <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
+                    <span class="dropdown-text" id="sign-in">Đăng nhập</span>
+                </li>
+                <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
+                    <span class="dropdown-text" id="sign-up">Đăng kí</span>
+                </li>
+          `; 
+        document.querySelector("span.dropdown-select").innerHTML="My account"; 
+        localStorage.removeItem("userSignIn");
+};
+
+
 
 
 

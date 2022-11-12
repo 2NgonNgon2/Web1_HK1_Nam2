@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/signin-menu.css">
     <link rel="stylesheet" href="/assets/css/slider.css">
+    <link rel="stylesheet" href="/assets/css/order-form.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
@@ -273,7 +275,7 @@
               <span class="cart-container-bottom-total-priceIcon">₫</span>
             </div>
           </div>
-          <button class="cart-container-bottom-buy" type="button" onclick="buyProdcutInCart()">
+          <button class="cart-container-bottom-buy" type="button" onclick="buyProdcutInCart();">
             Mua hàng
           </button>
         </div>
@@ -465,7 +467,44 @@
         </div>
       </div> -->
     </div>
-    
+    <!-- View orders -->
+    <div id="view-order">
+      <div class="view-order-container" onclick="stopPropagate(event)">
+        <div class="view-order-container-top">
+          Đơn hàng của tôi
+        </div>
+
+        <div class="products-container-close" onclick="hideViewOrder()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <div class="view-order-container-bottom">
+
+          <div class="view-order-container-bottom-product">
+            <div class="view-order-container-bottom-product-img">
+              <img src="/assets/img/Chuột gaming không dây DARE-U RGB.webp" alt="">
+            </div>
+            <div class="view-order-container-bottom-product-name">
+              <div class="view-order-container-bottom-product-name-title">
+                Bàn phím cơ không dây
+              </div>
+              <div class="view-order-container-bottom-product-name-label">
+                Keyboard for gamer
+              </div>
+            </div>
+            <div class="view-order-container-bottom-product-quantity">
+              <input type="number" value="1" class="view-order-container-bottom-product-quantity-adjust" disabled>
+            </div>
+            <div class="view-order-container-bottom-product-price">
+              <span class="view-order-container-bottom-product-priceNumber">700.000</span> 
+              <span class="view-order-container-bottom-product-priceIcon">₫</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
   <!-- Java Script -->
     <script src="/assets/js/account.js"></script>
     <script src="/assets/js/arr-account.js"></script>
@@ -479,6 +518,7 @@
     <script src="/assets/js/search-engine.js"></script>
     <script src="/assets/js/slider.js"></script>
     <script src="/assets/js/arr-order-form.js"></script>
+    <script src="/assets/js/order-form.js"></script>
 
   <!-- <script src="search-engine.js"></script> -->
   </body>

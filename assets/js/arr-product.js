@@ -14,7 +14,7 @@ else
     id: "1",
     type: "keyboard",
     name: "ban phim co 69",
-    price: "699.000",
+    price: "699000",
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/ban-phim-co-dareu-a98-rgb-04-400x400.jpg",
@@ -26,7 +26,7 @@ else
     description: "Bluetooth/Wireless,pin Sạc E-sports, Led RBG 7 màu - Chính Hãng",
     detail: ``,
     img: "/assets/img/ChuộtGamingYindiaoA5.webp",
-    price: "269.000",
+    price: "269000",
   },
   {
     id: "3",
@@ -35,7 +35,7 @@ else
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "4",
@@ -44,7 +44,7 @@ else
     description: "Mouse pad for wibu ",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "5",
@@ -53,7 +53,7 @@ else
     description: " loa cho dan choi",
     detail: ``,
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "6",
@@ -62,7 +62,7 @@ else
     description: "lot chuot cho dan vjp",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "7",
@@ -71,7 +71,7 @@ else
     description: "tai nghe hiphop",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "8",
@@ -80,13 +80,13 @@ else
     description: "tai nghe magaming",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "9",
     type: "keyboard",
     name: "ban phim co 69",
-    price: "699.000",
+    price: "699000",
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
@@ -98,7 +98,7 @@ else
     description: "Độ trễ thấp, phạm vi hoạt động hiệu quả 10m không vật cản",
     detail: ``,
     img: "/assets/img/Chuột gaming không dây DARE-U RGB.webp",
-    price: "719.000",
+    price: "719000",
   },
   {
     id: "11",
@@ -107,7 +107,7 @@ else
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "12",
@@ -116,7 +116,7 @@ else
     description: "Mouse pad for wibu ",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "13",
@@ -125,7 +125,7 @@ else
     description: " loa cho dan choi",
     detail: ``,
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "14",
@@ -134,7 +134,7 @@ else
     description: "lot chuot cho dan vjp",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "15",
@@ -143,7 +143,7 @@ else
     description: "tai nghe hiphop",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "16",
@@ -152,7 +152,7 @@ else
     description: "tai nghe magaming",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "17",
@@ -161,7 +161,7 @@ else
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "18",
@@ -170,7 +170,7 @@ else
     description: "Bi trọng lực tích hợp giúp chuột định vị chính xác trong game",
     detail: ``,
     img: "/assets/img/Chuột gaming Newmen G11.webp",
-    price: "179.000",
+    price: "179000",
   },
   {
     id: "19",
@@ -179,7 +179,7 @@ else
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "20",
@@ -188,7 +188,7 @@ else
     description: "Mouse pad for wibu ",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "21",
@@ -197,7 +197,7 @@ else
     description: " loa cho dan choi",
     detail: ``,
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "22",
@@ -206,7 +206,7 @@ else
     description: "lot chuot cho dan vjp",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "23",
@@ -215,7 +215,7 @@ else
     description: "tai nghe hiphop",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "24",
@@ -224,13 +224,13 @@ else
     description: "tai nghe magaming",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "25",
     type: "keyboard",
     name: "ban phim co 69",
-    price: "699.000",
+    price: "699000",
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
@@ -242,7 +242,7 @@ else
     description: "Cảm biến: HERO ,độ phân giải: 16000 DPI",
     detail: ``,
     img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
-    price: "999.000",
+    price: "999000",
   },
   {
     id: "27",
@@ -251,7 +251,7 @@ else
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: "28",
@@ -260,7 +260,7 @@ else
     description: "Mouse pad for wibu ",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "169.000",
+    price: "169000",
   },
   {
     id: "29",
@@ -269,7 +269,7 @@ else
     description: " loa cho dan choi",
     detail: ``,
     img: "/assets/img/speaker.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "30",
@@ -278,7 +278,7 @@ else
     description: "lot chuot cho dan vjp",
     detail: ``,
     img: "/assets/img/mousepads.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "31",
@@ -287,7 +287,7 @@ else
     description: "tai nghe hiphop",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "32",
@@ -296,7 +296,7 @@ else
     description: "tai nghe magaming",
     detail: ``,
     img: "/assets/img/headphone.png",
-    price: "569.000",
+    price: "569000",
   },
   {
     id: "33",
@@ -305,7 +305,7 @@ else
     description: "Keyboard for gamer",
     detail: ``,
     img: "/assets/img/keyboard.jpg",
-    price: "699.000",
+    price: "699000",
   },
   {
     id: '34',
