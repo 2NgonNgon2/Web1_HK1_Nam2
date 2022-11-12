@@ -35,7 +35,7 @@
   line-height: 56.25px;
   font-size: 20px;
   font-weight: bold;
-  background: linear-gradient(21deg, rgba(179,184,40,1) 0%, rgba(14,79,75,1) 30%, rgba(0,0,0,1) 100%);
+  background: linear-gradient(35deg, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
   border-radius: 29px 29px 0 0;
   color: whitesmoke;
 }
@@ -142,14 +142,14 @@
   margin: 0 0 5px;
   padding: 10px 40px;
   color: white;
-  background: linear-gradient(21deg, rgba(179,184,40,0.8) 0%, rgba(14,79,75,0.8) 30%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(35deg, rgba(253,29,29,.8) 50%, rgba(252,176,69,.8) 100%);
 }
 
 .cart-container-bottom-buy:hover {
   cursor: pointer;
-  background: linear-gradient(21deg, rgba(179,184,40,1) 0%, rgba(14,79,75,1) 30%, rgba(0,0,0,1) 100%);;
+  background: linear-gradient(35deg, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);;
 }
 
 .cart-container-bottom-buy:active {
-  background: linear-gradient(21deg, rgba(179,184,40,0.8) 0%, rgba(14,79,75,0.8) 30%, rgba(0,0,0,0.8) 100%);;
+  background: linear-gradient(35deg, rgba(253,29,29,.8) 50%, rgba(252,176,69,.8) 100%);;
 }
