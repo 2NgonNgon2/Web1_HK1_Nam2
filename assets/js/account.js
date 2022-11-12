@@ -1,22 +1,8 @@
 let isAdmin;
-if(localStorage.getItem("userSignIn") != null){
-    document.querySelector("span.dropdown-select").innerHTML=localStorage.getItem("userSignIn");  
-    var dropdown_list = document.querySelector(".dropdown .dropdown-list");
-        dropdown_list.innerHTML=`
-            <li class="dropdown-item">
-                <span class="dropdown-text">Thông tin cá nhân</span>
-            </li>
-            <li class="dropdown-item">
-                <span class="dropdown-text">Xem đơn hàng đã đặt</span>
-            </li>
-            <li class="dropdown-item">
-                <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
-            </li>
-                `;
-} 
 
 $(document).ready(function(){
     account.forEach(element => {
+        //localStorage.clear;
         var json = JSON.stringify(element);
 	    localStorage.setItem(element.username,json);
     });
@@ -36,7 +22,6 @@ function dangnhap(event){
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         isSignedin = true;
         isAdmin = false;
-        localStorage.setItem("userSignIn",username);
         event.preventDefault();
         console.log("you are user");   
     }
