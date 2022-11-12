@@ -307,7 +307,368 @@ else
     img: "/assets/img/keyboard.jpg",
     price: "699.000",
   },
-  
+  {
+    id: '34',
+    type: 'Lpatop',
+    name: 'Laptop Gaming GIGABYTE G5 GD-51VN123SO i5-11400H/16GB/512GB/RTX3050/15.6"',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/08/image-removebg-preview-24.png',
+    price: '18,490,000 ₫'
+  },
+  {
+    id: '35',
+    type: 'Lpatop',
+    name: 'Laptop HP Envy 16-h0033TX 6K7F9PA-i9-12900H/16GB/512GB/RTX3060/16.0120Hz',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/10/image-removebg-preview-3.png',
+    price: '56,890,000 ₫'
+  },
+  {
+    id: '36',
+    type: 'Lpatop',
+    name: 'Laptop Gaming MSI Katana GF66 12UCK-699VN (i5-12450H/8GB/512GB/RTX3050',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/27/laptop-gaming-msi-katana-gf66-12uc-699vn-removebg-preview.png',
+    price: '22,790,000 ₫'
+  },
+  {
+    id: '37',
+    type: 'Lpatop',
+    name: 'Laptop HP Envy 16-h0034TX 6K7G0PA-i7-12700H/16GB/512GB/RTX 3060 6GB/16 Inch',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/22/image-removebg-preview-28.png',
+    price: '47,890,000 ₫'
+  },
+  {
+    id: '38',
+    type: 'Lpatop',
+    name: 'Laptop Lenovo Legion 5 15ACH6 - 82JW00JPVN- R5 5600H/8GB/256GB/GTX1650',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/27/image-removebg-preview-20.png',
+    price: '20,490,000 ₫'
+  },
+  {
+    id: '39',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Lenovo Legion 5 15ARH7 - 82RE002VVN - R5 6600H/8GB/512GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/28/image-removebg-preview-4_637946022325170031.png',
+    price: '28,790,000 ₫'
+  },
+  {
+    id: '40',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Lenovo Legion 5 15ARH7- 82RE0035VN- R7 6800H/8GB/512GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/28/image-removebg-preview-4_637946022325170031.png',
+    price: '29,490,000 ₫'
+  },
+  {
+    id: '41',
+    type: 'Lpatop',
+    name: 'Laptop ASUS TUF Gaming A15 FA507RC-HN051W,R7-6800H/8GB/512GB/15.6FHD144Hz/',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/05/image-removebg-preview-26.png',
+    price: '22,990,000 ₫'
+  },
+  {
+    id: '42',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Acer Nitro 5 Eagle AN515-57-54MV (i5-11400H/8GB/512GB PCIE)',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/16/image-removebg-preview-2022-09-16t144349-595.png',
+    price: '21,690,000 ₫'
+  },
+  {
+    id: '43',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Acer Aspire 7 A715-42G-R05G (R5-5500U/8GB/512GB PCIE)',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/10/14/image-removebg-preview-39.png',
+    price: '16,490,000 ₫'
+  },
+  {
+    id: '44',
+    type: 'Lpatop',
+    name: 'Laptop ASUS TUF Gaming FX506HM-HN366W, i7-11800H/8GB/512GB/RTX3060/15.6FHD1',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/05/image-removebg-preview-34.png',
+    price: '27,890,000 ₫'
+  },
+  {
+    id: '45',
+    type: 'Lpatop',
+    name: 'Macbook Pro M2 13" 2022 - 256GB - Chính hãng Apple Việt Nam ',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/07/macbook-pro-m2-silver-3.png',
+    price: '30,490,000 ₫'
+  },
+  {
+    id: '46',
+    type: 'Lpatop',
+    name: 'Macbook Pro M2 13" 2022 - 16GB/256GB - Chính hãng Apple Việt Nam',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/07/macbook-pro-m2-silver-3.png',
+    price: '36,990,000 ₫'
+  },
+  {
+    id: '47',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Asus Rog Strix G15 G513RC HN038W - R7-6800H/8GB/512GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/10/image-removebg-preview-3_637957422088528878.png',
+    price: '24,490,000 ₫'
+  },
+  {
+    id: '48',
+    type: 'Lpatop',
+    name: 'Laptop HP Gaming VICTUS 16 - d0198TX - 4R0U0PA -i7-11800H/8GB RAM/512GB SSD',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/11/11/laptop-hp-gaming-victus-16-d0197tx-2.png',
+    price: '26,890,000 ₫'
+  },
+  {
+    id: '49',
+    type: 'Lpatop',
+    name: 'Laptop HP Gaming VICTUS 16 - e0168AX - 4R0U6PA  (R7-5800H/8GD4/512GB SSD',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/11/11/laptop-hp-gaming-victus-16-d0197tx-2.png',
+    price: '21,890,000 ₫'
+  },
+  {
+    id: '50',
+    type: 'Lpatop',
+    name: 'Laptop HP VICTUS 16-d0294TX- 5Z9R5PA - i5-11400H/8GB/512GB/ RTX 3050Ti 4GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/01/image-removebg-preview.png',
+    price: '18,990,000 ₫'
+  },
+  {
+    id: '51',
+    type: 'Lpatop',
+    name: 'Laptop Acer Gaming Aspire 7 A715-43G-R8GA (R5-5625U/8GB/512GB/15.6FHD144HZ',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/10/18/image-removebg-preview-52_638017091789031630.png',
+    price: '19,390,000 ₫'
+  },
+  {
+    id: '52',
+    type: 'Lpatop',
+    name: 'Laptop ASUS TUF Gaming Dash F15 FX517ZE-HN045W (i5-12450H/8GB/512GB/3050Ti)',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/05/gaming-tuf-dash-f15-fx517ze-hn045w-1.png',
+    price: '24,190,000 ₫'
+  },
+  {
+    id: '53',
+    type: 'Lpatop',
+    name: 'Laptop MSi Gaming GF63 11UC 443VN - Chính hãng - I5-11400H/8GB/512GB PCIE',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/18/msi-gaming-gf63-12.png',
+    price: '21,790,000 ₫'
+  }
+]
+[
+  {
+    id: '34',
+    type: 'Lpatop',
+    name: 'Laptop Gaming GIGABYTE G5 GD-51VN123SO i5-11400H/16GB/512GB/RTX3050/15.6"',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/08/image-removebg-preview-24.png',
+    price: '18,490,000 ₫'
+  },
+  {
+    id: '35',
+    type: 'Lpatop',
+    name: 'Laptop HP Envy 16-h0033TX 6K7F9PA-i9-12900H/16GB/512GB/RTX3060/16.0120Hz',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/10/image-removebg-preview-3.png',
+    price: '56,890,000 ₫'
+  },
+  {
+    id: '36',
+    type: 'Lpatop',
+    name: 'Laptop Gaming MSI Katana GF66 12UCK-699VN (i5-12450H/8GB/512GB/RTX3050',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/27/laptop-gaming-msi-katana-gf66-12uc-699vn-removebg-preview.png',
+    price: '22,790,000 ₫'
+  },
+  {
+    id: '37',
+    type: 'Lpatop',
+    name: 'Laptop HP Envy 16-h0034TX 6K7G0PA-i7-12700H/16GB/512GB/RTX 3060 6GB/16 Inch',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/22/image-removebg-preview-28.png',
+    price: '47,890,000 ₫'
+  },
+  {
+    id: '38',
+    type: 'Lpatop',
+    name: 'Laptop Lenovo Legion 5 15ACH6 - 82JW00JPVN- R5 5600H/8GB/256GB/GTX1650',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/27/image-removebg-preview-20.png',
+    price: '20,490,000 ₫'
+  },
+  {
+    id: '39',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Lenovo Legion 5 15ARH7 - 82RE002VVN - R5 6600H/8GB/512GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/28/image-removebg-preview-4_637946022325170031.png',
+    price: '28,790,000 ₫'
+  },
+  {
+    id: '40',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Lenovo Legion 5 15ARH7- 82RE0035VN- R7 6800H/8GB/512GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/28/image-removebg-preview-4_637946022325170031.png',
+    price: '29,490,000 ₫'
+  },
+  {
+    id: '41',
+    type: 'Lpatop',
+    name: 'Laptop ASUS TUF Gaming A15 FA507RC-HN051W,R7-6800H/8GB/512GB/15.6FHD144Hz/',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/05/image-removebg-preview-26.png',
+    price: '22,990,000 ₫'
+  },
+  {
+    id: '42',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Acer Nitro 5 Eagle AN515-57-54MV (i5-11400H/8GB/512GB PCIE)',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/16/image-removebg-preview-2022-09-16t144349-595.png',
+    price: '21,690,000 ₫'
+  },
+  {
+    id: '43',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Acer Aspire 7 A715-42G-R05G (R5-5500U/8GB/512GB PCIE)',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/10/14/image-removebg-preview-39.png',
+    price: '16,490,000 ₫'
+  },
+  {
+    id: '44',
+    type: 'Lpatop',
+    name: 'Laptop ASUS TUF Gaming FX506HM-HN366W, i7-11800H/8GB/512GB/RTX3060/15.6FHD1',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/05/image-removebg-preview-34.png',
+    price: '27,890,000 ₫'
+  },
+  {
+    id: '45',
+    type: 'Lpatop',
+    name: 'Macbook Pro M2 13" 2022 - 256GB - Chính hãng Apple Việt Nam ',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/07/macbook-pro-m2-silver-3.png',
+    price: '30,490,000 ₫'
+  },
+  {
+    id: '46',
+    type: 'Lpatop',
+    name: 'Macbook Pro M2 13" 2022 - 16GB/256GB - Chính hãng Apple Việt Nam',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/07/macbook-pro-m2-silver-3.png',
+    price: '36,990,000 ₫'
+  },
+  {
+    id: '47',
+    type: 'Lpatop',
+    name: 'Laptop Gaming Asus Rog Strix G15 G513RC HN038W - R7-6800H/8GB/512GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/10/image-removebg-preview-3_637957422088528878.png',
+    price: '24,490,000 ₫'
+  },
+  {
+    id: '48',
+    type: 'Lpatop',
+    name: 'Laptop HP Gaming VICTUS 16 - d0198TX - 4R0U0PA -i7-11800H/8GB RAM/512GB SSD',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/11/11/laptop-hp-gaming-victus-16-d0197tx-2.png',
+    price: '26,890,000 ₫'
+  },
+  {
+    id: '49',
+    type: 'Lpatop',
+    name: 'Laptop HP Gaming VICTUS 16 - e0168AX - 4R0U6PA  (R7-5800H/8GD4/512GB SSD',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/11/11/laptop-hp-gaming-victus-16-d0197tx-2.png',
+    price: '21,890,000 ₫'
+  },
+  {
+    id: '50',
+    type: 'Lpatop',
+    name: 'Laptop HP VICTUS 16-d0294TX- 5Z9R5PA - i5-11400H/8GB/512GB/ RTX 3050Ti 4GB',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/01/image-removebg-preview.png',
+    price: '18,990,000 ₫'
+  },
+  {
+    id: '51',
+    type: 'Lpatop',
+    name: 'Laptop Acer Gaming Aspire 7 A715-43G-R8GA (R5-5625U/8GB/512GB/15.6FHD144HZ',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/10/18/image-removebg-preview-52_638017091789031630.png',
+    price: '19,390,000 ₫'
+  },
+  {
+    id: '52',
+    type: 'Lpatop',
+    name: 'Laptop ASUS TUF Gaming Dash F15 FX517ZE-HN045W (i5-12450H/8GB/512GB/3050Ti)',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/05/gaming-tuf-dash-f15-fx517ze-hn045w-1.png',
+    price: '24,190,000 ₫'
+  },
+  {
+    id: '53',
+    type: 'Lpatop',
+    name: 'Laptop MSi Gaming GF63 11UC 443VN - Chính hãng - I5-11400H/8GB/512GB PCIE',
+    description: 'none',
+    detail: 'none',
+    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/18/msi-gaming-gf63-12.png',
+    price: '21,790,000 ₫'
+  }
   
 ];
 localStorage.setItem("product",JSON.stringify(product));

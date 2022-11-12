@@ -1,8 +1,10 @@
 
 let isAdmin;
+let dadangnhap;
 
 $(document).ready(function(){
     account.forEach(element => {
+        //localStorage.clear;
         var json = JSON.stringify(element);
 	    localStorage.setItem(element.username,json);
     });
@@ -22,6 +24,8 @@ function dangnhap(event){
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         isSignedin = true;
         isAdmin = false;
+        dadangnhap = true ;
+        localStorage.setItem("dadangnhap",dadangnhap);
         event.preventDefault();
         console.log("you are user");        
     }
