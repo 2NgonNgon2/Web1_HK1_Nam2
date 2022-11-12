@@ -1,6 +1,6 @@
 
 let isAdmin;
-
+   
 $(document).ready(function(){
     account.forEach(element => {
         var json = JSON.stringify(element);
@@ -23,7 +23,7 @@ function dangnhap(event){
         isSignedin = true;
         isAdmin = false;
         event.preventDefault();
-        console.log("you are user");        
+        console.log("you are user");   
     }
     else{
         alert("Error!");
@@ -35,10 +35,7 @@ function dangnhap(event){
                 <li class="dropdown-item">
                     <span class="dropdown-text">Thông tin cá nhân</span>
                 </li>
-                <li class="dropdown-item ">
-                    <span class="dropdown-text">Lịch sử mua hàng</span>
-                </li>
-                <li class="dropdown-item">
+                <li class="dropdown-item" onclick="showViewOrder()">
                     <span class="dropdown-text">Xem đơn hàng đã đặt</span>
                 </li>
                 <li class="dropdown-item">

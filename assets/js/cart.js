@@ -14,7 +14,7 @@ let btnBuyCart = document.querySelector(".cart-container-bottom-buy");
 
 function buyProdcutInCart() {
   if (!checkSignin()) return;
-  if(numberTmp == 0) {
+  if( numberTmp == 0 ) {
     alert("Bạn chưa thêm sản phẩm vào giỏ hàng");
     return;
   }
@@ -29,6 +29,7 @@ function buyProdcutInCart() {
 // show cart
 function showCart() {
   cart.classList.add("open");
+  hideViewOrder(); 
   backgroundLogin.style.display="none";
 }
 // hide cart
@@ -206,7 +207,6 @@ function addProductToCartByCardProduct(id) {
       k++;
     }
   }
-  console.log(savePrice);
   updateAddTotal(1, savePrice);
   updateTotal();
   // đưa sản phẩm mới thêm lên đầu trong giỏ hàng
@@ -229,10 +229,12 @@ function removeCartItem() {
       // sau đó từ parent suy ngược vào các thẻ con (children) để lấy giá trị
       // parseInt thứ 1 trỏ tới  input value số lượng của product trong cart
       // parseInt thứ 2 trỏ tới price của product
+      console.log(numberTmp);
       updateSubtractTotal(
         parseInt(parent.children[2].children[0].value),
         parseInt(parent.children[3].children[0].innerText)
       );
+      console.log(numberTmp);
       // thay đổi tổng số tiền
       updateTotal();
       temp.splice(index, 1);
@@ -245,29 +247,28 @@ function removeCartItem() {
 
 function checkEventInputValueCart() {
   for (let index = 0; index < cartContainerMiddle.children.length; index++) {
-    var inputValueQuantityCart =
+    let inputValueQuantityCart =
       cartContainerMiddle.children[index].children[2].children[0];
-    var tmpInputValue = inputValueQuantityCart.value;
+    let tmpInputValue = parseInt(inputValueQuantityCart.value);
+    console.log(tmpInputValue);
     inputValueQuantityCart.addEventListener("change", function () {
       // this.value là số lượng sản phẩm khi onchange
-      if (this.value > tmpInputValue)
-        updateAddTotal(
-          1,
-          parseInt(
-            cartContainerMiddle.children[index].children[3].children[0]
-              .innerText
-          )
-        );
-      if (this.value < tmpInputValue)
-        updateSubtractTotal(
-          1,
-          parseInt(
-            cartContainerMiddle.children[index].children[3].children[0]
-              .innerText
-          )
-        );
-      updateTotal();
+      console.log(this.value);
+        console.log(tmpInputValue);
+      if (parseInt(this.value) > tmpInputValue) {
+        console.log(numberTmp);
+        console.log(this.value);
+        console.log(tmpInputValue);
+        updateAddTotal(1,parseInt(cartContainerMiddle.children[index].children[3].children[0].innerText));
+        updateTotal();
+      }
+      else if (this.value < tmpInputValue) {
+        updateSubtractTotal(1,parseInt(cartContainerMiddle.children[index].children[3].children[0].innerText));
+        updateTotal();
+      }
+
       tmpInputValue = this.value; // lưu this.value vào tmpInputValue trước khi onchange
+      console.log(tmpInputValue);
     });
 
     inputValueQuantityCart.addEventListener("keypress", function (event) {

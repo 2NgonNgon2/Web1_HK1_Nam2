@@ -5,6 +5,8 @@ let btnDecreaseQuantity;
 let btnSubmitQuantity;
 let inputProductInfoBtn;
 let quantity;
+let x = 1;
+let saveQuantity = 1;
 // click card product item to open info product
 let cardProductItem = document.getElementsByClassName("card-product-item");
 let productInfo = document.getElementById("products-info");
@@ -56,7 +58,7 @@ function productInfomation(id) {
                     <div class="adjustProductQuantity-title">Số lượng : </div>
                       <div class="adjustProductQuantity-btn">
                         <button  type="button" id="adjustProductQuantity-decrease" onclick="decreaseQuantity()"><i class="fa-sharp fa-solid fa-minus adjustProductQuantity-decrease-icon"></i></button>
-                        <input name="quantity" id="adjustProductQuantity-number" type="text" value="1" onkeypress="getValueUserEntered(event)" >
+                        <input name="quantity" id="adjustProductQuantity-number" type="text" value="1" onblur="blurOutInput(event)" onkeypress="preventKeyPress(event);getValueInputInfo(event);" >
                         <button type="button" id="adjustProductQuantity-increase" onclick="increaseQuantity()";><i class="fa-regular fa-plus adjustProductQuantity-increase-icon"></i></button>
                       </div>
                   </div>
@@ -122,23 +124,30 @@ function decreaseQuantity() {
   }
 }
 
+
+function preventKeyPress(e) {
+  // kiểm tra xem charCode mà thỏa đk thì chặn keypress đó
+  if(e.charCode < 48 || e.charCode > 57) {
+    e.preventDefault();
+    if( e.charCode < 96 || e.charCode > 105)
+    e.preventDefault();
+  }
+}
 // get value when user enter value to input
-var x = 1;
-var saveQuantity = 1;
-function getValueUserEntered(e) {
+function getValueInputInfo(e) {
   x = parseInt(quantityProduct.value + e.key);
-  var y = parseInt(e.key);
+  var y = parseInt(e.key);//khi user đổi số nhìu kí tự thành số 1 ký tự
   // kiểm tra số lớn hơn 1 thì mở khóa nút giảm số lượng
   if (x > 1 || y > 1) {
     btnDecreaseQuantity.classList.remove("clockBtn");
   }
-  // kiểm tra số nhỏ hơn 1 thì cảnh báo
-  else if (x < 1 || y < 1) {
-    alert("Số lượng sản phẩm không nhỏ hơn 1!");
+}
+
+// khi blur ra ngoài thì giá trị trở về 1
+function blurOutInput(e) {
+  if(quantityProduct.value.length == 0) {
+    quantityProduct.value = 1;
     btnDecreaseQuantity.classList.add("clockBtn");
   }
-  // kiểm tra không là số thì cảnh báo
-  else if (isNaN(x) || isNaN(y)) {
-    alert("Số lượng sản phẩm phải là số!");
-  }
+  return;
 }
