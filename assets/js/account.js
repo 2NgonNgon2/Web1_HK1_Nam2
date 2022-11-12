@@ -1,6 +1,4 @@
 let isAdmin;
-
-
 if(localStorage.getItem("userSignIn") != null){
     document.querySelector("span.dropdown-select").innerHTML=localStorage.getItem("userSignIn");  
     var dropdown_list = document.querySelector(".dropdown .dropdown-list");
@@ -40,7 +38,7 @@ function dangnhap(event){
         isAdmin = false;
         localStorage.setItem("userSignIn",username);
         event.preventDefault();
-        console.log("you are user");        
+        console.log("you are user");   
     }
     else{
         alert("Error!");
@@ -52,7 +50,7 @@ function dangnhap(event){
                 <li class="dropdown-item">
                     <span class="dropdown-text">Thông tin cá nhân</span>
                 </li>
-                <li class="dropdown-item">
+                <li class="dropdown-item" onclick="showViewOrder()">
                     <span class="dropdown-text">Xem đơn hàng đã đặt</span>
                 </li>
                 <li class="dropdown-item">

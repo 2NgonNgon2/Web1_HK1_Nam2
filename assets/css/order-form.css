@@ -1,0 +1,53 @@
+#view-order {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(59, 54, 54, 0.6);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-order-container {
+  height: 480px;
+  background: whitesmoke;
+  flex-direction: column;
+  border-radius: 30px;
+  position: relative;
+  width: 900px;
+  max-width: calc(100% - 32px);
+  display: flex;
+  animation: ScrollDown 0.25s ease;
+}
+
+@keyframes ScrollDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-order-container-top {
+  display: flex;
+  background: linear-gradient(35deg, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  color: white;
+  flex: 1;
+  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-order-container .products-container-close {
+  color: white;
+}
+
+.view-order-container-bottom {
+  flex: 7;
+}
