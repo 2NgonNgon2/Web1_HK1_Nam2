@@ -47,13 +47,16 @@
                 <span class="dropdown-text" id="sign-up">Đăng kí</span>
               </li> -->
               <li class="dropdown-item">
-                <span class="dropdown-text">Xem đơn hàng</span>
+                  <span class="dropdown-text">Thông tin cá nhân</span>
               </li>
               <li class="dropdown-item">
-                <span class="dropdown-text">Quản lí khách hàng</span>
+                  <span class="dropdown-text">Quản lý người dùng</span>
               </li>
               <li class="dropdown-item">
-                <span class="dropdown-text">Đăng xuất</span>
+                  <span class="dropdown-text">Quản lý đơn hàng</span>
+              </li>
+              <li class="dropdown-item" onclick="dangXuat()">
+                  <span class="dropdown-text" >Đăng xuất</span>
               </li>
             </ul>
           </div>   
@@ -123,7 +126,7 @@
             <label for="productDescription">Description:</label>
             <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
             <label for="productImage">Image:</label>  
-            <input type="text" name="productImage" id="productImage" value="" placeholder="link image here">
+            <input type="file" name="productImage" id="productImage" value="" placeholder="link image here">
             <label for="productPrice">Price</label>
             <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
             <label for="productQuantity">Số lượng:</label>

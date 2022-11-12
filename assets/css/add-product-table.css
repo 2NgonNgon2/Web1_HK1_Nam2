@@ -87,6 +87,13 @@
   align-items: center;
 }
 
+.add-product-container .add-product-table #productImage
+{
+  justify-items: center;
+  line-height: 100%;
+  height: 50px;
+}
+
 .add-product-container .add-product-table .save-product-btn
 {
   grid-column: 2/3;
