@@ -211,7 +211,7 @@
 {
   width: 50px;
   height: 50px;
-  background: rgb(252,238,3);
+  background: linear-gradient(45deg, rgba(255, 0, 0,.8), rgba(255, 165, 0,.8));
   border-radius: 20px;
   position: fixed;
   opacity: 0;
@@ -238,13 +238,13 @@
 
 .back-to-top:hover {
   cursor: pointer;
-  color: rgb(137,211,231);
+  color: white;
   font-size: 24px;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, .8) ;
-  
+
 }
 
 .open {
