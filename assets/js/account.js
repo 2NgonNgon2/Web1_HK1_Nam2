@@ -1,4 +1,5 @@
 let isAdmin;
+
 if(localStorage.getItem("userSignIn") != null){
     document.querySelector("span.dropdown-select").innerHTML=localStorage.getItem("userSignIn");  
     var dropdown_list = document.querySelector(".dropdown .dropdown-list");
@@ -18,6 +19,7 @@ if(localStorage.getItem("userSignIn") != null){
 
 $(document).ready(function(){
     account.forEach(element => {
+        //localStorage.clear;
         var json = JSON.stringify(element);
 	    localStorage.setItem(element.username,json);
     });
@@ -37,7 +39,6 @@ function dangnhap(event){
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         isSignedin = true;
         isAdmin = false;
-        localStorage.setItem("userSignIn",username);
         event.preventDefault();
         console.log("you are user");   
     }
