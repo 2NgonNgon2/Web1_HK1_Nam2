@@ -6,13 +6,14 @@ if(localStorage.getItem("userSignIn") != null){
             <li class="dropdown-item">
                 <span class="dropdown-text">Thông tin cá nhân</span>
             </li>
-            <li class="dropdown-item">
+            <li class="dropdown-item" onclick="showViewOrder()">
                 <span class="dropdown-text">Xem đơn hàng đã đặt</span>
             </li>
             <li class="dropdown-item">
                 <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
             </li>
                 `;
+    isSignedin = true;    
 } 
 
 $(document).ready(function(){
@@ -87,8 +88,9 @@ function dangXuat()
                     <span class="dropdown-text" id="sign-up">Đăng kí</span>
                 </li>
           `; 
-        document.querySelector("span.dropdown-select").innerHTML="My account"; 
-        localStorage.removeItem("userSignIn");
+    document.querySelector("span.dropdown-select").innerHTML="My account"; 
+    localStorage.removeItem("userSignIn");
+    isSignedin == false;    
 };
 
 
