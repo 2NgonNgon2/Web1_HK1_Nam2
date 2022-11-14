@@ -1,4 +1,19 @@
 let isAdmin;
+let isSignedin = false;
+
+if(localStorage.getItem("isSignedin") != "true")
+{
+    isSignedin = false;
+}
+else
+{
+    isSignedin = true;
+}
+
+if(localStorage.getItem("adminSignedin") != null)
+{
+    document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
+}
 
 if(localStorage.getItem("userSignIn") != null){
     document.querySelector("span.dropdown-select").innerHTML=localStorage.getItem("userSignIn");  
@@ -14,7 +29,7 @@ if(localStorage.getItem("userSignIn") != null){
                 <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
             </li>
                 `;
-    isSignedin = true;    
+    localStorage.setItem("isSignedin","true");  
 
 } 
 
@@ -34,34 +49,20 @@ function dangnhap(event){
     var userLocal=JSON.parse(localStorage.getItem(username));
     if(username==userLocal.username && password==userLocal.password && userLocal.authority =="admin"){
         localStorage.setItem("adminSignedin",username);
+        localStorage.setItem("isSignedin","true"); 
         window.location.href = "/admin.html";
         event.preventDefault(); // ngăn form không bị reload sau khi submit
     }
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
-        isSignedin = true;
-        isAdmin = false;
+        localStorage.setItem("isSignedin","true");
         localStorage.setItem("userSignIn",username);
         event.preventDefault();
+        window.location.reload();
         console.log("you are user");   
     }
     else{
         alert("Error!");
     }
-    if(isSignedin){
-        document.querySelector("span.dropdown-select").innerHTML=userLocal.username;  
-        var dropdown_list = document.querySelector(".dropdown .dropdown-list");
-            dropdown_list.innerHTML=`
-                <li class="dropdown-item">
-                    <span class="dropdown-text">Thông tin cá nhân</span>
-                </li>
-                <li class="dropdown-item" onclick="showViewOrder()">
-                    <span class="dropdown-text">Xem đơn hàng đã đặt</span>
-                </li>
-                <li class="dropdown-item">
-                    <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
-                </li>
-                    `;
-    } 
 
       $(".dropdown-item:contains('Đăng xuất')").click(function(){
         if(isSignedin==true){
@@ -94,9 +95,16 @@ function dangXuat()
 
     document.querySelector("span.dropdown-select").innerHTML="My account"; 
     localStorage.removeItem("userSignIn");
-    isSignedin == false;    
+    localStorage.setItem("isSignedin","false");   
+    window.location.reload();
 };
 
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
+}
 
 
 
