@@ -44,7 +44,7 @@ function productInfomation(id) {
   
                 <div class="product-info-item-content-middle">
                     <div class="product-info-item-content-middle-title">
-                        Product info
+                        THÔNG TIN SẢN PHẨM
                     </div>
   
                     <div class="product-info-item-content-middle-content">
