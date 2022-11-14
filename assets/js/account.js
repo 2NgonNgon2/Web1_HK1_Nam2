@@ -15,6 +15,7 @@ if(localStorage.getItem("userSignIn") != null){
             </li>
                 `;
     isSignedin = true;    
+
 } 
 
 $(document).ready(function(){
@@ -39,6 +40,7 @@ function dangnhap(event){
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         isSignedin = true;
         isAdmin = false;
+        localStorage.setItem("userSignIn",username);
         event.preventDefault();
         console.log("you are user");   
     }
@@ -89,6 +91,7 @@ function dangXuat()
                     <span class="dropdown-text" id="sign-up">Đăng kí</span>
                 </li>
           `; 
+
     document.querySelector("span.dropdown-select").innerHTML="My account"; 
     localStorage.removeItem("userSignIn");
     isSignedin == false;    
