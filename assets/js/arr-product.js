@@ -716,7 +716,6 @@ else
     img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/18/msi-gaming-gf63-12.png',
     price: '21,790,000 ₫'
   }
-  
-];
+  ];
 localStorage.setItem("product",JSON.stringify(product));
 }

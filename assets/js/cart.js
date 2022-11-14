@@ -1,3 +1,6 @@
+function formatPrice(x) {
+  return x.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
+}
 // cart
 let cart = document.getElementById("cart");
 let shoppingIcon = document.querySelector(".shopping-icon");
@@ -29,11 +32,11 @@ function stopPropagate(e) {
 }
 // tính tổng tiền khi thêm và xóa sản phẩm
 function updateAddTotal(quantity, price) {
-  numberTmp += quantity * price * 1000;
+  numberTmp += quantity * price;
 }
 
 function updateSubtractTotal(quantity, price) {
-  numberTmp -= quantity * price * 1000;
+  numberTmp -= quantity * price;
 }
 
 function updateTotal() {
@@ -65,7 +68,7 @@ function addProductToCartByInforProduct(id) {
               let tmpSaveValue =
                 parseInt(cartContainerMiddle.children[i].children[2].children[0].value) + x;
               updateAddTotal(x,parseFloat(
-                  cartContainerMiddle.children[i].children[3].children[0].innerText));
+                  cartContainerMiddle.children[i].children[3].children[0].innerText)*1000);
               cartContainerMiddle.children[i].children[2].innerHTML = "";
               cartContainerMiddle.children[i].children[2].innerHTML = `
                   <input type="number" value="${tmpSaveValue}" class="cart-container-middle-product-quantity-adjust" min="1">
@@ -95,7 +98,7 @@ function addProductToCartByInforProduct(id) {
         <input type="number" value="${x}" class="cart-container-middle-product-quantity-adjust" min="1">
       </div>
       <div class="cart-container-middle-product-price">
-        <span class="cart-container-middle-product-priceNumber">${product[i].price}</span> 
+        <span class="cart-container-middle-product-priceNumber">${formatPrice(product[i].price)}</span> 
         <span class="cart-container-middle-product-priceIcon">₫</span>
       </div>
       <div class="cart-container-middle-product-remove">
@@ -121,7 +124,7 @@ function addProductToCartByInforProduct(id) {
 
 function addProductToCartByCardProduct(id) {
   if (!checkSignin()) return;
-
+  alert("Bạn đã thêm sản phẩm vào giỏ hàng");
   var savePrice;
   // chạy for để thêm đúng sản phẩm vào giỏ hàng
   for (let i = 0; i < product.length; i++) {
@@ -138,7 +141,7 @@ function addProductToCartByCardProduct(id) {
                 ) + 1;
               updateAddTotal(
                 1,
-                parseFloat(cartContainerMiddle.children[i].children[3].children[0].innerText)
+                parseFloat(cartContainerMiddle.children[i].children[3].children[0].innerText)*1000
               );
               cartContainerMiddle.children[i].children[2].innerHTML = "";
               cartContainerMiddle.children[i].children[2].innerHTML = `
@@ -168,7 +171,7 @@ function addProductToCartByCardProduct(id) {
         <input type="number" value="1" class="cart-container-middle-product-quantity-adjust" min="1">
       </div>
       <div class="cart-container-middle-product-price">
-        <span class="cart-container-middle-product-priceNumber">${product[i].price}</span> 
+        <span class="cart-container-middle-product-priceNumber">${formatPrice(product[i].price)}</span> 
         <span class="cart-container-middle-product-priceIcon">₫</span>
       </div>
       <div class="cart-container-middle-product-remove">
@@ -203,12 +206,10 @@ function removeCartItem() {
       // sau đó từ parent suy ngược vào các thẻ con (children) để lấy giá trị
       // parseInt thứ 1 trỏ tới  input value số lượng của product trong cart
       // parseFloat thứ 2 trỏ tới price của product
-      console.log(numberTmp);
       updateSubtractTotal(
         parseInt(parent.children[2].children[0].value),
-        parseFloat(parent.children[3].children[0].innerText)
+        parseFloat(parent.children[3].children[0].innerText)*1000
       );
-      console.log(numberTmp);
       // thay đổi tổng số tiền
       updateTotal();
       temp.splice(index, 1);
@@ -226,16 +227,16 @@ function checkEventInputValueCart() {
     let tmpInputValue = parseInt(inputValueQuantityCart.value);
     inputValueQuantityCart.addEventListener("change", function () {
       // this.value là số lượng sản phẩm khi onchange
-      if (parseInt(this.value) > tmpInputValue) {
-        updateAddTotal(1,parseFloat(cartContainerMiddle.children[index].children[3].children[0].innerText));
+      if (parseInt(this.value) > parseInt(tmpInputValue)) {
+        updateAddTotal(1,parseFloat(cartContainerMiddle.children[index].children[3].children[0].innerText)*1000);
         updateTotal();
       }
-      else if (this.value < tmpInputValue) {
-        updateSubtractTotal(1,parseFloat(cartContainerMiddle.children[index].children[3].children[0].innerText));
+      else if (parseInt(this.value) < parseInt(tmpInputValue)) {
+        updateSubtractTotal(1,parseFloat(cartContainerMiddle.children[index].children[3].children[0].innerText)*1000);
         updateTotal();
       }
 
-      tmpInputValue = this.value; // lưu this.value vào tmpInputValue trước khi onchange
+      tmpInputValue = parseInt(this.value); // lưu this.value vào tmpInputValue trước khi onchange
     });
 
     inputValueQuantityCart.addEventListener("keypress", function (event) {
@@ -246,7 +247,7 @@ function checkEventInputValueCart() {
 
 function buyProdcutInCart() {
   if (!checkSignin()) return;
-  if( numberTmp == 0 ) {
+  if( numberTmp == 0 || cartContainerMiddle.children.length == 0) {
     alert("Bạn chưa thêm sản phẩm vào giỏ hàng");
     return;
   }
@@ -256,8 +257,4 @@ function buyProdcutInCart() {
   cartTotalAmountNumber.value = '0';
   numberTmp = 0;
   alert("Bạn đã mua hàng thành công");
-}
-
-function name(params) {
-  
 }
