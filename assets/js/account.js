@@ -94,7 +94,7 @@ function dangXuat()
 
     document.querySelector("span.dropdown-select").innerHTML="My account"; 
     localStorage.removeItem("userSignIn");
-    isSignedin == false;    
+    isSignedin = false;    
 };
 
 
