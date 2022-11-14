@@ -206,7 +206,7 @@ function renderProduct(product) {
 
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">
-                <span class="card-product-priceNumber">${product.price}</span> 
+                <span class="card-product-priceNumber">${formatPrice(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
               </div>
               <div class="card-product-status">
