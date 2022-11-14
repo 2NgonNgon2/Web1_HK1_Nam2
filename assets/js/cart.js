@@ -12,20 +12,6 @@ let temp = []; // mảng đánh dấu sản phẩm đã có trong cart
 let k = 0;
 let btnBuyCart = document.querySelector(".cart-container-bottom-buy");
 
-function buyProdcutInCart() {
-  if (!checkSignin()) return;
-  if( numberTmp == 0 ) {
-    alert("Bạn chưa thêm sản phẩm vào giỏ hàng");
-    return;
-  }
-  // sau khi nhấn mua hàng các biến trở về trạng thái ban đầu
-  temp = [];
-  cartContainerMiddle.innerHTML = '';
-  cartTotalAmountNumber.value = '0';
-  numberTmp = 0;
-  alert("Bạn đã mua hàng thành công");
-}
-
 // show cart
 function showCart() {
   cart.classList.add("open");
@@ -51,9 +37,7 @@ function updateSubtractTotal(quantity, price) {
 }
 
 function updateTotal() {
-  cartTotalAmountNumber.value = numberTmp
-    .toString()
-    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+  cartTotalAmountNumber.value = numberTmp.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 }
 
 // nút thêm sản phẩm vào giỏ hàng
@@ -79,16 +63,9 @@ function addProductToCartByInforProduct(id) {
           for (let i = temp.length - 1; i >= 0; i--) {
             if (temp[i] == id) {
               let tmpSaveValue =
-                parseInt(
-                  cartContainerMiddle.children[i].children[2].children[0].value
-                ) + x;
-              updateAddTotal(
-                x,
-                parseInt(
-                  cartContainerMiddle.children[i].children[3].children[0]
-                    .innerText
-                )
-              );
+                parseInt(cartContainerMiddle.children[i].children[2].children[0].value) + x;
+              updateAddTotal(x,parseFloat(
+                  cartContainerMiddle.children[i].children[3].children[0].innerText));
               cartContainerMiddle.children[i].children[2].innerHTML = "";
               cartContainerMiddle.children[i].children[2].innerHTML = `
                   <input type="number" value="${tmpSaveValue}" class="cart-container-middle-product-quantity-adjust" min="1">
@@ -161,10 +138,7 @@ function addProductToCartByCardProduct(id) {
                 ) + 1;
               updateAddTotal(
                 1,
-                parseInt(
-                  cartContainerMiddle.children[i].children[3].children[0]
-                    .innerText
-                )
+                parseFloat(cartContainerMiddle.children[i].children[3].children[0].innerText)
               );
               cartContainerMiddle.children[i].children[2].innerHTML = "";
               cartContainerMiddle.children[i].children[2].innerHTML = `
@@ -228,11 +202,11 @@ function removeCartItem() {
       var parent = this.parentElement;
       // sau đó từ parent suy ngược vào các thẻ con (children) để lấy giá trị
       // parseInt thứ 1 trỏ tới  input value số lượng của product trong cart
-      // parseInt thứ 2 trỏ tới price của product
+      // parseFloat thứ 2 trỏ tới price của product
       console.log(numberTmp);
       updateSubtractTotal(
         parseInt(parent.children[2].children[0].value),
-        parseInt(parent.children[3].children[0].innerText)
+        parseFloat(parent.children[3].children[0].innerText)
       );
       console.log(numberTmp);
       // thay đổi tổng số tiền
@@ -250,29 +224,40 @@ function checkEventInputValueCart() {
     let inputValueQuantityCart =
       cartContainerMiddle.children[index].children[2].children[0];
     let tmpInputValue = parseInt(inputValueQuantityCart.value);
-    console.log(tmpInputValue);
     inputValueQuantityCart.addEventListener("change", function () {
       // this.value là số lượng sản phẩm khi onchange
-      console.log(this.value);
-        console.log(tmpInputValue);
       if (parseInt(this.value) > tmpInputValue) {
-        console.log(numberTmp);
-        console.log(this.value);
-        console.log(tmpInputValue);
-        updateAddTotal(1,parseInt(cartContainerMiddle.children[index].children[3].children[0].innerText));
+        updateAddTotal(1,parseFloat(cartContainerMiddle.children[index].children[3].children[0].innerText));
         updateTotal();
       }
       else if (this.value < tmpInputValue) {
-        updateSubtractTotal(1,parseInt(cartContainerMiddle.children[index].children[3].children[0].innerText));
+        updateSubtractTotal(1,parseFloat(cartContainerMiddle.children[index].children[3].children[0].innerText));
         updateTotal();
       }
 
       tmpInputValue = this.value; // lưu this.value vào tmpInputValue trước khi onchange
-      console.log(tmpInputValue);
     });
 
     inputValueQuantityCart.addEventListener("keypress", function (event) {
       event.preventDefault();
     });
   }
+}
+
+function buyProdcutInCart() {
+  if (!checkSignin()) return;
+  if( numberTmp == 0 ) {
+    alert("Bạn chưa thêm sản phẩm vào giỏ hàng");
+    return;
+  }
+  // sau khi nhấn mua hàng các biến trở về trạng thái ban đầu
+  temp = [];
+  cartContainerMiddle.innerHTML = '';
+  cartTotalAmountNumber.value = '0';
+  numberTmp = 0;
+  alert("Bạn đã mua hàng thành công");
+}
+
+function name(params) {
+  
 }

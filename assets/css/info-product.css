@@ -18,7 +18,7 @@
 
 .prodcts-info-container {
   height: 450px;
-  background: #fe6d38;
+  background: white;
   width: 900px;
   max-width: calc(100% - 32px);
   display: flex;
@@ -47,10 +47,11 @@
   cursor: pointer;
   line-height: 40px;
   text-align: center;
+  color: rgba(255, 255, 255,.7);
 }
 
 .products-container-close:active {
-  background-color: rgba(93, 88, 88, 0.2);
+  background-color: rgba(93, 88, 88, 0.4);
 }
 
 .product-info-item {
@@ -72,17 +73,17 @@
   display: flex;
   flex: 1.25;
   flex-direction: column;
-  background: rgb(235, 229, 229);
-  border-top-left-radius: 70px;
-  border-bottom-left-radius: 70px;
-  box-shadow: -6px 0 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, rgba(255, 0, 0,.9), rgba(255, 165, 0,.9));
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
 }
 
 .product-info-item-content-top-title {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 2px;
-  color: #fe6d38;
+  color: black;
 }
 
 .product-info-item-content-top-label-card-title {
@@ -90,7 +91,7 @@
   border-bottom: 2px solid #c4c3c3;
   padding-bottom: 20px;
   margin-bottom: 20px;
-  color: black;
+  color: rgb(218, 209, 209);
 }
 
 .product-info-item-content-middle {
@@ -101,7 +102,7 @@
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
-  color: #fe6d38;
+  color: black;
 }
 
 .product-info-item-content-middle-content {
@@ -137,6 +138,7 @@
   border-radius: 30px;
   height: 40px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  background: white;
 }
 
 /* clock btn decrease */
@@ -147,13 +149,13 @@
 #adjustProductQuantity-decrease,
 #adjustProductQuantity-increase {
   color: white;
-  background-color: #fe6d38;
+  background-color: black;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   text-align: center;
-  opacity: 0.8;
   transition: 0.15s;
+  opacity: .9;
 }
 
 #adjustProductQuantity-decrease:hover,
@@ -167,13 +169,14 @@
 #adjustProductQuantity-decrease:active,
 #adjustProductQuantity-increase:focus,
 #adjustProductQuantity-increase:active {
-  box-shadow: 0 0 1px 2px rgba(254, 109, 56, 0.8);
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0);
 }
 
 #adjustProductQuantity-number {
   text-align: center;
   width: 40px;
-  height: 40px;
+  height: 30px;
+  font-size: 20px;
 }
 
 .product-info-item-content-bottom-buying {
@@ -200,7 +203,7 @@
   padding: 0 0 0 10px;
   border-radius: 5px;
   color: white;
-  background-color: #fe6d38;
+  background-color: black;
   opacity: 0.8;
 }
 
