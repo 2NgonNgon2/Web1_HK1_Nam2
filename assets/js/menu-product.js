@@ -75,7 +75,7 @@ function filterProduct(typeProduct) {
       pageOneHandle();
       break;
     }
-    case "mousepad": {
+    case "Laptop": {
       for (let i = 0; i < product.length; i++) {
         if (product[i].type == typeProduct) {
           tmpProduct.push(product[i]);
