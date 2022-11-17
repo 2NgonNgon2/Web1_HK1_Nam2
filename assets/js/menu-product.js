@@ -1,6 +1,6 @@
 const cardProduct = document.querySelector(".card-products-container");
 
-let isSignedin = false  // check xem đã đăng nhập chưa   
+  // check xem đã đăng nhập chưa   
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
 let item = "";          // dùng để chứa các html product-items
@@ -75,7 +75,7 @@ function filterProduct(typeProduct) {
       pageOneHandle();
       break;
     }
-    case "mousepad": {
+    case "Laptop": {
       for (let i = 0; i < product.length; i++) {
         if (product[i].type == typeProduct) {
           tmpProduct.push(product[i]);
