@@ -58,17 +58,17 @@ function productInfomation(id) {
                     <div class="adjustProductQuantity-title">Số lượng : </div>
                       <div class="adjustProductQuantity-btn">
                         <button  type="button" id="adjustProductQuantity-decrease" onclick="decreaseQuantity()"><i class="fa-sharp fa-solid fa-minus adjustProductQuantity-decrease-icon"></i></button>
-                        <input name="quantity" id="adjustProductQuantity-number" type="text" value="1" onblur="blurOutInput(event)" onkeypress="preventKeyPress(event);getValueInputInfo(event);" >
+                        <input name="quantity" id="adjustProductQuantity-number" type="text" value="1" onblur="blurOutInput(event)" onkeypress="preventKeyPressNotNumber(event);getValueInputInfo(event);" >
                         <button type="button" id="adjustProductQuantity-increase" onclick="increaseQuantity()";><i class="fa-regular fa-plus adjustProductQuantity-increase-icon"></i></button>
                       </div>
                   </div>
   
                   <div class="product-info-item-content-bottom-buying">
                     <div class="product-info-item-content-bottom-buying-price">
-                      <span class="product-info-item-content-priceNumber">${product[i].price}</span> 
+                      <span class="product-info-item-content-priceNumber">${formatPrice(product[i].price)}</span> 
                       <span class="product-info-item-content-priceIcon">₫</span>
                     </div>
-                    <div id="product-info-item-content-bottom-buying-btn" onclick="addProductToCartByInforProduct(${product[i].id});checkEventInputValueCart();">
+                    <div id="product-info-item-content-bottom-buying-btn" onclick="addProductToCartByInforProduct(${product[i].id});">
   
                       <i class="fa-solid fa-cart-shopping product-info-item-icon-btn-shop"></i>
                       <input type="button" value="Thêm giỏ hàng" id="product-info-item-content-bottom-buying-btn-input">
@@ -97,7 +97,7 @@ function productInfomation(id) {
   );
   productInfo.classList.add("open");
   // check if quantity input <= 1 ,clock decrease button .
-  if (quantityProduct.value <= 1) {
+  if (parseInt(quantityProduct.value) <= 1) {
     btnDecreaseQuantity.classList.add("clockBtn");
   }
 }
@@ -125,7 +125,7 @@ function decreaseQuantity() {
 }
 
 
-function preventKeyPress(e) {
+function preventKeyPressNotNumber(e) {
   // kiểm tra xem charCode mà thỏa đk thì chặn keypress đó
   if(e.charCode < 48 || e.charCode > 57) {
     e.preventDefault();

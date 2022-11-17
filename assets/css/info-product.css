@@ -90,12 +90,13 @@
   font-size: 16px;
   border-bottom: 2px solid #c4c3c3;
   padding-bottom: 20px;
-  margin-bottom: 20px;
   color: rgb(218, 209, 209);
 }
 
 .product-info-item-content-middle {
   flex: 1.5;
+  padding: 10px 0 10px;
+  overflow: auto;
 }
 
 .product-info-item-content-middle-title {
