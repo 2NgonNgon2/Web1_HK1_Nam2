@@ -1,6 +1,6 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
-
+const orderContainer = document.querySelector(".order-container");
 
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
@@ -434,7 +434,165 @@ menuItems.forEach((menuItem, index) => {
   };
 });
 
+function openOrderManageTable()
+{
+  orderContainer.style.display = "flex";
+  console.log(orderForm);
+  renderOrder(orderForm);
 
+}
+
+function processOrder(orderId)
+{
+  
+  for(let i = 0; i < orderForm.length; i++)
+  {
+    
+    if(orderForm[i].id == orderId)
+    {
+      console.log(orderForm[i].id);
+      if(orderForm[i].status == true)
+      {
+        orderForm[i].status = false;
+        console.log("chưa xử lý");
+      }
+      else
+      {
+        orderForm[i].status = true;
+        console.log("đã xử lý");
+      }
+      // cập nhật lại trạng thái trong mảng đơn hàng
+      console.log(orderForm);
+      localStorage.removeItem("orderForm");
+      localStorage.setItem("orderForm",JSON.stringify(orderForm));
+      break;
+    }
+    
+    
+  }
+}
+
+
+
+function filterOrder(event)
+{
+  event.preventDefault();
+  const dateStart = document.querySelector(".date-start-input");
+  const dateEnd = document.querySelector(".date-end-input");
+  let start= new Date(dateStart.value);
+  let end = new Date(dateEnd.value);
+  let dateArray = [];
+  for(let order of orderForm)
+  {
+    if(start.getTime() <= order.dateOrder && end.getTime() >=  orderForm.dateOrder )
+    {
+      dateArray.push(order);
+    }
+  }
+  renderOrder(dateArray);
+}
+
+function renderOrder(orderArray)
+{
+  const order = document.querySelector(".order");
+  let orderItem = "";
+  orderItem = `
+              <div class="header">
+                  <div class="order-id">ID</div>
+                  <div class="order-userid">USER ID</div>
+                  <div class="order-product">
+                    SẢN PHẨM
+                  </div>
+                  <div class="order-date">NGÀY</div>
+                  <div class="total-price">TỔNG GIÁ</div>
+                  <div class="status">TÌNH TRẠNG</div>
+                </div>
+  `
+  
+  let productName='';
+  let orderProductTmp=[];
+  let soluong=0;
+  let nameTmp;
+  let k=0;
+  for(let i = 0; i < orderArray.length; i++)
+  {
+    productName = " ";
+    // copy mảng arrProductId
+    for(let id of orderArray[i].arrProductId)
+    {
+      orderProductTmp.push(id);
+    }
+    for(let j = 0; j < product.length; j++)
+    {
+      if(orderProductTmp.length == 0) {break;}
+      k=0;
+      while(k < orderProductTmp.length)
+      {
+        if(orderProductTmp[k] == product[j].id)
+        {
+          soluong ++;
+          nameTmp = product[j].name;
+          if(soluong < 2)
+          {
+            //console.log(nameTmp);
+            productName += nameTmp;
+          }
+          /* nameTmp = product[j].id ;
+          console.log(nameTmp); */
+          orderProductTmp.splice(k,1);
+        }
+        else
+        {
+          k++;
+        }
+      }
+      if(soluong != 0)
+      {
+        productName += (" x" + soluong + "; ");
+        soluong = 0;
+      }
+    }
+    orderItem += `
+    <div class="order-item">
+        <div class="order-id">${orderArray[i].id}</div>
+        <div class="order-userid">${orderArray[i].idUser}</div>
+        <div class="order-product">
+          ${productName}
+        </div>
+        <div class="order-date">${orderArray[i].dateOrder}</div>
+        <div class="total-price">${orderArray[i].totalPrice}</div>
+        
+    `
+
+    if(orderArray[i].status == true)
+    {
+      orderItem += 
+      `
+      <label for="order-status" class="order-status">
+      <input type="checkbox" checked class="status" onclick="processOrder(${orderArray[i].id})"> 
+      </label>
+      </div>     
+      `
+    }
+    else
+    {
+      orderItem += 
+      `
+      <label for="order-status" class="order-status">
+      <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].id})"> 
+      </label>
+      </div>      
+      `
+    }
+  }
+  order.innerHTML = orderItem;
+}
+
+function closeOrderProductTable()
+{
+  console.log("đóng bảng danh sách đơn hàng!");
+  orderContainer.style.display = "none";
+}
 
 function format1(currency)
 {
