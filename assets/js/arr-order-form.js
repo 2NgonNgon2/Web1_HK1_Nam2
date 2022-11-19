@@ -2,7 +2,6 @@ let orderForm = [];//mảng đơn hàng
 let orderFormItem ={};//thêm đơn hàng 
 let lenghtOrderForm = 1;
 
-<<<<<<< HEAD
 if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
 {
     console.log("yo wtf?");
@@ -30,8 +29,6 @@ function getDate() {
     return ddMMyy;
 }
 
-=======
->>>>>>> parent of b61261f (hien thi form dang ki)
 orderForm = [ 
     {
         id: "1",
