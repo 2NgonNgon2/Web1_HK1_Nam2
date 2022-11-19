@@ -1,7 +1,7 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
 const orderContainer = document.querySelector(".order-container");
-
+document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
@@ -194,7 +194,7 @@ function renderProductAdmin(product) {
 
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">
-                <span class="card-product-priceNumber">${product.price}</span> 
+                <span class="card-product-priceNumber">${formatCurrecy(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
               </div>
               <div class="card-product-status">
@@ -222,7 +222,7 @@ async function addProductToProductArray(event)
   const productQuantity = document.querySelector("#productQuantity").value; 
   console.log(productImage);
 
-  let priceFormated = format1(productPrice);
+  let priceFormated = formatCurrecy(productPrice);
 
   let productAdd = {};
   let length = product.length+1;
@@ -302,7 +302,7 @@ function editProductToProductArray(event)
   product[id.value - 1].type = productType.value ;
   product[id.value - 1].name = productName.value;
   product[id.value - 1].description = productDescription.value ;
-  product[id.value - 1].img = format1(productImage.value)  ;
+  product[id.value - 1].img = formatCurrecy(productImage.value)  ;
   product[id.value - 1].price =productPrice.value  ;
 
   localStorage.removeItem("product");
@@ -477,14 +477,17 @@ function processOrder(orderId)
 function filterOrder(event)
 {
   event.preventDefault();
+  
   const dateStart = document.querySelector(".date-start-input");
   const dateEnd = document.querySelector(".date-end-input");
+  
   let start= new Date(dateStart.value);
   let end = new Date(dateEnd.value);
   let dateArray = [];
   for(let order of orderForm)
   {
-    if(start.getTime() <= order.dateOrder && end.getTime() >=  orderForm.dateOrder )
+    let orderDate = new Date(order.dateOrder);
+    if((start <= orderDate) && (end >=  orderDate) )
     {
       dateArray.push(order);
     }
@@ -552,6 +555,9 @@ function renderOrder(orderArray)
         soluong = 0;
       }
     }
+    // định dạng lại ngày dd/mm/yyyy
+    let date = new Date(orderArray[i].dateOrder);
+
     orderItem += `
     <div class="order-item">
         <div class="order-id">${orderArray[i].id}</div>
@@ -559,7 +565,7 @@ function renderOrder(orderArray)
         <div class="order-product">
           ${productName}
         </div>
-        <div class="order-date">${orderArray[i].dateOrder}</div>
+        <div class="order-date">${formatDate(date)}</div>
         <div class="total-price">${orderArray[i].totalPrice}</div>
         
     `
@@ -594,7 +600,28 @@ function closeOrderProductTable()
   orderContainer.style.display = "none";
 }
 
-function format1(currency)
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
+}
+
+// hàm định dạng ngày tháng năm
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function formatDate(date) {
+  return [
+    padTo2Digits(date.getDate()),
+    padTo2Digits(date.getMonth() + 1),
+    date.getFullYear(),
+  ].join('/');
+}
+
+
+function formatCurrecy(currency)
 {
   return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }

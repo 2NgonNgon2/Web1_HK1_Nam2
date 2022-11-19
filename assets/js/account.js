@@ -11,7 +11,7 @@ else
 
 if(localStorage.getItem("adminSignedin") != null)
 {
-    document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
+    window.location.href = "/admin.html";
 }
 
 if(localStorage.getItem("userSignIn") != null){
@@ -101,12 +101,7 @@ function dangXuat()
     localStorage.removeItem('idCurrentUser');
 };
 
-function dangXuatAdmin()
-{
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
-}
+
 
 
 
