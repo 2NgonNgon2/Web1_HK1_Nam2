@@ -88,33 +88,33 @@ const dangnhap = async (event) => {
     }
 }
 
-// const createAcc = async (event) => {
-//     let response = await fetch('./assets/js/arr-account.json',{
-//         method:"POST",
-//         body:JSON.stringify(data),
-//         headers:{
-//             'Content-Type': './assets/js/arr-account.json'
-//         }
-//     });
-//     let data = await response.json();
-//     {
-//         var username = document.getElementById("form-Name").value;
-//         var password = document.getElementById("form-Password").value;
-//         var phone = document.getElementById("form-Phone").value;
-//         var email = document.getElementById("form-Email").value;
-//         data.forEach(element => {
-//             if(username==element.username){
-//                 console.log("Trung ten dang nhap");
-//             }
-//             else{
-//                 data.push(username,password,phone,email);
-//             }
+const createAcc = async (event) => {
+    let response = await fetch('./assets/js/arr-account.json',{
+        method:"POST",
+        body:JSON.stringify(data),
+        headers:{
+            'Content-Type': './assets/js/arr-account.json'
+        }
+    });
+    let data = await response.json();
+    {
+        var username = document.getElementById("form-Name").value;
+        var password = document.getElementById("form-Password").value;
+        var phone = document.getElementById("form-Phone").value;
+        var email = document.getElementById("form-Email").value;
+        data.forEach(element => {
+            if(username==element.username){
+                console.log("Trung ten dang nhap");
+            }
+            else{
+                data.push(username,password,phone,email);
+            }
             
-//         });
+        });
 
-//         backgroundLogin.style.display = "none";
-//     }
-// }
+        backgroundLogin.style.display = "none";
+    }
+}
 // async function dangnhap(event){
 // fetch('./assets/js/arr-account.json')
 //     .then(
