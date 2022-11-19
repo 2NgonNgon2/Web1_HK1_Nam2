@@ -46,23 +46,29 @@
 
 .view-order-container .products-container-close {
   color: white;
+  top: 17.5px;
 }
 
 .view-order-container-bottom {
   flex: 7;
   overflow: auto;
   padding: 10px 15px 0;
+  background-color: rgba(228, 226, 226,.7);
 }
 
 .view-order-container-bottom-product {
- 
+ margin-bottom: 60px;
+ background-color: white;
+ padding: 15px 20px 15px;
 }
 
 .view-order-container-bottom-product-title {
+  display: flex;
+  justify-content: space-between;
   padding-bottom: 5px;
   border-bottom: 1px solid rgb(214, 214, 218);
   color: rgb(128, 128, 137);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 20px;
 }
@@ -72,12 +78,18 @@
   align-items: center;
   text-align: center;
   height: 80px;
-  border-bottom: 1px solid rgb(214, 214, 218);
   padding: 10px 0;
 }
 
+.view-order-container-bottom-product-item:first-child {
+
+}
+
+.view-order-container-bottom-product-item:last-child {
+
+}
+
 .view-order-container-bottom-product-img {
-  flex: 1;
   height: 100%;
 }
 
@@ -86,9 +98,10 @@
 }
 
 .view-order-container-bottom-product-name {
-  flex: 1;
+  flex: 3;
   text-align: left;
-  margin-left: 4px;
+  margin-left: 10px;
+  
 }
 
 .view-order-container-bottom-product-name-title {
@@ -102,16 +115,40 @@
 
 .view-order-container-bottom-product-quantity {
   flex: 0.5;
-  text-align: center;
+  text-align: right;
 }
 .view-order-container-bottom-product-quantity-adjust {
-  width: 70px;
+  width: 60px;
   height: 30px;
   border: none;
 }
 
 .view-order-container-bottom-product-price {
-  flex: 1;
-  font-weight: 600;
+  flex: 0.5;
+  font-weight: 500;
   font-size: 18px;
 }
+
+.view-order-container-bottom-product-detail {
+  border-top: 1px solid rgb(214, 214, 218);
+  padding: 10px 0 0 ;
+}
+
+.view-order-container-bottom-product-detail-total {
+  display: flex;
+  justify-content: right;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 2px 0 2px;
+}
+
+.view-order-container-bottom-product-detail-total-title{
+  margin-right: 10px;
+  color: rgb(128, 128, 137);
+  font-weight: 500;
+}
+
+.view-order-container-bottom-product-detail-total-priceIcon {
+  margin-left: 5px;
+}
+

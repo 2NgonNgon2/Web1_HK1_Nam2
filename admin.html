@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="authors" content="NHÓM 13">
+    <meta name="description" content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... .">
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/card-products.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/menu-product.css" />
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <link rel="stylesheet" href="/assets/css/signin-menu.css">
+    <link rel="stylesheet" href="/assets/css/add-product-table.css">
+    <link rel="stylesheet" href="/assets/css/edit-product-table.css">
+    <link rel="stylesheet" href="/assets/css/delete-product-table.css">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="authors" content="NHÓM 13">
-  <meta name="description"
-    content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... .">
-  <title>Admin</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/assets/css/card-products.css" />
-  <link rel="stylesheet" href="/assets/css/reset.css" />
-  <link rel="stylesheet" href="/assets/css/menu-product.css" />
-  <link rel="stylesheet" href="/assets/css/navigation.css">
-  <link rel="stylesheet" href="/assets/css/signin-menu.css">
-  <link rel="stylesheet" href="/assets/css/add-product-table.css">
-  <link rel="stylesheet" href="/assets/css/edit-product-table.css">
-  <link rel="stylesheet" href="/assets/css/delete-product-table.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png"
-          style="width:200px;" alt=""></span></a>
-
-    <ul class="navigation" id="navigation">
-      <form action="" id="search_box">
-        <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="">
-        <div id="search_button">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-      </form>
-      <li><a href="#banner">Home</a></li>
-      <li><a href="#menu">Product</a></li>
-      <div class="dropdown">
-        <div class="dropdown-select">
-          <i class="fa fa-user dropdown-user"></i>
-          <span class="dropdown-select">My Account</span>
-          <i class="fa fa-caret-down dropdown-caret"></i>
-        </div>
-        <ul class="dropdown-list">
-          <!-- <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
+      
+      <ul class="navigation" id="navigation">
+        <form action="" id="search_box">	
+          <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="" > 
+          <div id="search_button">
+            <i class="fa-solid fa-magnifying-glass"></i> 				
+          </div>			
+        </form>
+          <li><a href="#banner">Home</a></li>
+          <li><a href="#menu">Product</a></li>
+          <div class="dropdown">
+            <div class="dropdown-select">
+              <i class="fa fa-user dropdown-user"></i>
+              <span class="dropdown-select">My Account</span>
+              <i class="fa fa-caret-down dropdown-caret"></i>
+            </div>
+            <ul class="dropdown-list">
+              <!-- <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
                 <span class="dropdown-text" id="sign-in">Đăng nhập</span>
               </li>
               <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
                 <span class="dropdown-text" id="sign-up">Đăng kí</span>
               </li> -->
-          <li class="dropdown-item">
-            <span class="dropdown-text">Thông tin cá nhân</span>
-          </li>
-          <li class="dropdown-item">
-            <span class="dropdown-text">Quản lý đơn hàng</span>
-          </li>
-          <li class="dropdown-item" onclick="dangXuatAdmin()">
-            <span class="dropdown-text">Đăng xuất</span>
-          </li>
-        </ul>
-      </div>
-    </ul>
-  </header>
-  <!-- Sign up menu -->
-  <!--<div class="signin" id="create">
+              <li class="dropdown-item">
+                  <span class="dropdown-text">Thông tin cá nhân</span>
+              </li>
+              <li class="dropdown-item">
+                  <span class="dropdown-text">Quản lý đơn hàng</span>
+              </li>
+              <li class="dropdown-item" onclick="dangXuatAdmin()">
+                  <span class="dropdown-text" >Đăng xuất</span>
+              </li>
+            </ul>
+          </div>   
+      </ul>
+    </header>
+      <!-- Sign up menu -->
+      <!--<div class="signin" id="create">
         <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
         <h2 class="signin-heading" >Create account</h2>
         <p class="signin-already" id="signin-already">
@@ -95,98 +88,93 @@
           </div>
         </form>
       </div>-->
-  <!-- Banner -->
-  <section class="banner" id="banner">
-    <div class="content">
-      <h2>GeForce RTX 40 Series</h2>
-      <p>Bộ xử lý đồ họa NVIDIA® GeForce RTX® 40 Series nhanh hơn tất cả dành cho game thủ và nhà sáng tạo nội dung.
-        Được thiết kế trên kiến trúc NVIDIA Ada Lovelace với hiệu năng siêu cao cung cấp sức mạnh nhảy vọt cho các ứng
-        dụng đồ họa phát triển trên nền tảng trí tuệ nhân tạo. Trải nghiệm như thật trong môi trường thực tế ảo với công
-        nghệ dò tia thời gian thực ray tracing, mượt mà với số khung hình siêu cao và độ trễ cực kỳ thấp. Hãy khám phá
-        những cách thức sáng tạo hoàn toàn mới và quy trình thực thi các tác vụ vượt trội chưa từng có.</p>
-      <a href="#" class="btn">Mua ngay</a>
+      <!-- Banner -->
+      <section class="banner" id="banner">
+        <div class="content">
+            <h2>GeForce RTX 40 Series</h2>
+            <p>Bộ xử lý đồ họa NVIDIA® GeForce RTX® 40 Series nhanh hơn tất cả dành cho game thủ và nhà sáng tạo nội dung. Được thiết kế trên kiến trúc NVIDIA Ada Lovelace với hiệu năng siêu cao cung cấp sức mạnh nhảy vọt cho các ứng dụng đồ họa phát triển trên nền tảng trí tuệ nhân tạo. Trải nghiệm như thật trong môi trường thực tế ảo với công nghệ dò tia thời gian thực ray tracing, mượt mà với số khung hình siêu cao và độ trễ cực kỳ thấp. Hãy khám phá những cách thức sáng tạo hoàn toàn mới và quy trình thực thi các tác vụ vượt trội chưa từng có.</p>
+            <a href="#" class="btn">Mua ngay</a>
+        </div>
+      </section>
+<!-- Back to top button -->
+    <div class="back-to-top">
+      <a class="" href="#"   ><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
     </div>
-  </section>
-  <!-- Back to top button -->
-  <div class="back-to-top">
-    <a class="" href="#"><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
-  </div>
 
 
-  <!-- add products -->
-  <div class="add-product-container" onclick="closeAddProductTable(event)">
-
-    <form class="add-product-table" onclick="stopPropagate(event)" onsubmit="addProductToProductArray(event)">
-      <div class="exit-add-product-table" onclick="closeAddProductTable()">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-      <div class="title">ADD PRODUCT</div>
-      <label for="type">Type: </label>
-      <select name="productType" id="select-type">
-        <option value="keyboard">keyboard</option>
-        <option value="headphone">headphone</option>
-        <option value="mouse">mouse</option>
-        <option value="speaker">speaker</option>
-        <option value="laptop">laptop</option>
-      </select>
-      <label for="productName">Name:</label>
-      <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" autofocus>
-      <label for="productDescription">Description:</label>
-      <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
-      <label for="productImage">Image:</label>
-      <input type="file" name="productImage" id="productImage" value="" placeholder="link image here">
-      <label for="productPrice">Price</label>
-      <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">
-      <label for="productQuantity">Số lượng:</label>
-      <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10">
-      <div class="save-product-btn">
-        <button type="submit">SAVE</button>
-      </div>
-    </form>
+    <!-- add products -->
+    <div class="add-product-container" onclick="closeAddProductTable(event)">
+      
+        <form class="add-product-table" onclick="stopPropagate(event)" onsubmit="addProductToProductArray(event)">
+          <div class="exit-add-product-table" onclick="closeAddProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">ADD PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="laptop">laptop</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="file" name="productImage" id="productImage" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
+            <label for="productQuantity">Số lượng:</label>
+            <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10">  
+            <div class="save-product-btn">
+              <button type="submit">SAVE</button>
+            </div>
+        </form>
 
   </div>
 
-  <div class="edit-product-container" onclick="closeEditProductTable(event)">
-
-    <form class="edit-product-table" onclick="stopPropagate(event)" onsubmit="editProductToProductArray(event)">
-      <div class="exit-edit-product-table" onclick="closeEditProductTable()">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-      <div class="title">EDIT PRODUCT</div>
-      <label for="type">Type: </label>
-      <select name="productType" id="select-type-edit">
-        <option value="keyboard">keyboard</option>
-        <option value="headphone">headphone</option>
-        <option value="mouse">mouse</option>
-        <option value="speaker">speaker</option>
-        <option value="laptop">laptop</option>
-      </select>
-      <label for="productName">Name:</label>
-      <input type="text" name="productName" id="productNameEdit" value="" placeholder="Keyboard haha" autofocus>
-      <label for="productDescription">Description:</label>
-      <input type="text" name="productDescription" id="productDescriptionEdit" value=""
-        placeholder="keyboard for gamer">
-      <label for="productImage">Image:</label>
-      <input type="text" name="productImage" id="productImageEdit" value="" placeholder="link image here">
-      <label for="productPrice">Price</label>
-      <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">
-      <input type="number" name="productId" value="" id="productId" style="display: none;">
-      <div class="save-product-btn">
-        <button type="submit">SAVE CHANGE</button>
-      </div>
-    </form>
+    <div class="edit-product-container" onclick="closeEditProductTable(event)">
+      
+        <form class="edit-product-table" onclick="stopPropagate(event)" onsubmit="editProductToProductArray(event)">
+          <div class="exit-edit-product-table" onclick="closeEditProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+            <div class="title">EDIT PRODUCT</div>
+            <label for="type">Type: </label>
+            <select name="productType" id="select-type-edit">
+              <option value="keyboard">keyboard</option>
+              <option value="headphone">headphone</option>
+              <option value="mouse">mouse</option>
+              <option value="speaker">speaker</option>
+              <option value="laptop">laptop</option>
+            </select>
+            <label for="productName">Name:</label>
+            <input type="text" name="productName" id="productNameEdit" value="" placeholder="Keyboard haha" autofocus>
+            <label for="productDescription">Description:</label>
+            <input type="text" name="productDescription" id="productDescriptionEdit" value="" placeholder="keyboard for gamer">
+            <label for="productImage">Image:</label>  
+            <input type="text" name="productImage" id="productImageEdit" value="" placeholder="link image here">
+            <label for="productPrice">Price</label>
+            <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">              
+            <input type="number" name="productId" value="" id="productId" style="display: none;">
+            <div class="save-product-btn">
+              <button type="submit">SAVE CHANGE</button>
+            </div>
+        </form>
 
   </div>
 
-  <div class="delete-product-container" onclick="closeDeleteProductTable()">
-
-    <form class="delete-product-table" onclick="stopPropagate(event)" onsubmit="deleteProductFromProductArray(event)">
-      <div class="exit-delete-product-table" onclick="closeDeleteProductTable()">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-      <div class="title">DELETE PRODUCT</div>
-      <div class="delete-item-container">
-        <!-- <div class="input-label">
+    <div class="delete-product-container" onclick="closeDeleteProductTable()">
+      
+      <form class="delete-product-table" onclick="stopPropagate(event)" onsubmit="deleteProductFromProductArray(event)">
+        <div class="exit-delete-product-table" onclick="closeDeleteProductTable()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="title">DELETE PRODUCT</div>
+        <div class="delete-item-container">
+          <!-- <div class="input-label">
             <input type="checkbox" name="deleteItem" id="item-id" value="productid">
             <label for="deleteItem" class="delete-item">
               <img class="delete-item-img" src="/assets/img/Gaming keyboard.webp">
@@ -294,12 +282,13 @@
   </div>
 
   <!-- Java Script -->
-  <script src="/assets/js/account.js"></script>
-  <script src="/assets/js/arr-account.js"></script>
-  <script src="/assets/js/arr-product.js"></script>
-  <script src="/assets/js/menu-product-admin.js"></script>
-  <script src="/assets/js/navigation.js"></script>
-  <script src="/assets/js/backToHome-button.js"></script>
+  <script src="./assets/js/arr-order-form.js"></script>
+  <script src="./assets/js/arr-account.js"></script>
+  <script src="./assets/js/arr-product.js"></script>
+  <script src="./assets/js/menu-product-admin.js"></script>
+  <script src="./assets/js/navigation.js"></script>
+  <script src="./assets/js/backToHome-button.js"></script>
+  <script src="./assets/js/search-engine.js"></script>
   <!-- <script src="search-engine.js"></script> -->
 </body>
 

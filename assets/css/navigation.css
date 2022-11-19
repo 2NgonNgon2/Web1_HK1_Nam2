@@ -44,18 +44,22 @@ header .navigation {
 	position: relative;
 	display: flex;
 	align-items: center;
+	min-width: 800px;
+	max-width: 900px;
 }
-
-header .navigation li {
+header .navigation li 
+{
 	list-style: none;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 25px;
+	padding-right: 15px;
+
 }
 
 header .navigation li a {
 	text-decoration: none;
 	color: #fff;
 	font-weight: 300;
+	width: 70px;
 }
 
 header.sticky .navigation li a {
@@ -67,13 +71,16 @@ header .navigation li a:hover {
 }
 
 .navigation div {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 16px;
+	padding-right: 16px;
+	flex: 2;
+
 }
 
 header.sticky .navigation div {
 	padding-left: 10px;
 	padding-right: 10px;
+	flex: 2;
 }
 
 .banner {
@@ -135,7 +142,6 @@ header.sticky .navigation div {
 
 .dropdown-select {
 	width: 100%;
-	padding-right: 10px;
 	color: white;
 	display: flex;
 	align-items: center;
@@ -147,7 +153,8 @@ header.sticky .dropdown .dropdown-select {
 	color: black;
 }
 
-.dropdown-select .dropdown-user {
+.dropdown-select .dropdown-user
+{
 	padding-right: 10px;
 }
 
@@ -170,7 +177,7 @@ header.sticky .dropdown .dropdown-select {
 .dropdown:hover .dropdown-list {
 	display: block;
 	width: 140px;
-	right: 0;
+	right: 15px;
 }
 
 .dropdown-item {
