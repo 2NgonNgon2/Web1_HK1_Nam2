@@ -75,7 +75,7 @@ function filterProduct(typeProduct) {
       pageOneHandle();
       break;
     }
-    case "mousepad": {
+    case "Laptop": {
       for (let i = 0; i < product.length; i++) {
         if (product[i].type == typeProduct) {
           tmpProduct.push(product[i]);
@@ -134,8 +134,8 @@ function pageOneHandle() {
 }
 
 function pageRender(pageNumberClicked, lastPage) {
-  console.log(tmpProduct);
-  console.log("da click trang: "+pageNumberClicked);
+  // console.log(tmpProduct);
+  // console.log("da click trang: "+pageNumberClicked);
   item = "";
   let positionLoad = (pageNumberClicked - 1) * 8;
   
@@ -145,7 +145,7 @@ function pageRender(pageNumberClicked, lastPage) {
   }
   // kiểm tra nếu là trang cuối thì duyệt tới hết mảng 
   if (lastPage == true) {
-    console.log("đã tới trang cuối !");
+    // console.log("đã tới trang cuối !");
     for (let k = positionLoad; k < tmpProduct.length; k++) {
       renderProduct(tmpProduct[k]);
     }
@@ -198,7 +198,7 @@ function renderProduct(product) {
           <div class="card-product-content-bottom">
 
 
-          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);addProductToCartByCardProduct(${product.id});checkEventInputValueCart();">
+          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);addProductToCartByCardProduct(${product.id});">
 
             <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
             Thêm giỏ hàng
@@ -206,7 +206,7 @@ function renderProduct(product) {
 
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">
-                <span class="card-product-priceNumber">${product.price}</span> 
+                <span class="card-product-priceNumber">${formatPrice(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
               </div>
               <div class="card-product-status">

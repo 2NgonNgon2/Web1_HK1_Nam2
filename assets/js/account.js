@@ -97,6 +97,7 @@ function dangXuat()
     localStorage.removeItem("userSignIn");
     localStorage.setItem("isSignedin","false");   
     window.location.reload();
+
 };
 
 
