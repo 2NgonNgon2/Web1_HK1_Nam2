@@ -18,53 +18,11 @@ function pushProductToOrderForm(day,total) {
   let arrCart = JSON.parse(localStorage.getItem('cart'));
   orderFormItem = {};
   tmpArrProductId = [];
-  // let div = document.createElement('div');
-  // div.classList.add('view-order-container-bottom-product');
-  // div.innerHTML = `
-  //   <div class="view-order-container-bottom-product-title">
-  //     Đang chờ xử lí
-  //     <div class="view-order-container-bottom-product-title-date">Ngày đặt hàng: ${day}</div>
-  //   </div>
-  // `;
+
 
   for (let i = 0; i < arrCart.length; i++) {
-    
-    // div.innerHTML += `
-    // <div class="view-order-container-bottom-product-item">
-    //   <div class="view-order-container-bottom-product-img">
-    //     <img src="${arrCart[i].img}" alt="">
-    //   </div>
-    //   <div class="view-order-container-bottom-product-name">
-    //     <div class="view-order-container-bottom-product-name-title">
-    //       ${arrCart[i].name}
-    //     </div>
-    //     <div class="view-order-container-bottom-product-name-label">
-    //       Keyboard for gamer
-    //     </div>
-    //   </div>
-    //   <div class="view-order-container-bottom-product-quantity">
-    //   x<input type="number" value="${arrCart[i].quantity}" class="view-order-container-bottom-product-quantity-adjust" disabled>
-    //   </div>
-    //   <div class="view-order-container-bottom-product-price">
-    //     <span class="view-order-container-bottom-product-priceNumber">${formatPrice(arrCart[i].price)}</span> 
-    //     <span class="view-order-container-bottom-product-priceIcon">₫</span>
-    //   </div>
-    // </div>
-    // `;
     tmpArrProductId.push(arrCart[i]);
-
   }
-
-  // div.innerHTML += `
-  // <div class="view-order-container-bottom-product-detail">
-  //   <div class="view-order-container-bottom-product-detail-total">
-  //     <div class="view-order-container-bottom-product-detail-total-title">Tổng tiền :</div>
-  //     <div class="view-order-container-bottom-product-detail-total-money">${formatPrice(total)}</div>
-  //     <div class="view-order-container-bottom-product-detail-total-priceIcon">₫</div>
-  //   </div>
-  // </div>
-  // `;
-  
   
   orderForm = JSON.parse(localStorage.getItem('orderForm'));
   
@@ -91,12 +49,23 @@ function showViewOrderFormWithIdUser() {
     if(orderForm[i].idUser == JSON.parse(localStorage.getItem('idCurrentUser'))) {
       div = document.createElement('div'); 
       div.classList.add('view-order-container-bottom-product');
-      div.innerHTML = `
+      
+      if (orderForm[i].status == false) {
+        div.innerHTML = `
         <div class="view-order-container-bottom-product-title">
           Đang chờ xử lí
           <div class="view-order-container-bottom-product-title-date">Ngày đặt hàng: ${orderForm[i].dateOrder}</div>
         </div>
       `;
+      } else {
+        div.innerHTML = `
+        <div class="view-order-container-bottom-product-title">
+          Đặt hàng thành công
+          <div class="view-order-container-bottom-product-title-date">Ngày đặt hàng: ${orderForm[i].dateOrder}</div>
+        </div>
+      `;
+      }
+     
 
       for (let j = 0; j < orderForm[i].arrProductId.length; j++) {
         
