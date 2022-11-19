@@ -1,6 +1,5 @@
 let isAdmin;
-let isSignedin = false;
-
+let isSignedin = false; 
 if(localStorage.getItem("isSignedin") != "true")
 {
     isSignedin = false;
@@ -58,7 +57,9 @@ function dangnhap(event){
         localStorage.setItem("userSignIn",username);
         event.preventDefault();
         window.location.reload();
-        console.log("you are user");   
+        console.log("you are user"); 
+        localStorage.setItem('idCurrentUser',userLocal.id);
+        showViewOrderFormWithIdUser();
     }
     else{
         alert("Error!");
@@ -97,7 +98,7 @@ function dangXuat()
     localStorage.removeItem("userSignIn");
     localStorage.setItem("isSignedin","false");   
     window.location.reload();
-
+    localStorage.removeItem('idCurrentUser');
 };
 
 
