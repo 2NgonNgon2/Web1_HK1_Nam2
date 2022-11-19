@@ -9,7 +9,7 @@ if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong local
         {
             id: "1",
             idUser: "3",
-            dateOrder: today,
+            dateOrder: "02/11/2020",
             status: true,
             arrProductId: ['5','24','11','20','2','2'],
             totalPrice: "1999999"
@@ -17,7 +17,7 @@ if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong local
         {
             id: "2",
             idUser: "3",
-            dateOrder: today,
+            dateOrder: "02/02/2022",
             status: true,
             arrProductId: ['14','6','2','10'],
             totalPrice: "1999999"
@@ -25,7 +25,7 @@ if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong local
         {
             id: "3",
             idUser: "4",
-            dateOrder: today,
+            dateOrder: "02/11/2021",
             status: false,
             arrProductId: ["14","6"],
             totalPrice: "1999999"
@@ -33,7 +33,7 @@ if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong local
         {
             id: "4",
             idUser: "4",
-            dateOrder: today,
+            dateOrder: "02/05/2020",
             status: false,
             arrProductId: ["4","6","21"],
             totalPrice: "1999999"
@@ -41,27 +41,27 @@ if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong local
         {
             id: "5",
             idUser: "4",
-            dateOrder: today,
+            dateOrder: "02/07/2021",
             status: false,
             arrProductId: ["1","26","22","10","15"],
             totalPrice: "1999999"
         },
         {
-            id: "5",
+            id: "6",
             idUser: "4",
-            dateOrder: today,
+            dateOrder: "02/06/2022",
             status: false,
             arrProductId: ["1","26","22","10","15"],
             totalPrice: "1999999"
         },
         {
-            id: "5",
-            idUser: "4",
-            dateOrder: today,
+            id: "7",
+            idUser: "5",
+            dateOrder: "07/19/2022",
             status: false,
             arrProductId: ["1","26","22","10","15"],
             totalPrice: "1999999"
-        },
+        }
     
     ]
     localStorage.setItem("orderForm",JSON.stringify(orderForm));

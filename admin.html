@@ -8,15 +8,15 @@
     <meta name="description" content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... .">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/assets/css/card-products.css" />
-    <link rel="stylesheet" href="/assets/css/reset.css" />
-    <link rel="stylesheet" href="/assets/css/menu-product.css" />
-    <link rel="stylesheet" href="/assets/css/navigation.css">
-    <link rel="stylesheet" href="/assets/css/add-product-table.css">
-    <link rel="stylesheet" href="/assets/css/edit-product-table.css">
-    <link rel="stylesheet" href="/assets/css/delete-product-table.css">
-    <link rel="stylesheet" href="/assets/css/switch-button.css">
-    <link rel="stylesheet" href="/assets/css/order-product-table.css">
+    <link rel="stylesheet" href="./assets/css/card-products.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/menu-product.css" />
+    <link rel="stylesheet" href="./assets/css/navigation.css">
+    <link rel="stylesheet" href="./assets/css/add-product-table.css">
+    <link rel="stylesheet" href="./assets/css/edit-product-table.css">
+    <link rel="stylesheet" href="./assets/css/delete-product-table.css">
+    <link rel="stylesheet" href="./assets/css/switch-button.css">
+    <link rel="stylesheet" href="./assets/css/order-product-table.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
@@ -26,11 +26,17 @@
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
-        <form action="" id="search_box">	
-          <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="" > 
-          <div id="search_button">
-            <i class="fa-solid fa-magnifying-glass"></i> 				
-          </div>			
+        <form onsubmit="searchEngineAdmin(event)" id="search_box">
+          <input
+            type="search"
+            id="search_text"
+            placeholder="Bạn muốn tìm gì !!!!"
+            value=""
+          />
+          <button type="submit" href="#product-display" id="search_button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          </a>
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
@@ -49,6 +55,9 @@
               </li> -->
               <li class="dropdown-item">
                   <span class="dropdown-text">Thông tin cá nhân</span>
+              </li>
+              <li class="dropdown-item">
+                <span class="dropdown-text" onclick ="openOrderManageTable()">Quản lý người dùng</span>
               </li>
               <li class="dropdown-item">
                   <span class="dropdown-text" onclick ="openOrderManageTable()">Quản lý đơn hàng</span>
@@ -114,9 +123,9 @@
 
                 <form class="date-filter" onsubmit="filterOrder(event)">
                   <label for="date" class="date-start">TỪ NGÀY</label>
-                  <input type="date" class="date-start-input" value="2022-03-03">
+                  <input type="date" class="date-start-input" value="2022-01-01">
                   <label for="date" class="date-end">ĐẾN NGÀY</label>
-                  <input type="date" class="date-end-input" value="2022-03-03">
+                  <input type="date" class="date-end-input" value="2022-12-31">
                   <button type="submit" class="filter">LỌC</button>
                 </form>
           </div>
@@ -305,12 +314,13 @@
     </div>
     
   <!-- Java Script -->
-  <script src="/assets/js/arr-order-form.js"></script>
-  <script src="/assets/js/arr-account.js"></script>
-  <script src="/assets/js/arr-product.js"></script>
-  <script src="/assets/js/menu-product-admin.js"></script>
-  <script src="/assets/js/navigation.js"></script>
-  <script src="/assets/js/backToHome-button.js"></script>
+  <script src="./assets/js/arr-order-form.js"></script>
+  <script src="./assets/js/arr-account.js"></script>
+  <script src="./assets/js/arr-product.js"></script>
+  <script src="./assets/js/menu-product-admin.js"></script>
+  <script src="./assets/js/navigation.js"></script>
+  <script src="./assets/js/backToHome-button.js"></script>
+  <script src="./assets/js/search-engine.js"></script>
   <!-- <script src="search-engine.js"></script> -->
   </body>
 </html>
