@@ -1,7 +1,7 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
 const orderContainer = document.querySelector(".order-container");
-
+document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
@@ -592,6 +592,13 @@ function closeOrderProductTable()
 {
   console.log("đóng bảng danh sách đơn hàng!");
   orderContainer.style.display = "none";
+}
+
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
 }
 
 function format1(currency)
