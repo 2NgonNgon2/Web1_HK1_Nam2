@@ -158,7 +158,7 @@
 }
 .menu #item-5:hover > .overlay::after
 {
-  content:"MOUSE PADS";
+  content:"LAPTOP";
   width: 100%;
   height: 100%;
   font-size: 20px;
