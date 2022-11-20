@@ -6,6 +6,16 @@ window.addEventListener('scroll',function () {
 // ham display ra menu dang nhap
 var loginMenu = document.getElementById("login");
 var backgroundLogin = document.getElementById("sigin-background");
+let headerIconList = document.getElementById('header-icon-list');
+
+
+headerIconList.addEventListener("click", function() {
+    menu.classList.add("showMenu");
+})
+
+menuCloseIcon.addEventListener("click", function() {
+    menu.classList.remove("showMenu");
+})
 
 loginMenu.addEventListener("click", function(event) {
     stopPropagate(event);
