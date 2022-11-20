@@ -17,17 +17,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="/assets/css/add-product-table.css">
-    <link rel="stylesheet" href="/assets/css/card-products.css">
-    <link rel="stylesheet" href="/assets/css/cart.css">
-    <link rel="stylesheet" href="/assets/css/info-product.css">
-    <link rel="stylesheet" href="/assets/css/menu-product.css">
-    <link rel="stylesheet" href="/assets/css/message.css">
-    <link rel="stylesheet" href="/assets/css/navigation.css">
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/signin-menu.css">
-    <link rel="stylesheet" href="/assets/css/slider.css">
-    <link rel="stylesheet" href="/assets/css/order-form.css">
+
+    <link rel="stylesheet" href="./assets/css/add-product-table.css">
+    <link rel="stylesheet" href="./assets/css/card-products.css">
+    <link rel="stylesheet" href="./assets/css/cart.css">
+    <link rel="stylesheet" href="./assets/css/info-product.css">
+    <link rel="stylesheet" href="./assets/css/menu-product.css">
+    <link rel="stylesheet" href="./assets/css/message.css">
+    <link rel="stylesheet" href="./assets/css/navigation.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/signin-menu.css">
+    <link rel="stylesheet" href="./assets/css/slider.css">
+    <link rel="stylesheet" href="./assets/css/order-form.css">
+    <link rel="stylesheet" href="./assets/css/responsiveAll.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
@@ -35,7 +37,10 @@
     <!-- Header -->
     <header>
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
-      
+      <!--icon list will appear when use tablet or mobile screen -->
+      <div id="header-icon-list">
+        <i class="fa-solid fa-list-ul"></i>
+      </div>
       <ul class="navigation" id="navigation">
           <form action="" id="search_box">
             <input
@@ -58,7 +63,9 @@
           <div class="dropdown">
             <div class="dropdown-select">
               <i class="fa fa-user dropdown-user"></i>
-              <span class="dropdown-select">My Account</span>
+
+              <span class="dropdown-select dropdown-select-userName" >Tài khoản</span>
+
               <i class="fa fa-caret-down dropdown-caret"></i>
             </div>
             <ul class="dropdown-list">
@@ -261,9 +268,12 @@
 
   <!-- Card products -->
 
-  <div class="card-products">
-    <div class="menu" id="menu">
-      <div class="menu-title">Danh mục sản phẩm</div>
+    <div class="card-products">
+      <div class="menu" id="menu">
+        <div class="close-menu-products-icon">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="menu-title">Danh mục sản phẩm</div>
 
       <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
         <a href="#product-display" class="overlay activeMenuItemOverlay" onclick="filterProduct('keyboard') "></a>

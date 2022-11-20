@@ -23,8 +23,8 @@ function getDate() {
     let dd = today.getDate();
     let mm = today.getMonth() + 1;// month start at 0
     let yy = today.getFullYear();
-    let hour = today.getHours();
-    let minute = today.getMinutes();
+    let hour = today.getHours()<10?'0':'' + today.getHours();
+    let minute = today.getMinutes()<10?'0':'' + today.getMinutes();
     let ddMMyy = hour + ':' + minute + ' ' + dd + '/' + mm + '/' + yy;
     return ddMMyy;
 }

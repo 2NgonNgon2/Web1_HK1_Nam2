@@ -41,6 +41,15 @@
   z-index: 1;
   margin-bottom: 115px;
 }
+.close-menu-products-icon {
+  display: none;
+}
+.showMenu {
+  left: 0!important;
+  opacity: 1!important;
+  z-index: 10001;
+  /* display: flex; */
+}
 
 .menu .menu-title
 {
@@ -202,8 +211,6 @@
 
 .menu #item-5
 {
-  flex:1;
-
 }
 
 
@@ -322,3 +329,4 @@
 
   }
 } */
+

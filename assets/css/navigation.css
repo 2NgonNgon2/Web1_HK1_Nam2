@@ -40,7 +40,11 @@ header.sticky .logo {
 	color: #111;
 }
 
-header .navigation {
+#header-icon-list {
+	display: none;
+}
+header .navigation
+{
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -71,8 +75,8 @@ header .navigation li a:hover {
 }
 
 .navigation div {
-	padding-left: 16px;
-	padding-right: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
 	flex: 2;
 
 }
@@ -145,7 +149,7 @@ header.sticky .navigation div {
 	color: white;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	cursor: pointer;
 }
 
@@ -158,7 +162,11 @@ header.sticky .dropdown .dropdown-select {
 	padding-right: 10px;
 }
 
-.dropdown-list {
+.dropdown-select-userName {
+	margin: 0 7px 0;
+}
+.dropdown-list
+{
 	margin-top: 20px;
 	position: absolute;
 	display: none;
@@ -251,12 +259,12 @@ header.sticky .dropdown-list {
 #search_box #search_button {
 	background-color: #cecece;
 	border-style: solid 5px;
-	border-color: #000000;
-	border: none;
-	padding: 15px;
+	border-color:#000000;
+	border:none;
+	padding: 12px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	font-size: 18px;
+	font-size:15px;
 	cursor: pointer;
 }
 
