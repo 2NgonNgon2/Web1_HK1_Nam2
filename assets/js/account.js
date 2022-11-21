@@ -14,8 +14,8 @@ if(localStorage.getItem("adminSignedin") != null)
     document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 }
 
-if (localStorage.getItem("userSignIn") != null) {
-    document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("userSignIn");
+if (localStorage.getItem("userSignedIn") != null) {
+    document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("userSignedIn");
     var dropdown_list = document.querySelector(".dropdown .dropdown-list");
     dropdown_list.innerHTML = `
             <li class="dropdown-item">
@@ -24,8 +24,8 @@ if (localStorage.getItem("userSignIn") != null) {
             <li class="dropdown-item" onclick="showViewOrder()">
                 <span class="dropdown-text">Xem đơn hàng đã đặt</span>
             </li>
-            <li class="dropdown-item">
-                <span class="dropdown-text">Đăng xuất</span>
+            <li class="dropdown-item" ">
+                <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
             </li>
                 `;
     localStorage.setItem("isSignedin","true");  
@@ -50,11 +50,11 @@ function dangnhap(event){
         localStorage.setItem("adminSignedin",username);
         localStorage.setItem("isSignedin","true"); 
         window.location.href = "/admin.html";
-        event.preventDefault(); // ngăn form không bị reload sau khi submit
+        event.preventDefault();
     }
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         localStorage.setItem("isSignedin","true");
-        localStorage.setItem("userSignIn",username);
+        localStorage.setItem("userSignedIn",username);
         event.preventDefault();
         window.location.reload();
         console.log("you are user");   
@@ -76,10 +76,17 @@ function dangnhap(event){
           `;
         }
         document.querySelector("span.dropdown-select").innerHTML = "My account";
-        localStorage.removeItem("userSignIn");
+        localStorage.removeItem("userSignedIn");
         localStorage.setItem("isSignedin", "false");
         window.location.reload();
     });
+}
+
+function dangXuat()
+{
+    localStorage.setItem("isSignedin","false");
+    localStorage.removeItem("userSignedIn");
+    window.location.reload();
 }
 
 // $(document).ready(function () {
@@ -93,12 +100,6 @@ function dangnhap(event){
 //     }
 // });
 
-function dangXuatAdmin()
-{
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
-}
 
 // const createAcc = async (event) => {
 //     let response = await fetch('./assets/js/arr-account.json',{
@@ -148,7 +149,7 @@ function dangXuatAdmin()
 //                     }
 //                     else if (username == element.username && password == element.password && element.authority == "user") {
 //                         localStorage.setItem("isSignedin", "true");
-//                         localStorage.setItem("userSignIn", username);
+//                         localStorage.setItem("userSignedIn", username);
 //                         event.preventDefault();
 //                         console.log("you are user");
 //                     }
@@ -178,7 +179,7 @@ function dangXuatAdmin()
 //     }
 //     else if (username == userLocal.username && password == userLocal.password && userLocal.authority == "user") {
 //         localStorage.setItem("isSignedin", "true");
-//         localStorage.setItem("userSignIn", username);
+//         localStorage.setItem("userSignedIn", username);
 //         event.preventDefault();
 //         window.location.reload();
 //         console.log("you are user");

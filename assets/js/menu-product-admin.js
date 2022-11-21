@@ -58,7 +58,7 @@ function filterProductAdmin(typeProduct) {
       pageOneHandleAdmin();
       break;
     }
-    case "laptop": {
+    case "Laptop": {
       for (let i = 0; i < product.length; i++) {
         if (product[i].type == typeProduct) {
           tmpProduct.push(product[i]);
@@ -600,12 +600,6 @@ function closeOrderProductTable()
   orderContainer.style.display = "none";
 }
 
-function dangXuatAdmin()
-{
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
-}
 
 // hàm định dạng ngày tháng năm
 function padTo2Digits(num) {
@@ -618,6 +612,14 @@ function formatDate(date) {
     padTo2Digits(date.getMonth() + 1),
     date.getFullYear(),
   ].join('/');
+}
+
+
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
 }
 
 
