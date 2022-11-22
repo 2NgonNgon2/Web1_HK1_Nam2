@@ -1,6 +1,7 @@
 let isAdmin;
 let isSignedin = false;
 
+
 if(localStorage.getItem("isSignedin") != "true")
 {
     isSignedin = false;
@@ -55,9 +56,11 @@ function dangnhap(event){
     else if(username==userLocal.username && password==userLocal.password && userLocal.authority =="user"){
         localStorage.setItem("isSignedin","true");
         localStorage.setItem("userSignIn",username);
+        localStorage.setItem("idCurrentUser",userLocal.id);
         event.preventDefault();
         window.location.reload();
         console.log("you are user");   
+
     }
     else{
         alert("Error!");

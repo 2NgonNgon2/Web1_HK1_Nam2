@@ -1,11 +1,10 @@
-let orderForm ;//mảng đơn hàng
+// let orderForm ;//mảng đơn hàng
 let lenghtOrderForm = 1;
-localStorage.removeItem("orderForm");
 if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
 {
     console.log("yo wtf?");
 
-    orderForm = [ 
+    let orderForm = [ 
     ]
     localStorage.setItem("orderForm",JSON.stringify(orderForm));
 
@@ -16,8 +15,8 @@ function getDate() {
     let dd = today.getDate();
     let mm = today.getMonth() + 1;// month start at 0
     let yy = today.getFullYear();
-    let hour = today.getHours()<10?'0':'' + today.getHours();
-    let minute = today.getMinutes()<10?'0':'' + today.getMinutes();
+    let hour = today.getHours()<10?'0' + today.getHours():'' + today.getHours();
+    let minute = today.getMinutes()<10?'0' + today.getHours():'' + today.getMinutes();
     let ddMMyy = hour + ':' + minute + ' ' + dd + '/' + mm + '/' + yy;
     return ddMMyy;
 }

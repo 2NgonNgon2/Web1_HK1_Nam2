@@ -46,10 +46,12 @@
     display: none;
   }
   header.sticky {
-    padding: 40px 40px 20px 100px;
+    padding: 30px 40px 30px 100px;
   }
 
   header.sticky #header-icon-list {
+    top: 50%;
+    transform: translateY(-50%);
     color: black;
   }
   header.sticky .navigation li a {
@@ -158,6 +160,12 @@
       justify-content: space-between;
     }
 
+    /* order form view */
+    .view-order-container {
+      height: 600px;
+      max-width: 100%;
+      bottom: 0;
+    }
   }
 
   
