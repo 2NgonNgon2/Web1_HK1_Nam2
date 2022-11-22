@@ -625,6 +625,35 @@ function filterAccount(event)
   accountArrayTmp =[];
 }
 
+function lockAccount(accountId)
+{
+  
+  for(let i = 0; i < account.length; i++)
+  {
+    
+    if(account[i].id == accountId)
+    {
+      console.log(account[i].id);
+      if(account[i].status == true)
+      {
+        account[i].status = false;
+        console.log("bỏ khóa tài khoản!");
+      }
+      else
+      {
+        account[i].status = true;
+        console.log("khóa tài khoản!");
+      }
+      // cập nhật lại trạng thái trong mảng đơn hàng
+      console.log(account);
+      localStorage.removeItem("account");
+      localStorage.setItem("account",JSON.stringify(account));
+      break;
+    }
+    
+    
+  }
+}
 
 function renderAccount(accountArray)
 {
@@ -639,7 +668,7 @@ function renderAccount(accountArray)
     <div class="account-password">MẬT KHẨU</div>
     <div class="account-phone">SĐT</div>
     <div class="account-mail">EMAIL</div>
-    <div class="status">TÌNH TRẠNG </div>
+    <div class="status">TÌNH TRẠNG</div>
   </div>
   `
 
@@ -653,12 +682,32 @@ function renderAccount(accountArray)
       <div class="account-password">${accountArray[i].password}</div>
       <div class="account-phone">${accountArray[i].phone}</div>
       <div class="account-mail">${accountArray[i].email}</div>
-      <label for="account-status" class="account-status">
-        <input type="checkbox" class="status"> 
-      </label>
-    </div>
+      
     `
+    // kiểm tra trạng thái tài khoản
+    if(accountArray[i].status == true) // tài khoản bị khóa
+    {
+      accountItem +=
+      `
+      <label for="account-status" class="account-status">
+        <input type="checkbox" checked class="status" onclick="lockAccount(${accountArray[i].id})"> 
+      </label>
+      </div>
+      `
+    }
+    else
+    {
+      accountItem +=
+      `
+      <label for="account-status" class="account-status" >
+        <input type="checkbox" class="status" onclick="lockAccount(${accountArray[i].id})"> 
+      </label>
+      </div>
+      `
+    }
+    
   }
+  
   accountDisplay.innerHTML = accountItem;
 }
 
