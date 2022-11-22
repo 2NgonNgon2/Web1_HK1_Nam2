@@ -97,9 +97,6 @@
 .card-product-content-bottom-buying {
   padding: 6px 0 0;
   line-height: 30px;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .card-product-content-bottom-buying-price {
@@ -165,16 +162,8 @@
   left: 12%;
 }
 
-.card-product-status {
-  text-align: center;
-  color: green;
-  font-size: 16px;
-  line-height: 25px;
-}
 
-.card-product-item:hover .card-product-status {
-  color: rgb(255, 255, 255);
-}
+
 
 .menu-card-products-page-number {
   display: flex;
