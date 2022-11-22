@@ -134,8 +134,8 @@ function pageOneHandle() {
 }
 
 function pageRender(pageNumberClicked, lastPage) {
-  console.log(tmpProduct);
-  console.log("da click trang: "+pageNumberClicked);
+  // console.log(tmpProduct);
+  // console.log("da click trang: "+pageNumberClicked);
   item = "";
   let positionLoad = (pageNumberClicked - 1) * 8;
   
@@ -145,7 +145,7 @@ function pageRender(pageNumberClicked, lastPage) {
   }
   // kiểm tra nếu là trang cuối thì duyệt tới hết mảng 
   if (lastPage == true) {
-    console.log("đã tới trang cuối !");
+    // console.log("đã tới trang cuối !");
     for (let k = positionLoad; k < tmpProduct.length; k++) {
       renderProduct(tmpProduct[k]);
     }
@@ -198,7 +198,7 @@ function renderProduct(product) {
           <div class="card-product-content-bottom">
 
 
-          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);addProductToCartByCardProduct(${product.id});checkEventInputValueCart();">
+          <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);addProductToCartByCardProduct(${product.id});">
 
             <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
             Thêm giỏ hàng
@@ -208,10 +208,6 @@ function renderProduct(product) {
               <div class="card-product-content-bottom-buying-price">
                 <span class="card-product-priceNumber">${formatPrice(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
-              </div>
-              <div class="card-product-status">
-                Còn hàng
-                <i class="fa-solid fa-check icon-check-status"></i>
               </div>
             </div>
             
@@ -223,13 +219,15 @@ function renderProduct(product) {
 }
 
 // hold active menu-items
-const menuItems = document.querySelectorAll(".menu-items");
-const menuItemsImg = document.querySelectorAll(".menu-items-img");
-const menuItemsOverlay = document.querySelectorAll(".overlay");
+let menu = document.querySelector("#menu");
+let menuCloseIcon = document.querySelector('.close-menu-products-icon');
+let menuItems = document.querySelectorAll(".menu-items");
+let menuItemsImg = document.querySelectorAll(".menu-items-img");
+let menuItemsOverlay = document.querySelectorAll(".overlay");
 
 menuItems.forEach((menuItem, index) => {
-  const menuItemImg = menuItemsImg[index];
-  const menuItemOverlay = menuItemsOverlay[index];
+  let menuItemImg = menuItemsImg[index];
+  let menuItemOverlay = menuItemsOverlay[index];
 
   menuItem.onclick = function () {
     document

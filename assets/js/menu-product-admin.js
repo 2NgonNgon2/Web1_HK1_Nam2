@@ -1,7 +1,7 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
-
-
+const orderContainer = document.querySelector(".order-container");
+document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
 let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã lọc
@@ -194,7 +194,7 @@ function renderProductAdmin(product) {
 
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">
-                <span class="card-product-priceNumber">${product.price}</span> 
+                <span class="card-product-priceNumber">${formatCurrecy(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
               </div>
               <div class="card-product-status">
@@ -222,7 +222,7 @@ async function addProductToProductArray(event)
   const productQuantity = document.querySelector("#productQuantity").value; 
   console.log(productImage);
 
-  let priceFormated = format1(productPrice);
+  let priceFormated = formatCurrecy(productPrice);
 
   let productAdd = {};
   let length = product.length+1;
@@ -302,7 +302,7 @@ function editProductToProductArray(event)
   product[id.value - 1].type = productType.value ;
   product[id.value - 1].name = productName.value;
   product[id.value - 1].description = productDescription.value ;
-  product[id.value - 1].img = format1(productImage.value)  ;
+  product[id.value - 1].img = formatCurrecy(productImage.value)  ;
   product[id.value - 1].price =productPrice.value  ;
 
   localStorage.removeItem("product");
@@ -434,9 +434,194 @@ menuItems.forEach((menuItem, index) => {
   };
 });
 
+function openOrderManageTable()
+{
+  orderContainer.style.display = "flex";
+  console.log(orderForm);
+  renderOrder(orderForm);
+
+}
+
+function processOrder(orderId)
+{
+  
+  for(let i = 0; i < orderForm.length; i++)
+  {
+    
+    if(orderForm[i].id == orderId)
+    {
+      console.log(orderForm[i].id);
+      if(orderForm[i].status == true)
+      {
+        orderForm[i].status = false;
+        console.log("chưa xử lý");
+      }
+      else
+      {
+        orderForm[i].status = true;
+        console.log("đã xử lý");
+      }
+      // cập nhật lại trạng thái trong mảng đơn hàng
+      console.log(orderForm);
+      localStorage.removeItem("orderForm");
+      localStorage.setItem("orderForm",JSON.stringify(orderForm));
+      break;
+    }
+    
+    
+  }
+}
 
 
-function format1(currency)
+
+function filterOrder(event)
+{
+  event.preventDefault();
+  
+  const dateStart = document.querySelector(".date-start-input");
+  const dateEnd = document.querySelector(".date-end-input");
+  
+  let start= new Date(dateStart.value);
+  let end = new Date(dateEnd.value);
+  let dateArray = [];
+  for(let order of orderForm)
+  {
+    let orderDate = new Date(order.dateOrder);
+    if((start <= orderDate) && (end >=  orderDate) )
+    {
+      dateArray.push(order);
+    }
+  }
+  renderOrder(dateArray);
+}
+
+function renderOrder(orderArray)
+{
+  const order = document.querySelector(".order");
+  let orderItem = "";
+  orderItem = `
+              <div class="header">
+                  <div class="order-id">ID</div>
+                  <div class="order-userid">USER ID</div>
+                  <div class="order-product">
+                    SẢN PHẨM
+                  </div>
+                  <div class="order-date">NGÀY</div>
+                  <div class="total-price">TỔNG GIÁ</div>
+                  <div class="status">TÌNH TRẠNG</div>
+                </div>
+  `
+  
+  let productName='';
+  let orderProductTmp=[];
+  let soluong=0;
+  let nameTmp;
+  let k=0;
+  for(let i = 0; i < orderArray.length; i++)
+  {
+    productName = " ";
+    // copy mảng arrProductId
+    for(let id of orderArray[i].arrProductId)
+    {
+      orderProductTmp.push(id);
+    }
+    for(let j = 0; j < product.length; j++)
+    {
+      if(orderProductTmp.length == 0) {break;}
+      k=0;
+      while(k < orderProductTmp.length)
+      {
+        if(orderProductTmp[k] == product[j].id)
+        {
+          soluong ++;
+          nameTmp = product[j].name;
+          if(soluong < 2)
+          {
+            //console.log(nameTmp);
+            productName += nameTmp;
+          }
+          /* nameTmp = product[j].id ;
+          console.log(nameTmp); */
+          orderProductTmp.splice(k,1);
+        }
+        else
+        {
+          k++;
+        }
+      }
+      if(soluong != 0)
+      {
+        productName += (" x" + soluong + "; ");
+        soluong = 0;
+      }
+    }
+    // định dạng lại ngày dd/mm/yyyy
+    let date = new Date(orderArray[i].dateOrder);
+
+    orderItem += `
+    <div class="order-item">
+        <div class="order-id">${orderArray[i].id}</div>
+        <div class="order-userid">${orderArray[i].idUser}</div>
+        <div class="order-product">
+          ${productName}
+        </div>
+        <div class="order-date">${formatDate(date)}</div>
+        <div class="total-price">${orderArray[i].totalPrice}</div>
+        
+    `
+
+    if(orderArray[i].status == true)
+    {
+      orderItem += 
+      `
+      <label for="order-status" class="order-status">
+      <input type="checkbox" checked class="status" onclick="processOrder(${orderArray[i].id})"> 
+      </label>
+      </div>     
+      `
+    }
+    else
+    {
+      orderItem += 
+      `
+      <label for="order-status" class="order-status">
+      <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].id})"> 
+      </label>
+      </div>      
+      `
+    }
+  }
+  order.innerHTML = orderItem;
+}
+
+function closeOrderProductTable()
+{
+  console.log("đóng bảng danh sách đơn hàng!");
+  orderContainer.style.display = "none";
+}
+
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
+}
+
+// hàm định dạng ngày tháng năm
+function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+function formatDate(date) {
+  return [
+    padTo2Digits(date.getDate()),
+    padTo2Digits(date.getMonth() + 1),
+    date.getFullYear(),
+  ].join('/');
+}
+
+
+function formatCurrecy(currency)
 {
   return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
