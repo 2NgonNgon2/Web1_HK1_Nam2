@@ -1,106 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="authors" content="NHÓM 13" />
-    <meta
-      name="description"
-      content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... ."
-    />
-    <title>Products</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
-    <link rel="stylesheet" href="./assets/css/add-product-table.css">
-    <link rel="stylesheet" href="./assets/css/card-products.css">
-    <link rel="stylesheet" href="./assets/css/cart.css">
-    <link rel="stylesheet" href="./assets/css/info-product.css">
-    <link rel="stylesheet" href="./assets/css/menu-product.css">
-    <link rel="stylesheet" href="./assets/css/message.css">
-    <link rel="stylesheet" href="./assets/css/navigation.css">
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/signin-menu.css">
-    <link rel="stylesheet" href="./assets/css/slider.css">
-    <link rel="stylesheet" href="./assets/css/order-form.css">
-    <link rel="stylesheet" href="./assets/css/responsiveAll.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="authors" content="NHÓM 13" />
+  <meta name="description"
+    content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... ." />
+  <title>Products</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
-      <!--icon list will appear when use tablet or mobile screen -->
-      <div id="header-icon-list">
-        <i class="fa-solid fa-list-ul"></i>
+  <link rel="stylesheet" href="./assets/css/add-product-table.css">
+  <link rel="stylesheet" href="./assets/css/card-products.css">
+  <link rel="stylesheet" href="./assets/css/cart.css">
+  <link rel="stylesheet" href="./assets/css/info-product.css">
+  <link rel="stylesheet" href="./assets/css/menu-product.css">
+  <link rel="stylesheet" href="./assets/css/message.css">
+  <link rel="stylesheet" href="./assets/css/navigation.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/signin-menu.css">
+  <link rel="stylesheet" href="./assets/css/slider.css">
+  <link rel="stylesheet" href="./assets/css/order-form.css">
+  <link rel="stylesheet" href="./assets/css/responsiveAll.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png"
+          style="width:200px;" alt=""></span></a>
+    <!--icon list will appear when use tablet or mobile screen -->
+    <div id="header-icon-list">
+      <i class="fa-solid fa-list-ul"></i>
+    </div>
+    <ul class="navigation" id="navigation">
+      <form action="" id="search_box">
+        <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="" />
+        <a href="#product-display" id="search_button" onclick="searchEngine(event)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+      </form>
+      <li><a href="#banner">Home</a></li>
+      <li><a href="#menu">Product</a></li>
+      <li title="Nhấn để xem giỏ hàng"><i class="fa fa-cart-shopping shopping-icon"
+          onclick="showCart();hideInfoProduct()"></i></li>
+      <div class="dropdown">
+        <div class="dropdown-select">
+          <i class="fa fa-user dropdown-user"></i>
+
+          <span class="dropdown-select dropdown-select-userName">Tài khoản</span>
+
+          <i class="fa fa-caret-down dropdown-caret"></i>
+        </div>
+        <ul class="dropdown-list">
+          <li class="dropdown-item" onclick="displaySignMenu('Sign in')">
+            <span class="dropdown-text" id="sign-in">Đăng nhập</span>
+          </li>
+          <li class="dropdown-item" onclick="displaySignMenu('Sign up')">
+            <span class="dropdown-text" id="sign-up">Đăng kí</span>
+          </li>
+        </ul>
       </div>
-      <ul class="navigation" id="navigation">
-          <form action="" id="search_box">
-            <input
-              type="search"
-              id="search_text"
-              placeholder="Bạn muốn tìm gì !!!!"
-              value=""
-            />
-            <a
-              href="#product-display"
-              id="search_button"
-              onclick="searchEngine(event)"
-            >
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-          </form>
-          <li><a href="#banner">Home</a></li>
-          <li><a href="#menu">Product</a></li>
-          <li title="Nhấn để xem giỏ hàng"><i class="fa fa-cart-shopping shopping-icon" onclick="showCart();hideInfoProduct()"></i></li>
-          <div class="dropdown">
-            <div class="dropdown-select">
-              <i class="fa fa-user dropdown-user"></i>
-
-              <span class="dropdown-select dropdown-select-userName" >Tài khoản</span>
-
-              <i class="fa fa-caret-down dropdown-caret"></i>
-            </div>
-            <ul class="dropdown-list">
-              <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
-                <span class="dropdown-text" id="sign-in">Đăng nhập</span>
-              </li>
-              <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
-                <span class="dropdown-text" id="sign-up">Đăng kí</span>
-              </li>
-            </ul>
-          </div>   
-      </ul>
-    </header>
-    <!-- Sign in menu -->
-    <div id="sigin-background">
-      <div class="signin" id="login">
+    </ul>
+  </header>
+  <!-- Sign in menu -->
+  <div id="sigin-background">
+    <!-- <div class="signin" id="login">
       <a class="signin-icon" onclick="displaySignMenu('none')">
-        <i class="fa-solid fa-xmark"></i
-      ></a>
+        <i class="fa-solid fa-xmark"></i></a>
       <h2 class="signin-heading">Log in</h2>
       <p class="signin-already" id="signin-already">
         You don't have an account?
-        <a
-          href="#"
-          class="signin-link-underline"
-          onclick="displaySignMenu('Sign up')"
-          >Create now</a
-        >
+        <a href="#" class="signin-link-underline" onclick="displaySignMenu('Sign up')">Create now</a>
       </p>
       <form class="form">
         <div class="form-user-name">
-            <input type="text" class="form-input" placeholder="Name" id="form-Name">
+          <input type="text" class="form-input" placeholder="Name" id="form-Name">
         </div>
         <div class="form-password">
-            <input type="password" class="form-input" placeholder="Password" id="form-Password">
+          <input type="password" class="form-input" placeholder="Password" id="form-Password">
         </div>
         <div>
           <button type="submit" class="form-submit">
@@ -109,7 +93,7 @@
           </button>
         </div>
       </form>
-    </div> -->
+    </div> --> -->
   </div>
   <!-- Banner -->
   <section class="banner" id="banner">
@@ -179,18 +163,18 @@
     <a class="" href="#"><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
   </div>
 
-    <!-- Cart products -->
-    <div class="cart" id="cart">
-      <div class="cart-container" onclick="stopPropagate(event)">
-        <div class="cart-container-top">
-          <i class="fa-solid fa-cart-shopping icon-btn-cart"></i>
-          Giỏ hàng
-        </div>
-        <div class="products-container-close" onclick="hideCart()">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="cart-container-middle">
-          <!-- <div class="cart-container-middle-product">
+  <!-- Cart products -->
+  <div class="cart" id="cart">
+    <div class="cart-container" onclick="stopPropagate(event)">
+      <div class="cart-container-top">
+        <i class="fa-solid fa-cart-shopping icon-btn-cart"></i>
+        Giỏ hàng
+      </div>
+      <div class="products-container-close" onclick="hideCart()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="cart-container-middle">
+        <!-- <div class="cart-container-middle-product">
             <div class="cart-container-middle-product-img">
               <img src="/assets/img/Gaming keyboard.webp" alt="">
             </div>
@@ -236,12 +220,12 @@
 
   <!-- Card products -->
 
-    <div class="card-products">
-      <div class="menu" id="menu">
-        <div class="close-menu-products-icon">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="menu-title">Danh mục sản phẩm</div>
+  <div class="card-products">
+    <div class="menu" id="menu">
+      <div class="close-menu-products-icon">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="menu-title">Danh mục sản phẩm</div>
 
       <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
         <a href="#product-display" class="overlay activeMenuItemOverlay" onclick="filterProduct('keyboard') "></a>
@@ -269,7 +253,22 @@
         <img class="menu-items-img" src="/assets/img/laptop.png" alt="keyboard image" loading="lazy" />
       </div>
     </div>
-
+    <div class="menu-mega">
+      <div class="menuToggle">
+      </div>
+      <div class="menu-toggle">
+        <ul>
+          <li class="down">
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+            <p>Giá giảm dần</p>
+          </li>
+          <li class="up">
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+            <p>Giá tăng dần</p>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="card-products-container" id="product-display">
       <!-- <div class="card-product-item">
         
@@ -385,9 +384,9 @@
         <i class="fa-solid fa-xmark"></i>
       </div>
 
-        <div class="view-order-container-bottom" id="view-order-container-bottom">
+      <div class="view-order-container-bottom" id="view-order-container-bottom">
 
-          <!-- <div class="view-order-container-bottom-product">
+        <!-- <div class="view-order-container-bottom-product">
 
             <div class="view-order-container-bottom-product-title">Đặt hàng thành công</div>
 
@@ -444,26 +443,26 @@
           </div> -->
 
 
-        </div>
-
       </div>
+
     </div>
+  </div>
   </div>
 
   <!-- Java Script -->
-    <script src="/assets/js/account.js"></script>
-    <script src="/assets/js/arr-account.js"></script>
-    <script src="/assets/js/arr-product.js"></script>
-    <script src="/assets/js/backToHome-button.js"></script>
-    <script src="/assets/js/cart.js"></script>
-    <script src="/assets/js/info-products.js"></script>
-    <script src="/assets/js/menu-product.js"></script>
-    <script src="/assets/js/message.js"></script>
-    <script src="/assets/js/navigation.js"></script>
-    <script src="/assets/js/search-engine.js"></script>
-    <script src="/assets/js/slider.js"></script>
-    <script src="/assets/js/arr-order-form.js"></script>
-    <script src="/assets/js/order-form.js"></script>
+  <script src="/assets/js/account.js"></script>
+  <script src="/assets/js/arr-account.js"></script>
+  <script src="/assets/js/arr-product.js"></script>
+  <script src="/assets/js/backToHome-button.js"></script>
+  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/info-products.js"></script>
+  <script src="/assets/js/menu-product.js"></script>
+  <script src="/assets/js/message.js"></script>
+  <script src="/assets/js/navigation.js"></script>
+  <script src="/assets/js/search-engine.js"></script>
+  <script src="/assets/js/slider.js"></script>
+  <script src="/assets/js/arr-order-form.js"></script>
+  <script src="/assets/js/order-form.js"></script>
 
   <!-- <script src="search-engine.js"></script> -->
 </body>

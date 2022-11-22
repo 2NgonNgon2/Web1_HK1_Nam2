@@ -2,7 +2,7 @@ let isAdmin;
 let isSignedin = false;
 
 $(document).ready(function () {
-    localStorage.clear;
+    //localStorage.clear;
 
     account.forEach(element => {
         localStorage.setItem(element.username, JSON.stringify(element));
@@ -78,26 +78,31 @@ function dangXuat()
 
 
 function dangnhap(event) {
-    var username = document.getElementById("name").value;
-    var password = document.getElementById("pass").value;
-    var userLocal = JSON.parse(localStorage.getItem(username));
-    if (username == userLocal.username && password == userLocal.password && userLocal.authority == "admin") {
-        localStorage.setItem("adminSignedin", username);
-        localStorage.setItem("isSignedin", "true");
-        window.location.href = "/admin.html";
-        event.preventDefault(); // ngăn form không bị reload sau khi submit
+    try {
+        var username = document.getElementById("name").value;
+        var password = document.getElementById("pass").value;
+        var userLocal = JSON.parse(localStorage.getItem(username));
+        if (username == userLocal.username && password == userLocal.password && userLocal.authority == "admin") {
+            localStorage.setItem("adminSignedin", username);
+            localStorage.setItem("isSignedin", "true");
+            window.location.href = "/admin.html";
+            event.preventDefault(); // ngăn form không bị reload sau khi submit
+        }
+        else if (username == userLocal.username && password == userLocal.password && userLocal.authority == "user") {
+            localStorage.setItem("isSignedin", "true");
+            localStorage.setItem("userSignIn", username);
+            event.preventDefault();
+            window.location.reload();
+            console.log("you are user");
+        }
+        else{
+            alert("Error!");
+        }
+        backgroundLogin.style.display = "none";
+    } catch (err){
+        alert(err);
     }
-    else if (username == userLocal.username && password == userLocal.password && userLocal.authority == "user") {
-        localStorage.setItem("isSignedin", "true");
-        localStorage.setItem("userSignIn", username);
-        event.preventDefault();
-        window.location.reload();
-        console.log("you are user");
-    }
-    else {
-        alert("Error!");
-    }
-    backgroundLogin.style.display = "none";
+
 }
 
 function createAcc(event) {
