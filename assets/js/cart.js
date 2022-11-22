@@ -1,6 +1,7 @@
 function formatPrice(x) {
   return x.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }
+
 // nhấn tổ hợp phím ctrl + X để mở cart
 var opened = false;
 $(document).keydown(function(evt) {
@@ -15,6 +16,7 @@ $(document).keydown(function(evt) {
     }
   }
 });
+
 // chặn keypress của user
 function preventKeyPress(e) {
   e.preventDefault();  
@@ -178,6 +180,7 @@ function buyProductInCart() {
   let arrCart = [];
   localStorage.setItem('cart',JSON.stringify(arrCart));
   alert("Bạn đã mua hàng thành công");
+  showProductsInCart();
 }
 
 
