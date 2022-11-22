@@ -209,10 +209,6 @@ function renderProduct(product) {
                 <span class="card-product-priceNumber">${formatPrice(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
               </div>
-              <div class="card-product-status">
-                Còn hàng
-                <i class="fa-solid fa-check icon-check-status"></i>
-              </div>
             </div>
             
           </div>

@@ -180,6 +180,7 @@ function buyProductInCart() {
   let arrCart = [];
   localStorage.setItem('cart',JSON.stringify(arrCart));
   alert("Bạn đã mua hàng thành công");
+  showProductsInCart();
 }
 
 
