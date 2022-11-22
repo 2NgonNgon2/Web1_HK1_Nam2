@@ -58,11 +58,6 @@ if (localStorage.getItem("userSignedIn") != null) {
     });
 }
 
-function dangXuatAdmin() {
-    localStorage.setItem("isSignedin", "false");
-    localStorage.removeItem("adminSignedin");
-    window.location.href = "/index.html";
-}
 function dangXuat()
 {
     localStorage.setItem("isSignedin","false");
