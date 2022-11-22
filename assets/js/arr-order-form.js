@@ -1,21 +1,15 @@
 let orderForm ;//mảng đơn hàng
 let lenghtOrderForm = 1;
-
+localStorage.removeItem("orderForm");
 if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
 {
     console.log("yo wtf?");
+
     orderForm = [ 
     ]
     localStorage.setItem("orderForm",JSON.stringify(orderForm));
 
 }
-if(localStorage.getItem("orderForm") != null)  // đã có trong ls(dùng trong trường hợp chỉnh sửa)
-{
-    orderForm = JSON.parse(localStorage.getItem("orderForm"));
-
-}
-
-
 
 function getDate() {
     let today = new Date();
