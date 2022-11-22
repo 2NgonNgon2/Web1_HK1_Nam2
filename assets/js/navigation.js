@@ -4,8 +4,8 @@ window.addEventListener('scroll', function () {
   header.classList.toggle("sticky", window.scrollY > 0);
 });
 // ham display ra menu dang nhap
-var loginMenu = document.getElementById("login");
-var createMenu = document.getElementById("create");
+// var loginMenu = document.getElementById("login");
+// var createMenu = document.getElementById("create");
 var backgroundLogin = document.getElementById("sigin-background");
 let headerIconList = document.getElementById('header-icon-list');
 
@@ -52,7 +52,7 @@ function fdk() {
           Already have an account ? 
           <a href="#" class="signin-link-underline" onclick="fdn()">Login now</a>
         </p>
-        <form id="form">
+        <form onsubmit="createAcc()">
           <div class="form-user-name">
               <input type="text" class="form-input" placeholder="Name" id="form-Name">
           </div>
@@ -72,7 +72,7 @@ function fdk() {
                 </button>
           </div>
         </form>
-      </div>-->
+      </div>
         `);
 
   }

@@ -1,32 +1,37 @@
 // mảng tài khoản
 
-var account;
-
-fetch("./assets/js/arr-account.json").then(function (response) {
-    if (response.status !== 200) {
-        console.log('Lỗi, mã lỗi ' + response.status);
-        return;
+var account = 
+[
+    {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "authority": "admin",
+        "email": "admin123@gmail.com",
+        "phone": "123456"
+    },
+    {
+        "id": "2",
+        "username": "admin2",
+        "password": "123",
+        "authority": "admin",
+        "email": "admin123@gmail.com",
+        "phone": "123456"
+    },
+    {
+        "id": "3",
+        "username": "user",
+        "password": "123",
+        "authority": "user",
+        "email": "admin123@gmail.com",
+        "phone": "123456"
+    },
+    {
+        "id": "4",
+        "username": "user2",
+        "password": "123",
+        "authority": "user",
+        "email": "admin123@gmail.com",
+        "phone": "123456"
     }
-    response.json().then(data => {
-        account = data;
-    })
-})
-// const myForm = document.getElementById('form');
-// console.log(myForm);
-
-// myForm.addEventListener('submit',function(e){
-//     e.preventDefault();
-
-//     const formData = new FormData(this);
-
-//     fetch('text.json',{
-//         method:'post',
-//         body:formData
-//     }).then(function(response){
-//         return response.text();
-//     }).then(function(text){
-//         console.log(text);
-//     }).catch(function(error){
-//         console.log(error);
-//     })
-// });
+];
