@@ -103,7 +103,7 @@
   text-align: center;
 }
 
-input[type="checkbox"] {
+.delete-product-container .delete-product-table .delete-item-container .input-label input[type="checkbox"] {
   appearance: checkbox !important;
   transform: scale(0.3);
 }

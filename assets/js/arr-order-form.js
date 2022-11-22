@@ -1,43 +1,6 @@
 let orderForm = [];//mảng đơn hàng
-// let orderFormItem ={};//thêm đơn hàng 
 let lenghtOrderForm = 1;
-localStorage.removeItem("orderForm");
-if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
-{
-    console.log("yo wtf?");
-    orderForm = [
-        {
-             id: "1",
-             idUser: "3",
-             dateOrder: today,
-             status: isProcessed,
-             arrProductId: ["4","24","11","20"]
-         },
-         {
-             id: "2",
-             idUser: "3",
-             dateOrder: today,
-             status: isProcessed,
-             arrProductId: ["14","6","2","10"]
-         },
-         {
-             id: "3",
-             idUser: "4",
-             dateOrder: today,
-             status: isProcessed,
-             arrProductId: ["14","6"]
-         },
-         {
-             id: "4",
-             idUser: "4",
-             dateOrder: today,
-             status: isProcessed,
-             arrProductId: ["4","6","21"]
-         },
-    ];
-    localStorage.setItem("orderForm",JSON.stringify(orderForm));
-
-}
+//localStorage.removeItem("orderForm");
 
 function getDate() {
     let today = new Date();
@@ -49,6 +12,51 @@ function getDate() {
     let ddMMyy = hour + ':' + minute + ' ' + dd + '/' + mm + '/' + yy;
     return ddMMyy;
 }
+
+let today = new Date(getDate());
+
+if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
+{
+    console.log("insert orderForm to ls");
+    orderForm = [
+       /*  {
+             id: "1",
+             idUser: "3",
+             dateOrder: today,
+             status: false,
+             arrProductId: ["4","24","11","20"]
+         },
+         {
+             id: "2",
+             idUser: "3",
+             dateOrder: today,
+             status: false,
+             arrProductId: ["14","6","2","10"]
+         },
+         {
+             id: "3",
+             idUser: "4",
+             dateOrder: today,
+             status: false,
+             arrProductId: ["14","6"]
+         },
+         {
+             id: "4",
+             idUser: "4",
+             dateOrder: today,
+             status: false,
+             arrProductId: ["4","6","21"]
+         }, */
+    ];
+    console.log("setItem");
+    localStorage.setItem("orderForm",JSON.stringify(orderForm));
+}
+else
+{
+    orderForm = localStorage.getItem("orderForm");
+}
+
+
 
 // let orderForm = [ 
 //     {

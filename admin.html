@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./assets/css/delete-product-table.css">
     <link rel="stylesheet" href="./assets/css/switch-button.css">
     <link rel="stylesheet" href="./assets/css/order-product-table.css">
+    <link rel="stylesheet" href="./assets/css/account-manager-table.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
@@ -57,7 +58,7 @@
                   <span class="dropdown-text">Thông tin cá nhân</span>
               </li>
               <li class="dropdown-item">
-                <span class="dropdown-text" onclick ="">Quản lý người dùng</span>
+                <span class="dropdown-text" onclick ="openAccountManageTable()">Quản lý người dùng</span>
               </li>
               <li class="dropdown-item">
                   <span class="dropdown-text" onclick ="openOrderManageTable()">Quản lý đơn hàng</span>
@@ -81,10 +82,54 @@
     <div class="back-to-top">
       <a class="" href="#"   ><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
     </div>
-    <!--order table  -->
+    
+      <!-- account manage table -->
+
+      <div class="account-container" onclick="closeAccountProductTable()">
+        <div class="account-table" onclick="stopPropagate(event)">
+
+          <div class="exit-account-manage-table" onclick="closeAccountProductTable()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="title">DANH SÁCH TÀI KHOẢN</div>
 
         
-       
+
+          <div class="account">
+
+            <!-- <div class="header">
+              <div class="account-id">ID</div>
+              <div class="account-name">TÊN TÀI KHOẢN</div>
+              <div class="account-password">MẬT KHẨU</div>
+              <div class="account-phone">SĐT</div>
+              <div class="account-mail">EMAIL</div>
+              <div class="status">TÌNH TRẠNG </div>
+            </div> -->
+            
+            <!-- <div class="account-item">
+                <div class="account-id">1</div>
+                <div class="account-name">otaku</div>
+                <div class="account-password">hehe</div>
+                <div class="account-phone">096123456</div>
+                <div class="account-mail">hackiemsi@gmail.com</div>
+                <label for="account-status" class="account-status">
+                  <input type="checkbox" class="status"> 
+                </label>
+            </div> -->
+            
+          </div>
+          
+          <form class="search-user" onsubmit="filterAccount(event)">
+            <label >TÊN TÀI KHOẢN:</label>
+            <input type="text" value="" id="user-name" placeholder="hackiemsi">
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+        
+       <!--order table  -->
         <div class="order-container" onclick="closeOrderProductTable()">
           <div class="order-table" onclick="stopPropagate(event)">
 
@@ -251,7 +296,7 @@
         </div>
   
         <div class="menu-items" id="item-5">
-          <a  href="#product-display" class="overlay" onclick="filterProductAdmin('laptop')"></a>
+          <a  href="#product-display" class="overlay" onclick="filterProductAdmin('Laptop')"></a>
           <img class="menu-items-img" src="/assets/img/mousepads.png" alt="keyboard image" loading="lazy">
         </div>
       </div>

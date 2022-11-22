@@ -1,6 +1,10 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
 const orderContainer = document.querySelector(".order-container");
+const accountContainer = document.querySelector(".account-container");
+const deleteProductTable = document.querySelector(".delete-product-container");
+const deleteItemContainer = document.querySelector(".delete-item-container");
+
 document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
@@ -58,7 +62,7 @@ function filterProductAdmin(typeProduct) {
       pageOneHandleAdmin();
       break;
     }
-    case "laptop": {
+    case "Laptop": {
       for (let i = 0; i < product.length; i++) {
         if (product[i].type == typeProduct) {
           tmpProduct.push(product[i]);
@@ -165,14 +169,8 @@ function activePageNumber(pageNumberClicked)
 }
 
 function renderProductAdmin(product) {
-  if(product == null)
-  {
-    console.log("why?");
-    
-  }
-  else
-  {
-    item += `
+    item += 
+    `
         <div class="card-product-item" id="${product.id}" >
           <img
             class="card-img"
@@ -207,11 +205,11 @@ function renderProductAdmin(product) {
           </div>
         </div>
       </div>
-      `;
-  }
+    `;
+
 }
 
-async function addProductToProductArray(event)
+function addProductToProductArray(event)
 {
   event.preventDefault();
   const productType = document.querySelector("#select-type").value;
@@ -317,9 +315,30 @@ function closeEditProductTable(event)
   editProductTable.style.display = "none";
 }
 
+/* THAO TÁC XÓA SẢN PHẨM */
 
-const deleteProductTable = document.querySelector(".delete-product-container");
-const deleteItemContainer = document.querySelector(".delete-item-container");
+function openDeleteProductTable()
+{
+  console.log("mở bảng thêm sản phẩm!");
+  deleteProductTable.style.display = "flex";
+  let deleteItem="";
+
+  for(let i = 0; i < tmpProduct.length; i++)
+  {
+    deleteItem += 
+    `
+    <div class="input-label">
+            <input type="checkbox" name="deleteItem" class="deleteItem" value="${tmpProduct[i].id}">
+            <label for="deleteItem" class="delete-item">
+              <img class="delete-item-img" src="${tmpProduct[i].img}">
+              <div class="delete-item-name">${tmpProduct[i].name}</div>  
+              <div class="delete-item-price">${tmpProduct[i].price}</div>
+            </label>
+    </div>
+    `
+  }
+  deleteItemContainer.innerHTML = deleteItem;
+}
 
 function deleteProductFromProductArray(event)
 {
@@ -379,28 +398,7 @@ function deleteProductFromProductArray(event)
   
 }
 
-function openDeleteProductTable()
-{
-  console.log("mở bảng thêm sản phẩm!");
-  deleteProductTable.style.display = "flex";
-  let deleteItem="";
 
-  for(let i = 0; i < tmpProduct.length; i++)
-  {
-    deleteItem += 
-    `
-    <div class="input-label">
-            <input type="checkbox" name="deleteItem" class="deleteItem" value="${tmpProduct[i].id}">
-            <label for="deleteItem" class="delete-item">
-              <img class="delete-item-img" src="${tmpProduct[i].img}">
-              <div class="delete-item-name">${tmpProduct[i].name}</div>  
-              <div class="delete-item-price">${tmpProduct[i].price}</div>
-            </label>
-    </div>
-    `
-  }
-  deleteItemContainer.innerHTML = deleteItem;
-}
 
 function closeDeleteProductTable(event)
 {
@@ -599,6 +597,78 @@ function closeOrderProductTable()
   console.log("đóng bảng danh sách đơn hàng!");
   orderContainer.style.display = "none";
 }
+
+/* CÁC HÀM QUẢN LÝ NGƯỜI DÙNG */
+
+function openAccountManageTable()
+{
+  accountContainer.style.display = "flex";
+  renderAccount(account);
+}
+
+function filterAccount(event)
+{
+  event.preventDefault();
+  const username = document.querySelector("#user-name").value;
+  let accountArrayTmp = [];
+  
+  for(let acc of account)
+  {
+    if(acc.username.match(username) != null) 
+    {
+      accountArrayTmp.push(acc); 
+    }
+    
+  }
+  console.log(accountArrayTmp); 
+  renderAccount(accountArrayTmp);
+  accountArrayTmp =[];
+}
+
+
+function renderAccount(accountArray)
+{
+  
+  const accountDisplay = document.querySelector(".account");
+  let accountItem = "";
+  accountItem = 
+  `
+  <div class="header">
+    <div class="account-id">ID</div>
+    <div class="account-name">TÊN TÀI KHOẢN</div>
+    <div class="account-password">MẬT KHẨU</div>
+    <div class="account-phone">SĐT</div>
+    <div class="account-mail">EMAIL</div>
+    <div class="status">TÌNH TRẠNG </div>
+  </div>
+  `
+
+  for(let i = 0; i < accountArray.length; i++)
+  {
+    accountItem +=
+    `
+    <div class="account-item">
+      <div class="account-id">${accountArray[i].id}</div>
+      <div class="account-name">${accountArray[i].username}</div>
+      <div class="account-password">${accountArray[i].password}</div>
+      <div class="account-phone">${accountArray[i].phone}</div>
+      <div class="account-mail">${accountArray[i].email}</div>
+      <label for="account-status" class="account-status">
+        <input type="checkbox" class="status"> 
+      </label>
+    </div>
+    `
+  }
+  accountDisplay.innerHTML = accountItem;
+}
+
+
+function closeAccountProductTable()
+{
+  console.log("đóng bảng danh sách người dùng!");
+  accountContainer.style.display = "none";
+}
+
 
 function dangXuatAdmin()
 {
