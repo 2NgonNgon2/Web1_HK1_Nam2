@@ -1,13 +1,17 @@
-// let orderForm ;//mảng đơn hàng
-let lenghtOrderForm = 1;
+
 if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
 {
-    console.log("yo wtf?");
-
-    let orderForm = [ 
-    ]
+   
+  let orderForm ;//mảng đơn hàng
+  let lenghtOrderForm = 1;
+  //localStorage.removeItem("orderForm");
+    console.log("insert orderForm to ls");
+    orderForm = [];
+    console.log("setItem");
     localStorage.setItem("orderForm",JSON.stringify(orderForm));
-
+} else
+{
+    orderForm = localStorage.getItem("orderForm");
 }
 
 function getDate() {
@@ -21,44 +25,8 @@ function getDate() {
     return ddMMyy;
 }
 
-// orderForm = [ 
-//     {
-//         id: "1",
-//         idUser: "3",
-//         dateOrder: today,
-//         status: isProcessed,
-//         arrProductId: ["4","24","11","20"]
-//     },
-//     {
-//         id: "2",
-//         idUser: "3",
-//         dateOrder: today,
-//         status: isProcessed,
-//         arrProductId: ["14","6","2","10"]
-//     },
-//     {
-//         id: "3",
-//         idUser: "4",
-//         dateOrder: today,
-//         status: isProcessed,
-//         arrProductId: ["14","6"]
-//     },
-//     {
-//         id: "4",
-//         idUser: "4",
-//         dateOrder: today,
-//         status: isProcessed,
-//         arrProductId: ["4","6","21"]
-//     },
-//     {
-//         id: "5",
-//         idUser: "4",
-//         dateOrder: today,
-//         status: isProcessed,
-//         arrProductId: ["1","26","22","10","15"]
-//     },
 
-// ]
+
 
 
 
