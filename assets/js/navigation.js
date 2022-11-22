@@ -52,7 +52,7 @@ function fdk() {
           Already have an account ? 
           <a href="#" class="signin-link-underline" onclick="fdn()">Login now</a>
         </p>
-        <form onsubmit="createAcc()">
+        <form onsubmit="createAcc(event)">
           <div class="form-user-name">
               <input type="text" class="form-input" placeholder="Name" id="form-Name">
           </div>
@@ -89,7 +89,7 @@ function fdn() {
         You don't have an account?
         <a href="#" class="signin-link-underline" onclick="fdk()">Create now</a>
       </p>
-      <form onsubmit="dangnhap()" >
+      <form onsubmit="dangnhap(event)" >
         <div class="form-user-name">
           <input type="text" class="form-input" placeholder="Name" id="name" />
         </div>
