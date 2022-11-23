@@ -209,10 +209,6 @@ function renderProduct(product) {
                 <span class="card-product-priceNumber">${formatPrice(product.price)}</span> 
                 <span class="card-product-priceIcon">₫</span>
               </div>
-              <div class="card-product-status">
-                Còn hàng
-                <i class="fa-solid fa-check icon-check-status"></i>
-              </div>
             </div>
             
           </div>
@@ -223,13 +219,15 @@ function renderProduct(product) {
 }
 
 // hold active menu-items
-const menuItems = document.querySelectorAll(".menu-items");
-const menuItemsImg = document.querySelectorAll(".menu-items-img");
-const menuItemsOverlay = document.querySelectorAll(".overlay");
+let menu = document.querySelector("#menu");
+let menuCloseIcon = document.querySelector('.close-menu-products-icon');
+let menuItems = document.querySelectorAll(".menu-items");
+let menuItemsImg = document.querySelectorAll(".menu-items-img");
+let menuItemsOverlay = document.querySelectorAll(".overlay");
 
 menuItems.forEach((menuItem, index) => {
-  const menuItemImg = menuItemsImg[index];
-  const menuItemOverlay = menuItemsOverlay[index];
+  let menuItemImg = menuItemsImg[index];
+  let menuItemOverlay = menuItemsOverlay[index];
 
   menuItem.onclick = function () {
     document
