@@ -1,11 +1,11 @@
-.order-container
+.account-container
 {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.231);
+  background-color: rgba(76, 76, 76, 0.231);
   display: none;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
 }
 
 
-.order-container .order-table
+.account-container .account-table
 {
   position: absolute;
   height: 600px;
@@ -24,7 +24,7 @@
   background: whitesmoke;
   z-index: 10002;
 }
-.order-container .order-table .title
+.account-container .account-table .title
 {
   border-bottom: 1px solid black;
   padding-bottom:20px ;
@@ -34,7 +34,7 @@
   font-size: 25px;
 }
 
-.order-container .order-table .exit-order-manage-table
+.account-container .account-table .exit-account-manage-table
 {
   position: absolute;
   top:10px;
@@ -47,53 +47,46 @@
   justify-content: center;
   align-items: center;
 }
-.order-container .order-table .order .header
+.account-container .account-table .account .header
 {
   width:100%;
   height: 30px;
   display: grid;
-  grid-template-columns: 10% 10% 40% 14% 13% 13%  ;
+  grid-template-columns: 5% 20% 20% 20% 25% 10% ;
   font-weight: bolder;
 }
 
-.order-container .order-table .order 
+.account-container .account-table .account 
 {
   height: 430px;
   width: 100%;
   overflow: auto;
 }
 
-.order-container .order-table .order .order-item
+.account-container .account-table .account .account-item
 {
   width:100%;
   height: 80px;
   display: grid;
-  grid-template-columns: 10% 10% 40% 14% 13% 13% ;
+  grid-template-columns: 5% 20% 20% 20% 25% 10% ;
+  border-bottom: 1px solid grey;
+
 }
-.order-container .order-table .order .order-item:nth-child(2n)
-{
-  background: rgb(160, 160, 160);
-}
-.order-container .order-table .order .order-item .order-product
+
+.account-container .account-table .account .account-item .account-product
 {
   overflow: auto;
   height: 80px;
 }
 
-.order-id,.order-userid,.order-date,.total-price,.header .status,.order-product
+.account-id,.account-name,.account-password,.account-phone,.account-mail,.header .status
 {
   justify-self: center;
   align-self: center;
   
 }
-.order-item .order-product
-{
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  
-}
-.order-status
+
+.account-status
 {
   width: 100%;
   height: 100%;
@@ -108,7 +101,7 @@ input[type="checkbox"] {
 
 }
 
-.order-container .order-table .date-filter
+.account-container .account-table .search-user
 {
   width: 50%;
   height: 50px;
@@ -116,55 +109,42 @@ input[type="checkbox"] {
   bottom: 10px;
   left: 10px;
   display: grid;
-  grid-template-columns: 20% 30% 20% 30% auto;
+  grid-template-columns: 30% 40% 30%;
   grid-gap: 10px;
   
 }
-
-.order-container .order-table .date-filter .date-start
+.account-container .account-table .search-user label
 {
-  grid-column: 1/2;
+  justify-self: center;
+  align-self: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.order-container .order-table .date-filter .date-start-input
-{
-  grid-column:2/3;
-
-}
-
-.order-container .order-table .date-filter .date-end
-{
-  grid-column: 3/4;
-}
-
-.order-container .order-table .date-filter .date-end-input
-{
-  grid-column:4/5;
-
-}
-
-.order-container .order-table .date-filter input
+.account-container .account-table  .search-user input
 {
   height: 30px;
   justify-self: center;
+  align-self: center;
   font-size: 20px;
   background: white;
   border-radius: 5px;
 }
 
-.order-container .order-table .date-filter label
+.account-container .account-table  .search-user input::placeholder
 {
-  justify-self: center;
-  font-size: 18px;
-  font-weight: bold;
+  color: rgba(149, 146, 146, 0.582);
 }
 
-.order-container .order-table .date-filter  button
+.account-container .account-table .search-user button
 {
-  width: 100px;
+  width: 50px;
   height: 30px;
   background: orange;
   border: 2px solid black;
+  border-radius: 25px;
   text-align: center;
   font-weight: bolder;
+  justify-self: center;
+  align-self: center;
 }
