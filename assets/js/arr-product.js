@@ -53,11 +53,16 @@ else {
     {
       id: "5",
       type: "speaker",
-      name: "loa xập xình",
-      description: " loa cho dan choi",
-      detail: ``,
-      img: "/assets/img/speaker.png",
-      price: "569000",
+      name: "Loa 2.1 Logitech Z213 (Đen)",
+      description: "none",
+      detail: `
+      - Thiết Kế: Hệ Thống Loa 2.1,<br>
+      - Kết Nối: Jack 3.5mm (headphone) / Jack 3.5mm (input) / Jack 3.5mm (output)<br>
+      - Chức Năng: Volume Control / Bass Control<br>
+      - Công Suất: 15W RMS
+      `,
+      img: "/assets/img/Loa LogitechZ213.webp",
+      price: "499000",
     },
     {
       id: "6",
@@ -135,11 +140,16 @@ else {
     {
       id: "13",
       type: "speaker",
-      name: "loa xập xình",
-      description: " loa cho dan choi",
-      detail: ``,
-      img: "/assets/img/speaker.png",
-      price: "569000",
+      name: "Loa Logitech Z120 (Trắng)",
+      description: "none",
+      detail: `
+      - Thiết Kế: Hệ Thống Loa 2.0<br>
+      - Kết Nối: Jack 3.5mm (input) / USB (power)<br>
+      - Chức Năng: Volume Control<br>
+      - ông Suất: 3W RMS<br>
+      `,
+      img: "/assets/img/Loa-logitech-z120.png",
+      price: "239000",
     },
     {
       id: "14",
@@ -222,11 +232,17 @@ else {
     {
       id: "21",
       type: "speaker",
-      name: "loa xập xình",
-      description: " loa cho dan choi",
-      detail: ``,
-      img: "/assets/img/speaker.png",
-      price: "569000",
+      name: "Loa Fenda F380X",
+      description: "none",
+      detail: `
+      - Màn hình LED trắng sáng với góc nhìn tốt<br>
+      - Đèn LED đa màu tự động<br>
+      - Phạm vi hoạt động của Bluetooth lên đến 15 m<br>
+      - Đầu đọc USB hỗ trợ giải mã định dạng kép MP3 / WMA<br>
+      - Bộ nhớ FM lên đến 100 đài<br>
+      `,
+      img: "/assets/img/Loa Fenda F380X.webp",
+      price: "1190000",
     },
     {
       id: "22",
@@ -304,11 +320,16 @@ else {
     {
       id: "29",
       type: "speaker",
-      name: "loa xập xình",
-      description: " loa cho dan choi",
-      detail: ``,
-      img: "/assets/img/speaker.png",
-      price: "569000",
+      name: "Loa 5.1 Logitech Z906 (Đen)",
+      description: "none",
+      detail: `
+      - Thiết Kế: Hệ Thống Loa 5.1<br>
+      - Kết Nối: Jack 3.5mm (headphone) / Jack 3.5mm (input) / RCA (input) / Jack 3.5 (surround input) / Coaxial (input) / Optical (input) / Push Ternminal (output)<br>
+      - Chức Năng: Volume Control / Bass Control / 2.1 Mode / 4.1 Mode / 3D Mode / DTS Interative / Dolby Digital / THX / Loa treo tường được<br>
+      - Công Suất: 500W RMS
+      `,
+      img: "/assets/img/Loa LogitechZ906-5.1.webp",
+      price: "6400000",
     },
     {
       id: "30",
@@ -536,7 +557,173 @@ else {
     img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/18/msi-gaming-gf63-12.png',
     price: '21790000'
   },
+{
+    id: '54',
+    type: 'speaker',
+    name: 'Loa Soundmax A140 (2.0)',
+    description: 'none',
+    detail: `
+    - Thiết kế nhỏ gọn với hai loa nhỏ hình hộp chữ nhật<br>
+    - Nút điều chỉnh âm lượng thiết kế ngay trước mặt điều chỉnh nhanh chóng<br>  
+    - Công suất 10W , âm thanh mạnh mẽ, trong trẻo đủ thỏa mãn nhu cầu giải trí
+    `,
+    img: '/assets/img/Loa SoundmaxA104.webp',
+    price: '350000'
+  },
+  {
+    id: '55',
+    type: 'speaker',
+    name: 'Loa Thanh Soundbar LG SNH5 ',
+    description: 'none',
+    detail: `
+    - Trải nghiệm đắm chìm trong âm thanh siêu thực<br>
+    - DTS Virtual:X - Cảm nhận sự khác biệt với âm thanh 3D ngập tràn<br>
+    - Trải nghiệm căn phòng ngập tràn âm thanh như trong rạp<br>
+    - LG ThinQ - TV và Loa thanh trở thành trung tâm điều khiển của bạn<br>
+    - AI Sound Pro - Âm thanh phù hợp với nội dung bạn xem
+    `,
+    img: '/assets/img/Loa Thanh Soundbar LG SNH5.webp',
+    price: '3850000'
+  },
+  {
+    id: '56',
+    type: 'speaker',
+    name: 'Loa Bluetooth Microtek X-216BT (2.1)',
+    description: 'none',
+    detail: `
+    - Trang bị hệ thống loa Portable 2.1<br>
+    - Nguồn : 220V - 50Hz<br>
+    - Tỷ số nén nhiễu : > 65dB<br>
+    - Điều chỉnh âm lượng : Volume tổng , treble, bass và Remote điều khiển
 
+    `,
+    img: '/assets/img/Loa Bluetooth Microtek X-216BT.webp',
+    price: '1999000'
+  },
+  {
+    id: '57',
+    type: 'speaker',
+    name: 'Loa 2.1 Bose Companion 2 Series III (Đen)',
+    description: 'none',
+    detail: `
+    - Thiết Kế: Hệ Thống Loa 2.0<br>
+    - Kết Nối: Jack 3.5mm (headphone) / Jack 3.5mm (input)<br>
+    - Chức Năng: Volume Control<br>
+    - Công Suất: 22W RMS
+    `,
+    img: '/assets/img/Loa 2.1 Bose Companion 2 Series III (Đen).webp',
+    price: '3690000'
+  },
+  {
+    id: '58',
+    type: 'speaker',
+    name: 'Loa Soundbar Samsung HW-S800B/XV',
+    description: 'none',
+    detail: `
+    - Thiết kế thanh mảnh<br>
+    - Âm thanh vòm Dolby Audio / DTS Virtual:X<br>
+    -	Âm Thanh Vòm Chuẩn 3.1.2 kênh<br>
+    `,
+    img: '/assets/img/Loa Soundbar Samsung HW-S800BXV.webp',
+    price: '14490000'
+  },
+  {
+    id: '59',
+    type: 'speaker',
+    name: 'Loa Bluetooth JBL Bar 5.1 Surround BAR51IMBLKAS (Đen)',
+    description: 'none',
+    detail: `
+    - Thiết kế dạng thanh vuông dài, mang trên mình đến 9 loa con tạo hiệu ứng Stereo<br>
+    - Phía trên là dải nút điều khiển, phía trước là màn hình LED hiển thị<br>
+    - Hai loa vòm không dây chạy bằng pin có thể tháo rời<br>
+    - Thời gian chơi 10 giờ, tổng công suất hệ thống 510W<br>
+    - Được lập trình để có thể điều khiển mọi thứ bằng điều khiển TV từ xa<br>
+    `,
+    img: '/assets/img/Loa Bluetooth JBL Bar 5.1 Surround BAR51IMBLKAS (Đen).jpg',
+    price: '14900000'
+  },
+  {
+    id: '60',
+    type: 'speaker',
+    name: 'Loa Soundbar Samsung HW-B550/XV',
+    description: 'none',
+    detail: `
+    -	Loa siêu trầm tích hợp<br>
+    -	Chế độ tăng cường âm trầm Bass Boost<br>
+    -	Tự động tối ưu âm thanh với nội dung bằng AI<br>
+    `,
+    img: '/assets/img/Loa Soundbar Samsung HW-B550XV.webp',
+    price: '5790000'
+  },
+  {
+    id: '61',
+    type: 'speaker',
+    name: 'Loa Máy Tính Bluetooth Z407 ',
+    description: 'none',
+    detail: `
+    - Nguồn điện 80 watt tham gia vào quá trình xử lý tín hiệu kỹ thuật số chính xác (DSP) để đem lại âm thanh đắm chìm, chân thực.<br> 
+    - Nghe các nốt cao rõ ràng, các âm trung và thấp mạnh mẽ cùng tất cả âm trầm bạn có thể xử lý.<br>
+    `,
+    img: '/assets/img/Loa Logitech Z407.jpg',
+    price: '2310000 '
+  },
+  {
+    id: '62',
+    type: 'speaker',
+    name: 'G560 LIGHTSYNC RGB ',
+    description: 'none',
+    detail: `
+    - Hệ thống loa 2.1 với LIGHTSYNC RGB toàn dải phản ứng với hành động và âm thanh trong trò chơi. <br>
+    - Âm thanh vòm định hướng DTS:X đem lại âm thanh bùng nổ cho loa siêu trầm hướng xuống và hai loa vệ tinh với các màng loa góc rộng.<br>
+    `,
+    img: '/assets/img/Loa g560-gallery-1.webp',
+    price: '5499000'
+  },
+  {
+    id: '63',
+    type: 'speaker',
+    name: 'Loa Microlab M-108 ',
+    description: 'none',
+    detail: `
+    -	Thiết kế thân thiện và gọn gàng, tinh tế<br>
+    -	Công suất loa 11W cho âm thanh lớn và rõ ràng<br>
+    -	Jack kết nối 3.5mm thông dụng với nhiều thiết bị<br>
+    -	Tùy chỉnh âm thanh dễ dàng với nút điều chỉnh âm lượng<br>
+    -	Loa có chân đế chống rung và chống trượt<br> 
+    -	Đem đến trải nghiệm nghe nhạc xem phim cực chất<br>
+
+    `,
+    img: '/assets/img/Loa Microlab M-108.jpg',
+    price: '535000'
+  },
+  {
+    id: '64',
+    type: 'speaker',
+    name: 'Loa Microlab B56 (2.0)(Đen)',
+    description: 'none',
+    detail: `
+    - Thiết kế thời trang, ấn tượng<br> 
+    - Chất lượng âm thanh chất lượng<br> 
+    - Kích thước nhỏ gọn, kết nối đơn giản  
+    `,
+    img: '/assets/img/Microlab B56 (2.0).webp',
+    price: '310000đ'
+  },
+  {
+    id: '65',
+    type: 'speaker',
+    name: 'Loa Microlab M106BT 2.1(Đen)',
+    description: 'none',
+    detail: `
+    - Thiết Kế: Hệ Thống Loa 2.1<br>
+    - Kết Nối: Jack 3.5mm (input) / RCA (output) / Bluetooth (audio)<br>
+    - Chức Năng: Volume Control / Bass Control<br>
+    - Công Suất: 10W RMS
+ 
+    `,
+    img: '/assets/img/Loa bluetooth 2.1 Microlab M106BT.webp',
+    price: '600000đ'
+  },
   ];
   localStorage.setItem("product", JSON.stringify(product));
 }

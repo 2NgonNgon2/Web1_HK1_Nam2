@@ -2,7 +2,7 @@ let isAdmin;
 let isSignedin = false;
 
 $(document).ready(function () {
-    
+
     if (location.href == '/admin.html') {
         document.querySelector("span.dropdown-select").innerHTML = "Admin";
     }
@@ -67,7 +67,7 @@ function dangnhap(event) {
         var found = false;
         arr.forEach(element => {
             if (username == element.username && password == element.password && element.authority == "admin") {
-                found=true;
+                found = true;
                 localStorage.setItem("adminSignedin", username);
                 localStorage.setItem("isSignedin", "true");
                 window.location.href = "/admin.html";
@@ -76,10 +76,10 @@ function dangnhap(event) {
             else if (username == element.username && password == element.password && element.authority == "user") {
                 localStorage.setItem("isSignedin", "true");
                 localStorage.setItem("userSignIn", username);
-                found=true;
+                found = true;
             }
         });
-        if(found===false){
+        if (found === false) {
             alert("Sai tài khoản hoặc mật khẩu!!");
         }
 
@@ -98,18 +98,28 @@ function createAcc(event) {
         var phone = document.getElementById("form-Phone").value;
         var email = document.getElementById("form-Email").value;
         var arr = JSON.parse(localStorage.getItem("arr-account"));
-        var id = arr.length + 1 + "";
-        var user = {
-            id: id,
-            username: username,
-            password: password,
-            phone: phone,
-            email: email,
-            authority: authority,
+        var found = false;
+        arr.forEach(element => {
+            if (element.username === username) {
+                alert("Tên đăng nhập đã tồn tại!");
+                found = true;
+            }
+        });
+        if (found == false) {
+            var id = arr.length + 1 + "";
+            var user = {
+                id: id,
+                username: username,
+                password: password,
+                phone: phone,
+                email: email,
+                authority: authority,
+            }
+            arr.push(user);
+            localStorage.setItem("arr-account", JSON.stringify(arr));
+            alert("Dang ki thanh cong");
         }
-        arr.push(user);
-        localStorage.setItem("arr-account", JSON.stringify(arr));
-        alert("Dang ki thanh cong");
+
     } catch (err) {
         alert(err);
     }
