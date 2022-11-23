@@ -15,7 +15,8 @@ function checkSignin()
   if(isSignedin == false)
   {
     alert("Bạn chưa đăng nhập!");
-    backgroundLogin.style.display="flex";
+    fdn();
+    displaySignMenu("Sign in");
     hideInfoProduct();
     return isSignedin;
   }
@@ -181,7 +182,6 @@ function activePageNumber(pageNumberClicked)
 }
 
 function renderProduct(product) {
-
   item += `
       <div class="card-product-item" title=" ${product.name}" id="${product.id}" onclick="productInfomation(${product.id})">
         <img

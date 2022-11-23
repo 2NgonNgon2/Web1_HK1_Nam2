@@ -9,7 +9,7 @@ if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong local
     ]
     localStorage.setItem("orderForm",JSON.stringify(orderForm));
 }
-else
+else    
 {
     orderForm = localStorage.getItem("orderForm");
 }

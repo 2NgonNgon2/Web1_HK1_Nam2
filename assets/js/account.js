@@ -46,8 +46,10 @@ if (localStorage.getItem("userSignIn") != null) {
                 </li>
           `;
         }
-        document.querySelector("span.dropdown-select").innerHTML = "My Account";
+        localStorage.setItem("cart",JSON.stringify([]));
+        document.querySelector("span.dropdown-select").innerHTML = "Tài khoản";
         localStorage.removeItem("userSignIn");
+        localStorage.removeItem("currentUser");
         localStorage.setItem("isSignedin", "false");
         window.location.reload();
     });
@@ -63,6 +65,7 @@ function dangnhap(event) {
     try {
         var username = document.getElementById("name").value;
         var password = document.getElementById("pass").value;
+
         var arr = JSON.parse(localStorage.getItem("arr-account"));
         var found = false;
         arr.forEach(element => {
@@ -76,6 +79,7 @@ function dangnhap(event) {
             else if (username == element.username && password == element.password && element.authority == "user") {
                 localStorage.setItem("isSignedin", "true");
                 localStorage.setItem("userSignIn", username);
+                localStorage.setItem("currentUser",JSON.stringify(userLocal));
                 found = true;
             }
         });
@@ -114,6 +118,7 @@ function createAcc(event) {
                 phone: phone,
                 email: email,
                 authority: authority,
+                status: false,
             }
             arr.push(user);
             localStorage.setItem("arr-account", JSON.stringify(arr));
@@ -123,7 +128,6 @@ function createAcc(event) {
     } catch (err) {
         alert(err);
     }
-
 }
 
 

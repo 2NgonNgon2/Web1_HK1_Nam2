@@ -28,7 +28,7 @@ function pushProductToOrderForm(day,total) {
   
   orderFormItem = {
     idOrderForm: orderForm.length + 1,
-    idUser: JSON.parse(localStorage.getItem('idCurrentUser')),
+    idUser: JSON.parse(localStorage.getItem('currentUser')).id,
     dateOrder: day,
     status: false,
     arrProductId: tmpArrProductId,
