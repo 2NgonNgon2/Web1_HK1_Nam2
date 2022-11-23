@@ -77,9 +77,7 @@
   /* Khi tràn chữ ra thì sẽ đổi thành ... */
   text-overflow: ellipsis;
   color: black;
- 
 }
-
 
 .label-card-title {
   display: -webkit-box;
@@ -113,7 +111,7 @@
 
 .card-product-content-bottom-buying-btn {
   margin-top: 10px;
-  padding: 8px 0 ;
+  padding: 8px 0;
   border: 2px solid black;
   border-radius: 10px;
   background: white;
@@ -162,9 +160,6 @@
   left: 12%;
 }
 
-
-
-
 .menu-card-products-page-number {
   display: flex;
   position: absolute;
@@ -175,7 +170,7 @@
 }
 
 .activePageNumber {
-  background: linear-gradient(45deg, red, orange)!important;
+  background: linear-gradient(45deg, red, orange) !important;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
   color: rgb(238, 234, 234);
   cursor: pointer;
@@ -198,8 +193,7 @@
   cursor: pointer;
 }
 
-.add-delete-product-button
-{
+.add-delete-product-button {
   width: 100%;
   height: 100%;
   display: flex;
@@ -207,56 +201,123 @@
   align-items: center;
 }
 
-.add-delete-product-button .add-button
-{
+.add-delete-product-button .add-button {
   height: 50px;
   width: 50px;
-  
   margin: 0 10px 20px 0;
   background: white;
-  border:2px groove black;
+  border: 2px groove black;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
-
   transition: all 0.3s ease;
 }
 
-.add-delete-product-button .add-button i
-{
+.add-delete-product-button .add-button i {
   font-size: 25px;
 }
 
-.add-delete-product-button .add-button:hover
-{
+.add-delete-product-button .add-button:hover {
   background-color: rgb(250, 176, 38);
   box-shadow: 0 0 5px 2px rgb(121, 103, 71);
 }
 
-.add-delete-product-button .delete-button
-{
+.add-delete-product-button .delete-button {
   height: 50px;
   width: 50px;
-  
   margin: 0 10px 20px 0;
   background: rgb(156, 156, 156);
-  border:2px groove black;
+  border: 2px groove black;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
-
   transition: all 0.3s ease;
 }
 
-.add-delete-product-button .delete-button i
-{
+.add-delete-product-button .delete-button i {
   font-size: 25px;
 }
 
-.add-delete-product-button .delete-button:hover
-{
+.add-delete-product-button .delete-button:hover {
   background-color: rgb(250, 176, 38);
   box-shadow: 0 0 5px 2px rgb(121, 103, 71);
 }
 
+.menu-mega {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.menuToggle {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 70px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menuToggle::before {
+  content: '+';
+  position: absolute;
+  font-size: 3em;
+  font-weight: 200;
+  color: #ff216d;
+  transition: 1.5s;
+}
+
+.menuToggle.active::before {
+  transform: rotate(225deg);
+}
+
+.menu-toggle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 70px;
+  z-index: -1;
+  transition: transform 0.5s, width 0.5s, height 0.5s;
+  transition-delay: 0.25s, 0.5s, 0.5s;
+  transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1) ;
+}
+
+.menuToggle.active~.menu-toggle {
+  width: 200px;
+  height: 70px;
+  z-index: 1;
+  transform: translateY(-100px);
+  transform: translateX(100px);
+  transition-delay: 0s, 0s, 0s;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+.menu-toggle ul{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  gap: 40px;
+}
+.menu-toggle ul li{
+  margin: 7px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.menu-toggle ul li i
+{
+  display: block;
+  font-size: 1.25em;
+  color: #555;
+}
+.menu-toggle ul li p
+{
+  font-size: 15px;
+}
