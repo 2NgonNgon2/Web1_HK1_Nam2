@@ -2,11 +2,6 @@ let isAdmin;
 let isSignedin = false;
 
 $(document).ready(function () {
-    //localStorage.clear;
-
-    account.forEach(element => {
-        localStorage.setItem(element.username, JSON.stringify(element));
-    });
 
     if (location.href == '/admin.html') {
         document.querySelector("span.dropdown-select").innerHTML = "Admin";
@@ -68,47 +63,67 @@ function dangnhap(event) {
     try {
         var username = document.getElementById("name").value;
         var password = document.getElementById("pass").value;
-        var userLocal = JSON.parse(localStorage.getItem(username));
-        if (username == userLocal.username && password == userLocal.password && userLocal.authority == "admin") {
-            localStorage.setItem("adminSignedin", username);
-            localStorage.setItem("isSignedin", "true");
-            window.location.href = "/admin.html";
-            event.preventDefault(); // ngăn form không bị reload sau khi submit
+        var arr = JSON.parse(localStorage.getItem("arr-account"));
+        var found = false;
+        arr.forEach(element => {
+            if (username == element.username && password == element.password && element.authority == "admin") {
+                found = true;
+                localStorage.setItem("adminSignedin", username);
+                localStorage.setItem("isSignedin", "true");
+                window.location.href = "/admin.html";
+                event.preventDefault(); // ngăn form không bị reload sau khi submit
+            }
+            else if (username == element.username && password == element.password && element.authority == "user") {
+                localStorage.setItem("isSignedin", "true");
+                localStorage.setItem("userSignIn", username);
+                found = true;
+            }
+        });
+        if (found === false) {
+            alert("Sai tài khoản hoặc mật khẩu!!");
         }
-        else if (username == userLocal.username && password == userLocal.password && userLocal.authority == "user") {
-            localStorage.setItem("isSignedin", "true");
-            localStorage.setItem("userSignIn", username);
-            event.preventDefault();
-            window.location.reload();
-            console.log("you are user");
-        }
-        else{
-            alert("Error!");
-        }
+
         backgroundLogin.style.display = "none";
-    } catch (err){
+    } catch (err) {
         alert(err);
     }
 
 }
 
 function createAcc(event) {
-    var authority = "user";
-    var username = document.getElementById("form-Name").value;
-    var password = document.getElementById("form-Password").value;
-    var phone = document.getElementById("form-Phone").value;
-    var email = document.getElementById("form-Email").value;
-    var user = {
-        username: username,
-        password: password,
-        phone: phone,
-        email: email,
-        authority: authority,
+    try {
+        var authority = "user";
+        var username = document.getElementById("form-Name").value;
+        var password = document.getElementById("form-Password").value;
+        var phone = document.getElementById("form-Phone").value;
+        var email = document.getElementById("form-Email").value;
+        var arr = JSON.parse(localStorage.getItem("arr-account"));
+        var found = false;
+        arr.forEach(element => {
+            if (element.username === username) {
+                alert("Tên đăng nhập đã tồn tại!");
+                found = true;
+            }
+        });
+        if (found == false) {
+            var id = arr.length + 1 + "";
+            var user = {
+                id: id,
+                username: username,
+                password: password,
+                phone: phone,
+                email: email,
+                authority: authority,
+            }
+            arr.push(user);
+            localStorage.setItem("arr-account", JSON.stringify(arr));
+            alert("Dang ki thanh cong");
+        }
+
+    } catch (err) {
+        alert(err);
     }
-    localStorage.setItem(username, JSON.stringify(user));
-    alert("Dang ki thanh cong");
-    event.preventDefault();
-    window.location.reload();
+
 }
 
 
