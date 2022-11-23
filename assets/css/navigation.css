@@ -78,13 +78,14 @@ header .navigation li a:hover {
 	padding-left: 10px;
 	padding-right: 10px;
 	flex: 2;
-
+    min-width: 100px;
 }
 
 header.sticky .navigation div {
 	padding-left: 10px;
 	padding-right: 10px;
 	flex: 2;
+	min-width: 100px;
 }
 
 .banner {

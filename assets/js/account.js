@@ -51,8 +51,10 @@ if (localStorage.getItem("userSignIn") != null) {
                 </li>
           `;
         }
-        document.querySelector("span.dropdown-select").innerHTML = "My Account";
+        localStorage.setItem("cart",JSON.stringify([]));
+        document.querySelector("span.dropdown-select").innerHTML = "Tài khoản";
         localStorage.removeItem("userSignIn");
+        localStorage.removeItem("currentUser");
         localStorage.setItem("isSignedin", "false");
         window.location.reload();
     });
@@ -78,6 +80,8 @@ function dangnhap(event) {
         else if (username == userLocal.username && password == userLocal.password && userLocal.authority == "user") {
             localStorage.setItem("isSignedin", "true");
             localStorage.setItem("userSignIn", username);
+            localStorage.setItem("currentUser",JSON.stringify(userLocal));
+
             event.preventDefault();
             window.location.reload();
             console.log("you are user");
@@ -104,8 +108,8 @@ function createAcc(event) {
         phone: phone,
         email: email,
         authority: authority,
+        status: false
     }
-    localStorage.setItem(username, JSON.stringify(user));
     alert("Dang ki thanh cong");
     event.preventDefault();
     window.location.reload();
