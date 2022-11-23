@@ -24,8 +24,8 @@ if (localStorage.getItem("adminSignedin") != null) {
     document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 }
 
-if (localStorage.getItem("userSignedIn") != null) {
-    document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("userSignedIn");
+if (localStorage.getItem("userSignIn") != null) {
+    document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("userSignIn");
     var dropdown_list = document.querySelector(".dropdown .dropdown-list");
     dropdown_list.innerHTML = `
             <li class="dropdown-item">
@@ -34,8 +34,8 @@ if (localStorage.getItem("userSignedIn") != null) {
             <li class="dropdown-item" onclick="showViewOrder()">
                 <span class="dropdown-text">Xem đơn hàng đã đặt</span>
             </li>
-            <li class="dropdown-item" ">
-                <span class="dropdown-text" onclick="dangXuat()">Đăng xuất</span>
+            <li class="dropdown-item">
+                <span class="dropdown-text">Đăng xuất</span>
             </li>
                 `;
     localStorage.setItem("isSignedin", "true");
@@ -52,30 +52,17 @@ if (localStorage.getItem("userSignedIn") != null) {
           `;
         }
         document.querySelector("span.dropdown-select").innerHTML = "My Account";
-        localStorage.removeItem("userSignedIn");
+        localStorage.removeItem("userSignIn");
         localStorage.setItem("isSignedin", "false");
         window.location.reload();
     });
 }
 
-function dangXuat()
-{
-    localStorage.setItem("isSignedin","false");
-    localStorage.removeItem("userSignedIn");
-    window.location.reload();
+function dangXuatAdmin() {
+    localStorage.setItem("isSignedin", "false");
+    localStorage.removeItem("adminSignedin");
+    window.location.href = "/index.html";
 }
-
-// $(document).ready(function () {
-//     account.forEach(element => {
-//         //localStorage.clear;
-//         var json = JSON.stringify(element);
-//         localStorage.setItem(element.username, json);
-//     });
-//     if (location.href == '/admin.html') {
-//         document.querySelector("span.dropdown-select").innerHTML = "Admin";
-//     }
-// });
-
 
 function dangnhap(event) {
     try {
@@ -124,60 +111,6 @@ function createAcc(event) {
     window.location.reload();
 }
 
-//         backgroundLogin.style.display = "none";
-//     }
-// }
-// async function dangnhap(event){
-// fetch('./assets/js/arr-account.json')
-//     .then(
-//         function (response) {
-//             if (response.status !== 200) {
-//                 console.log('Lỗi, mã lỗi ' + response.status);
-//                 return;
-//             }
-//             // parse response data
-//             response.json().then(data => {
-//                 var username = document.getElementById("name").value;
-//                 var password = document.getElementById("pass").value;
-//                 data.forEach(element => {
-//                     if (username == element.username && password == element.password && element.authority == "admin") {
-//                         localStorage.setItem("adminSignedin", username);
-//                         localStorage.setItem("isSignedin", "true");
-//                         window.location.href = "/admin.html";
-//                         event.preventDefault(); // ngăn form không bị reload sau khi submit
-//                     }
-//                     else if (username == element.username && password == element.password && element.authority == "user") {
-//                         localStorage.setItem("isSignedin", "true");
-//                         localStorage.setItem("userSignedIn", username);
-//                         event.preventDefault();
-//                         console.log("you are user");
-//                     }
-//                     // else {
-//                     //     alert("Error!");
-//                     // }
-//                 });
 
 
 
-// function dangnhap(event) {
-//     var username = document.getElementById("name").value;
-//     var password = document.getElementById("pass").value;
-//     var userLocal = JSON.parse(localStorage.getItem(username));
-//     if (username == userLocal.username && password == userLocal.password && userLocal.authority == "admin") {
-//         localStorage.setItem("adminSignedin", username);
-//         localStorage.setItem("isSignedin", "true");
-//         window.location.href = "/admin.html";
-//         event.preventDefault(); // ngăn form không bị reload sau khi submit
-//     }
-//     else if (username == userLocal.username && password == userLocal.password && userLocal.authority == "user") {
-//         localStorage.setItem("isSignedin", "true");
-//         localStorage.setItem("userSignedIn", username);
-//         event.preventDefault();
-//         window.location.reload();
-//         console.log("you are user");
-//     }
-//     else {
-//         alert("Error!");
-//     }
-//     backgroundLogin.style.display = "none";
-// }
