@@ -97,7 +97,6 @@ function createPageNum(tmpProduct) {
   }
 
   quantity = Math.floor(quantity);
-
   let pageNum = `<div class="menu-card-products-page-number">`;
   let count = 0;
 
@@ -181,9 +180,8 @@ function activePageNumber(pageNumberClicked)
 }
 
 function renderProduct(product) {
-
   item += `
-      <div class="card-product-item" title=" ${product.name}" id="${product.id}" onclick="productInfomation(${product.id})">
+      <div class="card-product-item" id="${product.id}" onclick="productInfomation(${product.id})">
         <img
           class="card-img"
           src="${product.img}"

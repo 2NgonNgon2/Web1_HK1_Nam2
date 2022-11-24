@@ -289,7 +289,7 @@
 }
 
 .menuToggle.active~.menu-toggle {
-  width: 200px;
+  width: 650px;
   height: 70px;
   z-index: 1;
   transform: translateY(-100px);
@@ -298,15 +298,15 @@
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 .menu-toggle ul{
-  position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+
   height: 80px;
-  gap: 40px;
+  gap: 10px;
 }
 .menu-toggle ul li{
-  margin: 7px;
+
   display: flex;
   justify-content: space-around;
   cursor: pointer;
@@ -320,4 +320,35 @@
 .menu-toggle ul li p
 {
   font-size: 15px;
+}
+
+.menu-toggle .price-filter
+{
+  width: 300px;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 20% 30% 20% 30% 10%;
+
+}
+
+.menu-toggle .price-filter input
+{
+  width: 90px;
+}
+
+.menu-toggle .price-filter input::placeholder
+{
+  color: rgb(186, 184, 184);
+  text-align: center;
+}
+.menu-toggle .price-filter label
+{
+  justify-self: center;
+  align-self: center;
+  font-weight: bolder;
+
+}
+.menu-toggle .price-filter button
+{
+  justify-self: center;
 }
