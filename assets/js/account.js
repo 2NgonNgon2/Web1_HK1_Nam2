@@ -79,7 +79,7 @@ function dangnhap(event) {
             else if (username == element.username && password == element.password && element.authority == "user") {
                 localStorage.setItem("isSignedin", "true");
                 localStorage.setItem("userSignIn", username);
-                localStorage.setItem("currentUser",JSON.stringify(userLocal));
+                localStorage.setItem("currentUser",JSON.stringify(element));
                 found = true;
             }
         });
