@@ -8,7 +8,6 @@
     <meta name="description" content="đây là bài tập đồ án tạo web BÁN LINH KIỆN ĐIỆN TỬ như chuột, bàn phím, tai nghe,... .">
     <title>Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="stylesheet" href="./assets/css/card-products.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/menu-product.css" />
@@ -19,8 +18,6 @@
     <link rel="stylesheet" href="./assets/css/switch-button.css">
     <link rel="stylesheet" href="./assets/css/order-product-table.css">
     <link rel="stylesheet" href="./assets/css/account-manager-table.css">
-    <link rel="stylesheet" href="./assets/css/responsiveAll.css">
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
@@ -30,11 +27,17 @@
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
-        <form action="" id="search_box">	
-          <input type="search" id="search_text" placeholder="Bạn muốn tìm gì !!!!" value="" > 
-          <div id="search_button">
-            <i class="fa-solid fa-magnifying-glass"></i> 				
-          </div>			
+        <form onsubmit="searchEngineAdmin(event)" id="search_box">
+          <input
+            type="search"
+            id="search_text"
+            placeholder="Bạn muốn tìm gì !!!!"
+            value=""
+          />
+          <button type="submit" href="#product-display" id="search_button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          </a>
         </form>
           <li><a href="#banner">Home</a></li>
           <li><a href="#menu">Product</a></li>
@@ -59,7 +62,6 @@
               </li>
               <li class="dropdown-item">
                   <span class="dropdown-text" onclick ="openOrderManageTable()">Quản lý đơn hàng</span>
-
               </li>
               <li class="dropdown-item" onclick="dangXuatAdmin()">
                   <span class="dropdown-text" >Đăng xuất</span>
@@ -68,35 +70,6 @@
           </div>   
       </ul>
     </header>
-      <!-- Sign up menu -->
-      <!--<div class="signin" id="create">
-        <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
-        <h2 class="signin-heading" >Create account</h2>
-        <p class="signin-already" id="signin-already">
-          Already have an account ? 
-          <a href="#" class="signin-link-underline" onclick="displaySignMenu('Sign in')">Login now</a>
-        </p>
-        <form onsubmit="createAcc()">
-          <div class="form-user-name">
-              <input type="text" class="form-input" placeholder="Name" id="form-Name">
-          </div>
-          <div class="form-password">
-              <input type="password" class="form-input" placeholder="Password" id="form-Password">
-          </div>
-          <div class="form-phone">
-            <input type="text" class="form-input" placeholder="Phone" id="form-Phone">
-          </div>
-          <div class="form-email">
-              <input type="text" class="form-input" placeholder="E-mail" id="form-E-mail">
-          </div>
-          <div >
-              <button type="submit" class="form-submit">
-                  <span class="form-submit-text" >Sign up</span>             
-                  <i class="fa fa-long-arrow-right form-submit-icon"></i>      
-                </button>
-          </div>
-        </form>
-      </div>-->
       <!-- Banner -->
       <section class="banner" id="banner">
         <div class="content">
@@ -165,6 +138,43 @@
               </div>
               <div class="title">DANH SÁCH ĐƠN HÀNG</div>
 
+              <div class="order">
+
+                <!-- <div class="header">
+                  <div class="order-id">ID</div>
+                  <div class="order-userid">USER ID</div>
+                  <div class="order-product">
+                    SẢN PHẨM
+                  </div>
+                  <div class="order-date">NGÀY</div>
+                  <div class="total-price">TỔNG GIÁ</div>
+                  <div class="status">TÌNH TRẠNG</div>
+                </div> -->
+
+                <!-- <div class="order-item">
+                  <div class="order-id">1</div>
+                  <div class="order-userid">2</div>
+                  <div class="order-product">
+                    aloooooooo123;125125;1231241212451;12352352
+                  </div>
+                  <div class="order-date">03-03-2003</div>
+                  <div class="total-price">1.999.999d</div> -->
+                  <!--<label for="order-status">
+                   <input type="checkbox" class="status" onclick="processOrder(${orderForm[i].id})"> 
+                   </label>
+                </div>-->
+
+              </div>
+
+                <form class="date-filter" onsubmit="filterOrder(event)">
+                  <label for="date" class="date-start">TỪ NGÀY</label>
+                  <input type="date" class="date-start-input" value="2022-01-01">
+                  <label for="date" class="date-end">ĐẾN NGÀY</label>
+                  <input type="date" class="date-end-input" value="2022-12-31">
+                  <button type="submit" class="filter">LỌC</button>
+                </form>
+          </div>
+        </div>
 
     <!-- add products -->
     <div class="add-product-container" onclick="closeAddProductTable(event)">
@@ -197,7 +207,9 @@
             </div>
         </form>
 
-  </div>
+    </div>
+
+    <!-- edit table -->
 
     <div class="edit-product-container" onclick="closeEditProductTable(event)">
       
@@ -228,7 +240,9 @@
             </div>
         </form>
 
-  </div>
+    </div>
+
+    <!-- delete table -->
 
     <div class="delete-product-container" onclick="closeDeleteProductTable()">
       
@@ -246,62 +260,25 @@
               <div class="delete-item-price">69999</div>
             </label>
           </div> -->
-      </div>
+        </div>
 
-      <div class="save-product-btn">
-        <button type="submit">DELETE</button>
-      </div>
+        <div class="save-product-btn">
+          <button type="submit">DELETE</button>
+        </div>
 
-    </form>
-  </div>
-
-  <!-- Card products -->
-  <div class="card-products">
-
-    <div class="menu" id="menu">
-      <div class="menu-title">Danh mục sản phẩm</div>
-
-      <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
-        <a href="#product-display" class="overlay activeMenuItemOverlay " onclick="filterProductAdmin('keyboard') "></a>
-        <img class="menu-items-img activeMenuItemImg" src="/assets/img/keyboard.jpg" alt="keyboard image"
-          loading="lazy">
-      </div>
-
-      <div class="menu-items" id="item-2">
-        <a href="#product-display" class="overlay" onclick="filterProductAdmin('headphone')"></a>
-        <img class="menu-items-img" src="/assets/img/headphone.png" alt="keyboard image" loading="lazy">
-      </div>
-
-      <div class="menu-items" id="item-3">
-        <a href="#product-display" class="overlay" onclick="filterProductAdmin('mouse')"></a>
-        <img class="menu-items-img" src="/assets/img/mouse.png" alt="keyboard image" loading="lazy">
-      </div>
-
-      <div class="menu-items" id="item-4">
-        <a href="#product-display" class="overlay" onclick="filterProductAdmin('speaker')"></a>
-        <img class="menu-items-img" src="/assets/img/speaker.png" alt="keyboard image" loading="lazy">
-      </div>
-
-      <div class="menu-items" id="item-5">
-        <a href="#product-display" class="overlay" onclick="filterProductAdmin('laptop')"></a>
-        <img class="menu-items-img" src="/assets/img/mousepads.png" alt="keyboard image" loading="lazy">
-      </div>
+      </form>
     </div>
 
-    <div class="add-delete-product-button">
-      <abbr title="DELETE PRODUCT">
-        <div class="delete-button" onclick="openDeleteProductTable()">
-          <i class="fa-solid fa-trash"></i>
+<!-- Card products -->
+    <div class="card-products">
+      
+      <div class="menu" id="menu">
+        <div class="menu-title">Danh mục sản phẩm</div>
+        
+        <div class="menu-items activeMenuItems" id="item-1" onclick="activeItem(1)">
+          <a  href="#product-display" class="overlay activeMenuItemOverlay " onclick="filterProductAdmin('keyboard') " ></a>
+          <img class="menu-items-img activeMenuItemImg" src="/assets/img/keyboard.jpg" alt="keyboard image" loading="lazy">
         </div>
-      </abbr>
-      <abbr title="ADD PRODUCT">
-        <div class="add-button" onclick="openAddProductTable()">
-          <i class="fa-regular fa-square-plus"></i>
-
-        </div>
-      </abbr>
-    </div>
-
   
         <div class="menu-items" id="item-2">
           <a  href="#product-display" class="overlay" onclick="filterProductAdmin('headphone')"></a>
@@ -320,12 +297,26 @@
   
         <div class="menu-items" id="item-5">
           <a  href="#product-display" class="overlay" onclick="filterProductAdmin('Laptop')"></a>
-          <img class="menu-items-img" src="/assets/img/mousepads.png" alt="keyboard image" loading="lazy">   
-      
+          <img class="menu-items-img" src="/assets/img/mousepads.png" alt="keyboard image" loading="lazy">
+        </div>
+      </div>
 
-    <div class="card-products-container">
+      <div class="add-delete-product-button">
+        <abbr title="DELETE PRODUCT">
+          <div class="delete-button" onclick="openDeleteProductTable()" >
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </abbr>
+        <abbr title="ADD PRODUCT">
+          <div class="add-button" onclick="openAddProductTable()" >
+            <i class="fa-regular fa-square-plus"></i>
+          </div>
+        </abbr>
+      </div>
 
-      <!-- <div class="card-product-item" id="${product.id}" onclick="productInfomation()">
+      <div class="card-products-container">
+        
+        <!-- <div class="card-product-item" id="${product.id}" onclick="productInfomation()">
           <img
             class="card-img"
             src="${product.img}"
@@ -359,14 +350,14 @@
           </div>
         </div> -->
 
-      <div class="menu-card-products-page-number">
-        <!-- <div class="pageNumber" onclick="pageRender(1)"></div>
+        <div class="menu-card-products-page-number">
+          <!-- <div class="pageNumber" onclick="pageRender(1)"></div>
           <div class="pageNumber" onclick="pageRender(2)">2</div>
           <div class="pageNumber" onclick="pageRender(3)">3</div>  -->
+        </div> 
       </div>
     </div>
-  </div>
-
+    
   <!-- Java Script -->
   <script src="./assets/js/arr-order-form.js"></script>
   <script src="./assets/js/arr-account.js"></script>
@@ -376,6 +367,5 @@
   <script src="./assets/js/backToHome-button.js"></script>
   <script src="./assets/js/search-engine.js"></script>
   <!-- <script src="search-engine.js"></script> -->
-</body>
-
+  </body>
 </html>

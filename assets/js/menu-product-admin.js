@@ -736,6 +736,14 @@ function formatDate(date) {
 }
 
 
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
+}
+
+
 function formatCurrecy(currency)
 {
   return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');

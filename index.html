@@ -261,8 +261,8 @@
       </div>
     </div>
     <div class="menu-mega">
-      <div class="menuToggle">
-      </div>
+      <div class="menuToggle"></div>
+
       <div class="menu-toggle">
         <ul>
           <li class="down">
@@ -270,12 +270,23 @@
             <p>Giá giảm dần</p>
           </li>
           <li class="up">
-            <i class="fa fa-angle-up" aria-hidden="true"></i>
+            <i class="fa fa-angle-up" ar  a-hidden="true"></i>
             <p>Giá tăng dần</p>
+          </li>
+          <li >
+            <form class="price-filter" onsubmit="searchPrice(event)">
+              <label for="price-start" class="price-start">GIÁ TỪ</label>
+              <input type="number" id="price-start-input" value="" placeholder="100 000">
+              <label for="price-end" class="price-end">ĐẾN</label>
+              <input type="number"  id="price-end-input" value="" placeholder="199 999">
+              <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
           </li>
         </ul>
       </div>
+
     </div>
+
     <div class="card-products-container" id="product-display">
       <!-- <div class="card-product-item">
         
@@ -457,9 +468,11 @@
   </div>
 
   <!-- Java Script -->
-  <script src="/assets/js/account.js"></script>
+  
   <script src="/assets/js/arr-account.js"></script>
   <script src="/assets/js/arr-product.js"></script>
+  <script src="/assets/js/arr-order-form.js"></script>
+  <script src="/assets/js/account.js"></script>
   <script src="/assets/js/backToHome-button.js"></script>
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/info-products.js"></script>
@@ -468,10 +481,7 @@
   <script src="/assets/js/navigation.js"></script>
   <script src="/assets/js/search-engine.js"></script>
   <script src="/assets/js/slider.js"></script>
-  <script src="/assets/js/arr-order-form.js"></script>
   <script src="/assets/js/order-form.js"></script>
-
-  <!-- <script src="search-engine.js"></script> -->
 </body>
 
 </html>

@@ -380,7 +380,7 @@ else {
   {
     id: '34',
     type: 'Laptop',
-    name: 'Laptop Gaming GIGABYTE G5 GD-51VN123SO i5-11400H/16GB/512GB/RTX3050/15.6"',
+    name: "Laptop Gaming GIGABYTE G5 GD-51VN123SO i5-11400H/16GB/512GB/RTX3050/15.6",
     description: 'none',
     detail: 'none',
     img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/08/image-removebg-preview-24.png',
