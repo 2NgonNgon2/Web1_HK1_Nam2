@@ -1,0 +1,148 @@
+.main-wrapper {
+}
+
+.nav-header-left {
+    position: fixed;
+    height: 100%;
+    width: 360px;
+    z-index: 2;
+    background: linear-gradient(45deg, red, orange);
+    opacity: .85;
+    padding: 20px 0 20px 20px;
+}
+
+.nav-header-left-logo {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 20px 20px 20px 0;
+    
+}
+.nav-header-left-logo img{
+    height: 100%;
+}
+
+.nav-header-left-list {
+    position: relative;
+    min-height: 100px;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 550;
+    color: white;
+}
+
+.nav-header-left-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    transition: .2s ease;
+}
+
+.nav-header-left-list li div {
+
+}
+
+
+.nav-header-left-list li:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    font-size: 18px;
+    
+}
+
+
+
+.container {
+    padding-left: 360px;
+    width: 100%;
+    margin: 0;
+}
+
+.container-header {
+}
+
+.container-header-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: lightblue;
+}
+
+.container-header-navigation-search-box {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+    border-radius: 20px!important;
+}
+
+.container-header-navigation-dropdown {
+    max-width: 200px;
+    width: 100px;
+}
+
+.container-header-navigation-dropdown-select,
+.container-header-navigation-dropdown-select-text {
+    color: black!important;
+}
+
+.container-header-navigation-dropdown-select-text {
+    margin: 0 5px 0;
+}
+
+.container-header-navigation-dropdown:hover .container-header-navigation-dropdown-list {
+    right: 25px;
+    box-shadow: 3px 3px 10px  rgba(0, 0, 0, .3);
+}
+
+.container-content-header {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding: 40px 20px 0 20px;
+}
+
+.container-content-products {
+    padding: 40px 40px 0 40px;
+}
+
+.container-content-products-table {
+  
+    text-align: center;
+}
+
+.container-content-products-table tr:first-child {
+    background: grey;
+}
+
+.container-content-products-table th,
+.container-content-products-table td {
+    border: 1px solid black;
+    height: 80px;
+    line-height: 80px;
+}
+
+.container-content-products-table-item-id {
+    
+}
+
+.container-content-products-table-item-img {
+  
+}
+
+.container-content-products-table-item-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.container-content-products-table-item-name {
+   
+}
+
+.container-content-products-table-item-type {
+
+}
+
+.container-content-products-table-item-price {
+
+}

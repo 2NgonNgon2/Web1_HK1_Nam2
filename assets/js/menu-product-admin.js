@@ -748,3 +748,6 @@ function formatCurrecy(currency)
 {
   return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
+
+// inner trong admin
+
