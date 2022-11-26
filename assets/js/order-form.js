@@ -28,7 +28,7 @@ function pushProductToOrderForm(day,total) {
   
   orderFormItem = {
     idOrderForm: orderForm.length + 1,
-    idUser: JSON.parse(localStorage.getItem('idCurrentUser')),
+    idUser: JSON.parse(localStorage.getItem('currentUser')).id,
     dateOrder: day,
     status: false,
     arrProductId: tmpArrProductId,
@@ -46,7 +46,7 @@ function showViewOrderFormWithIdUser() {
   viewOrderContainerBottom.innerHTML = '';
   orderForm = JSON.parse(localStorage.getItem('orderForm'));
   for (let i = 0; i < orderForm.length; i++) {
-    if(orderForm[i].idUser == JSON.parse(localStorage.getItem('idCurrentUser'))) {
+    if(orderForm[i].idUser == JSON.parse(localStorage.getItem('currentUser')).id) {
       div = document.createElement('div'); 
       div.classList.add('view-order-container-bottom-product');
       

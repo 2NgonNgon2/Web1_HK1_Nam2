@@ -15,7 +15,8 @@ function checkSignin()
   if(isSignedin == false)
   {
     alert("Bạn chưa đăng nhập!");
-    backgroundLogin.style.display="flex";
+    fdn();
+    displaySignMenu("Sign in");
     hideInfoProduct();
     return isSignedin;
   }

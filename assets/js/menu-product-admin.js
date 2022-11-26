@@ -211,7 +211,7 @@ function addProductToProductArray(event)
   const productType = document.querySelector("#select-type").value;
   const productName = document.querySelector("#productName").value;
   const productDescription = document.querySelector("#productDescription").value;
-  //const productImage = document.querySelector("#productImage").files[0].name  ;
+  const productImage = document.querySelector("#productImage").files[0].name;
   const productPrice = document.querySelector("#productPrice").value;
   const productQuantity = document.querySelector("#productQuantity").value; 
   console.log(productImage);
@@ -224,22 +224,13 @@ function addProductToProductArray(event)
   for(let i = length; i < maxLength; i++)
   {
     // thao tác image
-    /* let cmd = "copy "+ productImage+" "+ "../assets/img"
-    console.log(cmd); */
-    /* var a = document.createElement('img');
-    img.href = productImage;
-    img.download = "../img/";
-    document.body.appendChild(img);
-    img.click();
-    document.body.removeChild(img); */
 
-    console.log("add product");
     productAdd = {
       id: `${i}`,
       type: productType,
       name: productName,
       description: productDescription,
-      //img: productImage,
+      img: `/assets/img/${productImage}`,
       price: priceFormated,
     };
 
@@ -268,6 +259,8 @@ function stopPropagate(e) {
   e.stopPropagation();
 }
 
+/* THAO TÁC CHỈNH SỬA SẢN PHẨM */
+
 const editProductTable = document.querySelector(".edit-product-container");
 const productType = document.querySelector("#select-type-edit");
 const productName = document.querySelector("#productNameEdit");
@@ -278,13 +271,20 @@ const id = document.querySelector("#productId");
 
 function openEditProductTable(productId)
 {
-
-  console.log(product[productId-1]);
-  productType.value = product[productId-1].type
-  productName.value = product[productId-1].name
-  productDescription.value = product[productId-1].description
-  productImage.value = product[productId-1].img;
-  productPrice.value = product[productId-1].price;
+  let productNeedEdit;
+  for(let pd of product)
+  {
+    if(pd.id == productId)
+    {
+      productNeedEdit = pd;
+      break;
+    }
+  }
+  console.log(productNeedEdit);
+  productType.value = productNeedEdit.type;
+  productName.value = productNeedEdit.name;
+  productDescription.value = productNeedEdit.description;
+  productPrice.value = productNeedEdit.price;
   id.value = productId;
   editProductTable.style.display = "flex";
 }
@@ -292,12 +292,19 @@ function openEditProductTable(productId)
 function editProductToProductArray(event)
 {
   event.preventDefault();
-  console.log(product[id.value - 1]);
-  product[id.value - 1].type = productType.value ;
-  product[id.value - 1].name = productName.value;
-  product[id.value - 1].description = productDescription.value ;
-  product[id.value - 1].img = formatCurrecy(productImage.value)  ;
-  product[id.value - 1].price =productPrice.value  ;
+  for(let pd of product)
+  {
+    if(pd.id == id.value)
+    {
+      pd.type = productType.value ;
+      pd.name = productName.value;
+      pd.description = productDescription.value ;
+      pd.img = `/assets/img/${productImage.files[0].name}`;
+      pd.price = formatCurrecy(productPrice.value) ;
+      break;
+    }
+  }
+  
 
   localStorage.removeItem("product");
   localStorage.setItem("product",JSON.stringify(product));
@@ -515,6 +522,7 @@ function renderOrder(orderArray)
   {
     productName = " ";
     // copy mảng arrProductId
+    console.log(orderArray);
     for(let id of orderArray[i].arrProductId)
     {
       orderProductTmp.push(id);
@@ -525,7 +533,7 @@ function renderOrder(orderArray)
       k=0;
       while(k < orderProductTmp.length)
       {
-        if(orderProductTmp[k] == product[j].id)
+        if(orderProductTmp[k].id == product[j].id)
         {
           soluong ++;
           nameTmp = product[j].name;
@@ -551,15 +559,15 @@ function renderOrder(orderArray)
     }
     // định dạng lại ngày dd/mm/yyyy
     let date = new Date(orderArray[i].dateOrder);
-
+    console.log(date);
     orderItem += `
     <div class="order-item">
-        <div class="order-id">${orderArray[i].id}</div>
+        <div class="order-id">${orderArray[i].idOrderForm}</div>
         <div class="order-userid">${orderArray[i].idUser}</div>
         <div class="order-product">
           ${productName}
         </div>
-        <div class="order-date">${formatDate(date)}</div>
+        <div class="order-date">${getDate()}</div>
         <div class="total-price">${orderArray[i].totalPrice}</div>
         
     `
@@ -729,6 +737,7 @@ function padTo2Digits(num) {
 
 function formatDate(date) {
   return [
+    padTo2Digits(date.getHours()),
     padTo2Digits(date.getDate()),
     padTo2Digits(date.getMonth() + 1),
     date.getFullYear(),

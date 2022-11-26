@@ -64,7 +64,7 @@ function updateTotal() {
 }
 
 //kiểm tra xem trong giỏ đã sản phẩm cùng id chưa
-function exitInCart(tmpId) {
+function existInCart(tmpId) {
   let arrCart = JSON.parse(localStorage.getItem('cart'));
   if(arrCart == null || arrCart.length == 0 ) return false;
   for (let i = 0; i < arrCart.length; i++) {
@@ -94,12 +94,12 @@ function addProductToCartByInforProduct(id) {
     let arrCart = JSON.parse(localStorage.getItem('cart'));
     // chạy for để thêm đúng sản phẩm vào giỏ hàng
     for (let i = 0; i < product.length; i++) {
-      if (product[i].id == id && exitInCart(id) == true) {
+      if (product[i].id == id && existInCart(id) == true) {
         for (let j = 0; j < arrCart.length; j++) {
           if(parseInt(arrCart[j].id) == id)
             arrCart[j].quantity += parseInt(quantityProduct.value);
         }
-      } else if(product[i].id == id && exitInCart(id) == false) {
+      } else if(product[i].id == id && existInCart(id) == false) {
         let tmpCartArr = product[i];
         tmpCartArr.quantity = parseInt(quantityProduct.value);
         arrCart.push(tmpCartArr);
@@ -132,13 +132,13 @@ function addProductToCartByCardProduct(id) {
     // chạy for để thêm đúng sản phẩm vào giỏ hàng
     for (let i = 0; i < product.length; i++) {
       // kiểm tra nếu true thì tăng số lượng trong giỏ của cùng sản phẩm 
-      if (product[i].id == id && exitInCart(id) == true) {
+      if (product[i].id == id && existInCart(id) == true) {
         for (let j = 0; j < arrCart.length; j++) {
           if(parseInt(arrCart[j].id) == id)
             arrCart[j].quantity += 1;
         }
       // còn nếu false thì thêm sản phẩm mới vào giỏ hàng
-      } else if(product[i].id == id && exitInCart(id) == false) {
+      } else if(product[i].id == id && existInCart(id) == false) {
         let tmpCartArr = product[i];
         tmpCartArr.quantity = 1;
         arrCart.push(tmpCartArr);
@@ -167,6 +167,12 @@ function removeCartItem(productId) {
 // nút mua tất cả sản phẩm trong giỏ hàng
 function buyProductInCart() {
   if (!checkSignin()) return;
+  
+  if(JSON.parse(localStorage.getItem('currentUser')).status == true) {
+    alert("Tài khoản của bạn đã bị khóa!!");
+    return;
+  }  
+  
   if( totalTmp == 0 || cartContainerMiddle.children.length == 0) {
     alert("Bạn chưa thêm sản phẩm vào giỏ hàng");
     return;
