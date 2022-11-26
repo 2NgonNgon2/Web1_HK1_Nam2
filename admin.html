@@ -82,77 +82,10 @@
     
       <!-- account manage table -->
 
-      <!-- <div class="account-container" onclick="closeAccountProductTable()">
-        <div class="account-table" onclick="stopPropagate(event)">
-
-          <div class="exit-account-manage-table" onclick="closeAccountProductTable()">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <div class="title">DANH SÁCH TÀI KHOẢN</div>
-
+      <div class="account-container" onclick="closeAccountProductTable()">
         
-
-          <div class="account">
-            
-          </div>
-          
-          <form class="search-user" onsubmit="filterAccount(event)">
-            <label >TÊN TÀI KHOẢN:</label>
-            <input type="text" value="" id="user-name" placeholder="hackiemsi">
-            <button type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-      </div> -->
+      </div>
         
-       <!--order table  -->
-        <div class="order-container" onclick="closeOrderProductTable()">
-          <div class="order-table" onclick="stopPropagate(event)">
-
-              <div class="exit-order-manage-table" onclick="closeOrderProductTable()">
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <div class="title">DANH SÁCH ĐƠN HÀNG</div>
-
-              <div class="order">
-
-                <!-- <div class="header">
-                  <div class="order-id">ID</div>
-                  <div class="order-userid">USER ID</div>
-                  <div class="order-product">
-                    SẢN PHẨM
-                  </div>
-                  <div class="order-date">NGÀY</div>
-                  <div class="total-price">TỔNG GIÁ</div>
-                  <div class="status">TÌNH TRẠNG</div>
-                </div> -->
-
-                <!-- <div class="order-item">
-                  <div class="order-id">1</div>
-                  <div class="order-userid">2</div>
-                  <div class="order-product">
-                    aloooooooo123;125125;1231241212451;12352352
-                  </div>
-                  <div class="order-date">03-03-2003</div>
-                  <div class="total-price">1.999.999d</div> -->
-                  <!--<label for="order-status">
-                   <input type="checkbox" class="status" onclick="processOrder(${orderForm[i].id})"> 
-                   </label>
-                </div>-->
-
-              </div>
-
-                <form class="date-filter" onsubmit="filterOrder(event)">
-                  <label for="date" class="date-start">TỪ NGÀY</label>
-                  <input type="date" class="date-start-input" value="2022-01-01">
-                  <label for="date" class="date-end">ĐẾN NGÀY</label>
-                  <input type="date" class="date-end-input" value="2022-12-31">
-                  <button type="submit" class="filter">LỌC</button>
-                </form>
-          </div>
-        </div>
-
     <!-- add products -->
     <div class="add-product-container" onclick="closeAddProductTable(event)">
       
@@ -208,7 +141,7 @@
             <label for="productDescription">Description:</label>
             <input type="text" name="productDescription" id="productDescriptionEdit" value="" placeholder="keyboard for gamer">
             <label for="productImage">Image:</label>  
-            <input type="file" name="productImage" id="productImage" value="" placeholder="link image here">
+            <input type="file" name="productImage" id="productImageEdit" value="" placeholder="link image here">
             <label for="productPrice">Price</label>
             <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">              
             <input type="number" name="productId" value="" id="productId" style="display: none;">
@@ -217,33 +150,6 @@
             </div>
         </form>
 
-    </div>
-
-    <!-- delete table -->
-
-    <div class="delete-product-container" onclick="closeDeleteProductTable()">
-      
-      <form class="delete-product-table" onclick="stopPropagate(event)" onsubmit="deleteProductFromProductArray(event)">
-        <div class="exit-delete-product-table" onclick="closeDeleteProductTable()">
-          <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="title">DELETE PRODUCT</div>
-        <div class="delete-item-container">
-          <!-- <div class="input-label">
-            <input type="checkbox" name="deleteItem" id="item-id" value="productid">
-            <label for="deleteItem" class="delete-item">
-              <img class="delete-item-img" src="/assets/img/Gaming keyboard.webp">
-              <div class="delete-item-name">haha123</div>  
-              <div class="delete-item-price">69999</div>
-            </label>
-          </div> -->
-        </div>
-
-        <div class="save-product-btn">
-          <button type="submit">DELETE</button>
-        </div>
-
-      </form>
     </div>
 
 <!-- Card products -->
@@ -335,14 +241,14 @@
           <i class="fa-solid fa-chevron-right"></i>
         </li>
 
-        <li id="nav-header-left-list-user-management">
+        <li id="nav-header-left-list-user-management" onclick="openAccountManageTable()">
           <div class="nav-header-left-list-user-management">
             Quản lý khách hàng
           </div>
           <i class="fa-solid fa-chevron-right"></i>
         </li>
 
-        <li id="nav-header-left-list-order-form-management">
+        <li id="nav-header-left-list-order-form-management" onclick="openOrderManageTable()">
           <div class="nav-header-left-list-order-form-management">
             Quản lý đơn hàng
           </div>
@@ -389,31 +295,7 @@
       </div>
 
       <div class="container-content">
-        <div class="container-content-header">
-          Danh sách các sản phẩm
-        </div>
-        <div class="container-content-products" >
-          <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
-            <tr >
-              <th class="container-content-products-table-item-id">ID</th>
-              <th class="container-content-products-table-item-img">Ảnh</th>
-              <th class="container-content-products-table-item-name">Tên</th>
-              <th class="container-content-products-table-item-type">Loại</th>
-              <th class="container-content-products-table-item-price">Giá</th>
-              <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
-            </tr>
-            
-          </table>
-        </div>
-        <div class="container-content-user">
-          
-        </div>
-        <div class="container-content-order-form">
-          
-        </div>
-        <div class="container-content-business-statistics">
-          
-        </div>
+        
       </div>
     </div>
 
