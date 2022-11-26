@@ -780,7 +780,7 @@ function showProductTable() {
     <td class="container-content-products-table-item-edit">
       <div class="add-delete-product-button ">
         
-          <div class="container-content-products-table-item-edit-icon" >
+          <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
             <i class="fa-solid fa-gear"></i>
           </div>
 
