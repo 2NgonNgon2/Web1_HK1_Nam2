@@ -59,7 +59,7 @@ function showViewOrderFormWithIdUser() {
       `;
       } else {
         div.innerHTML = `
-        <div class="view-order-container-bottom-product-title">
+        <div class="view-order-container-bottom-product-title" style="color:green;">
           Đặt hàng thành công
           <div class="view-order-container-bottom-product-title-date">Ngày đặt hàng: ${orderForm[i].dateOrder}</div>
         </div>

@@ -328,30 +328,42 @@
       </div>
       
       <ul class="nav-header-left-list">
-        <li id="nav-header-left-list-products-management" onclick="showProductTable()">
+        <li class="nav-header-left-list-item active-nav-header-left-list-item" id="nav-header-left-list-products-management" onclick="showProductTable()">
           <div class="nav-header-left-list-products-management">
-            Quản lý sản phẩm
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            <span>
+              Quản lý sản phẩm
+            </span> 
           </div>
           <i class="fa-solid fa-chevron-right"></i>
         </li>
 
-        <li id="nav-header-left-list-user-management">
+        <li class="nav-header-left-list-item" id="nav-header-left-list-user-management">
           <div class="nav-header-left-list-user-management">
-            Quản lý khách hàng
+            <i class="fa-solid fa-users"></i>
+            <span>
+              Quản lý khách hàng
+            </span> 
           </div>
           <i class="fa-solid fa-chevron-right"></i>
         </li>
 
-        <li id="nav-header-left-list-order-form-management">
+        <li class="nav-header-left-list-item" id="nav-header-left-list-order-form-management">
           <div class="nav-header-left-list-order-form-management">
-            Quản lý đơn hàng
+            <i class="fa-solid fa-receipt"></i>
+            <span>
+              Quản lý đơn hàng
+            </span> 
           </div>
           <i class="fa-solid fa-chevron-right"></i>
         </li>
 
-        <li id="nav-header-left-list-business-statistics">
+        <li class="nav-header-left-list-item" id="nav-header-left-list-business-statistics">
           <div class="nav-header-left-list-business-statistics">
-            Thống kê doanh thu
+            <i class="fa-solid fa-sack-dollar"></i>
+            <span>
+              Thống kê doanh thu
+            </span> 
           </div>
           <i class="fa-solid fa-chevron-right"></i>
         </li>
@@ -361,7 +373,7 @@
 
     <div class="container">
       <div class="container-header">
-        <ul class="container-header-navigation" id="container-header-navigation">
+        <div class="container-header-navigation" id="container-header-navigation">
           <form onsubmit="searchEngineAdmin(event)" id="search_box" class="container-header-navigation-search-box">
             <input
               type="search"
@@ -373,6 +385,7 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
+
           <div class="dropdown container-header-navigation-dropdown">
               <div class="dropdown-select container-header-navigation-dropdown-select">
                 <i class="fa fa-user dropdown-user"></i>
@@ -385,27 +398,37 @@
                 </li>
               </ul>
           </div>   
-        </ul>
+        </div>
       </div>
 
-      <div class="container-content">
-        <div class="container-content-header">
-          Danh sách các sản phẩm
+      <div class="container-nav-header-right">
+        <div >
+          <div class="container-nav-header-right-filter-type">
+            <label for="typeProducts">Chọn loại:</label>
+            <select name="typeProducts" id="typeProducts">
+              <option value="all">Tất cả</option>
+              <option value="keyboard">Bàn phím</option>
+              <option value="mouse">Chuột</option>
+              <option value="headphone">Tai nghe</option>
+              <option value="speaker">Loa</option>
+              <option value="Laptop">Laptop</option>
+            </select>
+          </div>
+          <div class="container-nav-header-right-filter-price">
+            <span>Giá : </span>
+            <span>Từ</span>
+            <input type="number" value="0" placeholder="000.000" id="container-nav-header-right-filter-price-start">
+            <span> ₫   đến  </span>
+            <input type="number" value="999999" placeholder="999.999" id="container-nav-header-right-filter-price-end">
+            <span> ₫ </span>
+          </div>
+          <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
         </div>
-        <div class="container-content-products" >
-          <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
-            <tr >
-              <th class="container-content-products-table-item-id">ID</th>
-              <th class="container-content-products-table-item-img">Ảnh</th>
-              <th class="container-content-products-table-item-name">Tên</th>
-              <th class="container-content-products-table-item-type">Loại</th>
-              <th class="container-content-products-table-item-price">Giá</th>
-              <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
-            </tr>
-            
-          </table>
-        </div>
-        <div class="container-content-user">
+      </div>
+      
+      <div class="container-content" id="container-content">
+        
+        <!-- <div class="container-content-user">
           
         </div>
         <div class="container-content-order-form">
@@ -413,7 +436,7 @@
         </div>
         <div class="container-content-business-statistics">
           
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -425,7 +448,7 @@
   <script src="./assets/js/arr-account.js"></script>
   <script src="./assets/js/arr-product.js"></script>
   <script src="./assets/js/menu-product-admin.js"></script>
-  <script src="./assets/js/navigation.js"></script>
+  <!-- <script src="./assets/js/navigation.js"></script> -->
   <!-- <script src="./assets/js/backToHome-button.js"></script> -->
   <!-- <script src="./assets/js/search-engine.js"></script> -->
  </body>
