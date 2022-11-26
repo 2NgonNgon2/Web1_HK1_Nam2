@@ -32,12 +32,10 @@ else {
       type: "keyboard",
       name: "Bàn phím không dây Bluetooth Logitech MX Keys Mini - Hàng chính hãng",
       description: "Nhỏ gọn, Sạc USB-C, Phím tắt thông minh, Có bản cho Mac",
-      detail: `• CÁC PHÍM THÔNG MINH PERFECT STROKE: Gõ trên các phím được tạo hình phù hợp với ngón tay bạn, cùng 4 phím tắt thông minh: chuyển đổi giọng nói thành văn bản, Tắt tiếng/Hủy tắt tiếng Mic và các phím Emoji và cắt nhanh màn hình.<br>
-    • KÍCH CỠ MINI, HIỆU SUẤT MẠNH MẼ: Bố cục được thiết kế để dễ dàng gõ thật chính xác, với hình dáng tối giản và công thái học, có thể dễ dàng mang theo đi đến bất cứ nơi nào để cùng bạn làm việc.<br>
-    • CHIẾU SÁNG NỀN THÔNG MINH: Các phím được chiếu sáng nền sẽ sáng lên khi tay bạn tiến đến gần và tự động điều chỉnh để phù hợp với điều kiện ánh sáng thay đổi từ môi trường.<br>
-    • ĐA THIẾT BỊ, TƯƠNG THÍCH ĐA HỆ ĐIỀU HÀNH: Ghép cặp (Pair) bàn phím nhỏ gọn MX Keys Mini với tối đa 3 thiết bị qua tính năng Bluetooth tiết kiệm năng lượng và với nút Easy-switch trên hầu hết các hệ điều hành<br>
-    • KẾT NỐI NHIỀU MÁY TÍNH CÙNG FLOW: Kết hợp MX Keys Mini với MX Master 3 hoặc MX Anywhere 3 và gõ trên nhiều PC hoặc máy tính xách tay trong một luồng công việc trôi chảy.<br>
-    • PIN SẠC USB-C: Bàn phím Bluetooth MX Keys Mini dùng được 10 ngày trong một lần sạc đầy hoặc lên tới 5 tháng khi tắt chức năng chiếu sáng nền.<br>`,
+      detail: `
+      • CÁC PHÍM THÔNG MINH PERFECT STROKE: Gõ trên các phím được tạo hình phù hợp với ngón tay bạn, cùng 4 phím tắt thông minh: chuyển đổi giọng nói thành văn bản, Tắt tiếng/Hủy tắt tiếng Mic và các phím Emoji và cắt nhanh màn hình.<br>
+      • KÍCH CỠ MINI, HIỆU SUẤT MẠNH MẼ: Bố cục được thiết kế để dễ dàng gõ thật chính xác, với hình dáng tối giản và công thái học, có thể dễ dàng mang theo đi đến bất cứ nơi nào để cùng bạn làm việc.<br>
+      • PIN SẠC USB-C: Bàn phím Bluetooth MX Keys Mini dùng được 10 ngày trong một lần sạc đầy hoặc lên tới 5 tháng khi tắt chức năng chiếu sáng nền.<br>`,
       img: "/assets/img/fa3b402ea600bb5763a6655ec50bc74b.png.webp",
       price: "699000",
     },
@@ -184,8 +182,6 @@ else {
       name: "Bàn Phím Cơ không dây mini Đa kết nối RF84 White Gaming cho máy tính",
       description: "Keyboard for gamer",
       detail: `
-    - Hệ điều hành hỗ trợ : Windows . Android . Macos . ios <br>
-    - Thiết bị hỗ : Máy tính , Laptop , Điện thoại , Máy tính bảng<br>
     - Đa Kết nối : Bluetooth 5.0 - USB 2.4G - cáp USB . Có thể tháo rời , thay thế dễ dàng<br>
     - Khoảng cách kết nối không dây lên đến 10m<br>
     - Kết nối cùng lúc lên đến 3 thiết bị , chuyển đổi nhanh thiết bị bằng phím FN+...<br>
@@ -213,8 +209,6 @@ else {
     - Bàn phím cơ sử dụng Blue switch. Cho âm thanh gõ giống như Đoạn Văn hay cảm giác cơ học, loại thân công tắc thoải mái và dễ sử dụng hơn. Âm thanh của nó sắc nét và có nhịp gõ mạnh mẽ. Nó chủ yếu phù hợp để đánh máy trong các trò chơi.<br>
     - Bàn phím nổi sáu hàng thứ tư phù hợp với quỹ đạo chuyển động của ngón tay, gõ phím thoải mái và không dễ bị mỏi.<br>
     - Cắm và chạy, đèn nền năng động và rực rỡ, các nhân vật và tấm giữa phát sáng để giải trí ban đêm, nhiều đèn Charming hơn.<br>
-    - NHỰA ABS vật liệu nhựa nhiệt dẻo, tinh tế Hai-màu sắc, ánh sáng-Truyền thiết kế, cảm giác thoải mái, không dễ dàng để được nhờn, và để lại dấu vân tay.<br>
-    - Bố trí 87 phím, nắp phím nổi hình chữ U, gần ngón tay hoàn hảo, cảm giác mượt mà cho trải nghiệm văn phòng.<br>
     - Thiết kế chống nước và chống bụi, với nhiều lỗ thoát nước ở phía dưới, có thể đẩy chất lỏng và trà càng sớm càng tốt và chăm sóc bàn phím của bạn.<br>
     `,
       img: "/assets/img/a0869744ebcc1b4b546e12468832f8af.jpg",
@@ -365,9 +359,6 @@ else {
       description: "Keyboard for gamer",
       detail: `
     TÍNH NĂNG BÀN PHÍM SỐ MINI NUMBER KEYBOARD <br>
-    - Mini Number Keyboard thiết kế nhỏ gọn và tinh tế.<br>
-    - Bàn phím số cho laptop giúp xử lý những con số nhanh gọn và chuyên nghiệp.<br>
-    - Bàn phím số rời với 18 phím chức năng tiện dụng.<br>
     - Cắm và sử dụng, không cần cài đặt driver.<br>
     - Bàn phím số không dây sử dụng kết nối 2.4G mạnh mẽ và ổn định.<br>
     - Sử dụng pin AAA 1.5V thông dụng.<br>

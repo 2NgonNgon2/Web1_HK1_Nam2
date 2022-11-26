@@ -5,13 +5,12 @@ let lenghtOrderForm = 1;
 if(localStorage.getItem("orderForm") == null) // orderForm chưa có trong localStoragge 
 {
     console.log("insert orderForm to ls");
-    orderForm = [ 
-    ]
+    orderForm = [];
     localStorage.setItem("orderForm",JSON.stringify(orderForm));
 }
 else    
 {
-    orderForm = localStorage.getItem("orderForm");
+    orderForm = JSON.parse(localStorage.getItem("orderForm"));
 }
 
 function getDate() {

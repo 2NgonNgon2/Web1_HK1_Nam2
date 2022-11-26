@@ -1,30 +1,5 @@
-.order-container
-{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.231);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 10001;
-}
 
-
-.order-container .order-table
-{
-  position: absolute;
-  height: 600px;
-  width: 1100px;
-  max-width: 100%;
-  padding: 20px;
-
-  background: whitesmoke;
-  z-index: 10002;
-}
-.order-container .order-table .title
+.container-content .title
 {
   border-bottom: 1px solid black;
   padding-bottom:20px ;
@@ -34,7 +9,7 @@
   font-size: 25px;
 }
 
-.order-container .order-table .exit-order-manage-table
+.container-content .exit-order-manage-table
 {
   position: absolute;
   top:10px;
@@ -47,7 +22,7 @@
   justify-content: center;
   align-items: center;
 }
-.order-container .order-table .order .header
+.container-content .order .header
 {
   width:100%;
   height: 30px;
@@ -56,25 +31,21 @@
   font-weight: bolder;
 }
 
-.order-container .order-table .order 
+.container-content .order 
 {
   height: 430px;
   width: 100%;
   overflow: auto;
 }
 
-.order-container .order-table .order .order-item
+.container-content .order .order-item
 {
   width:100%;
   height: 80px;
   display: grid;
   grid-template-columns: 10% 10% 40% 14% 13% 13% ;
 }
-.order-container .order-table .order .order-item:nth-child(2n)
-{
-  background: rgb(160, 160, 160);
-}
-.order-container .order-table .order .order-item .order-product
+.container-content .order .order-item .order-product
 {
   overflow: auto;
   height: 80px;
@@ -108,11 +79,10 @@ input[type="checkbox"] {
 
 }
 
-.order-container .order-table .date-filter
+.container-content .date-filter
 {
   width: 50%;
   height: 50px;
-  position: absolute;
   bottom: 10px;
   left: 10px;
   display: grid;
@@ -121,29 +91,29 @@ input[type="checkbox"] {
   
 }
 
-.order-container .order-table .date-filter .date-start
+.container-content .date-filter .date-start
 {
   grid-column: 1/2;
 }
 
-.order-container .order-table .date-filter .date-start-input
+.container-content .date-filter .date-start-input
 {
   grid-column:2/3;
 
 }
 
-.order-container .order-table .date-filter .date-end
+.container-content .date-filter .date-end
 {
   grid-column: 3/4;
 }
 
-.order-container .order-table .date-filter .date-end-input
+.container-content .date-filter .date-end-input
 {
   grid-column:4/5;
 
 }
 
-.order-container .order-table .date-filter input
+.container-content .date-filter input
 {
   height: 30px;
   justify-self: center;
@@ -152,14 +122,14 @@ input[type="checkbox"] {
   border-radius: 5px;
 }
 
-.order-container .order-table .date-filter label
+.container-content .date-filter label
 {
   justify-self: center;
   font-size: 18px;
   font-weight: bold;
 }
 
-.order-container .order-table .date-filter  button
+.container-content .date-filter  button
 {
   width: 100px;
   height: 30px;
