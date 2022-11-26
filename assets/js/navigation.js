@@ -7,16 +7,14 @@ window.addEventListener('scroll', function () {
 // var loginMenu = document.getElementById("login");
 // var createMenu = document.getElementById("create");
 var backgroundLogin = document.getElementById("sigin-background");
-let headerIconList = document.getElementById('header-icon-list');
 
 
-headerIconList.addEventListener("click", function() {
+function showMenuList() {
     menu.classList.add("showMenu");
-})
-
-menuCloseIcon.addEventListener("click", function() {
+}
+function hideMenuList() {
     menu.classList.remove("showMenu");
-})
+}
 
 // loginMenu.addEventListener("click", function (event) {
 //     stopPropagate(event);
