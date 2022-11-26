@@ -278,18 +278,7 @@
         </div>
       </div>
 
-      <div class="add-delete-product-button">
-        <abbr title="DELETE PRODUCT">
-          <div class="delete-button" onclick="openDeleteProductTable()" >
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </abbr>
-        <abbr title="ADD PRODUCT">
-          <div class="add-button" onclick="openAddProductTable()" >
-            <i class="fa-regular fa-square-plus"></i>
-          </div>
-        </abbr>
-      </div>
+      
 
       <div class="card-products-container"> -->
         
@@ -307,10 +296,7 @@
             </div>
             <div class="card-product-content-bottom">
   
-            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);editProduct()">
-              <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-              Chỉnh sửa 
-            </div>
+            
   
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">
@@ -342,7 +328,7 @@
       </div>
       
       <ul class="nav-header-left-list">
-        <li id="nav-header-left-list-products-management">
+        <li id="nav-header-left-list-products-management" onclick="showProductTable()">
           <div class="nav-header-left-list-products-management">
             Quản lý sản phẩm
           </div>
@@ -407,126 +393,16 @@
           Danh sách các sản phẩm
         </div>
         <div class="container-content-products" >
-          <table class="container-content-products-table" style="width: 100%; z-index: 1;" >
+          <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
             <tr >
               <th class="container-content-products-table-item-id">ID</th>
               <th class="container-content-products-table-item-img">Ảnh</th>
               <th class="container-content-products-table-item-name">Tên</th>
               <th class="container-content-products-table-item-type">Loại</th>
               <th class="container-content-products-table-item-price">Giá</th>
+              <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
             </tr>
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
-
-
-            <tr class="container-content-products-table-item">
-              <td class="container-content-products-table-item-id">1</td>
-              <td class="container-content-products-table-item-img">
-                <img src="/assets/img/Chuột gaming Logitech G502 HERO.webp" alt="">
-              </td>
-              <td class="container-content-products-table-item-name">Mouse</td>
-              <td class="container-content-products-table-item-type">Mouse</td>
-              <td class="container-content-products-table-item-price">122.000</td>
-            </tr>
+            
           </table>
         </div>
         <div class="container-content-user">
@@ -550,8 +426,7 @@
   <script src="./assets/js/arr-product.js"></script>
   <script src="./assets/js/menu-product-admin.js"></script>
   <script src="./assets/js/navigation.js"></script>
-  <script src="./assets/js/backToHome-button.js"></script>
-  <script src="./assets/js/search-engine.js"></script>
-  <!-- <script src="search-engine.js"></script> -->
-  </body>
+  <!-- <script src="./assets/js/backToHome-button.js"></script> -->
+  <!-- <script src="./assets/js/search-engine.js"></script> -->
+ </body>
 </html>
