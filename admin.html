@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./assets/css/switch-button.css">
     <link rel="stylesheet" href="./assets/css/order-product-table.css">
     <link rel="stylesheet" href="./assets/css/account-manager-table.css">
+    <link rel="stylesheet" href="./assets/css/Statistical.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
@@ -63,6 +64,9 @@
               <li class="dropdown-item">
                   <span class="dropdown-text" onclick ="openOrderManageTable()">Quản lý đơn hàng</span>
               </li>
+              <li class="dropdown-item">
+                <span class="dropdown-text">Thống kê</span>
+            </li>
               <li class="dropdown-item" onclick="dangXuatAdmin()">
                   <span class="dropdown-text" >Đăng xuất</span>
               </li>
@@ -82,7 +86,37 @@
     <div class="back-to-top">
       <a class="" href="#"   ><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
     </div>
-    
+      <!-- Bảng thông kê -->
+      <div class="Statistical-container">
+        <div class="Statistical-table">
+          <div class="close-table">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <div class="title">BẢNG THỐNG KÊ</div>
+          <div class="Statistical">
+
+          </div>
+          <form class="search-table">
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </form>
+        </div>
+      </div>
+
+
+
       <!-- account manage table -->
 
       <div class="account-container" onclick="closeAccountProductTable()">
@@ -359,6 +393,7 @@
     </div>
     
   <!-- Java Script -->
+  <script src="./assets/js/Statistical.js"></script>
   <script src="./assets/js/arr-order-form.js"></script>
   <script src="./assets/js/arr-account.js"></script>
   <script src="./assets/js/arr-product.js"></script>
