@@ -21,7 +21,7 @@
     background-color: #fff;
     border-radius: 10px;
     padding: 5.5rem 3.5rem;
-    z-index: 100;
+    z-index: 10005;
     transform: scale(65%);
 }
 
