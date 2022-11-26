@@ -49,7 +49,7 @@ if (localStorage.getItem("userSignIn") != null) {
         localStorage.setItem("cart",JSON.stringify([]));
         document.querySelector("span.dropdown-select").innerHTML = "Tài khoản";
         localStorage.removeItem("userSignIn");
-        localStorage.removeItem("currentUser");
+        localStorage.setItem("currentUser",JSON.stringify({}));
         localStorage.setItem("isSignedin", "false");
         window.location.reload();
     });

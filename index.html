@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="./assets/css/cart.css">
   <link rel="stylesheet" href="./assets/css/info-product.css">
   <link rel="stylesheet" href="./assets/css/menu-product.css">
-  <link rel="stylesheet" href="./assets/css/message.css">
   <link rel="stylesheet" href="./assets/css/navigation.css">
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/signin-menu.css">
@@ -33,7 +32,7 @@
     <header>
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       <!--icon list will appear when use tablet or mobile screen -->
-      <div id="header-icon-list">
+      <div id="header-icon-list" onclick="showMenuList()">
         <i class="fa-solid fa-list-ul"></i>
       </div>
       <ul class="navigation" id="navigation">
@@ -104,7 +103,7 @@
           </button>
         </div>
       </form>
-    </div> --> -->
+    </div> --> 
   </div>
   <!-- Banner -->
   <section class="banner" id="banner">
@@ -229,7 +228,7 @@
 
   <div class="card-products">
     <div class="menu" id="menu">
-      <div class="close-menu-products-icon">
+      <div class="close-menu-products-icon" onclick="hideMenuList()">
         <i class="fa-solid fa-xmark"></i>
       </div>
       <div class="menu-title">Danh mục sản phẩm</div>
@@ -477,7 +476,6 @@
   <script src="/assets/js/cart.js"></script>
   <script src="/assets/js/info-products.js"></script>
   <script src="/assets/js/menu-product.js"></script>
-  <script src="/assets/js/message.js"></script>
   <script src="/assets/js/navigation.js"></script>
   <script src="/assets/js/search-engine.js"></script>
   <script src="/assets/js/slider.js"></script>

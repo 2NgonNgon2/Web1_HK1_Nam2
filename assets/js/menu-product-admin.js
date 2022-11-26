@@ -13,7 +13,7 @@ let item = "";          // dùng để chứa các html product-items
 
 isAdmin = true;
 
-filterProductAdmin("keyboard");
+/* filterProductAdmin("keyboard");
 function filterProductAdmin(typeProduct) {
   item = "";
   tmpProduct = [];
@@ -204,7 +204,7 @@ function renderProductAdmin(product) {
     `;
 
 }
-
+ */
 function addProductToProductArray(event)
 {
   event.preventDefault();
@@ -751,3 +751,37 @@ function formatCurrecy(currency)
 
 // inner trong admin
 
+let productsManage = document.getElementById("nav-header-left-list-products-management");
+let productsTable = document.getElementById("container-content-products-table");
+
+function showProductTable() {
+  for (let i = 0; i < product.length; i++) {
+    productsTable.children[0].innerHTML += `
+    <tr class="container-content-products-table-item">
+    <td class="container-content-products-table-item-id">${product[i].id}</td>
+    <td class="container-content-products-table-item-img">
+        <img src="${product[i].img}" alt="">
+    </td>
+    <td class="container-content-products-table-item-name">${product[i].name}</td>
+    <td class="container-content-products-table-item-type">${product[i].type}</td>
+    <td class="container-content-products-table-item-price">
+      ${formatCurrecy(product[i].price)}
+      ₫
+    </td>
+    <td class="container-content-products-table-item-edit">
+      <div class="add-delete-product-button ">
+        
+          <div class="container-content-products-table-item-edit-icon" >
+            <i class="fa-solid fa-gear"></i>
+          </div>
+
+          <div class="container-content-products-table-item-edit-delete"  >
+            <i class="fa-solid fa-trash"></i>
+          </div>
+      </div>
+    </td>
+    
+  </tr>
+    `
+  }
+}
