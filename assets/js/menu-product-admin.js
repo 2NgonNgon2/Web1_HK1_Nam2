@@ -4,7 +4,6 @@ const orderContainer = document.querySelector(".order-container");
 const accountContainer = document.querySelector(".account-container");
 const deleteProductTable = document.querySelector(".delete-product-container");
 const deleteItemContainer = document.querySelector(".delete-item-container");
-const productsTable = document.getElementById("container-content-products-table");
 const contantContainer = document.querySelector(".container-content");
 
 document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
@@ -348,6 +347,7 @@ function closeOrderProductTable()
 
 function openAccountManageTable()
 {
+  console.log("let goo");
   contantContainer.innerHTML =
   `
       <div class="title">DANH SÁCH TÀI KHOẢN</div>
