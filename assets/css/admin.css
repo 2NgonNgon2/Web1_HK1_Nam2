@@ -1,0 +1,238 @@
+.main-wrapper {
+}
+
+.nav-header-left {
+    position: fixed;
+    height: 100%;
+    width: 360px;
+    z-index: 2;
+    background: linear-gradient(45deg, red, orange);
+    opacity: .85;
+    padding: 20px 0 20px 20px;
+}
+
+.nav-header-left-logo {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 20px 20px 20px 0;
+    
+}
+.nav-header-left-logo img{
+    height: 100%;
+}
+
+.nav-header-left-list {
+    position: relative;
+    min-height: 100px;
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: 550;
+    color: white;
+}
+
+.nav-header-left-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+    transition: .2s ease;
+}
+
+.nav-header-left-list li div {
+
+}
+
+
+.nav-header-left-list li:hover {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    font-size: 18px;
+    
+}
+
+
+
+.container {
+    padding-left: 360px;
+    width: 100%;
+    margin: 0;
+}
+
+.container-header {
+}
+
+.container-header-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: lightblue;
+}
+
+.container-header-navigation-search-box {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
+    border-radius: 20px!important;
+}
+
+.container-header-navigation-dropdown {
+    max-width: 200px;
+    width: 100px;
+}
+
+.container-header-navigation-dropdown-select,
+.container-header-navigation-dropdown-select-text {
+    color: black!important;
+}
+
+.container-header-navigation-dropdown-select-text {
+    margin: 0 5px 0;
+}
+
+.container-header-navigation-dropdown:hover .container-header-navigation-dropdown-list {
+    right: 25px;
+    box-shadow: 3px 3px 10px  rgba(0, 0, 0, .3);
+}
+
+.container-content-header {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    padding: 40px 20px 0 20px;
+}
+
+.container-content-products {
+    padding: 40px 40px 0 40px;
+}
+
+.container-content-products-table {
+  
+    text-align: center;
+}
+
+.container-content-products-table tr:first-child {
+    background: grey;
+}
+
+
+.container-content-products-table th {
+    font-weight: 600;
+}
+
+.container-content-products-table th,
+.container-content-products-table td {
+    border: 2px solid black;
+    height: 100px;
+    
+}
+
+.container-content-products-table-item-id {
+    width: 10%;
+    line-height: 100px;
+}
+
+.container-content-products-table-item-img {
+    position: relative;
+    height: 100%;
+    width: 20%;
+
+}
+
+.container-content-products-table-item-img img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+.container-content-products-table-item-name {
+    width: 20%;
+
+}
+
+.container-content-products-table-item-type {
+    width: 10%;
+
+}
+
+.container-content-products-table-item-price {
+    width: 20%;
+
+}
+
+.container-content-products-table-item-edit {
+    position: relative;
+    width: 20%;
+}
+
+.add-delete-product-button {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: 50% 50% ;
+   
+}
+
+
+.add-delete-product-button .add-button {
+  height: 50px;
+  width: 50px;
+  margin: 0 10px 20px 0;
+  background: white;
+  border: 2px groove black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+
+
+.add-delete-product-button .add-button:hover {
+  cursor: pointer;
+  background-color: rgb(250, 176, 38);
+  box-shadow: 0 0 5px 2px rgb(121, 103, 71);
+}
+
+.container-content-products-table-item-edit-delete {
+  /* height: 50px;
+  width: 50px;
+  margin: 0 10px 20px 0;
+  background: rgb(156, 156, 156);
+  border: 2px groove black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease; */
+}
+
+.container-content-products-table-item-edit-icon,
+.container-content-products-table-item-edit-delete {
+  width: 100%;
+  
+}
+
+.container-content-products-table-item-edit-delete,
+.container-content-products-table-item-edit-icon{
+  font-size: 25px;
+  height: 100%;
+  line-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-content-products-table-item-edit-delete:hover {
+  background-color: rgb(250, 38, 42);
+  color: white;
+  cursor: pointer;
+}
+.container-content-products-table-item-edit-icon:hover {
+  background-color: rgb(38, 250, 87);
+  color: white;
+  cursor: pointer;
+}
+  

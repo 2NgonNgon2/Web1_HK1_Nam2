@@ -18,12 +18,14 @@
     <link rel="stylesheet" href="./assets/css/switch-button.css">
     <link rel="stylesheet" href="./assets/css/order-product-table.css">
     <link rel="stylesheet" href="./assets/css/account-manager-table.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
     <!-- Header -->
-    <header>
+    <!-- <header>
       <a href="#" class="logo"><span style="color: #FFEA00; font-style:italic;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" style="width:200px;" alt=""></span></a>
       
       <ul class="navigation" id="navigation">
@@ -48,12 +50,7 @@
               <i class="fa fa-caret-down dropdown-caret"></i>
             </div>
             <ul class="dropdown-list">
-              <!-- <li class="dropdown-item" onclick="displaySignMenu('Sign in')" >
-                <span class="dropdown-text" id="sign-in">Đăng nhập</span>
-              </li>
-              <li class="dropdown-item" onclick="displaySignMenu('Sign up')" >
-                <span class="dropdown-text" id="sign-up">Đăng kí</span>
-              </li> -->
+              
               <li class="dropdown-item">
                   <span class="dropdown-text">Thông tin cá nhân</span>
               </li>
@@ -69,23 +66,23 @@
             </ul>
           </div>   
       </ul>
-    </header>
+    </header> -->
       <!-- Banner -->
-      <section class="banner" id="banner">
+      <!-- <section class="banner" id="banner">
         <div class="content">
             <h2>GeForce RTX 40 Series</h2>
             <p>Bộ xử lý đồ họa NVIDIA® GeForce RTX® 40 Series nhanh hơn tất cả dành cho game thủ và nhà sáng tạo nội dung. Được thiết kế trên kiến trúc NVIDIA Ada Lovelace với hiệu năng siêu cao cung cấp sức mạnh nhảy vọt cho các ứng dụng đồ họa phát triển trên nền tảng trí tuệ nhân tạo. Trải nghiệm như thật trong môi trường thực tế ảo với công nghệ dò tia thời gian thực ray tracing, mượt mà với số khung hình siêu cao và độ trễ cực kỳ thấp. Hãy khám phá những cách thức sáng tạo hoàn toàn mới và quy trình thực thi các tác vụ vượt trội chưa từng có.</p>
             <a href="#" class="btn">Mua ngay</a>
         </div>
-      </section>
+      </section> -->
 <!-- Back to top button -->
-    <div class="back-to-top">
+    <!-- <div class="back-to-top">
       <a class="" href="#"   ><i class="fa-solid fa-arrow-up back-top-top-icon"></i></a>
-    </div>
+    </div> -->
     
       <!-- account manage table -->
 
-      <div class="account-container" onclick="closeAccountProductTable()">
+      <!-- <div class="account-container" onclick="closeAccountProductTable()">
         <div class="account-table" onclick="stopPropagate(event)">
 
           <div class="exit-account-manage-table" onclick="closeAccountProductTable()">
@@ -96,26 +93,6 @@
         
 
           <div class="account">
-
-            <!-- <div class="header">
-              <div class="account-id">ID</div>
-              <div class="account-name">TÊN TÀI KHOẢN</div>
-              <div class="account-password">MẬT KHẨU</div>
-              <div class="account-phone">SĐT</div>
-              <div class="account-mail">EMAIL</div>
-              <div class="status">TÌNH TRẠNG </div>
-            </div> -->
-            
-            <!-- <div class="account-item">
-                <div class="account-id">1</div>
-                <div class="account-name">otaku</div>
-                <div class="account-password">hehe</div>
-                <div class="account-phone">096123456</div>
-                <div class="account-mail">hackiemsi@gmail.com</div>
-                <label for="account-status" class="account-status">
-                  <input type="checkbox" class="status"> 
-                </label>
-            </div> -->
             
           </div>
           
@@ -127,10 +104,10 @@
             </button>
           </form>
         </div>
-      </div>
+      </div> -->
         
        <!--order table  -->
-        <div class="order-container" onclick="closeOrderProductTable()">
+        <!-- <div class="order-container" onclick="closeOrderProductTable()">
           <div class="order-table" onclick="stopPropagate(event)">
 
               <div class="exit-order-manage-table" onclick="closeOrderProductTable()">
@@ -138,7 +115,7 @@
               </div>
               <div class="title">DANH SÁCH ĐƠN HÀNG</div>
 
-              <div class="order">
+              <div class="order"> -->
 
                 <!-- <div class="header">
                   <div class="order-id">ID</div>
@@ -164,7 +141,7 @@
                    </label>
                 </div>-->
 
-              </div>
+              <!-- </div>
 
                 <form class="date-filter" onsubmit="filterOrder(event)">
                   <label for="date" class="date-start">TỪ NGÀY</label>
@@ -174,10 +151,10 @@
                   <button type="submit" class="filter">LỌC</button>
                 </form>
           </div>
-        </div>
+        </div> -->
 
     <!-- add products -->
-    <div class="add-product-container" onclick="closeAddProductTable(event)">
+    <!-- <div class="add-product-container" onclick="closeAddProductTable(event)">
       
         <form class="add-product-table" onclick="stopPropagate(event)" onsubmit="addProductToProductArray(event)">
           <div class="exit-add-product-table" onclick="closeAddProductTable()">
@@ -207,11 +184,11 @@
             </div>
         </form>
 
-    </div>
+    </div> -->
 
     <!-- edit table -->
 
-    <div class="edit-product-container" onclick="closeEditProductTable(event)">
+    <!-- <div class="edit-product-container" onclick="closeEditProductTable(event)">
       
         <form class="edit-product-table" onclick="stopPropagate(event)" onsubmit="editProductToProductArray(event)">
           <div class="exit-edit-product-table" onclick="closeEditProductTable()">
@@ -240,18 +217,18 @@
             </div>
         </form>
 
-    </div>
+    </div> -->
 
     <!-- delete table -->
 
-    <div class="delete-product-container" onclick="closeDeleteProductTable()">
+    <!-- <div class="delete-product-container" onclick="closeDeleteProductTable()">
       
       <form class="delete-product-table" onclick="stopPropagate(event)" onsubmit="deleteProductFromProductArray(event)">
         <div class="exit-delete-product-table" onclick="closeDeleteProductTable()">
           <i class="fa-solid fa-xmark"></i>
         </div>
         <div class="title">DELETE PRODUCT</div>
-        <div class="delete-item-container">
+        <div class="delete-item-container"> -->
           <!-- <div class="input-label">
             <input type="checkbox" name="deleteItem" id="item-id" value="productid">
             <label for="deleteItem" class="delete-item">
@@ -260,17 +237,17 @@
               <div class="delete-item-price">69999</div>
             </label>
           </div> -->
-        </div>
+        <!-- </div>
 
         <div class="save-product-btn">
           <button type="submit">DELETE</button>
         </div>
 
       </form>
-    </div>
+    </div> -->
 
 <!-- Card products -->
-    <div class="card-products">
+    <!-- <div class="card-products">
       
       <div class="menu" id="menu">
         <div class="menu-title">Danh mục sản phẩm</div>
@@ -301,20 +278,9 @@
         </div>
       </div>
 
-      <div class="add-delete-product-button">
-        <abbr title="DELETE PRODUCT">
-          <div class="delete-button" onclick="openDeleteProductTable()" >
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </abbr>
-        <abbr title="ADD PRODUCT">
-          <div class="add-button" onclick="openAddProductTable()" >
-            <i class="fa-regular fa-square-plus"></i>
-          </div>
-        </abbr>
-      </div>
+      
 
-      <div class="card-products-container">
+      <div class="card-products-container"> -->
         
         <!-- <div class="card-product-item" id="${product.id}" onclick="productInfomation()">
           <img
@@ -330,10 +296,7 @@
             </div>
             <div class="card-product-content-bottom">
   
-            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);editProduct()">
-              <i class="fa-solid fa-cart-shopping icon-btn-shop"></i>
-              Chỉnh sửa 
-            </div>
+            
   
             <div class="card-product-content-bottom-buying">
               <div class="card-product-content-bottom-buying-price">
@@ -350,22 +313,120 @@
           </div>
         </div> -->
 
-        <div class="menu-card-products-page-number">
+        <!-- <div class="menu-card-products-page-number"> -->
           <!-- <div class="pageNumber" onclick="pageRender(1)"></div>
           <div class="pageNumber" onclick="pageRender(2)">2</div>
           <div class="pageNumber" onclick="pageRender(3)">3</div>  -->
-        </div> 
+        <!-- </div> 
+      </div>
+    </div> -->
+  <div class="main-wrapper">
+
+    <div class="nav-header-left">
+      <div class="nav-header-left-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Cyberpunk_2077_logo.svg/2560px-Cyberpunk_2077_logo.svg.png" alt="">
+      </div>
+      
+      <ul class="nav-header-left-list">
+        <li id="nav-header-left-list-products-management" onclick="showProductTable()">
+          <div class="nav-header-left-list-products-management">
+            Quản lý sản phẩm
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </li>
+
+        <li id="nav-header-left-list-user-management">
+          <div class="nav-header-left-list-user-management">
+            Quản lý khách hàng
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </li>
+
+        <li id="nav-header-left-list-order-form-management">
+          <div class="nav-header-left-list-order-form-management">
+            Quản lý đơn hàng
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </li>
+
+        <li id="nav-header-left-list-business-statistics">
+          <div class="nav-header-left-list-business-statistics">
+            Thống kê doanh thu
+          </div>
+          <i class="fa-solid fa-chevron-right"></i>
+        </li>
+      </ul>
+      
+    </div>
+
+    <div class="container">
+      <div class="container-header">
+        <ul class="container-header-navigation" id="container-header-navigation">
+          <form onsubmit="searchEngineAdmin(event)" id="search_box" class="container-header-navigation-search-box">
+            <input
+              type="search"
+              id="search_text"
+              placeholder="Bạn muốn tìm gì !!!!"
+              value=""
+            />
+            <button type="submit" href="#product-display" id="search_button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <div class="dropdown container-header-navigation-dropdown">
+              <div class="dropdown-select container-header-navigation-dropdown-select">
+                <i class="fa fa-user dropdown-user"></i>
+                <span class="dropdown-select container-header-navigation-dropdown-select-text">My Account</span>
+                <i class="fa fa-caret-down dropdown-caret"></i>
+              </div>
+              <ul class="dropdown-list container-header-navigation-dropdown-list">
+                <li class="dropdown-item container-header-navigation-dropdown-item" onclick="dangXuatAdmin()">
+                    <span class="dropdown-text container-header-navigation-dropdown-text" >Đăng xuất</span>
+                </li>
+              </ul>
+          </div>   
+        </ul>
+      </div>
+
+      <div class="container-content">
+        <div class="container-content-header">
+          Danh sách các sản phẩm
+        </div>
+        <div class="container-content-products" >
+          <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
+            <tr >
+              <th class="container-content-products-table-item-id">ID</th>
+              <th class="container-content-products-table-item-img">Ảnh</th>
+              <th class="container-content-products-table-item-name">Tên</th>
+              <th class="container-content-products-table-item-type">Loại</th>
+              <th class="container-content-products-table-item-price">Giá</th>
+              <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
+            </tr>
+            
+          </table>
+        </div>
+        <div class="container-content-user">
+          
+        </div>
+        <div class="container-content-order-form">
+          
+        </div>
+        <div class="container-content-business-statistics">
+          
+        </div>
       </div>
     </div>
+
     
+  </div>  
+
   <!-- Java Script -->
   <script src="./assets/js/arr-order-form.js"></script>
   <script src="./assets/js/arr-account.js"></script>
   <script src="./assets/js/arr-product.js"></script>
   <script src="./assets/js/menu-product-admin.js"></script>
   <script src="./assets/js/navigation.js"></script>
-  <script src="./assets/js/backToHome-button.js"></script>
-  <script src="./assets/js/search-engine.js"></script>
-  <!-- <script src="search-engine.js"></script> -->
-  </body>
+  <!-- <script src="./assets/js/backToHome-button.js"></script> -->
+  <!-- <script src="./assets/js/search-engine.js"></script> -->
+ </body>
 </html>
