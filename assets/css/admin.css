@@ -39,10 +39,6 @@
     transition: .2s ease;
 }
 
-.nav-header-left-list li div {
-
-}
-
 
 .nav-header-left-list li:hover {
     cursor: pointer;
@@ -52,7 +48,12 @@
     
 }
 
-
+.active-nav-header-left-list-item {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    font-size: 18px;
+}
 
 .container {
     padding-left: 360px;
@@ -61,6 +62,11 @@
 }
 
 .container-header {
+    position: fixed;
+    right: 0;
+    left: 360px;
+    z-index: 2;
+    background: rgba(200, 187, 187, 0.8);
 }
 
 .container-header-navigation {
@@ -68,7 +74,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: lightblue;
 }
 
 .container-header-navigation-search-box {
@@ -77,8 +82,10 @@
 }
 
 .container-header-navigation-dropdown {
-    max-width: 200px;
-    width: 100px;
+    max-width: 150px;
+    min-width: 100px;
+    border-left: 1px solid rgb(113 109 109 / 20%);
+    padding: 10px 0 10px 20px;
 }
 
 .container-header-navigation-dropdown-select,
@@ -95,6 +102,62 @@
     box-shadow: 3px 3px 10px  rgba(0, 0, 0, .3);
 }
 
+
+.container-nav-header-right {
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+}
+
+.container-nav-header-right > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-nav-header-right-filter-type label {
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+.container-nav-header-right-filter-type select {
+    padding: 2px 4px ;
+    border: 2px solid black;
+    height: 100%;
+}
+
+.container-nav-header-right-filter-price input {
+    border: 2px solid black;
+}
+
+.container-nav-header-right-filter-price span {
+    font-weight: 600;
+}
+
+.container-nav-header-right-filter-price input::placeholder {
+    color: rgb(113 109 109 / 40%);
+}
+
+.container-nav-header-right div > button {
+    border: 2px solid black;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 600;
+    background: rgba(255,144,39,.8);
+    cursor: pointer;
+}
+
+.container-nav-header-right div > button:hover {
+    background: rgba(255,144,39,1);
+}
+
+#container-content {
+  
+}
+
 .container-content-header {
     font-size: 24px;
     font-weight: 700;
@@ -103,16 +166,16 @@
 }
 
 .container-content-products {
-    padding: 40px 40px 0 40px;
+    padding: 40px ;
 }
 
 .container-content-products-table {
-  
+    box-shadow: 0 12px 33px 0 rgb(62 73 84 / 30%);
     text-align: center;
 }
 
 .container-content-products-table tr:first-child {
-    background: grey;
+    background: rgb(255,144,39);
 }
 
 
@@ -134,7 +197,6 @@
 
 .container-content-products-table-item-img {
     position: relative;
-    height: 100%;
     width: 20%;
 
 }
@@ -230,6 +292,8 @@
   color: white;
   cursor: pointer;
 }
+
+
 .container-content-products-table-item-edit-icon:hover {
   background-color: rgb(38, 250, 87);
   color: white;

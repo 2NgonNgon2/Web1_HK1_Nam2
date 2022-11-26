@@ -270,7 +270,7 @@ header.sticky .dropdown-list {
 }
 
 #search_box #search_button:hover {
-	background: red;
+	background: rgb(255,172,39);
 }
 
 header.sticky #search_box {
