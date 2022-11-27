@@ -533,7 +533,7 @@ function renderProductManage() {
             <span>Từ</span>
             <input type="number" value="0" placeholder="000.000" id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫   đến  </span>
-            <input type="number" value="999999" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
+            <input type="number" value="99999999" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫ </span>
           </div>
           <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
@@ -639,18 +639,14 @@ function showProductTable(arrTmpProducts) {
 }
 
 // hold color nav header left
-let navHeaderListItems = document.querySelectorAll(".nav-header-left-list-item");
-
-navHeaderListItems.forEach((navHeaderListItem) => {
-  navHeaderListItem.onclick = function() {
-    document
-      .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
-      .classList.remove("active-nav-header-left-list-item");
-  
-    this.classList.add("active-nav-header-left-list-item");
-  };
-}); 
-
+function holdColorMenuInAdmin(e){
+  document
+    .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
+    .classList.remove("active-nav-header-left-list-item");
+    
+    let element = e.target.closest(".nav-header-left-list-item");
+  element.classList.add("active-nav-header-left-list-item");
+};
 
 let search_inp = document.querySelector("#search_text");
 let search_btn = document.querySelector("#search_button");
