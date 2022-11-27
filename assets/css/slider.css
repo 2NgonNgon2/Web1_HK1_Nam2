@@ -49,8 +49,7 @@ li{
 }
 .slider-content-top img{
 	width: 100%;
-	height: 375px;
-	
+	height: 500px;
 }
 .slider-content-bottom{
 	display: flex;
@@ -102,6 +101,7 @@ li{
 	overflow:hidden;
 	border-top-left-radius:20px;
 	border-top-right-radius:20px;
+	padding-bottom: 120px;
 }
 .slider-content-top-container :hover i{
 	opacity: 1;
