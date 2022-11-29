@@ -19,22 +19,7 @@ function searchEngine(event)
   pageOneHandle();
 }
 
-function searchEngineAdmin(event)
-{
-  console.log(search_inp.value);
-  tmpProduct = [];
 
-  for(let i=0; i<product.length; i++)
-  {
-    if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
-    {
-      tmpProduct.push(product[i]);
-    }
-  }
-  event.preventDefault();
-  createPageNumAdmin(tmpProduct);
-  pageOneHandleAdmin();
-}
 
 function getEnterKey(event) {
   if(event.keyCode == 13)
@@ -167,4 +152,3 @@ function searchPrice(event)
  
   
 }
-
