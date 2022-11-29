@@ -391,16 +391,30 @@ function lockAccount(accountId)
     
     if(account[i].id == accountId)
     {
+      accountStatus = document.querySelectorAll(".account-status");
       console.log(account[i].id);
       if(account[i].status == true)
       {
+        
         account[i].status = false;
         console.log("bỏ khóa tài khoản!");
+        accountStatus[i].style.color = "green";
+        accountStatus[i].innerHTML = `
+        Chưa khóa
+        <input type="checkbox" class="status" onclick="lockAccount(${account[i].id})"> 
+       `
       }
       else
       {
         account[i].status = true;
         console.log("khóa tài khoản!");
+        accountStatus[i].style.color = "red";
+        accountStatus[i].innerHTML = `
+         Đã khóa
+        <input type="checkbox" checked class="status" onclick="lockAccount(${account[i].id})"> 
+       
+        `
+
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(account);
@@ -447,7 +461,8 @@ function renderAccount(accountArray)
     {
       accountItem +=
       `
-      <label for="account-status" class="account-status">
+      <label for="account-status" class="account-status" style="color:red;">
+        Đã khóa
         <input type="checkbox" checked class="status" onclick="lockAccount(${accountArray[i].id})"> 
         </label>
         </div>
@@ -457,7 +472,8 @@ function renderAccount(accountArray)
       {
         accountItem +=
         `
-        <label for="account-status" class="account-status" >
+        <label for="account-status" class="account-status" style="color:green;" >
+        Chưa khóa
         <input type="checkbox" class="status" onclick="lockAccount(${accountArray[i].id})"> 
         </label>
         </div>
@@ -518,36 +534,79 @@ function preventKeyPressNotNumber(e) {
 // inner trong admin
 
 let productsManage = document.getElementById("nav-header-left-list-products-management");
-
-function showProductTable() {
+let productsTable;
+renderProductManage();
+function renderProductManage() {
+  containerContentAdmin.innerHTML = `
+      <div class="container-nav-header-right">
+        <div>
+          <div class="container-nav-header-right-filter-type">
+            <label for="typeProducts">Chọn loại:</label>
+            <select name="typeProducts" id="typeProducts">
+              <option value="all">Tất cả</option>
+              <option value="keyboard">Bàn phím</option>
+              <option value="mouse">Chuột</option>
+              <option value="headphone">Tai nghe</option>
+              <option value="speaker">Loa</option>
+              <option value="Laptop">Laptop</option>
+            </select>
+          </div>
+          <div class="container-nav-header-right-filter-price">
+            <span>Giá : </span>
+            <span>Từ</span>
+            <input type="number" value="0" placeholder="000.000" id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
+            <span> ₫   đến  </span>
+            <input type="number" value="99999999" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
+            <span> ₫ </span>
+          </div>
+          <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
+        </div>
+      </div>
+      <div class="container-content-header">
+        DANH SÁCH CÁC SẢN PHẨM
+        <button class="container-content-header-btn" onclick="openAddProductTable()">
+          <i class="fa-regular fa-square-plus"></i>
+          Thêm sản phẩm
+        </button>
+      </div>
+      <div class="container-content-products" >
+        <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
+          <tr >
+            <th class="container-content-products-table-item-id">ID</th>
+            <th class="container-content-products-table-item-img">Ảnh</th>
+            <th class="container-content-products-table-item-name">Tên</th>
+            <th class="container-content-products-table-item-type">Loại</th>
+            <th class="container-content-products-table-item-price">Giá</th>
+            <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
+          </tr>
+        </table>
+      </div>
+  ` 
+  productsTable = document.getElementById("container-content-products-table");
   for (let i = 0; i < product.length; i++) {
     productsTable.innerHTML += `
     <tr class="container-content-products-table-item">
-    <td class="container-content-products-table-item-id">${product[i].id}</td>
-    <td class="container-content-products-table-item-img">
-        <img src="${product[i].img}" alt="">
-    </td>
-    <td class="container-content-products-table-item-name">${product[i].name}</td>
-    <td class="container-content-products-table-item-type">${product[i].type}</td>
-    <td class="container-content-products-table-item-price">
-      ${formatCurrecy(product[i].price)}
-      ₫
-    </td>
-    <td class="container-content-products-table-item-edit">
-      <div class="add-delete-product-button ">
-        
-          <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
-            <i class="fa-solid fa-gear"></i>
-          </div>
-  
-  
-          <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
-            <i class="fa-solid fa-trash"></i>
-          </div>
-      </div>
-    </td>
-    
-  </tr>
+      <td class="container-content-products-table-item-id">${product[i].id}</td>
+      <td class="container-content-products-table-item-img">
+          <img src="${product[i].img}" alt="">
+      </td>
+      <td class="container-content-products-table-item-name">${product[i].name}</td>
+      <td class="container-content-products-table-item-type">${product[i].type}</td>
+      <td class="container-content-products-table-item-price">
+        ${formatCurrecy(product[i].price)}
+        ₫
+      </td>
+      <td class="container-content-products-table-item-edit">
+        <div class="add-delete-product-button">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+      </td>
+    </tr>
     `
   }
 }
@@ -624,7 +683,7 @@ function searchEngineAdmin(event)
 
 function getEnterKey(event) {
   if(event.keyCode == 13)
-  searchEngine(event);
+  searchEngineAdmin(event);
 }
 search_inp.addEventListener('keypress',getEnterKey)
 

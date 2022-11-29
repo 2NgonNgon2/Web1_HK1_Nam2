@@ -1,9 +1,7 @@
 
 .container-content .title
 {
-  border-bottom: 1px solid black;
   padding-bottom:20px ;
-  margin-bottom: 20px;
   text-align: center;
   font-weight: bolder;
   font-size: 25px;
@@ -12,17 +10,19 @@
 .container-content .account .header
 {
   width:100%;
-  height: 30px;
+  height: 80px;
   display: grid;
-  grid-template-columns: 5% 20% 20% 20% 25% 10% ;
+  grid-template-columns: 5% 20% 20% 20% 20% 15% ;
   font-weight: bolder;
+  border: 2px solid ;
+  background: rgb(255,144,39);
+  
 }
 
 .container-content .account 
 {
-  height: 430px;
   width: 100%;
-  overflow: auto;
+  padding: 0 40px 40px;
 }
 
 .container-content .account .account-item
@@ -30,10 +30,13 @@
   width:100%;
   height: 80px;
   display: grid;
-  grid-template-columns: 5% 20% 20% 20% 25% 10% ;
-  border-bottom: 1px solid grey;
-
+  grid-template-columns: 5% 20% 20% 20% 20% 15% ;
+  border-bottom: 2px solid grey;
+  border-left: 2px solid;
+  border-right: 2px solid;
 }
+
+
 
 .container-content .account .account-item .account-product
 {
@@ -43,9 +46,16 @@
 
 .account-id,.account-name,.account-password,.account-phone,.account-mail,.header .status
 {
-  justify-self: center;
-  align-self: center;
-  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid;
+}
+
+.header .status {
+  border-right: 0;
 }
 
 .account-status
@@ -53,7 +63,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;  
+  justify-content: space-around;  
   align-items:center;
 }
 
