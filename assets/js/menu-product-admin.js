@@ -4,7 +4,8 @@ const orderContainer = document.querySelector(".order-container");
 const accountContainer = document.querySelector(".account-container");
 const deleteProductTable = document.querySelector(".delete-product-container");
 const deleteItemContainer = document.querySelector(".delete-item-container");
-const contantContainer = document.querySelector(".container-content");
+// const contantContainer = document.querySelector(".container-content");
+let containerContentAdmin = document.getElementById("container-content")
 
 document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
@@ -45,10 +46,11 @@ function addProductToProductArray(event)
     };
 
     product.push(productAdd);
-    }
+  }
   
   localStorage.setItem("product",JSON.stringify(product));
   alert("Thêm sản phẩm thành công!");
+  renderProductManage();
   location.reload();
 }
 
@@ -81,7 +83,7 @@ const id = document.querySelector("#productId");
 
 function openEditProductTable(productId)
 {
-
+  
   let productNeedEdit;
   for(let pd of product)
   {
@@ -96,7 +98,7 @@ function openEditProductTable(productId)
   productName.value = productNeedEdit.name;
   productDescription.value = productNeedEdit.description;
   productPrice.value = productNeedEdit.price;
-
+  
   id.value = productId;
   editProductTable.style.display = "flex";
 }
@@ -117,7 +119,7 @@ function editProductToProductArray(event)
     }
   }
   
-
+  
   localStorage.removeItem("product");
   localStorage.setItem("product",JSON.stringify(product));
   alert("Cập nhật sản phẩm thành công!");
@@ -164,21 +166,21 @@ function closeDeleteProductTable(event)
 
 function openOrderManageTable()
 {
-  contantContainer.innerHTML =
+  containerContentAdmin.innerHTML =
   `
-      <div class="title">DANH SÁCH ĐƠN HÀNG</div>
-
-      <form class="date-filter" onsubmit="filterOrder(event)">
-        <label for="date" class="date-start">TỪ NGÀY</label>
-        <input type="date" class="date-start-input" value="2022-01-01">
-        <label for="date" class="date-end">ĐẾN NGÀY</label>
-        <input type="date" class="date-end-input" value="2022-12-31">
-        <button type="submit" class="filter">LỌC</button>
-      </form>
-
-      <div class="order">
-      
-      </div>
+  <div class="title">DANH SÁCH ĐƠN HÀNG</div>
+  
+  <form class="date-filter" onsubmit="filterOrder(event)">
+  <label for="date" class="date-start">TỪ NGÀY</label>
+  <input type="date" class="date-start-input" value="2022-01-01">
+  <label for="date" class="date-end">ĐẾN NGÀY</label>
+  <input type="date" class="date-end-input" value="2022-12-31">
+  <button type="submit" class="filter">LỌC</button>
+  </form>
+  
+  <div class="order">
+  
+  </div>
   `
   renderOrder(orderForm);
 
@@ -242,16 +244,16 @@ function renderOrder(orderArray)
   const order = document.querySelector(".order");
   let orderItem = "";
   orderItem = `
-              <div class="header">
-                  <div class="order-id">ID</div>
-                  <div class="order-userid">USER ID</div>
-                  <div class="order-product">
-                    SẢN PHẨM
-                  </div>
-                  <div class="order-date">NGÀY</div>
-                  <div class="total-price">TỔNG GIÁ</div>
-                  <div class="status">TÌNH TRẠNG</div>
-                </div>
+  <div class="header">
+  <div class="order-id">ID</div>
+  <div class="order-userid">USER ID</div>
+  <div class="order-product">
+  SẢN PHẨM
+  </div>
+  <div class="order-date">NGÀY</div>
+  <div class="total-price">TỔNG GIÁ</div>
+  <div class="status">TÌNH TRẠNG</div>
+  </div>
   `
   
   let productName='';
@@ -303,16 +305,16 @@ function renderOrder(orderArray)
     console.log(date);
     orderItem += `
     <div class="order-item">
-        <div class="order-id">${orderArray[i].idOrderForm}</div>
-        <div class="order-userid">${orderArray[i].idUser}</div>
-        <div class="order-product">
-          ${productName}
-        </div>
-        <div class="order-date">${getDate()}</div>
-        <div class="total-price">${orderArray[i].totalPrice}</div>
-        
+    <div class="order-id">${orderArray[i].idOrderForm}</div>
+    <div class="order-userid">${orderArray[i].idUser}</div>
+    <div class="order-product">
+    ${productName}
+    </div>
+    <div class="order-date">${getDate()}</div>
+    <div class="total-price">${orderArray[i].totalPrice}</div>
+    
     `
-
+    
     if(orderArray[i].status == true)
     {
       orderItem += 
@@ -349,13 +351,13 @@ document.querySelector("#nav-header-left-list-products-management").addEventList
 
 function openAccountManageTable()
 {
-  contantContainer.innerHTML =
+  containerContentAdmin.innerHTML =
   `
-      <div class="title">DANH SÁCH TÀI KHOẢN</div>
-
-      <div class="account">
-      
-      </div>
+  <div class="title">DANH SÁCH TÀI KHOẢN</div>
+  
+  <div class="account">
+  
+  </div>
   `
   renderAccount(account);
 }
@@ -368,7 +370,7 @@ function filterAccount(event)
   for(let acc of account)
   {
     if(acc.username.match(username) != null) 
-      accountArrayTmp.push(acc); 
+    accountArrayTmp.push(acc); 
   }
   console.log(accountArrayTmp); 
   renderAccount(accountArrayTmp);
@@ -413,12 +415,12 @@ function renderAccount(accountArray)
   accountItem = 
   `
   <div class="header">
-    <div class="account-id">ID</div>
-    <div class="account-name">TÊN TÀI KHOẢN</div>
-    <div class="account-password">MẬT KHẨU</div>
-    <div class="account-phone">SĐT</div>
-    <div class="account-mail">EMAIL</div>
-    <div class="status">TÌNH TRẠNG</div>
+  <div class="account-id">ID</div>
+  <div class="account-name">TÊN TÀI KHOẢN</div>
+  <div class="account-password">MẬT KHẨU</div>
+  <div class="account-phone">SĐT</div>
+  <div class="account-mail">EMAIL</div>
+  <div class="status">TÌNH TRẠNG</div>
   </div>
   `
 
@@ -427,11 +429,11 @@ function renderAccount(accountArray)
     accountItem +=
     `
     <div class="account-item">
-      <div class="account-id">${accountArray[i].id}</div>
-      <div class="account-name">${accountArray[i].username}</div>
-      <div class="account-password">${accountArray[i].password}</div>
-      <div class="account-phone">${accountArray[i].phone}</div>
-      <div class="account-mail">${accountArray[i].email}</div>
+    <div class="account-id">${accountArray[i].id}</div>
+    <div class="account-name">${accountArray[i].username}</div>
+    <div class="account-password">${accountArray[i].password}</div>
+    <div class="account-phone">${accountArray[i].phone}</div>
+    <div class="account-mail">${accountArray[i].email}</div>
       
     `
     // kiểm tra trạng thái tài khoản
@@ -441,71 +443,109 @@ function renderAccount(accountArray)
       `
       <label for="account-status" class="account-status">
         <input type="checkbox" checked class="status" onclick="lockAccount(${accountArray[i].id})"> 
-      </label>
-      </div>
-      `
-    }
-    else
-    {
-      accountItem +=
-      `
-      <label for="account-status" class="account-status" >
+        </label>
+        </div>
+        `
+      }
+      else
+      {
+        accountItem +=
+        `
+        <label for="account-status" class="account-status" >
         <input type="checkbox" class="status" onclick="lockAccount(${accountArray[i].id})"> 
-      </label>
-      </div>
-      `
+        </label>
+        </div>
+        `
+      }
+      
     }
     
+    accountDisplay.innerHTML = accountItem;
   }
   
-  accountDisplay.innerHTML = accountItem;
+  
+  function closeAccountProductTable()
+  {
+    console.log("đóng bảng danh sách người dùng!");
+    accountContainer.style.display = "none";
+  }
+  
+  
+  
+  // hàm định dạng ngày tháng năm
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+  }
+  
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getHours()),
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join('/');
+  }
+  
+  
+  function dangXuatAdmin()
+  {
+    localStorage.setItem("isSignedin","false");
+    localStorage.removeItem("adminSignedin");
+    window.location.href = "/index.html";
+  }
+  
+  
+  function formatCurrecy(currency)
+  {
+    return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
-
-function closeAccountProductTable()
-{
-  console.log("đóng bảng danh sách người dùng!");
-  accountContainer.style.display = "none";
-}
-
-
-
-// hàm định dạng ngày tháng năm
-function padTo2Digits(num) {
-  return num.toString().padStart(2, '0');
-}
-
-function formatDate(date) {
-  return [
-    padTo2Digits(date.getHours()),
-    padTo2Digits(date.getDate()),
-    padTo2Digits(date.getMonth() + 1),
-    date.getFullYear(),
-  ].join('/');
-}
-
-
-function dangXuatAdmin()
-{
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
-}
-
-
-function formatCurrecy(currency)
-{
-  return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+function preventKeyPressNotNumber(e) {
+  // kiểm tra xem charCode mà thỏa đk thì chặn keypress đó
+  if(e.charCode < 48 || e.charCode > 57) {
+    e.preventDefault();
+    if( e.charCode < 96 || e.charCode > 105)
+        e.preventDefault();
+  }
 }
 
 // inner trong admin
 
 let productsManage = document.getElementById("nav-header-left-list-products-management");
-
-let containerContentAdmin = document.getElementById("container-content")
-containerContentAdmin.innerHTML = `
+let productsTable;
+renderProductManage();
+function renderProductManage() {
+  containerContentAdmin.innerHTML = `
+      <div class="container-nav-header-right">
+        <div>
+          <div class="container-nav-header-right-filter-type">
+            <label for="typeProducts">Chọn loại:</label>
+            <select name="typeProducts" id="typeProducts">
+              <option value="all">Tất cả</option>
+              <option value="keyboard">Bàn phím</option>
+              <option value="mouse">Chuột</option>
+              <option value="headphone">Tai nghe</option>
+              <option value="speaker">Loa</option>
+              <option value="Laptop">Laptop</option>
+            </select>
+          </div>
+          <div class="container-nav-header-right-filter-price">
+            <span>Giá : </span>
+            <span>Từ</span>
+            <input type="number" value="0" placeholder="000.000" id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
+            <span> ₫   đến  </span>
+            <input type="number" value="99999999" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
+            <span> ₫ </span>
+          </div>
+          <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
+        </div>
+      </div>
   <div class="container-content-header">
-  DANH SÁCH CÁC SẢN PHẨM
+    DANH SÁCH CÁC SẢN PHẨM
+    <button class="container-content-header-btn" onclick="openAddProductTable()">
+      <i class="fa-regular fa-square-plus"></i>
+      Thêm sản phẩm
+    </button>
   </div>
   <div class="container-content-products" >
   <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
@@ -520,42 +560,46 @@ containerContentAdmin.innerHTML = `
     
   </table>
   </div>
+
+  
 ` 
 
-let productsTable = document.getElementById("container-content-products-table");
-for (let i = 0; i < product.length; i++) {
-  productsTable.children[0].innerHTML += `
-  <tr class="container-content-products-table-item">
-  <td class="container-content-products-table-item-id">${product[i].id}</td>
-  <td class="container-content-products-table-item-img">
-      <img src="${product[i].img}" alt="">
-  </td>
-  <td class="container-content-products-table-item-name">${product[i].name}</td>
-  <td class="container-content-products-table-item-type">${product[i].type}</td>
-  <td class="container-content-products-table-item-price">
-    ${formatCurrecy(product[i].price)}
-    ₫
-  </td>
-  <td class="container-content-products-table-item-edit">
-    <div class="add-delete-product-button ">
-      
-        <div class="container-content-products-table-item-edit-icon" >
-          <i class="fa-solid fa-gear"></i>
-        </div>
-
-
-        <div class="container-content-products-table-item-edit-delete"  >
-          <i class="fa-solid fa-trash"></i>
-        </div>
-    </div>
-  </td>
+  productsTable = document.getElementById("container-content-products-table");
+  for (let i = 0; i < product.length; i++) {
+    productsTable.innerHTML += `
+    <tr class="container-content-products-table-item">
+    <td class="container-content-products-table-item-id">${product[i].id}</td>
+    <td class="container-content-products-table-item-img">
+        <img src="${product[i].img}" alt="">
+    </td>
+    <td class="container-content-products-table-item-name">${product[i].name}</td>
+    <td class="container-content-products-table-item-type">${product[i].type}</td>
+    <td class="container-content-products-table-item-price">
+      ${formatCurrecy(product[i].price)}
+      ₫
+    </td>
+    <td class="container-content-products-table-item-edit">
+      <div class="add-delete-product-button ">
+        
+          <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
+            <i class="fa-solid fa-gear"></i>
+          </div>
   
-</tr>
-  `
+  
+          <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+      </div>
+    </td>
+    
+  </tr>
+    `
+  }
 }
 
+
 function showProductTable(arrTmpProducts) {
-  productsTable.children[0].innerHTML = `
+  productsTable.innerHTML = `
   <tr >
   <th class="container-content-products-table-item-id">ID</th>
   <th class="container-content-products-table-item-img">Ảnh</th>
@@ -565,7 +609,7 @@ function showProductTable(arrTmpProducts) {
   <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
   </tr>`;
   for (let i = 0; i < arrTmpProducts.length; i++) {
-    productsTable.children[0].innerHTML += `
+    productsTable.innerHTML += `
     <tr class="container-content-products-table-item">
     <td class="container-content-products-table-item-id">${arrTmpProducts[i].id}</td>
     <td class="container-content-products-table-item-img">
@@ -594,18 +638,16 @@ function showProductTable(arrTmpProducts) {
     `
   }
 }
-// hold color nav header left
-let navHeaderListItems = document.querySelectorAll(".nav-header-left-list-item");
 
-navHeaderListItems.forEach((navHeaderListItem, i) => {
-  navHeaderListItem.onclick = function() {
-    document
-      .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
-      .classList.remove("active-nav-header-left-list-item");
-  
-    this.classList.add("active-nav-header-left-list-item");
-  };
-}); 
+// hold color nav header left
+function holdColorMenuInAdmin(e){
+  document
+    .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
+    .classList.remove("active-nav-header-left-list-item");
+    
+    let element = e.target.closest(".nav-header-left-list-item");
+  element.classList.add("active-nav-header-left-list-item");
+};
 
 let search_inp = document.querySelector("#search_text");
 let search_btn = document.querySelector("#search_button");
@@ -662,14 +704,11 @@ function filterProductsInAdmin() {
       arrTmp1.push(product[i]);
     } 
   }
-  console.log(arrTmp1);
   if(priceStart.value == '' || priceEnd.value == '') {
     showProductTable(arrTmp1);
     return;
   }
 
-  console.log(parseInt(priceStart.value));
-  console.log(parseInt(priceEnd.value));
   for (let i = 0; i < arrTmp1.length; i++) {
     if(parseInt(priceStart.value) <= parseInt(arrTmp1[i].price) && parseInt(priceEnd.value) >= parseInt(arrTmp1[i].price)) {
       arrTmp2.push(arrTmp1[i]);
@@ -678,4 +717,53 @@ function filterProductsInAdmin() {
   showProductTable(arrTmp2);
   
 
+}
+let headerNavigationIconMenu = document.querySelector(".container-header-navigation-icon-menu");
+let container = document.querySelector(".container");
+let containerHeader = document.querySelector(".container-header");
+let navHeaderLeft = document.querySelector(".nav-header-left");
+let navHeaderLeftLogo = document.querySelector(".nav-header-left-logo");
+let navHeaderLeftListItems = document.querySelectorAll(".nav-header-left-list-item");
+let navHeaderLeftListItemSpans = document.querySelectorAll(".nav-header-left-list span");
+let navHeaderLeftListItemIcons = document.querySelectorAll(".nav-header-left-list-item > i");
+let headerNavigationIconMenuShrink = document.querySelector(".container-header-navigation-icon-menu-shrink");
+let headerNavigationIconMenuZoomIn = document.querySelector(".container-header-navigation-icon-menu-zoomIn");
+
+
+
+
+function shrinkMenuInAdmin() {
+  container.classList.add("zoomInContainer");
+  containerHeader.classList.add("zoomInContainerHeader");
+  navHeaderLeft.classList.add("shrinkNavHeaderLeft");
+  navHeaderLeftLogo.classList.add("hideNavHeaderLeftLogo");
+  navHeaderLeftListItemSpans.forEach(navHeaderLeftListItemSpan => {
+    navHeaderLeftListItemSpan.classList.add("hide");
+  });
+  navHeaderLeftListItemIcons.forEach(navHeaderLeftListItemIcon => {
+    navHeaderLeftListItemIcon.classList.add("hide");
+  });
+  navHeaderLeftListItems.forEach(navHeaderLeftListItem => {
+    navHeaderLeftListItem.classList.add("center");
+  });
+  headerNavigationIconMenuShrink.classList.add("hide");
+  headerNavigationIconMenuZoomIn.classList.add("show");
+}
+
+function zoomInMenuInAdmin() {
+  container.classList.remove("zoomInContainer");
+  containerHeader.classList.remove("zoomInContainerHeader");
+  navHeaderLeft.classList.remove("shrinkNavHeaderLeft");
+  navHeaderLeftLogo.classList.remove("hideNavHeaderLeftLogo");
+  navHeaderLeftListItemSpans.forEach(navHeaderLeftListItemSpan => {
+    navHeaderLeftListItemSpan.classList.remove("hide");
+  });
+  navHeaderLeftListItemIcons.forEach(navHeaderLeftListItemIcon => {
+    navHeaderLeftListItemIcon.classList.remove("hide");
+  });
+  navHeaderLeftListItems.forEach(navHeaderLeftListItem => {
+    navHeaderLeftListItem.classList.remove("center");
+  });
+  headerNavigationIconMenuShrink.classList.remove("hide");
+  headerNavigationIconMenuZoomIn.classList.remove("show");
 }
