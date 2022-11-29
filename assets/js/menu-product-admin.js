@@ -30,7 +30,8 @@ function addProductToProductArray(event)
   let priceFormated = formatCurrecy(productPrice);
 
   let productAdd = {};
-  let length = product.length+1;
+  let length = parseInt(product[product.length - 1].id) + 1; 
+  console.log(typeof(length));// lấy id của phần tử cuối cùng
   let maxLength = length +  parseInt(productQuantity) ;
   for(let i = length; i < maxLength; i++)
   {
@@ -96,8 +97,13 @@ function openEditProductTable(productId)
   console.log(productNeedEdit);
   productType.value = productNeedEdit.type;
   productName.value = productNeedEdit.name;
+  //productImage.value = productNeedEdit.img;
   productDescription.value = productNeedEdit.description;
-  productPrice.value = productNeedEdit.price;
+  // đổi lại định dạng cho giá
+  let priceTmp = productNeedEdit.price.toString();
+  priceTmp = priceTmp.split('.').join('');
+  console.log(priceTmp);
+  productPrice.value = parseInt(priceTmp);
   
   id.value = productId;
   editProductTable.style.display = "flex";
