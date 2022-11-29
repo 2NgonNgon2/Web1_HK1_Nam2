@@ -87,18 +87,6 @@ header.sticky .navigation div {
 	flex: 2;
 	min-width: 100px;
 }
-
-.banner {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	background: url(/assets/img/background.png);
-	background-size: cover;
-}
-
 .content {
 	max-width: 600px;
 	text-align: center;
