@@ -685,30 +685,60 @@ function showProductTable(arrTmpProducts) {
 }
 
 // hold color nav header left
-function holdColorMenuInAdmin(e){
+function holdColorMenuInAdmin(currentElement){
   document
     .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
     .classList.remove("active-nav-header-left-list-item");
     
-    let element = e.target.closest(".nav-header-left-list-item");
-  element.classList.add("active-nav-header-left-list-item");
+    let text = currentElement.querySelector('span').innerText;
+    console.log(text);
+    localStorage.setItem("textSpan",JSON.stringify(text));
+    currentElement.classList.add("active-nav-header-left-list-item");
 };
 
 let search_inp = document.querySelector("#search_text");
 let search_btn = document.querySelector("#search_button");
+let textSpanFromMenu = 'Quản lý sản phẩm';
+localStorage.setItem("textSpan",JSON.stringify(textSpanFromMenu));
 
 function searchEngineAdmin(event)
 {
+   textSpanFromMenu = JSON.parse(localStorage.getItem("textSpan"));
   tmpProduct = [];
+  if(textSpanFromMenu == "Quản lý sản phẩm") {
 
-  for(let i=0; i<product.length; i++)
-  {
-    if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+    for(let i=0; i<product.length; i++)
     {
-      tmpProduct.push(product[i]);
+      if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
+      }
     }
+    showProductTable(tmpProduct); 
+
+  } else if(textSpanFromMenu == 'Quản lý khách hàng'){
+
+    for(let i=0; i<account.length; i++)
+    {
+      if(account[i].username.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
+    }
+    
+    renderAccount(tmpProduct);
+
+  } else if (textSpanFromMenu == 'Quản lý đơn hàng') {
+    for(let i=0; i<orderForm.length; i++)
+    {
+      if(orderForm[i].idUser.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+    }
+    renderOrder(tmpProduct);
   }
-  showProductTable(tmpProduct);
+
   event.preventDefault();
 }
 
