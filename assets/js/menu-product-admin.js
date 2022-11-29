@@ -345,9 +345,10 @@ function closeOrderProductTable()
 
 /* CÁC HÀM QUẢN LÝ NGƯỜI DÙNG */
 
+document.querySelector("#nav-header-left-list-products-management").addEventListener("click",openAccountManageTable());
+
 function openAccountManageTable()
 {
-  console.log("let goo");
   contantContainer.innerHTML =
   `
       <div class="title">DANH SÁCH TÀI KHOẢN</div>
@@ -358,7 +359,6 @@ function openAccountManageTable()
   `
   renderAccount(account);
 }
-
 function filterAccount(event)
 {
   event.preventDefault();
