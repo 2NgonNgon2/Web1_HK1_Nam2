@@ -220,6 +220,7 @@ function processOrder(orderId)
         <input type="checkbox" checked class="status" disabled onclick="processOrder(${orderForm[i].idOrderForm})"> 
         `
         console.log("đã xử lý");
+        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " của tài khoản có mã " + orderForm[i].idUser +" đã được xử lí!");
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(orderForm);
@@ -334,8 +335,8 @@ function renderOrder(orderArray)
     <div class="order-item">
     <div class="order-id">${orderArray[i].idOrderForm}</div>
     <div class="order-userid">${orderArray[i].idUser}</div>
-    <div class="order-product">
-    ${productName}
+    <div class="order-product" onclick="">
+    Chi tiết đơn hàng
     </div>
     <div class="order-date">${getDate()}</div>
     <div class="total-price">${formatPrice(orderArray[i].totalPrice)} ₫</div>
@@ -426,6 +427,7 @@ function lockAccount(accountId)
         Chưa khóa
         <input type="checkbox" class="status" onclick="lockAccount(${account[i].id})"> 
        `
+       alert("Bạn đã mở khóa tài khoản " + account[i].username);
       }
       else
       {
@@ -437,7 +439,7 @@ function lockAccount(accountId)
         <input type="checkbox" checked class="status" onclick="lockAccount(${account[i].id})"> 
        
         `
-
+        alert("Bạn đã khóa tài khoản " + account[i].username);
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(account);
