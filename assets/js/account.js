@@ -57,7 +57,7 @@ if (localStorage.getItem("userSignIn") != null) {
 }
 
 function dangXuatAdmin() {
-    localStorage.setItem("isSignedin", "false");
+    localStorage.setItem("isSignedin", JSON.stringify("false"));
     localStorage.removeItem("adminSignedin");
     window.location.href = "/index.html";
 }
