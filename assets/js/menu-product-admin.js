@@ -22,15 +22,17 @@ function showOrderDetails() {
   orderDetailContainer.style.display ="block";
 }
 
-
+function stopPropagating(e) {
+  e.stopPropagation();
+}
 function renderDetailsOrder(idCurrentOrderForm) {
   let orderFormArr = JSON.parse(localStorage.getItem("orderForm"));
   let tmporderDetailContainer ='';
   orderDetailContainer.innerHTML='';
   console.log(orderFormArr);
   tmporderDetailContainer=`
-  <div id="orderDetailContainer-content">
-        <div class="iconClose">
+  <div id="orderDetailContainer-content" onclick="stopPropagating(event)">
+        <div class="iconClose" onclick="hideOrderDetails()">
           <i class="fa-solid fa-xmark"></i>
         </div>`
   for (let i = 0; i < orderFormArr.length; i++) {
