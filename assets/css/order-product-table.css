@@ -23,17 +23,18 @@
 .container-content .order .header
 {
   width:100%;
-  height: 30px;
+  height: 80px;
   display: grid;
-  grid-template-columns: 10% 10% 40% 14% 13% 13%  ;
+  grid-template-columns: 5% 10% 40% 15% 14% 16% ;
   font-weight: bolder;
+  border: 2px solid ;
+  background: rgb(255,144,39);
 }
 
 .container-content .order 
 {
-  height: 430px;
   width: 100%;
-  overflow: auto;
+  padding: 0 40px 40px;
 }
 
 .container-content .order .order-item
@@ -41,7 +42,10 @@
   width:100%;
   height: 80px;
   display: grid;
-  grid-template-columns: 10% 10% 40% 14% 13% 13% ;
+  grid-template-columns: 5% 10% 40% 15% 14% 16%;
+  border-bottom: 2px solid grey;
+  border-left: 2px solid;
+  border-right: 2px solid;
 }
 .container-content .order .order-item .order-product
 {
@@ -51,10 +55,18 @@
 
 .order-id,.order-userid,.order-date,.total-price,.header .status,.order-product
 {
-  justify-self: center;
-  align-self: center;
-  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid;
 }
+
+.order .header .status {
+  border-right: 0;
+}
+
 .order-item .order-product
 {
   display: flex;
@@ -67,7 +79,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;  
+  justify-content: space-around;  
   align-items:center;
 }
 
@@ -77,16 +89,12 @@ input[type="checkbox"] {
 
 }
 
-.container-content .date-filter
-{
-  width: 50%;
-  height: 50px;
-  bottom: 10px;
-  left: 10px;
-  display: grid;
-  grid-template-columns: 20% 30% 20% 30% auto;
-  grid-gap: 10px;
-  
+.container-content .date-filter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 40px;
 }
 
 .container-content .date-filter .date-start

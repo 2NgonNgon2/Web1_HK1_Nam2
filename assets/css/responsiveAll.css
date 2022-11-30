@@ -267,6 +267,7 @@
     position: relative;
     left: 0;
     transform: translate(0,200%);
+    opacity: .6;
   }
 
   /* slider */

@@ -194,22 +194,33 @@ function openOrderManageTable()
 }
 
 function processOrder(orderId)
-{
-  
+{ 
   for(let i = 0; i < orderForm.length; i++)
   {
-    
-    if(orderForm[i].id == orderId)
+    if(orderForm[i].idOrderForm == orderId)
     {
-      console.log(orderForm[i].id);
+      orderStatus = document.querySelectorAll(".order-status")
+ 
+      console.log(orderForm[i].idOrderForm);
       if(orderForm[i].status == true)
       {
         orderForm[i].status = false;
+        orderStatus[i].style.color = 'red';
+        orderStatus[i].innerHTML = `
+        Chưa xử lí
+        <input type="checkbox" class="status" onclick="processOrder(${orderForm[i].idOrderForm})"> 
+
+        `
         console.log("chưa xử lý");
       }
       else
       {
         orderForm[i].status = true;
+        orderStatus[i].style.color = 'green';
+        orderStatus[i].innerHTML = `
+        Đã xử lí
+        <input type="checkbox" checked class="status" disabled onclick="processOrder(${orderForm[i].idOrderForm})"> 
+        `
         console.log("đã xử lý");
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
@@ -242,6 +253,10 @@ function filterOrder(event)
     }
   }
   renderOrder(dateArray);
+}
+
+function formatPrice(x) {
+  return x.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }
 
 function renderOrder(orderArray)
@@ -316,7 +331,7 @@ function renderOrder(orderArray)
     ${productName}
     </div>
     <div class="order-date">${getDate()}</div>
-    <div class="total-price">${orderArray[i].totalPrice}</div>
+    <div class="total-price">${formatPrice(orderArray[i].totalPrice)} ₫</div>
     
     `
     
@@ -324,8 +339,9 @@ function renderOrder(orderArray)
     {
       orderItem += 
       `
-      <label for="order-status" class="order-status">
-      <input type="checkbox" checked class="status" onclick="processOrder(${orderArray[i].id})"> 
+      <label for="order-status" class="order-status" style="color:green">
+      Đã xử lí
+      <input type="checkbox" checked disabled class="status" onclick="processOrder(${orderArray[i].idOrderForm})"> 
       </label>
       </div>     
       `
@@ -334,8 +350,9 @@ function renderOrder(orderArray)
     {
       orderItem += 
       `
-      <label for="order-status" class="order-status">
-      <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].id})"> 
+      <label for="order-status" class="order-status" style="color:red">
+      Chưa xử lí
+      <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].idOrderForm})"> 
       </label>
       </div>      
       `
@@ -440,6 +457,7 @@ function renderAccount(accountArray)
   <div class="account-phone">SĐT</div>
   <div class="account-mail">EMAIL</div>
   <div class="status">TÌNH TRẠNG</div>
+  <div class="account-edit">Chỉnh sửa</div>
   </div>
   `
 
@@ -453,7 +471,7 @@ function renderAccount(accountArray)
     <div class="account-password">${accountArray[i].password}</div>
     <div class="account-phone">${accountArray[i].phone}</div>
     <div class="account-mail">${accountArray[i].email}</div>
-      
+     
     `
     // kiểm tra trạng thái tài khoản
     if(accountArray[i].status == true) // tài khoản bị khóa
@@ -464,6 +482,16 @@ function renderAccount(accountArray)
         Đã khóa
         <input type="checkbox" checked class="status" onclick="lockAccount(${accountArray[i].id})"> 
         </label>
+        <div class="account-edit">
+        <div class="add-delete-product-button">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+        </div> 
         </div>
         `
       }
@@ -475,6 +503,16 @@ function renderAccount(accountArray)
         Chưa khóa
         <input type="checkbox" class="status" onclick="lockAccount(${accountArray[i].id})"> 
         </label>
+        <div class="account-edit">
+        <div class="add-delete-product-button">
+            <div class="container-content-products-table-item-edit-icon" onclick="">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="container-content-products-table-item-edit-delete"  onclick="">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+        </div> 
         </div>
         `
       }
@@ -712,30 +750,60 @@ function showProductTable(arrTmpProducts) {
 }
 
 // hold color nav header left
-function holdColorMenuInAdmin(e){
+function holdColorMenuInAdmin(currentElement){
   document
     .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
     .classList.remove("active-nav-header-left-list-item");
     
-    let element = e.target.closest(".nav-header-left-list-item");
-  element.classList.add("active-nav-header-left-list-item");
+    let text = currentElement.querySelector('span').innerText;
+    console.log(text);
+    localStorage.setItem("textSpan",JSON.stringify(text));
+    currentElement.classList.add("active-nav-header-left-list-item");
 };
 
 let search_inp = document.querySelector("#search_text");
 let search_btn = document.querySelector("#search_button");
+let textSpanFromMenu = 'Quản lý sản phẩm';
+localStorage.setItem("textSpan",JSON.stringify(textSpanFromMenu));
 
 function searchEngineAdmin(event)
 {
+   textSpanFromMenu = JSON.parse(localStorage.getItem("textSpan"));
   tmpProduct = [];
+  if(textSpanFromMenu == "Quản lý sản phẩm") {
 
-  for(let i=0; i<product.length; i++)
-  {
-    if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+    for(let i=0; i<product.length; i++)
     {
-      tmpProduct.push(product[i]);
+      if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
+      }
     }
+    showProductTable(tmpProduct); 
+
+  } else if(textSpanFromMenu == 'Quản lý khách hàng'){
+
+    for(let i=0; i<account.length; i++)
+    {
+      if(account[i].username.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
+    }
+    
+    renderAccount(tmpProduct);
+
+  } else if (textSpanFromMenu == 'Quản lý đơn hàng') {
+    for(let i=0; i<orderForm.length; i++)
+    {
+      if(orderForm[i].idUser.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+    }
+    renderOrder(tmpProduct);
   }
-  showProductTable(tmpProduct);
+
   event.preventDefault();
 }
 

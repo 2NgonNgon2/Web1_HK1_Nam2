@@ -15,7 +15,7 @@
   bottom: 0;
   right: 0;
   background: rgba(59, 54, 54, 0.6);
-  z-index: 2;
+  z-index: 10002;
   display: none;
   justify-content: center;
   align-items: center;
