@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./assets/css/slider.css">
   <link rel="stylesheet" href="./assets/css/order-form.css">
   <link rel="stylesheet" href="./assets/css/responsiveAll.css">
+  <link rel="stylesheet" href="./assets/css/account-info-table.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
   <link rel="stylesheet" href="./assets/css/banner.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -106,6 +107,32 @@
       </form>
     </div> --> 
   </div>
+
+  <!-- ACCOUNT INFORMATION -->
+  <div class="edit-account-container" onclick="closeEditAccountTable(event)">
+      
+    <form class="edit-account-table" onclick="stopPropagate(event)" onsubmit="editAccountToAccountArray(event)">
+      <div class="exit-edit-account-table" onclick="closeEditAccountTable()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+        <div class="title">CHỈNH SỬA TÀI KHOẢN</div>
+        <label for="accountName">Tên tài khoản: </label>
+        <input type="text" name="accountName" id="accountName" value="" placeholder="hackiemsi" autofocus>
+        <label for="accountPassword">Mật khẩu: </label>
+        <input type="text" name="accountPassword" id="accountPassword" value="">             
+        <label for="accountTel">Số điện thoại: </label>
+        <input type="text" name="accountTel" id="accountTel" value="" placeholder="0969696969">             
+        <label for="accountMail">Email: </label>
+        <input type="text" name="accountMail" id="accountMail" value="" placeholder="hackiemsi@gmail.com">             
+
+        <input type="number" name="accountId" value="" id="accountId" style="display: none;">
+        <div class="save-account-btn">
+          <button type="submit">LƯU</button>
+        </div>
+    </form>
+
+</div>
+
   <!-- Banner -->
   <section class="banner" id="banner">
     <div class="banner-container">

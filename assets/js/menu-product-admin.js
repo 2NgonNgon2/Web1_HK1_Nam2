@@ -242,7 +242,9 @@ function filterOrder(event)
   let start = new Date(dateStart.value);
   let end = new Date(dateEnd.value);
   let dateArray = [];
-
+  start.setHours(00,00,00);
+  end.setHours(00,00,00);
+  
   for(let order of orderForm)
   {
     console.log(formatOrderDate(order.dateOrder));
@@ -388,22 +390,6 @@ function openAccountManageTable()
   </div>
   `
   renderAccount(account);
-}
-
-function filterAccount(event)
-{
-  event.preventDefault();
-  const username = document.querySelector("#user-name").value;
-  let accountArrayTmp = [];
-  
-  for(let acc of account)
-  {
-    if(acc.username.match(username) != null) 
-    accountArrayTmp.push(acc); 
-  }
-  console.log(accountArrayTmp); 
-  renderAccount(accountArrayTmp);
-  accountArrayTmp =[];
 }
 
 function lockAccount(accountId)
@@ -552,7 +538,6 @@ function openEditAccountTable(accountId)
     }
   }
   console.log(accountNeedEdit);
-  console.log(accountNeedEdit.username);
   accountName.value = accountNeedEdit.username;
   accountPassword.value = accountNeedEdit.password;
   accountMail.value = accountNeedEdit.email;
@@ -565,30 +550,63 @@ function openEditAccountTable(accountId)
 function editAccountToAccountArray(event)
 {
   event.preventDefault();
-  for(let acc of account)
+  // check dữ liệu
+  if(ValidateEmail(accountMail.value) == true && validatePhone(accountTel.value) == true)
+  // check dữ liệu
   {
-    if(acc.id == idAccount.value)
+    for(let acc of account)
     {
-      acc.username = accountName.value;
-      acc.password = accountPassword.value;
-      acc.email = accountMail.value;
-      acc.phone = accountTel.value;
-      break;
+      if(acc.id == idAccount.value)
+      {
+        acc.username = accountName.value;
+        acc.password = accountPassword.value;
+        acc.email = accountMail.value;
+        acc.phone = accountTel.value;
+        break;
+      }
     }
+    
+    
+    localStorage.removeItem("arr-account");
+    localStorage.setItem("arr-account",JSON.stringify(account));
+    alert("Cập nhật tài khoản thành công!");
+    window.location.reload();
+  }
+  else
+  {
+    alert("Email hoặc số điện thoại không hợp lệ!")
   }
   
-  
-  localStorage.removeItem("arr-account");
-  localStorage.setItem("arr-account",JSON.stringify(account));
-  alert("Cập nhật tài khoản thành công!");
-  window.location.reload();
 }
 
+// check định dạng mail
+function ValidateEmail(mail) 
+{
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@gmail.com/;
+
+  if (mail.match(validRegex)) {
+    return true;
+  }
+  return false;
+
+}
+// check định dạng sdt
+function validatePhone(phoneNumber)
+{
+  let validRegex = /^0+[9,8]+[0-9]{8}/
+  if(phoneNumber.match(validRegex)){
+    return true;
+  } return false;
+}
 function closeEditAccountTable(event)
 {
   console.log("đóng bảng chỉnh sửa tài khoản!");
   editAccountTable.style.display = "none";
 }
+
+
+
+
 
 /* THAO TÁC XÓA TÀI KHOẢN */
 
@@ -627,6 +645,8 @@ function closeEditAccountTable(event)
     
 
   }
+
+  
   
   // hàm định dạng ngày tháng năm
   function padTo2Digits(num) {
@@ -646,13 +666,6 @@ function closeEditAccountTable(event)
   function formatCurrecy(currency)
   {
     return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
-
-function dangXuatAdmin()
-{
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
 }
 
 function preventKeyPressNotNumber(e) {
