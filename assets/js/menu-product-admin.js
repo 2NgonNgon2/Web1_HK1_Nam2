@@ -169,6 +169,7 @@ function closeDeleteProductTable(event)
   deleteProductTable.style.display = "none";
 }
 
+/* THAO TÁC QUẢN LÝ ĐƠN HÀNG */
 
 function openOrderManageTable()
 {
@@ -221,8 +222,6 @@ function processOrder(orderId)
     
   }
 }
-
-
 
 function filterOrder(event)
 {
@@ -492,7 +491,66 @@ function renderAccount(accountArray)
     accountContainer.style.display = "none";
   }
   
+  /* THAO TÁC CHỈNH SỬA TÀI KHOẢN */
+
+
+  const editAccountTable = document.querySelector(".edit-account-container");
+const accountName = document.querySelector("#accountName");
+const accountPassword = document.querySelector("#accountPassword");
+const accountTel = document.querySelector("#accountTel");
+const accountMail = document.querySelector("#accountMail");
+const idAccount = document.querySelector("#accountId");
+
+function openEditAccountTable(accountId)
+{
   
+  let accountNeedEdit;
+  for(let acc of account)
+  {
+    if(acc.id == accountId)
+    {
+      accountNeedEdit = acc;
+      break;
+    }
+  }
+  console.log(accountNeedEdit);
+  accountName.value = accountNeedEdit.username;
+  accountPassword.value = accountNeedEdit.password;
+  accountMail.value = accountNeedEdit.email;
+  accountTel.value = accountNeedEdit.phone;
+  accountName.value = accountNeedEdit.id;
+
+}
+
+function editAccountToAccountArray(event)
+{
+  event.preventDefault();
+  for(let acc of account)
+  {
+    if(acc.id == id.value)
+    {
+      acc.name = accountName.value;
+      acc.name = accountPassword.value;
+      acc.description = accountDescription.value;
+      acc.img = `/assets/img/${accountImage.files[0].name}`;
+      acc.price = formatCurrecy(accountPrice.value) ;
+      break;
+    }
+  }
+  
+  
+ /*  localStorage.removeItem("arr-account");
+  localStorage.setItem("arr-account",JSON.stringify(account));
+  alert("Cập nhật sản phẩm thành công!");
+  window.location.reload(); */
+}
+
+function closeEditAccountTable(event)
+{
+  console.log("đóng bảng chỉnh sửa tài khoản!");
+  editAccountTable.style.display = "none";
+}
+
   
   // hàm định dạng ngày tháng năm
   function padTo2Digits(num) {
