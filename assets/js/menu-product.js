@@ -24,8 +24,6 @@ function checkSignin()
 
 }
 
-
-
 function filterProduct(typeProduct) {
   item = "";
   tmpProduct = [];
@@ -216,6 +214,100 @@ function renderProduct(product) {
       </div>
       `;
 }
+
+
+/* THAO TÁC CHỈNH SỬA TÀI KHOẢN TỪ PHÍA NGƯỜI DÙNG */
+
+
+const editAccountTable = document.querySelector(".edit-account-container");
+const accountName = document.querySelector("#accountName");
+const accountPassword = document.querySelector("#accountPassword");
+const accountTel = document.querySelector("#accountTel");
+const accountMail = document.querySelector("#accountMail");
+const idAccount = document.querySelector("#accountId");
+
+function openEditAccountTable(accountId)
+{
+  let accountNeedEdit;
+  for(let acc of account)
+  {
+    if(acc.id == accountId)
+    {
+      accountNeedEdit = acc;
+      break;
+    }
+  }
+  console.log(accountNeedEdit);
+  accountName.value = accountNeedEdit.username;
+  accountPassword.value = accountNeedEdit.password;
+  accountMail.value = accountNeedEdit.email;
+  accountTel.value = accountNeedEdit.phone;
+  idAccount.value = accountNeedEdit.id;
+
+  editAccountTable.style.display = "flex";
+}
+
+function editAccountToAccountArray(event)
+{
+  event.preventDefault();
+  // check dữ liệu
+  if(ValidateEmail(accountMail.value) == true && validatePhone(accountTel.value) == true)
+  // check dữ liệu
+  {
+    for(let acc of account)
+    {
+      if(acc.id == idAccount.value)
+      {
+        acc.username = accountName.value;
+        acc.password = accountPassword.value;
+        acc.email = accountMail.value;
+        acc.phone = accountTel.value;
+        break;
+      }
+    }
+    
+    
+    localStorage.removeItem("arr-account");
+    localStorage.setItem("arr-account",JSON.stringify(account));
+    alert("Cập nhật tài khoản thành công!");
+    window.location.reload();
+  }
+  else
+  {
+    alert("Email hoặc số điện thoại không hợp lệ!")
+  }
+  
+}
+
+// check định dạng mail
+function ValidateEmail(mail) 
+{
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@gmail.com/;
+
+  if (mail.match(validRegex)) {
+    return true;
+  }
+  return false;
+
+}
+// check định dạng sdt
+function validatePhone(phoneNumber)
+{
+  let validRegex = /^0+[9,8]+[0-9]{8}/
+  if(phoneNumber.match(validRegex)){
+    return true;
+  } return false;
+}
+function closeEditAccountTable(event)
+{
+  console.log("đóng bảng chỉnh sửa tài khoản!");
+  editAccountTable.style.display = "none";
+}
+
+
+/* THAO TÁC CHỈNH SỬA TÀI KHOẢN TỪ PHÍA NGƯỜI DÙNG */
+
+
 
 // hold active menu-items
 let menu = document.querySelector("#menu");

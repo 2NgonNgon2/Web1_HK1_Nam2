@@ -20,10 +20,11 @@ if (localStorage.getItem("adminSignedin") != null) {
 }
 
 if (localStorage.getItem("userSignIn") != null) {
+    let userNameTmp = JSON.parse(localStorage.getItem("currentUser"));
     document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("userSignIn");
     var dropdown_list = document.querySelector(".dropdown .dropdown-list");
     dropdown_list.innerHTML = `
-            <li class="dropdown-item">
+            <li class="dropdown-item" onclick="openEditAccountTable(${userNameTmp.id})">
                 <span class="dropdown-text">Thông tin cá nhân</span>
             </li>
             <li class="dropdown-item" onclick="showViewOrder()">
