@@ -87,18 +87,6 @@ header.sticky .navigation div {
 	flex: 2;
 	min-width: 100px;
 }
-
-.banner {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	background: url(/assets/img/background.png);
-	background-size: cover;
-}
-
 .content {
 	max-width: 600px;
 	text-align: center;
@@ -270,7 +258,7 @@ header.sticky .dropdown-list {
 }
 
 #search_box #search_button:hover {
-	background: red;
+	background: rgb(255,172,39);
 }
 
 header.sticky #search_box {

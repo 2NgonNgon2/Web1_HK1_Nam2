@@ -1,9 +1,10 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
 const orderContainer = document.querySelector(".order-container");
-const accountContainer = document.querySelector(".account-container");
 const deleteProductTable = document.querySelector(".delete-product-container");
 const deleteItemContainer = document.querySelector(".delete-item-container");
+// const contantContainer = document.querySelector(".container-content");
+let containerContentAdmin = document.getElementById("container-content")
 
 document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
@@ -13,205 +14,14 @@ let item = "";          // dùng để chứa các html product-items
 
 isAdmin = true;
 
-/* filterProductAdmin("keyboard");
-function filterProductAdmin(typeProduct) {
-  item = "";
-  tmpProduct = [];
-  switch (typeProduct) {
-    case "keyboard": {
-      for (let i = 0; i < product.length; i++) {
-        if (product[i].type == typeProduct) {
-          tmpProduct.push(product[i]);
-        }
-      }
-      // kiểm tra xem 1 có phải là trang cuối không
-      createPageNumAdmin(tmpProduct);
-      // xử lý nếu 1 là trang cuối
-      pageOneHandleAdmin();
-      break;
-    }
-    case "headphone": {
-      for (let i = 0; i < product.length; i++) {
-        if (product[i].type == typeProduct) {
-          tmpProduct.push(product[i]);
-        }
-      }
-      // kiểm tra xem 1 có phải là trang cuối không
-      createPageNumAdmin(tmpProduct);
-      // xử lý nếu 1 là trang cuối
-      pageOneHandleAdmin();
-      break;
-    }
-    case "mouse": {
-      for (let i = 0; i < product.length; i++) {
-        if (product[i].type == typeProduct) {
-          tmpProduct.push(product[i]);
-        }
-      }
-      createPageNumAdmin(tmpProduct);
-      pageOneHandleAdmin();
-      break;
-    }
-    case "speaker": {
-      for (let i = 0; i < product.length; i++) {
-        if (product[i].type == typeProduct) {
-          tmpProduct.push(product[i]);
-        }
-      }
-      createPageNumAdmin(tmpProduct);
-      pageOneHandleAdmin();
-      break;
-    }
-    case "Laptop": {
-      for (let i = 0; i < product.length; i++) {
-        if (product[i].type == typeProduct) {
-          tmpProduct.push(product[i]);
-        }
-      }
-      createPageNumAdmin(tmpProduct);
-      pageOneHandleAdmin();
-      break;
-    }
-  }
-}
 
-function createPageNumAdmin(tmpProduct) {
-  
-  console.log(isAdmin);
-  let quantity = tmpProduct.length / 8;
-
-  if (quantity % 1 != 0) {
-    quantity++;
-  }
-
-  quantity = Math.floor(quantity);
-  console.log("quantity = " + quantity);
-  
-  let pageNum = `<div class="menu-card-products-page-number">`;
-  let count = 0;
-
-  lastPageIs = 0;
-
-  do {
-    count++;
-    if (count === quantity) {
-        lastPageIs = count;
-        pageNum += `
-        <div class="pageNumber" onclick="pageRenderAdmin(${count},true)">${count}</div>
-        `;
-      }
-    else {
-        pageNum += `
-        <div class="pageNumber" onclick="pageRenderAdmin(${count},false)">${count}</div>
-        `;
-      }
-    }
-  while (count < quantity);
-
-  pageNum += `</div>`;
-
-  activePageNumber(1);
-  return pageNum;
-}
-
-function pageOneHandleAdmin() {
-  if (lastPageIs == 1) {
-    pageRenderAdmin(1, true);
-  } else {
-    pageRenderAdmin(1, false);
-  }
-}
-
-function pageRenderAdmin(pageNumberClicked, lastPage) {
-  console.log(tmpProduct);
-  console.log("da click trang: "+pageNumberClicked);
-  item = "";
-  let positionLoad = (pageNumberClicked - 1) * 8;
-  
-  // vị trí sản phẩm load không âm 
-  if (positionLoad < 0) {
-    positionLoad = 0;
-  }
-  // kiểm tra nếu là trang cuối thì duyệt tới hết mảng 
-  if (lastPage == true) {
-    console.log("đã tới trang cuối !");
-    for (let k = positionLoad; k < tmpProduct.length; k++) {
-      renderProductAdmin(tmpProduct[k]);
-    }
-    item += createPageNumAdmin(tmpProduct); // thêm vào lại 3 cục div pageNumber
-    cardProduct.innerHTML = item;
-  }
-  
-  // nếu không thì duyệt đến 8 vị trí cách từ positionLoad 
-  else {
-    for (let k = positionLoad; k < positionLoad + 8; k++) {
-      renderProductAdmin(tmpProduct[k]);
-    }
-    item += createPageNumAdmin(tmpProduct);
-    cardProduct.innerHTML = item;
-  }
-  activePageNumber(pageNumberClicked);
-  
-}
-
-function activePageNumber(pageNumberClicked)
-{
-  const pageNumBers = document.querySelectorAll(".pageNumber");
-
-  pageNumBers.forEach((pageNumber,index) => {
-      if((index+1) != pageNumberClicked){
-        pageNumber.classList.remove("activePageNumber");
-      }
-      else{
-        pageNumber.classList.add("activePageNumber");
-      }
-  }); 
-}
-
-function renderProductAdmin(product) {
-    item += 
-    `
-        <div class="card-product-item" id="${product.id}" >
-          <img
-            class="card-img"
-            src="${product.img}"
-          />
-          <div class="card-product-content">
-            <div class="card-product-content-top">
-              <div class="card-product-content-title card-title">
-                ${product.name}
-              </div>
-              <div class="label-card-title card-title">${product.description}</div>
-            </div>
-            <div class="card-product-content-bottom">
-
-            <div class="card-product-content-bottom-buying-btn" onclick="stopPropagate(event);openEditProductTable(${product.id});">
-              <i class="fa-solid fa-gear"></i>
-              CHỈNH SỬA
-            </div>
-
-            <div class="card-product-content-bottom-buying">
-              <div class="card-product-content-bottom-buying-price">
-                <span class="card-product-priceNumber">${formatCurrecy(product.price)}</span> 
-                <span class="card-product-priceIcon">₫</span>
-              </div>
-            </div>
-            
-          </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-}
- */
 function addProductToProductArray(event)
 {
   event.preventDefault();
   const productType = document.querySelector("#select-type").value;
   const productName = document.querySelector("#productName").value;
   const productDescription = document.querySelector("#productDescription").value;
-  //const productImage = document.querySelector("#productImage").files[0].name  ;
+  const productImage = document.querySelector("#productImage").files[0].name;
   const productPrice = document.querySelector("#productPrice").value;
   const productQuantity = document.querySelector("#productQuantity").value; 
   console.log(productImage);
@@ -219,35 +29,28 @@ function addProductToProductArray(event)
   let priceFormated = formatCurrecy(productPrice);
 
   let productAdd = {};
-  let length = product.length+1;
+  let length = parseInt(product[product.length - 1].id) + 1; 
+  console.log(typeof(length));// lấy id của phần tử cuối cùng
   let maxLength = length +  parseInt(productQuantity) ;
   for(let i = length; i < maxLength; i++)
   {
     // thao tác image
-    /* let cmd = "copy "+ productImage+" "+ "../assets/img"
-    console.log(cmd); */
-    /* var a = document.createElement('img');
-    img.href = productImage;
-    img.download = "../img/";
-    document.body.appendChild(img);
-    img.click();
-    document.body.removeChild(img); */
 
-    console.log("add product");
     productAdd = {
       id: `${i}`,
       type: productType,
       name: productName,
       description: productDescription,
-      //img: productImage,
+      img: `/assets/img/${productImage}`,
       price: priceFormated,
     };
 
     product.push(productAdd);
-    }
+  }
   
   localStorage.setItem("product",JSON.stringify(product));
   alert("Thêm sản phẩm thành công!");
+  renderProductManage();
   location.reload();
 }
 
@@ -268,6 +71,8 @@ function stopPropagate(e) {
   e.stopPropagation();
 }
 
+/* THAO TÁC CHỈNH SỬA SẢN PHẨM */
+
 const editProductTable = document.querySelector(".edit-product-container");
 const productType = document.querySelector("#select-type-edit");
 const productName = document.querySelector("#productNameEdit");
@@ -278,13 +83,27 @@ const id = document.querySelector("#productId");
 
 function openEditProductTable(productId)
 {
-
-  console.log(product[productId-1]);
-  productType.value = product[productId-1].type
-  productName.value = product[productId-1].name
-  productDescription.value = product[productId-1].description
-  productImage.value = product[productId-1].img;
-  productPrice.value = product[productId-1].price;
+  
+  let productNeedEdit;
+  for(let pd of product)
+  {
+    if(pd.id == productId)
+    {
+      productNeedEdit = pd;
+      break;
+    }
+  }
+  console.log(productNeedEdit);
+  productType.value = productNeedEdit.type;
+  productName.value = productNeedEdit.name;
+  //productImage.value = productNeedEdit.img;
+  productDescription.value = productNeedEdit.description;
+  // đổi lại định dạng cho giá
+  let priceTmp = productNeedEdit.price.toString();
+  priceTmp = priceTmp.split('.').join('');
+  console.log(priceTmp);
+  productPrice.value = parseInt(priceTmp);
+  
   id.value = productId;
   editProductTable.style.display = "flex";
 }
@@ -292,13 +111,20 @@ function openEditProductTable(productId)
 function editProductToProductArray(event)
 {
   event.preventDefault();
-  console.log(product[id.value - 1]);
-  product[id.value - 1].type = productType.value ;
-  product[id.value - 1].name = productName.value;
-  product[id.value - 1].description = productDescription.value ;
-  product[id.value - 1].img = formatCurrecy(productImage.value)  ;
-  product[id.value - 1].price =productPrice.value  ;
-
+  for(let pd of product)
+  {
+    if(pd.id == id.value)
+    {
+      pd.type = productType.value ;
+      pd.name = productName.value;
+      pd.description = productDescription.value ;
+      pd.img = `/assets/img/${productImage.files[0].name}`;
+      pd.price = formatCurrecy(productPrice.value) ;
+      break;
+    }
+  }
+  
+  
   localStorage.removeItem("product");
   localStorage.setItem("product",JSON.stringify(product));
   alert("Cập nhật sản phẩm thành công!");
@@ -313,85 +139,24 @@ function closeEditProductTable(event)
 
 /* THAO TÁC XÓA SẢN PHẨM */
 
-function openDeleteProductTable()
+function deleteProductFromProductArray(productId)
 {
-  console.log("mở bảng thêm sản phẩm!");
-  deleteProductTable.style.display = "flex";
-  let deleteItem="";
-
-  for(let i = 0; i < tmpProduct.length; i++)
+  for(let i = 0 ; i < product.length; i++)
   {
-    deleteItem += 
-    `
-    <div class="input-label">
-            <input type="checkbox" name="deleteItem" class="deleteItem" value="${tmpProduct[i].id}">
-            <label for="deleteItem" class="delete-item">
-              <img class="delete-item-img" src="${tmpProduct[i].img}">
-              <div class="delete-item-name">${tmpProduct[i].name}</div>  
-              <div class="delete-item-price">${tmpProduct[i].price}</div>
-            </label>
-    </div>
-    `
-  }
-  deleteItemContainer.innerHTML = deleteItem;
-}
-
-function deleteProductFromProductArray(event)
-{
-  event.preventDefault();
-  const deleteItem = document.querySelectorAll(".deleteItem");
-  let itemNeedToRemove = [];
-  deleteItem.forEach((element,index) => {
-    if(element.checked == true)
+    if(product[i].id== productId)
     {
-      itemNeedToRemove.push(element.value);
-    }
-  });
-  console.log(itemNeedToRemove);
-
-  let k=0;
-  let i=0;
-  while(i < product.length && k < itemNeedToRemove.length)
-  {
-    if(product[i].id == itemNeedToRemove[k])
-    {
-      console.log("xoa: "+product[i].id+" i: "+i);
+      console.log(product[i]);
       product.splice(i,1);
-      k++;
+      break;
     }
-    else
-    {
-      console.log("pass: "+product[i].id + "i: "+i);
-      i++;
-    }
-    
-    
   }
-
-  /* for(let i=0; i<product.length;i++)
-  {
-    
-    if((product[i].id == itemNeedToRemove[k]))
-    {
-      console.log("remove id: " + product[i].id);
-      console.log("here go k: "+ k);
-      product.splice(i,1);
-      k+=1;
-    }
-    else
-    {
-      console.log("pass: "+product[i].id);
-    }
-  } */
-
-  if(confirm("Bạn có chắc muốn xóa những sản phẩm này?") == true)
+  if(confirm("Bạn có chắc muốn xóa sản phẩm này?") == true)
   {
     localStorage.removeItem("product");
     localStorage.setItem("product",JSON.stringify(product));
     alert("Xóa sản phẩm thành công!");
     location.reload();
   }
-  
 }
 
 
@@ -402,58 +167,60 @@ function closeDeleteProductTable(event)
   deleteProductTable.style.display = "none";
 }
 
-// hold active menu-items
-const menuItems = document.querySelectorAll(".menu-items");
-const menuItemsImg = document.querySelectorAll(".menu-items-img");
-const menuItemsOverlay = document.querySelectorAll(".overlay");
-
-menuItems.forEach((menuItem, index) => {
-  const menuItemImg = menuItemsImg[index];
-  const menuItemOverlay = menuItemsOverlay[index];
-
-  menuItem.onclick = function () {
-    document
-      .querySelector(".menu-items.activeMenuItems")
-      .classList.remove("activeMenuItems");
-    document
-      .querySelector(".overlay.activeMenuItemOverlay")
-      .classList.remove("activeMenuItemOverlay");
-    document
-      .querySelector(".menu-items-img.activeMenuItemImg")
-      .classList.remove("activeMenuItemImg");
-
-    this.classList.add("activeMenuItems");
-    menuItemOverlay.classList.add("activeMenuItemOverlay");
-    menuItemImg.classList.add("activeMenuItemImg");
-  };
-});
+/* THAO TÁC QUẢN LÝ ĐƠN HÀNG */
 
 function openOrderManageTable()
 {
-  orderContainer.style.display = "flex";
-  console.log(orderForm);
+  containerContentAdmin.innerHTML =
+  `
+  <div class="title">DANH SÁCH ĐƠN HÀNG</div>
+  
+  <form class="date-filter" onsubmit="filterOrder(event)">
+  <label for="date" class="date-start">TỪ NGÀY</label>
+  <input type="date" class="date-start-input" value="2022-01-01">
+  <label for="date" class="date-end">ĐẾN NGÀY</label>
+  <input type="date" class="date-end-input" value="2022-12-31">
+  <button type="submit" class="filter">LỌC</button>
+  </form>
+  
+  <div class="order">
+  
+  </div>
+  `
   renderOrder(orderForm);
 
 }
 
 function processOrder(orderId)
-{
-  
+{ 
   for(let i = 0; i < orderForm.length; i++)
   {
-    
-    if(orderForm[i].id == orderId)
+    if(orderForm[i].idOrderForm == orderId)
     {
-      console.log(orderForm[i].id);
+      orderStatus = document.querySelectorAll(".order-status")
+ 
+      console.log(orderForm[i].idOrderForm);
       if(orderForm[i].status == true)
       {
         orderForm[i].status = false;
+        orderStatus[i].style.color = 'red';
+        orderStatus[i].innerHTML = `
+        Chưa xử lí
+        <input type="checkbox" class="status" onclick="processOrder(${orderForm[i].idOrderForm})"> 
+
+        `
         console.log("chưa xử lý");
       }
       else
       {
         orderForm[i].status = true;
+        orderStatus[i].style.color = 'green';
+        orderStatus[i].innerHTML = `
+        Đã xử lí
+        <input type="checkbox" checked class="status" disabled onclick="processOrder(${orderForm[i].idOrderForm})"> 
+        `
         console.log("đã xử lý");
+        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " của tài khoản có mã " + orderForm[i].idUser +" đã được xử lí!");
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(orderForm);
@@ -466,27 +233,39 @@ function processOrder(orderId)
   }
 }
 
-
-
 function filterOrder(event)
 {
   event.preventDefault();
   
   const dateStart = document.querySelector(".date-start-input");
   const dateEnd = document.querySelector(".date-end-input");
-  
-  let start= new Date(dateStart.value);
+
+  let start = new Date(dateStart.value);
   let end = new Date(dateEnd.value);
   let dateArray = [];
+
   for(let order of orderForm)
   {
-    let orderDate = new Date(order.dateOrder);
-    if((start <= orderDate) && (end >=  orderDate) )
+    console.log(formatOrderDate(order.dateOrder));
+    let date = new Date(+formatOrderDate(order.dateOrder)[2], +formatOrderDate(order.dateOrder)[1] - 1,+formatOrderDate(order.dateOrder)[0]);
+    if((start <= date) && (date <= end))
     {
+      console.log(date);
       dateArray.push(order);
     }
   }
   renderOrder(dateArray);
+}
+
+function formatOrderDate(date)
+{
+  let dateTmp = date.split(" ");
+  let ymd = dateTmp[1].split("/");
+  return ymd;
+}
+
+function formatPrice(x) {
+  return x.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
 }
 
 function renderOrder(orderArray)
@@ -494,16 +273,16 @@ function renderOrder(orderArray)
   const order = document.querySelector(".order");
   let orderItem = "";
   orderItem = `
-              <div class="header">
-                  <div class="order-id">ID</div>
-                  <div class="order-userid">USER ID</div>
-                  <div class="order-product">
-                    SẢN PHẨM
-                  </div>
-                  <div class="order-date">NGÀY</div>
-                  <div class="total-price">TỔNG GIÁ</div>
-                  <div class="status">TÌNH TRẠNG</div>
-                </div>
+  <div class="header">
+  <div class="order-id">ID</div>
+  <div class="order-userid">USER ID</div>
+  <div class="order-product">
+  SẢN PHẨM
+  </div>
+  <div class="order-date">NGÀY</div>
+  <div class="total-price">TỔNG GIÁ</div>
+  <div class="status">TÌNH TRẠNG</div>
+  </div>
   `
   
   let productName='';
@@ -515,6 +294,7 @@ function renderOrder(orderArray)
   {
     productName = " ";
     // copy mảng arrProductId
+    console.log(orderArray);
     for(let id of orderArray[i].arrProductId)
     {
       orderProductTmp.push(id);
@@ -525,7 +305,7 @@ function renderOrder(orderArray)
       k=0;
       while(k < orderProductTmp.length)
       {
-        if(orderProductTmp[k] == product[j].id)
+        if(orderProductTmp[k].id == product[j].id)
         {
           soluong ++;
           nameTmp = product[j].name;
@@ -550,26 +330,26 @@ function renderOrder(orderArray)
       }
     }
     // định dạng lại ngày dd/mm/yyyy
-    let date = new Date(orderArray[i].dateOrder);
 
     orderItem += `
     <div class="order-item">
-        <div class="order-id">${orderArray[i].id}</div>
-        <div class="order-userid">${orderArray[i].idUser}</div>
-        <div class="order-product">
-          ${productName}
-        </div>
-        <div class="order-date">${formatDate(date)}</div>
-        <div class="total-price">${orderArray[i].totalPrice}</div>
-        
+    <div class="order-id">${orderArray[i].idOrderForm}</div>
+    <div class="order-userid">${orderArray[i].idUser}</div>
+    <div class="order-product" onclick="">
+    Chi tiết đơn hàng
+    </div>
+    <div class="order-date">${getDate()}</div>
+    <div class="total-price">${formatPrice(orderArray[i].totalPrice)} ₫</div>
+    
     `
-
+    
     if(orderArray[i].status == true)
     {
       orderItem += 
       `
-      <label for="order-status" class="order-status">
-      <input type="checkbox" checked class="status" onclick="processOrder(${orderArray[i].id})"> 
+      <label for="order-status" class="order-status" style="color:green">
+      Đã xử lí
+      <input type="checkbox" checked disabled class="status" onclick="processOrder(${orderArray[i].idOrderForm})"> 
       </label>
       </div>     
       `
@@ -578,8 +358,9 @@ function renderOrder(orderArray)
     {
       orderItem += 
       `
-      <label for="order-status" class="order-status">
-      <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].id})"> 
+      <label for="order-status" class="order-status" style="color:red">
+      Chưa xử lí
+      <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].idOrderForm})"> 
       </label>
       </div>      
       `
@@ -596,9 +377,17 @@ function closeOrderProductTable()
 
 /* CÁC HÀM QUẢN LÝ NGƯỜI DÙNG */
 
+document.querySelector("#nav-header-left-list-products-management").addEventListener("click",openAccountManageTable());
+
 function openAccountManageTable()
 {
-  accountContainer.style.display = "flex";
+  containerContentAdmin.innerHTML =
+  `
+  <div class="title">DANH SÁCH TÀI KHOẢN</div>
+  <div class="account">
+  
+  </div>
+  `
   renderAccount(account);
 }
 
@@ -611,10 +400,7 @@ function filterAccount(event)
   for(let acc of account)
   {
     if(acc.username.match(username) != null) 
-    {
-      accountArrayTmp.push(acc); 
-    }
-    
+    accountArrayTmp.push(acc); 
   }
   console.log(accountArrayTmp); 
   renderAccount(accountArrayTmp);
@@ -629,21 +415,36 @@ function lockAccount(accountId)
     
     if(account[i].id == accountId)
     {
+      accountStatus = document.querySelectorAll(".account-status");
       console.log(account[i].id);
       if(account[i].status == true)
       {
+        
         account[i].status = false;
         console.log("bỏ khóa tài khoản!");
+        accountStatus[i].style.color = "green";
+        accountStatus[i].innerHTML = `
+        Chưa khóa
+        <input type="checkbox" class="status" onclick="lockAccount(${account[i].id})"> 
+       `
+       alert("Bạn đã mở khóa tài khoản " + account[i].username);
       }
       else
       {
         account[i].status = true;
         console.log("khóa tài khoản!");
+        accountStatus[i].style.color = "red";
+        accountStatus[i].innerHTML = `
+         Đã khóa
+        <input type="checkbox" checked class="status" onclick="lockAccount(${account[i].id})"> 
+       
+        `
+        alert("Bạn đã khóa tài khoản " + account[i].username);
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(account);
-      localStorage.removeItem("account");
-      localStorage.setItem("account",JSON.stringify(account));
+      localStorage.removeItem("arr-account");
+      localStorage.setItem("arr-account",JSON.stringify(account));
       break;
     }
     
@@ -659,12 +460,13 @@ function renderAccount(accountArray)
   accountItem = 
   `
   <div class="header">
-    <div class="account-id">ID</div>
-    <div class="account-name">TÊN TÀI KHOẢN</div>
-    <div class="account-password">MẬT KHẨU</div>
-    <div class="account-phone">SĐT</div>
-    <div class="account-mail">EMAIL</div>
-    <div class="status">TÌNH TRẠNG</div>
+  <div class="account-id">ID</div>
+  <div class="account-name">TÊN TÀI KHOẢN</div>
+  <div class="account-password">MẬT KHẨU</div>
+  <div class="account-phone">SĐT</div>
+  <div class="account-mail">EMAIL</div>
+  <div class="status">TÌNH TRẠNG</div>
+  <div class="account-edit">CHỈNH SỬA</div>
   </div>
   `
 
@@ -673,47 +475,189 @@ function renderAccount(accountArray)
     accountItem +=
     `
     <div class="account-item">
-      <div class="account-id">${accountArray[i].id}</div>
-      <div class="account-name">${accountArray[i].username}</div>
-      <div class="account-password">${accountArray[i].password}</div>
-      <div class="account-phone">${accountArray[i].phone}</div>
-      <div class="account-mail">${accountArray[i].email}</div>
-      
+    <div class="account-id">${accountArray[i].id}</div>
+    <div class="account-name">${accountArray[i].username}</div>
+    <div class="account-password">${accountArray[i].password}</div>
+    <div class="account-phone">${accountArray[i].phone}</div>
+    <div class="account-mail">${accountArray[i].email}</div>
+     
     `
     // kiểm tra trạng thái tài khoản
     if(accountArray[i].status == true) // tài khoản bị khóa
     {
       accountItem +=
       `
-      <label for="account-status" class="account-status">
+      <label for="account-status" class="account-status" style="color:red;">
+        Đã khóa
         <input type="checkbox" checked class="status" onclick="lockAccount(${accountArray[i].id})"> 
-      </label>
-      </div>
-      `
-    }
-    else
-    {
-      accountItem +=
-      `
-      <label for="account-status" class="account-status" >
+        </label>
+        <div class="account-edit">
+        <div class="add-delete-product-button">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+        </div> 
+        </div>
+        `
+      }
+      else
+      {
+        accountItem +=
+        `
+        <label for="account-status" class="account-status" style="color:green;" >
+        Chưa khóa
         <input type="checkbox" class="status" onclick="lockAccount(${accountArray[i].id})"> 
-      </label>
-      </div>
-      `
+        </label>
+        <div class="account-edit">
+        <div class="add-delete-product-button">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditAccountTable(${accountArray[i].id})">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteAccountFromAccountArray(${accountArray[i].id})">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+        </div> 
+        </div>
+        `
+      }
+      
     }
     
+    accountDisplay.innerHTML = accountItem;
   }
   
-  accountDisplay.innerHTML = accountItem;
-}
+  /* THAO TÁC CHỈNH SỬA TÀI KHOẢN */
 
 
-function closeAccountProductTable()
+  const editAccountTable = document.querySelector(".edit-account-container");
+const accountName = document.querySelector("#accountName");
+const accountPassword = document.querySelector("#accountPassword");
+const accountTel = document.querySelector("#accountTel");
+const accountMail = document.querySelector("#accountMail");
+const idAccount = document.querySelector("#accountId");
+
+function openEditAccountTable(accountId)
 {
-  console.log("đóng bảng danh sách người dùng!");
-  accountContainer.style.display = "none";
+  
+  let accountNeedEdit;
+  for(let acc of account)
+  {
+    if(acc.id == accountId)
+    {
+      accountNeedEdit = acc;
+      break;
+    }
+  }
+  console.log(accountNeedEdit);
+  console.log(accountNeedEdit.username);
+  accountName.value = accountNeedEdit.username;
+  accountPassword.value = accountNeedEdit.password;
+  accountMail.value = accountNeedEdit.email;
+  accountTel.value = accountNeedEdit.phone;
+  idAccount.value = accountNeedEdit.id;
+
+  editAccountTable.style.display = "flex";
 }
 
+function editAccountToAccountArray(event)
+{
+  event.preventDefault();
+  for(let acc of account)
+  {
+    if(acc.id == idAccount.value)
+    {
+      acc.username = accountName.value;
+      acc.password = accountPassword.value;
+      acc.email = accountMail.value;
+      acc.phone = accountTel.value;
+      break;
+    }
+  }
+  
+  
+  localStorage.removeItem("arr-account");
+  localStorage.setItem("arr-account",JSON.stringify(account));
+  alert("Cập nhật tài khoản thành công!");
+  window.location.reload();
+}
+
+function closeEditAccountTable(event)
+{
+  console.log("đóng bảng chỉnh sửa tài khoản!");
+  editAccountTable.style.display = "none";
+}
+
+/* THAO TÁC XÓA TÀI KHOẢN */
+
+  function deleteAccountFromAccountArray(accountId)
+  {
+    if(confirm("Bạn có chắc muốn xóa tài khoản này?") == true)
+    {
+      for(let i = 0 ; i < account.length; i++)
+      {
+        if(account[i].id == accountId)
+        {
+          console.log(account[i]);
+          account.splice(i,1);
+          break;
+        }
+      }
+  
+      for(let i = 0 ; i < orderForm.length; i++) 
+      {
+        if(orderForm[i].idUser == accountId)
+        {
+          console.log(orderForm[i]);
+          orderForm.splice(i,1);
+          i--;
+        }
+      }
+
+      localStorage.removeItem("arr-account");
+      localStorage.setItem("arr-account",JSON.stringify(account));
+      localStorage.removeItem("orderForm");
+      localStorage.setItem("orderForm",JSON.stringify(orderForm));
+
+      alert("Xóa tài khoản thành công!");
+      window.location.reload();
+    }
+    
+
+  }
+  
+  // hàm định dạng ngày tháng năm
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+  }
+  
+  function formatDate(date) {
+    return [
+      padTo2Digits(date.getHours()),
+      padTo2Digits(date.getDate()),
+      padTo2Digits(date.getMonth() + 1),
+      date.getFullYear(),
+    ].join('/');
+  }
+  
+  
+
+  function dangXuatAdmin()
+  {
+    localStorage.setItem("isSignedin","false");
+    localStorage.removeItem("adminSignedin");
+    localStorage.removeItem("textSpan");
+    window.location.href = "/index.html";
+  }
+  
+  function formatCurrecy(currency)
+  {
+    return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
 
 function dangXuatAdmin()
 {
@@ -722,60 +666,127 @@ function dangXuatAdmin()
   window.location.href = "/index.html";
 }
 
-// hàm định dạng ngày tháng năm
-function padTo2Digits(num) {
-  return num.toString().padStart(2, '0');
-}
-
-function formatDate(date) {
-  return [
-    padTo2Digits(date.getDate()),
-    padTo2Digits(date.getMonth() + 1),
-    date.getFullYear(),
-  ].join('/');
-}
-
-
-function dangXuatAdmin()
-{
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
-}
-
-
-function formatCurrecy(currency)
-{
-  return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+function preventKeyPressNotNumber(e) {
+  // kiểm tra xem charCode mà thỏa đk thì chặn keypress đó
+  if(e.charCode < 48 || e.charCode > 57) {
+    e.preventDefault();
+    if( e.charCode < 96 || e.charCode > 105)
+        e.preventDefault();
+  }
 }
 
 // inner trong admin
 
 let productsManage = document.getElementById("nav-header-left-list-products-management");
-let productsTable = document.getElementById("container-content-products-table");
-
-function showProductTable() {
+let productsTable;
+renderProductManage();
+function renderProductManage() {
+  containerContentAdmin.innerHTML = `
+      <div class="container-nav-header-right">
+        <div>
+          <div class="container-nav-header-right-filter-type">
+            <label for="typeProducts">Chọn loại:</label>
+            <select name="typeProducts" id="typeProducts">
+              <option value="all">Tất cả</option>
+              <option value="keyboard">Bàn phím</option>
+              <option value="mouse">Chuột</option>
+              <option value="headphone">Tai nghe</option>
+              <option value="speaker">Loa</option>
+              <option value="Laptop">Laptop</option>
+            </select>
+          </div>
+          <div class="container-nav-header-right-filter-price">
+            <span>Giá : </span>
+            <span>Từ</span>
+            <input type="number" value="0" min="1" placeholder="000.000"  id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
+            <span> ₫   đến  </span>
+            <input type="number" value="99999999" max="1000000000" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
+            <span> ₫ </span>
+          </div>
+          <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
+        </div>
+      </div>
+      <div class="container-content-header">
+        DANH SÁCH CÁC SẢN PHẨM
+        <button class="container-content-header-btn" onclick="openAddProductTable()">
+          <i class="fa-regular fa-square-plus"></i>
+          Thêm sản phẩm
+        </button>
+      </div>
+      <div class="container-content-products" >
+        <table class="container-content-products-table" id="container-content-products-table"  style="width: 100%; z-index: 1;" >
+          <tr >
+            <th class="container-content-products-table-item-id">ID</th>
+            <th class="container-content-products-table-item-img">Ảnh</th>
+            <th class="container-content-products-table-item-name">Tên</th>
+            <th class="container-content-products-table-item-type">Loại</th>
+            <th class="container-content-products-table-item-price">Giá</th>
+            <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
+          </tr>
+        </table>
+      </div>
+  ` 
+  productsTable = document.getElementById("container-content-products-table");
   for (let i = 0; i < product.length; i++) {
-    productsTable.children[0].innerHTML += `
+    productsTable.innerHTML += `
     <tr class="container-content-products-table-item">
-    <td class="container-content-products-table-item-id">${product[i].id}</td>
+      <td class="container-content-products-table-item-id">${product[i].id}</td>
+      <td class="container-content-products-table-item-img">
+          <img src="${product[i].img}" alt="">
+      </td>
+      <td class="container-content-products-table-item-name">${product[i].name}</td>
+      <td class="container-content-products-table-item-type">${product[i].type}</td>
+      <td class="container-content-products-table-item-price">
+        ${formatCurrecy(product[i].price)}
+        ₫
+      </td>
+      <td class="container-content-products-table-item-edit">
+        <div class="add-delete-product-button">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
+              <i class="fa-solid fa-gear"></i>
+            </div>
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(${product[i].id})">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+        </div>
+      </td>
+    </tr>
+    `
+  }
+}
+
+
+function showProductTable(arrTmpProducts) {
+  productsTable.innerHTML = `
+  <tr >
+  <th class="container-content-products-table-item-id">ID</th>
+  <th class="container-content-products-table-item-img">Ảnh</th>
+  <th class="container-content-products-table-item-name">Tên</th>
+  <th class="container-content-products-table-item-type">Loại</th>
+  <th class="container-content-products-table-item-price">Giá</th>
+  <th class="container-content-products-table-item-edit">Chỉnh sửa</th>
+  </tr>`;
+  for (let i = 0; i < arrTmpProducts.length; i++) {
+    productsTable.innerHTML += `
+    <tr class="container-content-products-table-item">
+    <td class="container-content-products-table-item-id">${arrTmpProducts[i].id}</td>
     <td class="container-content-products-table-item-img">
-        <img src="${product[i].img}" alt="">
+        <img src="${arrTmpProducts[i].img}" alt="">
     </td>
-    <td class="container-content-products-table-item-name">${product[i].name}</td>
-    <td class="container-content-products-table-item-type">${product[i].type}</td>
+    <td class="container-content-products-table-item-name">${arrTmpProducts[i].name}</td>
+    <td class="container-content-products-table-item-type">${arrTmpProducts[i].type}</td>
     <td class="container-content-products-table-item-price">
-      ${formatCurrecy(product[i].price)}
+      ${formatCurrecy(arrTmpProducts[i].price)}
       ₫
     </td>
     <td class="container-content-products-table-item-edit">
       <div class="add-delete-product-button ">
         
-          <div class="container-content-products-table-item-edit-icon" >
+          <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
             <i class="fa-solid fa-gear"></i>
           </div>
 
-          <div class="container-content-products-table-item-edit-delete"  >
+          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(${product[i].id})" >
             <i class="fa-solid fa-trash"></i>
           </div>
       </div>
@@ -784,4 +795,175 @@ function showProductTable() {
   </tr>
     `
   }
+}
+
+// hold color nav header left
+function holdColorMenuInAdmin(currentElement){
+  document
+    .querySelector(".nav-header-left-list-item.active-nav-header-left-list-item")
+    .classList.remove("active-nav-header-left-list-item");
+    
+    let text = currentElement.querySelector('span').innerText;
+    console.log(text);
+    localStorage.setItem("textSpan",JSON.stringify(text));
+    currentElement.classList.add("active-nav-header-left-list-item");
+};
+
+let search_inp = document.querySelector("#search_text");
+let search_btn = document.querySelector("#search_button");
+let textSpanFromMenu = 'Quản lý sản phẩm';
+localStorage.setItem("textSpan",JSON.stringify(textSpanFromMenu));
+
+function searchEngineAdmin(event)
+{
+   textSpanFromMenu = JSON.parse(localStorage.getItem("textSpan"));
+  tmpProduct = [];
+  if(textSpanFromMenu == "Quản lý sản phẩm") {
+
+    for(let i=0; i<product.length; i++)
+    {
+      if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
+      } 
+      else if(product[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
+      }
+    }
+    showProductTable(tmpProduct); 
+
+  } else if(textSpanFromMenu == 'Quản lý khách hàng'){
+
+    for(let i=0; i<account.length; i++)
+    {
+      if(account[i].username.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
+      else if(account[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
+    }
+    
+    renderAccount(tmpProduct);
+
+  } else if (textSpanFromMenu == 'Quản lý đơn hàng') {
+    for(let i=0; i<orderForm.length; i++)
+    {
+      if(orderForm[i].idUser.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+      else if(orderForm[i].idOrderForm.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+    }
+    renderOrder(tmpProduct);
+  }
+
+  event.preventDefault();
+}
+
+function getEnterKey(event) {
+  if(event.keyCode == 13)
+  searchEngineAdmin(event);
+}
+search_inp.addEventListener('keypress',getEnterKey)
+
+
+function filterProductsInAdmin() {
+  let typeProducts = document.querySelector("#typeProducts");
+  let priceStart = document.querySelector("#container-nav-header-right-filter-price-start");
+  let priceEnd = document.querySelector("#container-nav-header-right-filter-price-end");
+  let arrTmp1 = [];
+  let arrTmp2 = [];
+  // show ra sản phẩm với loại là tất cả
+  if(typeProducts.value == 'all') {
+    // kiểm tra xem có điều kiểu theo giá hay không
+    if(priceStart.value == '' || priceEnd.value == '') {
+      showProductTable(product);
+      return;
+
+    } else {
+      
+      for (let i = 0; i < product.length; i++) {
+        if(parseInt(priceStart.value) <= parseInt(product[i].price) && parseInt(priceEnd.value) >= parseInt(product[i].price)) {
+          arrTmp1.push(product[i]);
+        }
+      }
+    }
+    showProductTable(arrTmp1);
+    return;
+  }
+
+  for (let i = 0; i < product.length; i++) {
+    if (product[i].type == typeProducts.value) {
+      arrTmp1.push(product[i]);
+    } 
+  }
+  if(priceStart.value == '' || priceEnd.value == '') {
+    showProductTable(arrTmp1);
+    return;
+  }
+
+  for (let i = 0; i < arrTmp1.length; i++) {
+    if(parseInt(priceStart.value) <= parseInt(arrTmp1[i].price) && parseInt(priceEnd.value) >= parseInt(arrTmp1[i].price)) {
+      arrTmp2.push(arrTmp1[i]);
+    }
+  }
+  showProductTable(arrTmp2);
+  
+
+}
+let headerNavigationIconMenu = document.querySelector(".container-header-navigation-icon-menu");
+let container = document.querySelector(".container");
+let containerHeader = document.querySelector(".container-header");
+let navHeaderLeft = document.querySelector(".nav-header-left");
+let navHeaderLeftLogo = document.querySelector(".nav-header-left-logo");
+let navHeaderLeftListItems = document.querySelectorAll(".nav-header-left-list-item");
+let navHeaderLeftListItemSpans = document.querySelectorAll(".nav-header-left-list span");
+let navHeaderLeftListItemIcons = document.querySelectorAll(".nav-header-left-list-item > i");
+let headerNavigationIconMenuShrink = document.querySelector(".container-header-navigation-icon-menu-shrink");
+let headerNavigationIconMenuZoomIn = document.querySelector(".container-header-navigation-icon-menu-zoomIn");
+
+
+
+
+function shrinkMenuInAdmin() {
+  container.classList.add("zoomInContainer");
+  containerHeader.classList.add("zoomInContainerHeader");
+  navHeaderLeft.classList.add("shrinkNavHeaderLeft");
+  navHeaderLeftLogo.classList.add("hideNavHeaderLeftLogo");
+  navHeaderLeftListItemSpans.forEach(navHeaderLeftListItemSpan => {
+    navHeaderLeftListItemSpan.classList.add("hide");
+  });
+  navHeaderLeftListItemIcons.forEach(navHeaderLeftListItemIcon => {
+    navHeaderLeftListItemIcon.classList.add("hide");
+  });
+  navHeaderLeftListItems.forEach(navHeaderLeftListItem => {
+    navHeaderLeftListItem.classList.add("center");
+  });
+  headerNavigationIconMenuShrink.classList.add("hide");
+  headerNavigationIconMenuZoomIn.classList.add("show");
+}
+
+function zoomInMenuInAdmin() {
+  container.classList.remove("zoomInContainer");
+  containerHeader.classList.remove("zoomInContainerHeader");
+  navHeaderLeft.classList.remove("shrinkNavHeaderLeft");
+  navHeaderLeftLogo.classList.remove("hideNavHeaderLeftLogo");
+  navHeaderLeftListItemSpans.forEach(navHeaderLeftListItemSpan => {
+    navHeaderLeftListItemSpan.classList.remove("hide");
+  });
+  navHeaderLeftListItemIcons.forEach(navHeaderLeftListItemIcon => {
+    navHeaderLeftListItemIcon.classList.remove("hide");
+  });
+  navHeaderLeftListItems.forEach(navHeaderLeftListItem => {
+    navHeaderLeftListItem.classList.remove("center");
+  });
+  headerNavigationIconMenuShrink.classList.remove("hide");
+  headerNavigationIconMenuZoomIn.classList.remove("show");
 }

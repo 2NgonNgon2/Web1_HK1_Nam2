@@ -23,7 +23,16 @@ else {
       type: "mouse",
       name: "Chuột Gaming Yindiao A5",
       description: "Bluetooth/Wireless,pin Sạc E-sports, Led RBG 7 màu - Chính Hãng",
-      detail: ``,
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
       img: "/assets/img/ChuộtGamingYindiaoA5.webp",
       price: "269000",
     },
@@ -32,23 +41,30 @@ else {
       type: "keyboard",
       name: "Bàn phím không dây Bluetooth Logitech MX Keys Mini - Hàng chính hãng",
       description: "Nhỏ gọn, Sạc USB-C, Phím tắt thông minh, Có bản cho Mac",
-      detail: `• CÁC PHÍM THÔNG MINH PERFECT STROKE: Gõ trên các phím được tạo hình phù hợp với ngón tay bạn, cùng 4 phím tắt thông minh: chuyển đổi giọng nói thành văn bản, Tắt tiếng/Hủy tắt tiếng Mic và các phím Emoji và cắt nhanh màn hình.<br>
-    • KÍCH CỠ MINI, HIỆU SUẤT MẠNH MẼ: Bố cục được thiết kế để dễ dàng gõ thật chính xác, với hình dáng tối giản và công thái học, có thể dễ dàng mang theo đi đến bất cứ nơi nào để cùng bạn làm việc.<br>
-    • CHIẾU SÁNG NỀN THÔNG MINH: Các phím được chiếu sáng nền sẽ sáng lên khi tay bạn tiến đến gần và tự động điều chỉnh để phù hợp với điều kiện ánh sáng thay đổi từ môi trường.<br>
-    • ĐA THIẾT BỊ, TƯƠNG THÍCH ĐA HỆ ĐIỀU HÀNH: Ghép cặp (Pair) bàn phím nhỏ gọn MX Keys Mini với tối đa 3 thiết bị qua tính năng Bluetooth tiết kiệm năng lượng và với nút Easy-switch trên hầu hết các hệ điều hành<br>
-    • KẾT NỐI NHIỀU MÁY TÍNH CÙNG FLOW: Kết hợp MX Keys Mini với MX Master 3 hoặc MX Anywhere 3 và gõ trên nhiều PC hoặc máy tính xách tay trong một luồng công việc trôi chảy.<br>
-    • PIN SẠC USB-C: Bàn phím Bluetooth MX Keys Mini dùng được 10 ngày trong một lần sạc đầy hoặc lên tới 5 tháng khi tắt chức năng chiếu sáng nền.<br>`,
+      detail: `
+      • CÁC PHÍM THÔNG MINH PERFECT STROKE: Gõ trên các phím được tạo hình phù hợp với ngón tay bạn, cùng 4 phím tắt thông minh: chuyển đổi giọng nói thành văn bản, Tắt tiếng/Hủy tắt tiếng Mic và các phím Emoji và cắt nhanh màn hình.<br>
+      • KÍCH CỠ MINI, HIỆU SUẤT MẠNH MẼ: Bố cục được thiết kế để dễ dàng gõ thật chính xác, với hình dáng tối giản và công thái học, có thể dễ dàng mang theo đi đến bất cứ nơi nào để cùng bạn làm việc.<br>
+      • PIN SẠC USB-C: Bàn phím Bluetooth MX Keys Mini dùng được 10 ngày trong một lần sạc đầy hoặc lên tới 5 tháng khi tắt chức năng chiếu sáng nền.<br>`,
       img: "/assets/img/fa3b402ea600bb5763a6655ec50bc74b.png.webp",
       price: "699000",
     },
     {
       id: "4",
-      type: "mousepad",
-      name: "lót chuột pro max",
-      description: "Mouse pad for wibu ",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "169000",
+      type: "mouse",
+      name: "Chuột không dây Dareu LM106G Black/ Red /Blue / Pink / White",
+      description: "Siêu bền , sạc nhanh",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-khong-day-dareu-LM106G-768x768.png",
+      price: "120000",
     },
     {
       id: "5",
@@ -66,12 +82,21 @@ else {
     },
     {
       id: "6",
-      type: "mousepad",
-      name: "lót chuột siêu vjp pro",
-      description: "lot chuot cho dan vjp",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "569000",
+      type: "mouse",
+      name: "Chuột không dây DAREU LM115G Black",
+      description: "Siêu bền , sạc nhanh",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-khong-day-dareu-lm115g-01-768x768.jpg",
+      price: "125000",
     },
     {
       id: "7",
@@ -110,7 +135,16 @@ else {
       type: "mouse",
       name: "Chuột gaming không dây DARE-U RGB",
       description: "Độ trễ thấp, phạm vi hoạt động hiệu quả 10m không vật cản",
-      detail: ``,
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
       img: "/assets/img/Chuột gaming không dây DARE-U RGB.webp",
       price: "719000",
     },
@@ -130,12 +164,21 @@ else {
     },
     {
       id: "12",
-      type: "mousepad",
-      name: "lót chuột pro max",
-      description: "Mouse pad for wibu ",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "169000",
+      type: "mouse",
+      name: "Chuột không dây DAREU LM115G Multi-Color Dog",
+      description: "Độ trễ thấp, phạm vi hoạt động hiệu quả 10m không vật cản",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-khong-day-dareu-lm115g-dog-01-768x768.jpg",
+      price: "249000",
     },
     {
       id: "13",
@@ -153,12 +196,21 @@ else {
     },
     {
       id: "14",
-      type: "mousepad",
-      name: "lót chuột siêu vjp pro",
-      description: "lot chuot cho dan vjp",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "569000",
+      type: "mouse",
+      name: "Chuột không dây DAREU LM115G Multi-Color Bear",
+      description: "Siêu bền , sạc nhanh",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-khong-day-dareu-lm115g-bear-01.jpg",
+      price: "249000",
     },
     {
       id: "15",
@@ -184,8 +236,6 @@ else {
       name: "Bàn Phím Cơ không dây mini Đa kết nối RF84 White Gaming cho máy tính",
       description: "Keyboard for gamer",
       detail: `
-    - Hệ điều hành hỗ trợ : Windows . Android . Macos . ios <br>
-    - Thiết bị hỗ : Máy tính , Laptop , Điện thoại , Máy tính bảng<br>
     - Đa Kết nối : Bluetooth 5.0 - USB 2.4G - cáp USB . Có thể tháo rời , thay thế dễ dàng<br>
     - Khoảng cách kết nối không dây lên đến 10m<br>
     - Kết nối cùng lúc lên đến 3 thiết bị , chuyển đổi nhanh thiết bị bằng phím FN+...<br>
@@ -199,7 +249,16 @@ else {
       type: "mouse",
       name: "Chuột gaming Newmen G11 ",
       description: "Bi trọng lực tích hợp giúp chuột định vị chính xác trong game",
-      detail: ``,
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
       img: "/assets/img/Chuột gaming Newmen G11.webp",
       price: "179000",
     },
@@ -213,8 +272,6 @@ else {
     - Bàn phím cơ sử dụng Blue switch. Cho âm thanh gõ giống như Đoạn Văn hay cảm giác cơ học, loại thân công tắc thoải mái và dễ sử dụng hơn. Âm thanh của nó sắc nét và có nhịp gõ mạnh mẽ. Nó chủ yếu phù hợp để đánh máy trong các trò chơi.<br>
     - Bàn phím nổi sáu hàng thứ tư phù hợp với quỹ đạo chuyển động của ngón tay, gõ phím thoải mái và không dễ bị mỏi.<br>
     - Cắm và chạy, đèn nền năng động và rực rỡ, các nhân vật và tấm giữa phát sáng để giải trí ban đêm, nhiều đèn Charming hơn.<br>
-    - NHỰA ABS vật liệu nhựa nhiệt dẻo, tinh tế Hai-màu sắc, ánh sáng-Truyền thiết kế, cảm giác thoải mái, không dễ dàng để được nhờn, và để lại dấu vân tay.<br>
-    - Bố trí 87 phím, nắp phím nổi hình chữ U, gần ngón tay hoàn hảo, cảm giác mượt mà cho trải nghiệm văn phòng.<br>
     - Thiết kế chống nước và chống bụi, với nhiều lỗ thoát nước ở phía dưới, có thể đẩy chất lỏng và trà càng sớm càng tốt và chăm sóc bàn phím của bạn.<br>
     `,
       img: "/assets/img/a0869744ebcc1b4b546e12468832f8af.jpg",
@@ -222,12 +279,21 @@ else {
     },
     {
       id: "20",
-      type: "mousepad",
-      name: "lót chuột pro max",
-      description: "Mouse pad for wibu ",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "169000",
+      type: "mouse",
+      name: "Chuột không dây DAREU LM115G Multi-Color- Panda",
+      description: "Siêu nhẹ ,siêu bền",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-khong-day-dareu-lm115g-panda-01-768x768.jpg",
+      price: "249000",
     },
     {
       id: "21",
@@ -246,12 +312,21 @@ else {
     },
     {
       id: "22",
-      type: "mousepad",
-      name: "lót chuột siêu vjp pro",
-      description: "lot chuot cho dan vjp",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "569000",
+      type: "mouse",
+      name: "Chuột Gaming DAREU A960 – ULTRALIGHT",
+      description: "siêu bền , led RGB",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-gaming-sieu-nhe-dareu-a960-black-banner-768x768.jpg",
+      price: "750000",
     },
     {
       id: "23",
@@ -289,7 +364,16 @@ else {
       type: "mouse",
       name: "Chuột gaming Logitech G502 HERO",
       description: "Cảm biến: HERO ,độ phân giải: 16000 DPI",
-      detail: ``,
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
       img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
       price: "999000",
     },
@@ -310,12 +394,21 @@ else {
     },
     {
       id: "28",
-      type: "mousepad",
-      name: "lót chuột pro max",
-      description: "Mouse pad for wibu ",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "169000",
+      type: "mouse",
+      name: "Chuột Gaming DAREU EM908 Queen",
+      description: "LED RGB, BRAVO sensor",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-gaming-dareu-em908-queen-01-768x768.jpg",
+      price: "299000",
     },
     {
       id: "29",
@@ -333,12 +426,21 @@ else {
     },
     {
       id: "30",
-      type: "mousepad",
-      name: "lót chuột siêu vjp pro",
-      description: "lot chuot cho dan vjp",
-      detail: ``,
-      img: "/assets/img/mousepads.png",
-      price: "569000",
+      type: "mouse",
+      name: "Chuột không dây DAREU LM115G Multi-Color Sheep",
+      description: "Siêu nhẹ, siêu bền",
+      detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      img: "/assets/img/chuot-may-tinh-khong-day-dareu-lm115g-sheep-pink-01-768x768.jpg",
+      price: "249000",
     },
     {
       id: "31",
@@ -365,9 +467,6 @@ else {
       description: "Keyboard for gamer",
       detail: `
     TÍNH NĂNG BÀN PHÍM SỐ MINI NUMBER KEYBOARD <br>
-    - Mini Number Keyboard thiết kế nhỏ gọn và tinh tế.<br>
-    - Bàn phím số cho laptop giúp xử lý những con số nhanh gọn và chuyên nghiệp.<br>
-    - Bàn phím số rời với 18 phím chức năng tiện dụng.<br>
     - Cắm và sử dụng, không cần cài đặt driver.<br>
     - Bàn phím số không dây sử dụng kết nối 2.4G mạnh mẽ và ổn định.<br>
     - Sử dụng pin AAA 1.5V thông dụng.<br>
@@ -723,6 +822,210 @@ else {
     `,
     img: '/assets/img/Loa bluetooth 2.1 Microlab M106BT.webp',
     price: '600000đ'
+  },
+  {
+    id: '66',
+    type: 'mouse',
+    name: 'Chuột không dây Gaming DAREU EM901X RGB Pink',
+    description: 'SUPERLIGHT, FAST CHARING DOCK',
+    detail: `
+    - RGB FAST CHARGING DOCK</br>
+    - SUPERLIGHT: 86g</br>
+    - Sensor: BRAVO (ATG4090)</br>
+    - DPI: 800-6000</br>
+    - Tracking: 150IPS</br>
+    - Polling rate: 1000Hz</br>
+    - Dung lượng PIN: 930 mAh</br>
+    - Thời gian sử dụng: 30h | 18h LED RGB</br>
+    - Thời gian sạc: 3h</br>
+    - Switch: DareU (10 triệu lần click)</br>
+    - Kích thước: 125.5*68.6*39.6mm</br>
+    - Trọng lượng: 86g</br>
+    - WIRELESS – 2.4G</br>
+    - Lưu ý:  Cổng USB </br>
+    `, 
+    img: '/assets/img/chuot-khong-day-gaming-dareu-em901x-pink-01.jpg',
+    price: '715000đ'
+  },
+  {
+    id: '67',
+    type: 'mouse',
+    name: 'Chuột không dây Gaming DAREU A950 TRIPLE MODE',
+    description: 'Siêu nhẹ, sạc nhanh',
+    detail: `
+      - TRIPLE MODE: Type-C – Bluetooth 5.1 – 2.4G<br>
+      - RGB FAST CHARGING DOCK<br>
+      - SUPERLIGHT: 88g     <br>
+      - Sensor: DAREU AIM-WL<br>
+      - DPI: 400-12.000<br>
+      - Tracking: 300IPS<br>
+      - Polling rate: 1000Hz<br>
+      - Thời gian sử dụng: 12-30 ngày<br>
+      - Switch: DareU<br>
+      - Kích thước: 123*64*39mm<br>
+      - Trọng lượng: 88g<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-gaming-dareu-a950-triple-mode-sieu-nhe-01-768x768.jpg',
+    price: '969000đ'
+  },
+  {
+    id: '68',
+    type: 'mouse',
+    name: 'Chuột không dây DAREU LM115G WHITE',
+    description: 'Siêu nhẹ, sạc nhanh',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 6mA<br>
+      - Sensor: PAN3212<br>
+      - DPI: 800/1200(Default)/1600<br>
+      - IPS: 30<br>
+      - Acceleration: 10G<br>
+      - Backlight: No<br>
+      - Button: 6<br>
+      - Trọng lượng: 70±5g<br>
+      - Kích thước: 59*107*38mm<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-lm115h-white-01-768x768.png',
+    price: '125000đ'
+  },
+  {
+    id: '69',
+    type: 'mouse',
+    name: 'Chuột không dây DAREU LM115G Multi-Color Monkey',
+    description: 'Siêu nhẹ, sạc nhanh',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 6mA<br>
+      - Sensor: PAN3212<br>
+      - DPI: 800/1200(Default)/1600<br>
+      - IPS: 30<br>
+      - Acceleration: 10G<br>
+      - Backlight: No<br>
+      - Button: 6<br>
+      - Trọng lượng: 70±5g<br>
+      - Kích thước: 59*107*38mm<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-dareu-lm115g-monkey-01-768x768.jpg',
+    price: '249000đ'
+  },
+  {
+    id: '70',
+    type: 'mouse',
+    name: 'Chuột DAREU LM130s (RGB, USB)',
+    description: 'Siêu bền , có đèn led',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 6mA<br>
+      - Sensor: PAN3512<br>
+      - DPI: 1000<br>
+      - IPS: 30<br>
+      - Acceleration: 10G<br>
+      - Dây 1.8m<br>
+      - Trọng lượng:  100g +/- 10g<br>
+      - Kích thước: 118*61*38.4mm<br>
+    `, 
+    img: '/assets/img/chuot-dareu-led-rgb-lm130s-01-768x768.png',
+    price: '119000đ'
+  },
+  {
+    id: '71',
+    type: 'mouse',
+    name: 'Chuột không dây DAREU LM118B',
+    description: 'Siêu bền , Dual Mode: Bluetooth + 2.4G',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 6mA<br>
+      - Sensor: PAN3512<br>
+      - DPI:  800-1200-1600<br>
+      - Acceleration: 10G<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 90g +/- 10g<br>
+      - Kích thước: 107.5*59.15*38.29mm<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-dareu-lm118b-black-01-768x768.jpg',
+    price: '249000đ'
+  },
+  {
+    id: '72',
+    type: 'mouse',
+    name: 'Chuột không dây Gaming DAREU EM905 PRO PINK',
+    description: 'Siêu bền , LED RGB',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-gaming-dareu-em905-pink-01-768x768.jpg',
+    price: '649000đ'
+  },
+
+  {
+    id: '73',
+    type: 'mouse',
+    name: 'Chuột không dây DAREU LM115G Multi-Color Cat',
+    description: 'Siêu bền , LED RGB',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 125.5*68.6*39.6mm<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-dareu-lm115g-cat-01-768x768.jpg',
+    price: '249000đ'
+  },
+
+  {
+    id: '74',
+    type: 'mouse',
+    name: 'Chuột Gaming DAREU EM908 White',
+    description: 'Siêu bền , LED RGB',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 40*122*67mm<br>
+    `, 
+    img: '/assets/img/13552-768x768.png',
+    price: '299000đ'
+  },
+  {
+    id: '75',
+    type: 'mouse',
+    name: 'Chuột không dây DAREU LM115G Multi-Color Lion',
+    description: 'Siêu bền , LED RGB',
+    detail: `
+      - Cổng kết nối: wireless with 2.4G<br>
+      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
+      - Pin : 930 mAh<br>
+      - Sensor: PAN3512<br>
+      - DPI: 800-6400<br>
+      - Thời gian sạc: 3h<br>
+      - Dây 1.8m<br>
+      - Trọng lượng: 100g +/- 10g<br>
+      - Kích thước: 59*107*38mm<br>
+    `, 
+    img: '/assets/img/chuot-khong-day-dareu-lm115g-lion-01-768x768.jpg',
+    price: '249000đ'
   },
   ];
   localStorage.setItem("product", JSON.stringify(product));

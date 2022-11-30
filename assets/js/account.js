@@ -50,14 +50,15 @@ if (localStorage.getItem("userSignIn") != null) {
         document.querySelector("span.dropdown-select").innerHTML = "Tài khoản";
         localStorage.removeItem("userSignIn");
         localStorage.setItem("currentUser",JSON.stringify({}));
-        localStorage.setItem("isSignedin", "false");
+        localStorage.setItem("isSignedin", isSignedin);
         window.location.reload();
     });
 }
 
 function dangXuatAdmin() {
-    localStorage.setItem("isSignedin", "false");
+    localStorage.setItem("isSignedin", JSON.stringify("false"));
     localStorage.removeItem("adminSignedin");
+    localStorage.removeItem("textSpan");
     window.location.href = "/index.html";
 }
 

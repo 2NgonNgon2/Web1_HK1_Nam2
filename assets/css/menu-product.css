@@ -48,7 +48,7 @@
   left: 0!important;
   opacity: 1!important;
   z-index: 10001;
-  /* display: flex; */
+  pointer-events: visible!important;
 }
 
 .menu .menu-title

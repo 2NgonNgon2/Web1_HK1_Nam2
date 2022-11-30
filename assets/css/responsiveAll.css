@@ -30,9 +30,8 @@
 
     header .navigation {
       justify-content: right;
-      min-width: 50%;
-      max-width: 50%;
-    
+      min-width: 100%;
+      max-width: 100%;
     }
 
     #search_box #search_text {
@@ -41,6 +40,7 @@
 
     header .logo {
       position: absolute;
+      left: 20%;
     }
     .navigation div {
       flex: 2;
@@ -69,6 +69,15 @@
     }
 
     /* slider */
+    .slider {
+      margin: 0;
+      border-radius: 0;
+      
+    }
+    .slider-content-top-container {
+      border-radius: 0;
+    }
+
     .slider-content-left {
       width: 100%;
       height: 380px;
@@ -93,11 +102,12 @@
       left: -30%;
       width: 25%;
       height: 100%;
-      z-index: 10001;
+      z-index: 10000;
       opacity: 0;
-      padding: 40px 60px 0 20px;
+      padding: 40px 40px 0 40px;
       transition: all .2s ease;
       background-color: whitesmoke;
+      pointer-events: none;
     }
 
     .close-menu-products-icon {
@@ -223,6 +233,9 @@
     }
 
     /* card product */
+    .card-products {
+      margin-top: 150px;
+    }
     .card-products-container {
       margin-left: -30px;
     }
@@ -242,12 +255,48 @@
 }
 
 /* mobile */
-@media  (max-width: 900px) {
 
+@media  (max-width: 900px) {
+  /* navigation */
+  header .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #search_box {
+    position: relative;
+    left: 0;
+    transform: translate(0,200%);
+    opacity: .6;
+  }
+
+  /* slider */
+  .slider-content-bottom li {
+    font-size: 9px!important;
+    line-height: 25px;
+  }
+  /* cart */
+  #cart {
+    z-index: 10001;
+  }
+  .cart-container {
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    left: 0;
+  }
   /* card product */
   .menu {
-    width: 40%;
-    padding-right: 30px;
+    width: 100%;
+    padding-top: 110px;
+    padding-right: 0px;
+    padding-left: 0;
+    background-color: rgba(245, 245, 245,.6);
+    left: -40%;
+  }
+  .menu .menu-items{
+    margin: 20px 180px 20px;
+    height: 60px;
   }
 
   .card-products {
@@ -255,7 +304,7 @@
     height: 1150px;
     grid-template-columns: 0;
     grid-template-rows: 0;
-    margin-top: 40px;
+   
   }
 
   .card-products-container {
@@ -277,7 +326,7 @@
       height: 850px;
       grid-template-columns: 0;
       grid-template-rows: 0;
-      margin-top: 40px;
+     
     }
 
     .card-products-container {
