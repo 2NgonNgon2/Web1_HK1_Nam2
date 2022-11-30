@@ -645,6 +645,7 @@ function closeEditAccountTable(event)
   {
     localStorage.setItem("isSignedin","false");
     localStorage.removeItem("adminSignedin");
+    localStorage.removeItem("textSpan");
     window.location.href = "/index.html";
   }
   
@@ -813,6 +814,10 @@ function searchEngineAdmin(event)
       if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(product[i]);
+      } 
+      else if(product[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
       }
     }
     showProductTable(tmpProduct); 
@@ -825,6 +830,10 @@ function searchEngineAdmin(event)
       {
         tmpProduct.push(account[i]);
       }
+      else if(account[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
     }
     
     renderAccount(tmpProduct);
@@ -833,6 +842,10 @@ function searchEngineAdmin(event)
     for(let i=0; i<orderForm.length; i++)
     {
       if(orderForm[i].idUser.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+      else if(orderForm[i].idOrderForm.toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(orderForm[i]);
       }
