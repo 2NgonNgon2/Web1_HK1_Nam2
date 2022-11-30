@@ -643,6 +643,15 @@ function closeEditAccountTable(event)
   }
   
   
+
+  function dangXuatAdmin()
+  {
+    localStorage.setItem("isSignedin","false");
+    localStorage.removeItem("adminSignedin");
+    localStorage.removeItem("textSpan");
+    window.location.href = "/index.html";
+  }
+  
   function formatCurrecy(currency)
   {
     return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -687,9 +696,9 @@ function renderProductManage() {
           <div class="container-nav-header-right-filter-price">
             <span>Giá : </span>
             <span>Từ</span>
-            <input type="number" value="0" placeholder="000.000" id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
+            <input type="number" value="0" min="1" placeholder="000.000"  id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫   đến  </span>
-            <input type="number" value="99999999" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
+            <input type="number" value="99999999" max="1000000000" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫ </span>
           </div>
           <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
@@ -814,6 +823,10 @@ function searchEngineAdmin(event)
       if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(product[i]);
+      } 
+      else if(product[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
       }
     }
     showProductTable(tmpProduct); 
@@ -826,6 +839,10 @@ function searchEngineAdmin(event)
       {
         tmpProduct.push(account[i]);
       }
+      else if(account[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
     }
     
     renderAccount(tmpProduct);
@@ -834,6 +851,10 @@ function searchEngineAdmin(event)
     for(let i=0; i<orderForm.length; i++)
     {
       if(orderForm[i].idUser.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+      else if(orderForm[i].idOrderForm.toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(orderForm[i]);
       }

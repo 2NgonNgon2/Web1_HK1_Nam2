@@ -131,6 +131,7 @@ function preventKeyPressNotNumber(e) {
     e.preventDefault();
     if( e.charCode < 96 || e.charCode > 105)
         e.preventDefault();
+    return false;    
   }
 }
 // get value when user enter value to input
