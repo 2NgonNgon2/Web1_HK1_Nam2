@@ -12,7 +12,7 @@
   width:100%;
   height: 80px;
   display: grid;
-  grid-template-columns: 5% 20% 20% 20% 20% 15% ;
+  grid-template-columns: 5% 15% 15% 15% 20% 15% 15%;
   font-weight: bolder;
   border: 2px solid ;
   background: rgb(255,144,39);
@@ -30,7 +30,7 @@
   width:100%;
   height: 80px;
   display: grid;
-  grid-template-columns: 5% 20% 20% 20% 20% 15% ;
+  grid-template-columns: 5% 15% 15% 15% 20% 15% 15%;
   border-bottom: 2px solid grey;
   border-left: 2px solid;
   border-right: 2px solid;
@@ -44,7 +44,7 @@
   height: 80px;
 }
 
-.account-id,.account-name,.account-password,.account-phone,.account-mail,.header .status
+.account-id,.account-name,.account-password,.account-phone,.account-mail,.header .status,.account-edit 
 {
   height: 100%;
   width: 100%;
@@ -54,7 +54,7 @@
   border-right: 2px solid;
 }
 
-.header .status {
+.account-edit  {
   border-right: 0;
 }
 
@@ -64,13 +64,18 @@
   height: 100%;
   display: flex;
   justify-content: space-around;  
+  border-right: 2px solid black;
   align-items:center;
+}
+
+.account-edit {
+  position: relative;
 }
 
 input[type="checkbox"] {
   appearance: checkbox !important;
   transform: scale(2);
-
+  cursor: pointer;
 }
 
 .container-content .search-user
