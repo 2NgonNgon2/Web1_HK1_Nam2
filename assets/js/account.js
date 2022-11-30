@@ -49,7 +49,6 @@ if (localStorage.getItem("userSignIn") != null) {
         localStorage.setItem("cart",JSON.stringify([]));
         document.querySelector("span.dropdown-select").innerHTML = "Tài khoản";
         localStorage.removeItem("userSignIn");
-        localStorage.removeItem("textSpan");
         localStorage.setItem("currentUser",JSON.stringify({}));
         localStorage.setItem("isSignedin", isSignedin);
         window.location.reload();
@@ -59,6 +58,7 @@ if (localStorage.getItem("userSignIn") != null) {
 function dangXuatAdmin() {
     localStorage.setItem("isSignedin", JSON.stringify("false"));
     localStorage.removeItem("adminSignedin");
+    localStorage.removeItem("textSpan");
     window.location.href = "/index.html";
 }
 
