@@ -1,7 +1,6 @@
 const cardProduct = document.querySelector(".card-products-container");
 const addProductContainer = document.querySelector(".add-product-container");
 const orderContainer = document.querySelector(".order-container");
-const accountContainer = document.querySelector(".account-container");
 const deleteProductTable = document.querySelector(".delete-product-container");
 const deleteItemContainer = document.querySelector(".delete-item-container");
 // const contantContainer = document.querySelector(".container-content");
@@ -239,19 +238,29 @@ function filterOrder(event)
   
   const dateStart = document.querySelector(".date-start-input");
   const dateEnd = document.querySelector(".date-end-input");
-  
-  let start= new Date(dateStart.value);
+
+  let start = new Date(dateStart.value);
   let end = new Date(dateEnd.value);
   let dateArray = [];
+
   for(let order of orderForm)
   {
-    let orderDate = new Date(order.dateOrder);
-    if((start <= orderDate) && (end >=  orderDate) )
+    console.log(formatOrderDate(order.dateOrder));
+    let date = new Date(+formatOrderDate(order.dateOrder)[2], +formatOrderDate(order.dateOrder)[1] - 1,+formatOrderDate(order.dateOrder)[0]);
+    if((start <= date) && (date <= end))
     {
+      console.log(date);
       dateArray.push(order);
     }
   }
   renderOrder(dateArray);
+}
+
+function formatOrderDate(date)
+{
+  let dateTmp = date.split(" ");
+  let ymd = dateTmp[1].split("/");
+  return ymd;
 }
 
 function formatPrice(x) {
@@ -320,8 +329,7 @@ function renderOrder(orderArray)
       }
     }
     // định dạng lại ngày dd/mm/yyyy
-    let date = new Date(orderArray[i].dateOrder);
-    console.log(date);
+
     orderItem += `
     <div class="order-item">
     <div class="order-id">${orderArray[i].idOrderForm}</div>
@@ -375,13 +383,13 @@ function openAccountManageTable()
   containerContentAdmin.innerHTML =
   `
   <div class="title">DANH SÁCH TÀI KHOẢN</div>
-  
   <div class="account">
   
   </div>
   `
   renderAccount(account);
 }
+
 function filterAccount(event)
 {
   event.preventDefault();
@@ -456,7 +464,7 @@ function renderAccount(accountArray)
   <div class="account-phone">SĐT</div>
   <div class="account-mail">EMAIL</div>
   <div class="status">TÌNH TRẠNG</div>
-  <div class="account-edit">Chỉnh sửa</div>
+  <div class="account-edit">CHỈNH SỬA</div>
   </div>
   `
 
@@ -521,13 +529,6 @@ function renderAccount(accountArray)
     accountDisplay.innerHTML = accountItem;
   }
   
-  
-  function closeAccountProductTable()
-  {
-    console.log("đóng bảng danh sách người dùng!");
-    accountContainer.style.display = "none";
-  }
-  
   /* THAO TÁC CHỈNH SỬA TÀI KHOẢN */
 
 
@@ -590,6 +591,7 @@ function closeEditAccountTable(event)
 }
 
 /* THAO TÁC XÓA TÀI KHOẢN */
+
   function deleteAccountFromAccountArray(accountId)
   {
     if(confirm("Bạn có chắc muốn xóa tài khoản này?") == true)
@@ -641,17 +643,16 @@ function closeEditAccountTable(event)
   }
   
   
-  function dangXuatAdmin()
-  {
-    localStorage.setItem("isSignedin","false");
-    localStorage.removeItem("adminSignedin");
-    window.location.href = "/index.html";
-  }
-  
-  
   function formatCurrecy(currency)
   {
     return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
+function dangXuatAdmin()
+{
+  localStorage.setItem("isSignedin","false");
+  localStorage.removeItem("adminSignedin");
+  window.location.href = "/index.html";
 }
 
 function preventKeyPressNotNumber(e) {
