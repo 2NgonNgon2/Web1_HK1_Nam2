@@ -140,9 +140,8 @@ function closeEditProductTable(event)
 
 /* THAO TÁC XÓA SẢN PHẨM */
 
-function deleteProductFromProductArray(event,productId)
+function deleteProductFromProductArray(productId)
 {
-  event.preventDefault();
   for(let i = 0 ; i < product.length; i++)
   {
     if(product[i].id== productId)
@@ -505,10 +504,10 @@ function renderAccount(accountArray)
         </label>
         <div class="account-edit">
         <div class="add-delete-product-button">
-            <div class="container-content-products-table-item-edit-icon" onclick="">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditAccountTable(${accountArray[i].id})">
               <i class="fa-solid fa-gear"></i>
             </div>
-            <div class="container-content-products-table-item-edit-delete"  onclick="">
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteAccountFromAccountArray(${accountArray[i].id})">
               <i class="fa-solid fa-trash"></i>
             </div>
         </div>
@@ -552,12 +551,14 @@ function openEditAccountTable(accountId)
     }
   }
   console.log(accountNeedEdit);
+  console.log(accountNeedEdit.username);
   accountName.value = accountNeedEdit.username;
   accountPassword.value = accountNeedEdit.password;
   accountMail.value = accountNeedEdit.email;
   accountTel.value = accountNeedEdit.phone;
-  accountName.value = accountNeedEdit.id;
+  idAccount.value = accountNeedEdit.id;
 
+  editAccountTable.style.display = "flex";
 }
 
 function editAccountToAccountArray(event)
@@ -565,22 +566,21 @@ function editAccountToAccountArray(event)
   event.preventDefault();
   for(let acc of account)
   {
-    if(acc.id == id.value)
+    if(acc.id == idAccount.value)
     {
-      acc.name = accountName.value;
-      acc.name = accountPassword.value;
-      acc.description = accountDescription.value;
-      acc.img = `/assets/img/${accountImage.files[0].name}`;
-      acc.price = formatCurrecy(accountPrice.value) ;
+      acc.username = accountName.value;
+      acc.password = accountPassword.value;
+      acc.email = accountMail.value;
+      acc.phone = accountTel.value;
       break;
     }
   }
   
   
- /*  localStorage.removeItem("arr-account");
+  localStorage.removeItem("arr-account");
   localStorage.setItem("arr-account",JSON.stringify(account));
-  alert("Cập nhật sản phẩm thành công!");
-  window.location.reload(); */
+  alert("Cập nhật tài khoản thành công!");
+  window.location.reload();
 }
 
 function closeEditAccountTable(event)
@@ -589,6 +589,42 @@ function closeEditAccountTable(event)
   editAccountTable.style.display = "none";
 }
 
+/* THAO TÁC XÓA TÀI KHOẢN */
+  function deleteAccountFromAccountArray(accountId)
+  {
+    if(confirm("Bạn có chắc muốn xóa tài khoản này?") == true)
+    {
+      for(let i = 0 ; i < account.length; i++)
+      {
+        if(account[i].id == accountId)
+        {
+          console.log(account[i]);
+          account.splice(i,1);
+          break;
+        }
+      }
+  
+      for(let i = 0 ; i < orderForm.length; i++) 
+      {
+        if(orderForm[i].idUser == accountId)
+        {
+          console.log(orderForm[i]);
+          orderForm.splice(i,1);
+          i--;
+        }
+      }
+
+      localStorage.removeItem("arr-account");
+      localStorage.setItem("arr-account",JSON.stringify(account));
+      localStorage.removeItem("orderForm");
+      localStorage.setItem("orderForm",JSON.stringify(orderForm));
+
+      alert("Xóa tài khoản thành công!");
+      window.location.reload();
+    }
+    
+
+  }
   
   // hàm định dạng ngày tháng năm
   function padTo2Digits(num) {
@@ -697,7 +733,7 @@ function renderProductManage() {
             <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
               <i class="fa-solid fa-gear"></i>
             </div>
-            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(${product[i].id})">
               <i class="fa-solid fa-trash"></i>
             </div>
         </div>
@@ -738,7 +774,7 @@ function showProductTable(arrTmpProducts) {
             <i class="fa-solid fa-gear"></i>
           </div>
 
-          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(event,${product[i].id})" >
+          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(${product[i].id})" >
             <i class="fa-solid fa-trash"></i>
           </div>
       </div>
