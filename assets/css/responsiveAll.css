@@ -233,9 +233,7 @@
     }
 
     /* card product */
-    .card-products {
-      margin-top: 150px;
-    }
+    
     .card-products-container {
       margin-left: -30px;
     }
@@ -274,6 +272,7 @@
   .slider-content-bottom li {
     font-size: 9px!important;
     line-height: 25px;
+    height: 80%;
   }
   /* cart */
   #cart {

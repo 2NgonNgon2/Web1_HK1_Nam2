@@ -381,3 +381,73 @@
   cursor: pointer;
 }
   
+#orderDetailContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(200, 187, 187, 0.3);
+    z-index: 5;
+}
+
+#orderDetailContainer-content {
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 1000px;
+}
+
+#orderDetailContainer-content .iconClose {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50% ;
+}
+
+#orderDetailContainer-content .iconClose:active {
+    background-color: rgba(200, 187, 187, 0.6);
+}
+
+.orderDetailContainer-content-date {
+    padding: 10px 0 10px 20px ;
+    
+    background: rgb(255,144,39);
+}
+
+.orderDetailContainer-content-list-products {
+    height: 80%;
+    overflow: auto;
+    padding: 20px;
+    background: rgb(128 128 128 / 20%);
+}
+
+.orderDetailContainer-content-product {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    padding: 10px ;
+    background-color: white;
+}
+
+.orderDetailContainer-content {
+    padding-right: 10px;
+    font-size: 20px!important;
+}
+
+.orderDetailContainer-content-total {
+    padding-right: 18px;
+    padding-left: 18px;
+    display: flex;
+    justify-content: space-between;
+}
