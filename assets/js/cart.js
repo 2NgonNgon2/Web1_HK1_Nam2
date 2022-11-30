@@ -18,8 +18,9 @@ $(document).keydown(function(evt) {
 });
 
 // chặn keypress của user
-function preventKeyPress(e) {
-  e.preventDefault();  
+function preventKeyPress(event) {
+  event.preventDefault();  
+  return false;
 }
 
 
