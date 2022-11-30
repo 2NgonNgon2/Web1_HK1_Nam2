@@ -30,7 +30,8 @@ function addProductToProductArray(event)
   let priceFormated = formatCurrecy(productPrice);
 
   let productAdd = {};
-  let length = product.length+1;
+  let length = parseInt(product[product.length - 1].id) + 1; 
+  console.log(typeof(length));// lấy id của phần tử cuối cùng
   let maxLength = length +  parseInt(productQuantity) ;
   for(let i = length; i < maxLength; i++)
   {
@@ -96,8 +97,13 @@ function openEditProductTable(productId)
   console.log(productNeedEdit);
   productType.value = productNeedEdit.type;
   productName.value = productNeedEdit.name;
+  //productImage.value = productNeedEdit.img;
   productDescription.value = productNeedEdit.description;
-  productPrice.value = productNeedEdit.price;
+  // đổi lại định dạng cho giá
+  let priceTmp = productNeedEdit.price.toString();
+  priceTmp = priceTmp.split('.').join('');
+  console.log(priceTmp);
+  productPrice.value = parseInt(priceTmp);
   
   id.value = productId;
   editProductTable.style.display = "flex";
@@ -134,9 +140,8 @@ function closeEditProductTable(event)
 
 /* THAO TÁC XÓA SẢN PHẨM */
 
-function deleteProductFromProductArray(event,productId)
+function deleteProductFromProductArray(productId)
 {
-  event.preventDefault();
   for(let i = 0 ; i < product.length; i++)
   {
     if(product[i].id== productId)
@@ -163,6 +168,7 @@ function closeDeleteProductTable(event)
   deleteProductTable.style.display = "none";
 }
 
+/* THAO TÁC QUẢN LÝ ĐƠN HÀNG */
 
 function openOrderManageTable()
 {
@@ -226,8 +232,6 @@ function processOrder(orderId)
     
   }
 }
-
-
 
 function filterOrder(event)
 {
@@ -364,6 +368,8 @@ function closeOrderProductTable()
 
 /* CÁC HÀM QUẢN LÝ NGƯỜI DÙNG */
 
+document.querySelector("#nav-header-left-list-products-management").addEventListener("click",openAccountManageTable());
+
 function openAccountManageTable()
 {
   containerContentAdmin.innerHTML =
@@ -376,7 +382,6 @@ function openAccountManageTable()
   `
   renderAccount(account);
 }
-
 function filterAccount(event)
 {
   event.preventDefault();
@@ -499,10 +504,10 @@ function renderAccount(accountArray)
         </label>
         <div class="account-edit">
         <div class="add-delete-product-button">
-            <div class="container-content-products-table-item-edit-icon" onclick="">
+            <div class="container-content-products-table-item-edit-icon" onclick="openEditAccountTable(${accountArray[i].id})">
               <i class="fa-solid fa-gear"></i>
             </div>
-            <div class="container-content-products-table-item-edit-delete"  onclick="">
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteAccountFromAccountArray(${accountArray[i].id})">
               <i class="fa-solid fa-trash"></i>
             </div>
         </div>
@@ -523,7 +528,103 @@ function renderAccount(accountArray)
     accountContainer.style.display = "none";
   }
   
+  /* THAO TÁC CHỈNH SỬA TÀI KHOẢN */
+
+
+  const editAccountTable = document.querySelector(".edit-account-container");
+const accountName = document.querySelector("#accountName");
+const accountPassword = document.querySelector("#accountPassword");
+const accountTel = document.querySelector("#accountTel");
+const accountMail = document.querySelector("#accountMail");
+const idAccount = document.querySelector("#accountId");
+
+function openEditAccountTable(accountId)
+{
   
+  let accountNeedEdit;
+  for(let acc of account)
+  {
+    if(acc.id == accountId)
+    {
+      accountNeedEdit = acc;
+      break;
+    }
+  }
+  console.log(accountNeedEdit);
+  console.log(accountNeedEdit.username);
+  accountName.value = accountNeedEdit.username;
+  accountPassword.value = accountNeedEdit.password;
+  accountMail.value = accountNeedEdit.email;
+  accountTel.value = accountNeedEdit.phone;
+  idAccount.value = accountNeedEdit.id;
+
+  editAccountTable.style.display = "flex";
+}
+
+function editAccountToAccountArray(event)
+{
+  event.preventDefault();
+  for(let acc of account)
+  {
+    if(acc.id == idAccount.value)
+    {
+      acc.username = accountName.value;
+      acc.password = accountPassword.value;
+      acc.email = accountMail.value;
+      acc.phone = accountTel.value;
+      break;
+    }
+  }
+  
+  
+  localStorage.removeItem("arr-account");
+  localStorage.setItem("arr-account",JSON.stringify(account));
+  alert("Cập nhật tài khoản thành công!");
+  window.location.reload();
+}
+
+function closeEditAccountTable(event)
+{
+  console.log("đóng bảng chỉnh sửa tài khoản!");
+  editAccountTable.style.display = "none";
+}
+
+/* THAO TÁC XÓA TÀI KHOẢN */
+  function deleteAccountFromAccountArray(accountId)
+  {
+    if(confirm("Bạn có chắc muốn xóa tài khoản này?") == true)
+    {
+      for(let i = 0 ; i < account.length; i++)
+      {
+        if(account[i].id == accountId)
+        {
+          console.log(account[i]);
+          account.splice(i,1);
+          break;
+        }
+      }
+  
+      for(let i = 0 ; i < orderForm.length; i++) 
+      {
+        if(orderForm[i].idUser == accountId)
+        {
+          console.log(orderForm[i]);
+          orderForm.splice(i,1);
+          i--;
+        }
+      }
+
+      localStorage.removeItem("arr-account");
+      localStorage.setItem("arr-account",JSON.stringify(account));
+      localStorage.removeItem("orderForm");
+      localStorage.setItem("orderForm",JSON.stringify(orderForm));
+
+      alert("Xóa tài khoản thành công!");
+      window.location.reload();
+    }
+    
+
+  }
   
   // hàm định dạng ngày tháng năm
   function padTo2Digits(num) {
@@ -632,7 +733,7 @@ function renderProductManage() {
             <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
               <i class="fa-solid fa-gear"></i>
             </div>
-            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(event,${product[i].id})">
+            <div class="container-content-products-table-item-edit-delete"  onclick="deleteProductFromProductArray(${product[i].id})">
               <i class="fa-solid fa-trash"></i>
             </div>
         </div>
@@ -673,7 +774,7 @@ function showProductTable(arrTmpProducts) {
             <i class="fa-solid fa-gear"></i>
           </div>
 
-          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(event,${product[i].id})" >
+          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(${product[i].id})" >
             <i class="fa-solid fa-trash"></i>
           </div>
       </div>

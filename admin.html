@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./assets/css/navigation.css">
     <link rel="stylesheet" href="./assets/css/add-product-table.css">
     <link rel="stylesheet" href="./assets/css/edit-product-table.css">
+    <link rel="stylesheet" href="./assets/css/edit-account-table.css">
     <link rel="stylesheet" href="./assets/css/delete-product-table.css">
     <link rel="stylesheet" href="./assets/css/switch-button.css">
     <link rel="stylesheet" href="./assets/css/order-product-table.css">
@@ -73,30 +74,54 @@
           <div class="exit-edit-product-table" onclick="closeEditProductTable()">
             <i class="fa-solid fa-xmark"></i>
           </div>
-            <div class="title">EDIT PRODUCT</div>
-            <label for="type">Type: </label>
+            <div class="title">CHỈNH SỬA SẢN PHẨM</div>
+            <label for="type">LOẠI: </label>
             <select name="productType" id="select-type-edit">
-              <option value="keyboard">keyboard</option>
-              <option value="headphone">headphone</option>
-              <option value="mouse">mouse</option>
-              <option value="speaker">speaker</option>
-              <option value="laptop">laptop</option>
+              <option value="keyboard">Bàn phím</option>
+              <option value="headphone">Tai nghe</option>
+              <option value="mouse">Chuột</option>
+              <option value="speaker">Loa</option>
+              <option value="laptop">Laptop</option>
             </select>
-            <label for="productName">Name:</label>
+            <label for="productName">Tên:</label>
             <input type="text" name="productName" id="productNameEdit" value="" placeholder="Keyboard haha" autofocus>
-            <label for="productDescription">Description:</label>
+            <label for="productDescription">Mô tả:</label>
             <input type="text" name="productDescription" id="productDescriptionEdit" value="" placeholder="keyboard for gamer">
-            <label for="productImage">Image:</label>  
+            <label for="productImage">Link hình:</label>  
             <input type="file" name="productImage" id="productImageEdit" value="" placeholder="link image here">
-            <label for="productPrice">Price</label>
+            <label for="productPrice">Giá</label>
             <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">              
             <input type="number" name="productId" value="" id="productId" style="display: none;">
             <div class="save-product-btn">
-              <button type="submit">SAVE CHANGE</button>
+              <button type="submit">LƯU</button>
             </div>
         </form>
 
     </div>
+    <!-- edit account -->
+    <div class="edit-account-container" onclick="closeEditAccountTable(event)">
+      
+      <form class="edit-account-table" onclick="stopPropagate(event)" onsubmit="editAccountToAccountArray(event)">
+        <div class="exit-edit-account-table" onclick="closeEditAccountTable()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+          <div class="title">CHỈNH SỬA TÀI KHOẢN</div>
+          <label for="accountName">Tên tài khoản: </label>
+          <input type="text" name="accountName" id="accountName" value="" placeholder="hackiemsi" autofocus>
+          <label for="accountPassword">Mật khẩu: </label>
+          <input type="text" name="accountPassword" id="accountPassword" value="">             
+          <label for="accountTel">Số điện thoại: </label>
+          <input type="text" name="accountTel" id="accountTel" value="" placeholder="0969696969">             
+          <label for="accountMail">Email: </label>
+          <input type="text" name="accountMail" id="accountMail" value="" placeholder="hackiemsi@gmail.com">             
+
+          <input type="number" name="accountId" value="" id="accountId" style="display: none;">
+          <div class="save-account-btn">
+            <button type="submit">LƯU</button>
+          </div>
+      </form>
+
+  </div>
 
 <!-- Card products -->
     <!-- <div class="card-products">
