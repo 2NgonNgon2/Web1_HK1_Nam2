@@ -18,8 +18,8 @@ $(document).keydown(function(evt) {
 });
 
 // chặn keypress của user
-function preventKeyPress(event) {
-  event.preventDefault();  
+function preventKeyPress(e) {
+  e.stopImmediatePropagation(); 
   return false;
 }
 

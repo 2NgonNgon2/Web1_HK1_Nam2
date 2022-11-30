@@ -307,7 +307,7 @@ function processOrder(orderId)
         <input type="checkbox" checked class="status" disabled onclick="processOrder(${orderForm[i].idOrderForm})"> 
         `
         console.log("đã xử lý");
-        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " của tài khoản có mã " + orderForm[i].idUser +" đã được xử lí!");
+        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " đã được xử lí!");
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(orderForm);
@@ -786,7 +786,7 @@ function renderProductManage() {
         <div>
           <div class="container-nav-header-right-filter-type">
             <label for="typeProducts">Chọn loại:</label>
-            <select name="typeProducts" id="typeProducts">
+            <select name="typeProducts" id="typeProducts" onchange="filterProductsInAdmin()">
               <option value="all">Tất cả</option>
               <option value="keyboard">Bàn phím</option>
               <option value="mouse">Chuột</option>
