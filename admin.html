@@ -42,27 +42,27 @@
           <div class="exit-add-product-table" onclick="closeAddProductTable()">
             <i class="fa-solid fa-xmark"></i>
           </div>
-            <div class="title">ADD PRODUCT</div>
-            <label for="type">Type: </label>
+            <div class="title">THÊM SẢN PHẨM</div>
+            <label for="type">LOẠI: </label>
             <select name="productType" id="select-type">
-              <option value="keyboard">keyboard</option>
-              <option value="headphone">headphone</option>
-              <option value="mouse">mouse</option>
-              <option value="speaker">speaker</option>
-              <option value="laptop">laptop</option>
+              <option value="keyboard">BÀN PHÍM</option>
+              <option value="headphone">TAI NGHE</option>
+              <option value="mouse">CHUỘT</option>
+              <option value="speaker">LOA</option>
+              <option value="laptop">LAPTOP</option>
             </select>
-            <label for="productName">Name:</label>
-            <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" autofocus>
-            <label for="productDescription">Description:</label>
-            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer">
-            <label for="productImage">Image:</label>  
-            <input type="file" name="productImage" id="productImage" value="" placeholder="link image here">
-            <label for="productPrice">Price</label>
-            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999">  
-            <label for="productQuantity">Số lượng:</label>
-            <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10">  
+            <label for="productName">TÊN SẢN PHẨM:</label>
+            <input type="text" name="productName" id="productName" value="" placeholder="Keyboard haha" required autofocus>
+            <label for="productDescription">MÔ TẢ SẢN PHẨM:</label>
+            <input type="text" name="productDescription" id="productDescription" value="" placeholder="keyboard for gamer" required>
+            <label for="productImage">HÌNH ẢNH:</label>  
+            <input type="file" name="productImage" id="productImage" value="" required>
+            <label for="productPrice">GIÁ</label>
+            <input type="number" name="productPrice" id="productPrice" value="" placeholder="999 999" required>  
+            <label for="productQuantity">SỐ LƯỢNG THÊM:</label>
+            <input type="number" name="productQuantity" id="productQuantity" value="" placeholder="10" required>  
             <div class="save-product-btn">
-              <button type="submit">SAVE</button>
+              <button type="submit">LƯU</button>
             </div>
         </form>
 
@@ -87,10 +87,10 @@
             </select>
             <label for="productName">Tên:</label>
             <input type="text" name="productName" id="productNameEdit" value="" placeholder="Keyboard haha" autofocus>
-            <label for="productDescription">Mô tả:</label>
+            <label for="productDescription">Chi tiết:</label>
             <input type="text" name="productDescription" id="productDescriptionEdit" value="" placeholder="keyboard for gamer">
             <label for="productImage">Link hình:</label>  
-            <input type="file" name="productImage" id="productImageEdit" value="" placeholder="link image here">
+            <input type="file" id="productImageEdit" value="" placeholder="link image here" required>
             <label for="productPrice">Giá</label>
             <input type="number" name="productPrice" id="productPriceEdit" value="" placeholder="999 999">              
             <input type="number" name="productId" value="" id="productId" style="display: none;">

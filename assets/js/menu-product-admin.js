@@ -111,8 +111,8 @@ function addProductToProductArray(event)
   const productImage = document.querySelector("#productImage").files[0].name;
   const productPrice = document.querySelector("#productPrice").value;
   const productQuantity = document.querySelector("#productQuantity").value; 
-  console.log(productImage);
-
+  console.log(productPrice);
+    
   let priceFormated = formatCurrecy(productPrice);
 
   let productAdd = {};
@@ -121,7 +121,7 @@ function addProductToProductArray(event)
   let maxLength = length +  parseInt(productQuantity) ;
   for(let i = length; i < maxLength; i++)
   {
-    // thao tác image
+    
 
     productAdd = {
       id: `${i}`,
@@ -141,11 +141,6 @@ function addProductToProductArray(event)
   location.reload();
 }
 
-function openAddProductTable()
-{
-  console.log("mở bảng thêm sản phẩm!");
-  addProductContainer.style.display = "flex";
-}
 
 function closeAddProductTable(event)
 {
@@ -183,8 +178,7 @@ function openEditProductTable(productId)
   console.log(productNeedEdit);
   productType.value = productNeedEdit.type;
   productName.value = productNeedEdit.name;
-  //productImage.value = productNeedEdit.img;
-  productDescription.value = productNeedEdit.description;
+  productDescription.value = productNeedEdit.detail;
   // đổi lại định dạng cho giá
   let priceTmp = productNeedEdit.price.toString();
   priceTmp = priceTmp.split('.').join('');
@@ -204,7 +198,7 @@ function editProductToProductArray(event)
     {
       pd.type = productType.value ;
       pd.name = productName.value;
-      pd.description = productDescription.value ;
+      pd.detail = productDescription.value ;
       pd.img = `/assets/img/${productImage.files[0].name}`;
       pd.price = formatCurrecy(productPrice.value) ;
       break;
@@ -882,11 +876,11 @@ function showProductTable(arrTmpProducts) {
     <td class="container-content-products-table-item-edit">
       <div class="add-delete-product-button ">
         
-          <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${product[i].id})">
+          <div class="container-content-products-table-item-edit-icon" onclick="openEditProductTable(${arrTmpProducts[i].id})">
             <i class="fa-solid fa-gear"></i>
           </div>
 
-          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(${product[i].id})" >
+          <div class="container-content-products-table-item-edit-delete" onclick="deleteProductFromProductArray(${arrTmpProducts[i].id})" >
             <i class="fa-solid fa-trash"></i>
           </div>
       </div>

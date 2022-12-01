@@ -19,8 +19,8 @@ select {
 .edit-product-container .edit-product-table
 {
   position: absolute;
-  height: 500px;
-  width: 700px;
+  height: 600px;
+  width: 1000px;
   padding: 50px;
   display: grid;
   grid-template-columns: 25% 75%;
@@ -69,7 +69,7 @@ select {
   align-items: center;
 
   text-align: center;
- 
+  font-weight: bold;
 }
 
 .edit-product-container .edit-product-table input,select 
@@ -78,6 +78,7 @@ select {
   border: 1px solid black;
   height: 90%;
   padding-left: 20px ;
+
 }
 
 .edit-product-container .edit-product-table input::placeholder,select::placeholder
@@ -90,6 +91,19 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.edit-product-container .edit-product-table  #productDescriptionEdit
+{
+  grid-column: 2/3;
+  border: 1px solid black;
+  height: 90%;
+  padding-left: 20px ;
+}
+
+.edit-product-container .edit-product-table #productImageEdit
+{
+  padding-top: 20px;
 }
 
 .edit-product-container .edit-product-table .save-product-btn
