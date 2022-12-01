@@ -5,7 +5,7 @@ const deleteProductTable = document.querySelector(".delete-product-container");
 const deleteItemContainer = document.querySelector(".delete-item-container");
 // const contantContainer = document.querySelector(".container-content");
 let containerContentAdmin = document.getElementById("container-content")
-
+let orderDetailContainer = document.getElementById("orderDetailContainer");
 document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
@@ -13,6 +13,93 @@ let tmpProduct = [];    // mảng để chứa các sản phẩm sau khi đã l�
 let item = "";          // dùng để chứa các html product-items
 
 isAdmin = true;
+
+function hideOrderDetails() {
+  orderDetailContainer.style.display ="none";
+}
+
+function showOrderDetails() {
+  orderDetailContainer.style.display ="block";
+}
+
+function stopPropagating(e) {
+  e.stopPropagation();
+}
+function renderDetailsOrder(idCurrentOrderForm) {
+  let orderFormArr = JSON.parse(localStorage.getItem("orderForm"));
+  let tmporderDetailContainer ='';
+  orderDetailContainer.innerHTML='';
+  console.log(orderFormArr);
+  tmporderDetailContainer=`
+  <div id="orderDetailContainer-content" onclick="stopPropagating(event)">
+        <div class="iconClose" onclick="hideOrderDetails()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>`
+  for (let i = 0; i < orderFormArr.length; i++) {
+    if(orderFormArr[i].idOrderForm == idCurrentOrderForm) {
+      tmporderDetailContainer+=`
+      <div class="orderDetailContainer-content-date">Ngày đặt hàng: ${orderFormArr[i].dateOrder}</div>
+        <div class="orderDetailContainer-content-list-products">
+          `
+          for (let j = 0; j < orderFormArr[i].arrProductId.length; j++) {
+            
+            tmporderDetailContainer +=`
+            <div class="orderDetailContainer-content-product">
+            
+              <div class="view-order-container-bottom-product-img">
+                <img src="${orderFormArr[i].arrProductId[j].img}" alt="">
+              </div>
+              <div class="view-order-container-bottom-product-name">
+                <div class="view-order-container-bottom-product-name-title">
+                  ${orderFormArr[i].arrProductId[j].name}
+                </div>
+                <div class="view-order-container-bottom-product-name-label">
+                  ${orderFormArr[i].arrProductId[j].description}
+                </div>
+              </div>
+              <div class="view-order-container-bottom-product-quantity">
+                x<input type="number" value="${orderFormArr[i].arrProductId[j].quantity}" class="view-order-container-bottom-product-quantity-adjust" disabled>
+              </div>
+              <div class="view-order-container-bottom-product-price">
+                <span class="view-order-container-bottom-product-priceNumber">${formatCurrecy(orderFormArr[i].arrProductId[j].price)}</span> 
+                <span class="view-order-container-bottom-product-priceIcon">₫</span>
+              </div>
+
+            </div>`
+          }
+          tmporderDetailContainer +=`
+          </div>
+
+
+        <div class="view-order-container-bottom-product-detail orderDetailContainer-content-total">`
+
+        if(orderFormArr[i].status == true) {
+
+          tmporderDetailContainer +=`
+          <div class="view-order-container-bottom-product-detail-total-title" >Tình trạng : <span style="color:green;">Đã xử lí</span></div>`
+        } else {
+          tmporderDetailContainer +=`
+          <div class="view-order-container-bottom-product-detail-total-title" >Tình trạng : <span style="color:red;">Chưa xử lí</span></div>`
+        
+        }
+
+        tmporderDetailContainer +=`
+          <div class="view-order-container-bottom-product-detail-total">
+            <div class="view-order-container-bottom-product-detail-total-title">Tổng tiền :</div>
+            <div class="view-order-container-bottom-product-detail-total-money">${formatCurrecy(orderFormArr[i].totalPrice)}</div>
+            <div class="view-order-container-bottom-product-detail-total-priceIcon">₫</div>
+          </div>
+        </div>
+      </div>
+      
+      `
+      break;
+    }
+    
+  }
+  orderDetailContainer.innerHTML=tmporderDetailContainer;
+
+}
 
 
 function addProductToProductArray(event)
@@ -220,7 +307,7 @@ function processOrder(orderId)
         <input type="checkbox" checked class="status" disabled onclick="processOrder(${orderForm[i].idOrderForm})"> 
         `
         console.log("đã xử lý");
-        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " của tài khoản có mã " + orderForm[i].idUser +" đã được xử lí!");
+        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " đã được xử lí!");
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(orderForm);
@@ -243,7 +330,9 @@ function filterOrder(event)
   let start = new Date(dateStart.value);
   let end = new Date(dateEnd.value);
   let dateArray = [];
-
+  start.setHours(00,00,00);
+  end.setHours(00,00,00);
+  
   for(let order of orderForm)
   {
     console.log(formatOrderDate(order.dateOrder));
@@ -335,10 +424,10 @@ function renderOrder(orderArray)
     <div class="order-item">
     <div class="order-id">${orderArray[i].idOrderForm}</div>
     <div class="order-userid">${orderArray[i].idUser}</div>
-    <div class="order-product" onclick="">
+    <div class="order-product" onclick="renderDetailsOrder(${orderArray[i].idOrderForm});showOrderDetails()">
     Chi tiết đơn hàng
     </div>
-    <div class="order-date">${getDate()}</div>
+    <div class="order-date">${orderArray[i].dateOrder}</div>
     <div class="total-price">${formatPrice(orderArray[i].totalPrice)} ₫</div>
     
     `
@@ -389,22 +478,6 @@ function openAccountManageTable()
   </div>
   `
   renderAccount(account);
-}
-
-function filterAccount(event)
-{
-  event.preventDefault();
-  const username = document.querySelector("#user-name").value;
-  let accountArrayTmp = [];
-  
-  for(let acc of account)
-  {
-    if(acc.username.match(username) != null) 
-    accountArrayTmp.push(acc); 
-  }
-  console.log(accountArrayTmp); 
-  renderAccount(accountArrayTmp);
-  accountArrayTmp =[];
 }
 
 function lockAccount(accountId)
@@ -554,7 +627,6 @@ function openEditAccountTable(accountId)
     }
   }
   console.log(accountNeedEdit);
-  console.log(accountNeedEdit.username);
   accountName.value = accountNeedEdit.username;
   accountPassword.value = accountNeedEdit.password;
   accountMail.value = accountNeedEdit.email;
@@ -567,30 +639,63 @@ function openEditAccountTable(accountId)
 function editAccountToAccountArray(event)
 {
   event.preventDefault();
-  for(let acc of account)
+  // check dữ liệu
+  if(ValidateEmail(accountMail.value) == true && validatePhone(accountTel.value) == true)
+  // check dữ liệu
   {
-    if(acc.id == idAccount.value)
+    for(let acc of account)
     {
-      acc.username = accountName.value;
-      acc.password = accountPassword.value;
-      acc.email = accountMail.value;
-      acc.phone = accountTel.value;
-      break;
+      if(acc.id == idAccount.value)
+      {
+        acc.username = accountName.value;
+        acc.password = accountPassword.value;
+        acc.email = accountMail.value;
+        acc.phone = accountTel.value;
+        break;
+      }
     }
+    
+    
+    localStorage.removeItem("arr-account");
+    localStorage.setItem("arr-account",JSON.stringify(account));
+    alert("Cập nhật tài khoản thành công!");
+    window.location.reload();
+  }
+  else
+  {
+    alert("Email hoặc số điện thoại không hợp lệ!")
   }
   
-  
-  localStorage.removeItem("arr-account");
-  localStorage.setItem("arr-account",JSON.stringify(account));
-  alert("Cập nhật tài khoản thành công!");
-  window.location.reload();
 }
 
+// check định dạng mail
+function ValidateEmail(mail) 
+{
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@gmail.com/;
+
+  if (mail.match(validRegex)) {
+    return true;
+  }
+  return false;
+
+}
+// check định dạng sdt
+function validatePhone(phoneNumber)
+{
+  let validRegex = /^0+[9,8]+[0-9]{8}/
+  if(phoneNumber.match(validRegex)){
+    return true;
+  } return false;
+}
 function closeEditAccountTable(event)
 {
   console.log("đóng bảng chỉnh sửa tài khoản!");
   editAccountTable.style.display = "none";
 }
+
+
+
+
 
 /* THAO TÁC XÓA TÀI KHOẢN */
 
@@ -629,6 +734,8 @@ function closeEditAccountTable(event)
     
 
   }
+
+  
   
   // hàm định dạng ngày tháng năm
   function padTo2Digits(num) {
@@ -655,15 +762,8 @@ function closeEditAccountTable(event)
   }
   
   function formatCurrecy(currency)
-  {
-    return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
-
-function dangXuatAdmin()
 {
-  localStorage.setItem("isSignedin","false");
-  localStorage.removeItem("adminSignedin");
-  window.location.href = "/index.html";
+    return currency.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
 function preventKeyPressNotNumber(e) {
@@ -686,7 +786,7 @@ function renderProductManage() {
         <div>
           <div class="container-nav-header-right-filter-type">
             <label for="typeProducts">Chọn loại:</label>
-            <select name="typeProducts" id="typeProducts">
+            <select name="typeProducts" id="typeProducts" onchange="filterProductsInAdmin()">
               <option value="all">Tất cả</option>
               <option value="keyboard">Bàn phím</option>
               <option value="mouse">Chuột</option>

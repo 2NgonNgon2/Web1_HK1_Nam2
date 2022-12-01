@@ -19,17 +19,22 @@
 
 }
 .boxfooter1{
-    width: 30%;
+    width: 25%;
     float: left;
     color:aliceblue;
 }
 .boxfooter2{
-    width: 30%;
+    width: 25%;
     float: left;
     color:aliceblue;
 }
 .boxfooter3{
-    width: 30%;
+    width: 25%;
+    float: left;
+    color:aliceblue;
+}
+.boxfooter4{
+    width: 25%;
     float: left;
     color:aliceblue;
 }
@@ -40,6 +45,7 @@
 .mr{
     font-size: 12px;
     margin-top: 10px;
+    margin-right: 20px;
 }
 .mr a:hover{
     color:#FF5252;

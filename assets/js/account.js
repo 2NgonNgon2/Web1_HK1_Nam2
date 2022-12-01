@@ -20,10 +20,11 @@ if (localStorage.getItem("adminSignedin") != null) {
 }
 
 if (localStorage.getItem("userSignIn") != null) {
+    let userNameTmp = JSON.parse(localStorage.getItem("currentUser"));
     document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("userSignIn");
     var dropdown_list = document.querySelector(".dropdown .dropdown-list");
     dropdown_list.innerHTML = `
-            <li class="dropdown-item">
+            <li class="dropdown-item" onclick="openEditAccountTable(${userNameTmp.id})">
                 <span class="dropdown-text">Thông tin cá nhân</span>
             </li>
             <li class="dropdown-item" onclick="showViewOrder()">
@@ -104,6 +105,22 @@ function createAcc(event) {
         var email = document.getElementById("form-Email").value;
         var arr = JSON.parse(localStorage.getItem("arr-account"));
         var found = false;
+        if ( username == ""){
+                alert("Vui lòng nhập tên đăng nhập!");
+                found = true;
+            }
+            else if ( password == "" || password.lenght<6){
+                alert("Vui lòng nhập mật khẩu (ít nhất 6 kí tự)!");
+                found = true;
+            }
+            else if ( phone == "" || phone.length !=10 ){
+                alert("Vui lòng nhập số điện thoại (10 chữ số)!");
+                found = true;
+            }
+            else if ( email == "" || ValidateEmail(email)==false){
+                alert("Vui lòng nhập đúng định dạng email!");
+                found = true;
+            }
         arr.forEach(element => {
             if (element.username === username) {
                 alert("Tên đăng nhập đã tồn tại!");
@@ -130,7 +147,11 @@ function createAcc(event) {
         alert(err);
     }
 }
-
+function ValidateEmail(mail) 
+{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) return (true)
+    return (false)
+}
 
 
 

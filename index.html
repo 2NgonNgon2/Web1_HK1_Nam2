@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./assets/css/slider.css">
   <link rel="stylesheet" href="./assets/css/order-form.css">
   <link rel="stylesheet" href="./assets/css/responsiveAll.css">
+  <link rel="stylesheet" href="./assets/css/account-info-table.css">
   <link rel="stylesheet" href="./assets/css/footer.css">
   <link rel="stylesheet" href="./assets/css/banner.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -37,7 +38,7 @@
         <i class="fa-solid fa-list-ul"></i>
       </div>
       <ul class="navigation" id="navigation">
-          <form action="" id="search_box">
+          <form action="" id="search_box" oninput="searchEngine(event)">
             <input
               type="search"
               id="search_text"
@@ -106,6 +107,32 @@
       </form>
     </div> --> 
   </div>
+
+  <!-- ACCOUNT INFORMATION -->
+  <div class="edit-account-container" onclick="closeEditAccountTable(event)">
+      
+    <form class="edit-account-table" onclick="stopPropagate(event)" onsubmit="editAccountToAccountArray(event)">
+      <div class="exit-edit-account-table" onclick="closeEditAccountTable()">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+        <div class="title">CHỈNH SỬA TÀI KHOẢN</div>
+        <label for="accountName">Tên tài khoản: </label>
+        <input type="text" name="accountName" id="accountName" value="" placeholder="hackiemsi" autofocus>
+        <label for="accountPassword">Mật khẩu: </label>
+        <input type="text" name="accountPassword" id="accountPassword" value="">             
+        <label for="accountTel">Số điện thoại: </label>
+        <input type="text" name="accountTel" id="accountTel" value="" placeholder="0969696969">             
+        <label for="accountMail">Email: </label>
+        <input type="text" name="accountMail" id="accountMail" value="" placeholder="hackiemsi@gmail.com">             
+
+        <input type="number" name="accountId" value="" id="accountId" style="display: none;">
+        <div class="save-account-btn">
+          <button type="submit">LƯU</button>
+        </div>
+    </form>
+
+</div>
+
   <!-- Banner -->
   <section class="banner" id="banner">
     <div class="banner-container">
@@ -472,16 +499,23 @@
           </div>
           <div class="boxfooter2">
             <h3>CHĂM SÓC KHÁCH HÀNG</h3>  
-            <div class="mr"> <a href=""> Hướng dẫn đặt hàng</a></div>
-            <div class="mr"> <a href=""> Chính sách đổi trả</a></div>
-            <div class="mr"> <a href=""> Chính sách bảo hành</a></div>
-            <div class="mr"> <a href=""> Gửi góp ý, khiếu nại</a></div>
+            <div class="mr"> <a> Hướng dẫn đặt hàng</a></div>
+            <div class="mr"> <a> Chính sách đổi trả</a></div>
+            <div class="mr"> <a> Chính sách bảo hành</a></div>
+            <div class="mr"> <a> Gửi góp ý, khiếu nại</a></div>
           </div>
           <div class="boxfooter3">
+            <h3>TỔNG ĐÀI HỖ TRỢ</h3>            
+            <div class="mr"> <a> Gọi mua: 0123.4567 (7:30 - 22:00)</a></div>
+            <div class="mr"> <a> Kỹ thuật: 08765.4321 (7:30 - 22:00)</a></div>
+            <div class="mr"> <a> Khiếu nại: 0147.2580 (8:00 - 21:30)</a></div>
+            <div class="mr"> <a> Bảo hành: 0852.7410 (8:00 - 21:00)</a></div>
+          </div>
+          <div class="boxfooter4">
             <h3>THEO DÕI CHÚNG TÔI </h3>  
-            <div class="mr"> <a href=""> <i class="fa-brands fa-facebook"></i> Facebook </a></div>
-            <div class="mr"> <a href=""> <i class="fa-brands fa-instagram"></i> Instagram </a></div>
-            <div class="mr"> <a href=""> <i class="fa-brands fa-square-youtube"></i> Youtube </a></div>
+            <div class="mr"> <a> <i class="fa-brands fa-facebook"></i> Facebook </a></div>
+            <div class="mr"> <a> <i class="fa-brands fa-instagram"></i> Instagram </a></div>
+            <div class="mr"> <a> <i class="fa-brands fa-square-youtube"></i> Youtube </a></div>
           </div>
         </div>
     </div>

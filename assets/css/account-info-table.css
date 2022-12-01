@@ -36,7 +36,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
 
 .edit-account-container .edit-account-table .exit-edit-account-table:hover

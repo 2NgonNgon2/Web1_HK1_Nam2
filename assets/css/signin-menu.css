@@ -10,7 +10,7 @@
     right: 0;
     bottom: 0;
     background: rgb(87, 84, 84, .4);
-    z-index: 3;
+    z-index: 10005;
     align-items: center;
     justify-content: center;
 }
