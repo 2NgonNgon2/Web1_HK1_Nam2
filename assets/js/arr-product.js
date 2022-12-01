@@ -24,15 +24,15 @@ else {
       name: "Chuột Gaming Yindiao A5",
       description: "Bluetooth/Wireless,pin Sạc E-sports, Led RBG 7 màu - Chính Hãng",
       detail: `
-      - Cổng kết nối: wireless with 2.4G<br>
-      - Khoảng cách sử dụng :Over 10M (No shielding)<br>
-      - Pin : 930 mAh<br>
-      - Sensor: PAN3512<br>
-      - DPI: 800-6400<br>
-      - Thời gian sạc: 3h<br>
-      - Dây 1.8m<br>
-      - Trọng lượng: 100g +/- 10g<br>
-      - Kích thước: 125.5*68.6*39.6mm<br>`,
+      - Cổng kết nối: wireless with 2.4G <
+      - Khoảng cách sử dụng :Over 10M (No shielding) <br>
+      - Pin : 930 mAh <br>
+      - Sensor: PAN3512 <br>
+      - DPI: 800-6400 <br>
+      - Thời gian sạc: 3h <br>
+      - Dây 1.8m <br>
+      - Trọng lượng: 100g +/- 10g <br>
+      - Kích thước: 125.5*68.6*39.6mm <br>`,
       img: "/assets/img/ChuộtGamingYindiaoA5.webp",
       price: "269000",
     },
@@ -101,20 +101,27 @@ else {
     {
       id: "7",
       type: "headphone",
-      name: "tai nghe vjp pro cho dân quẩy",
-      description: "tai nghe hiphop",
-      detail: ``,
-      img: "/assets/img/headphone.png",
-      price: "569000",
+      name: "Tai Nghe Bluetooth Chụp Tai Sony WH-1000XM4 Hi-Res Noise Canceling - Hàng Chính Hãng",
+      description: "Tai nghe hiphop",
+      detail: `
+      Tai nghe Sony WH-1000XM4 chính hãng <br>
+
+      Mới đây, Sony vừa công bố thế hệ thứ 4 của dòng tai nghe chụp đầu chống ồn cao cấp: WH1000XM4. Sony WH-1000XM4 có thiết kế tương tự như người đàn anh của mình, và cũng được trang bị bộ xử lý chống ồn QN1, thứ giúp cho Sony WH-1000XM3 trở thành một trong những tai nghe không dây tốt nhất trong phân khúc chống ồn chủ động.
+      
+      `,
+      img: "/assets/img/tainghe1.jpg",
+      price: "6090000",
     },
     {
       id: "8",
       type: "headphone",
-      name: "tai nghe cho người điếc",
-      description: "tai nghe magaming",
-      detail: ``,
-      img: "/assets/img/headphone.png",
-      price: "569000",
+      name: "Tai nghe không dây Logitech Zone Vibe 100",
+      description: "Tai nghe magaming",
+      detail: `
+      Tai nghe nhẹ, thoáng khí này chỉ nặng 185 gram và đủ thoải mái để đeo cả ngày, với đệm tai bằng mút hoạt tính mềm mại và thiết kế có thể điều chỉnh. <br>
+      Điều chỉnh âm phụ, mức âm lượng mic và EQ để có trải nghiệm âm thanh ưa thích của bạn bằng ứng dụng Logi Tune trên máy tính để bàn hoặc thiết bị di động`,
+      img: "/assets/img/tainghe2.png",
+      price: "2090000",
     },
     {
       id: "9",
@@ -215,19 +222,25 @@ else {
     {
       id: "15",
       type: "headphone",
-      name: "tai nghe vjp pro cho dân quẩy",
-      description: "tai nghe hiphop",
-      detail: ``,
-      img: "/assets/img/headphone.png",
-      price: "569000",
+      name: "Tai Nghe Bluetooth Chụp Tai Lenovo HD200 Gamming 5.1",
+      description: "Tai nghe hiphop",
+      detail: `Tai nghe chụp tai chống ồn ANC Remax RB-800HB âm thanh sống động, siêu nhẹ, khử ồn. Ưu đãi 10% khi đặt hàng tại iCybernet. <br>
+      Tích hợp chống ồn chủ động ANC<br>
+      Chụp tai bọc da PU êm ái, ôm khít tai<br>
+      Âm thanh sống động: bass mạnh mẽ; âm trong trẻo<br>`,
+      img: "/assets/img/tainghe3.jpg",
+      price: "2090000",
     },
     {
       id: "16",
       type: "headphone",
-      name: "tai nghe cho người điếc",
-      description: "tai nghe magaming",
-      detail: ``,
-      img: "/assets/img/headphone.png",
+      name: "Tai nghe bluetooth chụp tai chống ồn chủ động ANC Remax RB-800HB ",
+      description: "Tai nghe magaming",
+      detail: `Tai nghe chụp tai chống ồn ANC Remax RB-800HB âm thanh sống động, siêu nhẹ, khử ồn. Ưu đãi 10% khi đặt hàng tại iCybernet. <br>
+      Tích hợp chống ồn chủ động ANC<br>
+      Chụp tai bọc da PU êm ái, ôm khít tai<br>
+      Âm thanh sống động: bass mạnh mẽ; âm trong trẻo<br>`,
+      img: "/assets/img/tainghe2.png",
       price: "569000",
     },
     {
@@ -331,20 +344,31 @@ else {
     {
       id: "23",
       type: "headphone",
-      name: "tai nghe vjp pro cho dân quẩy",
-      description: "tai nghe hiphop",
-      detail: ``,
+      name: "Tai nghe chụp tai Bluetooth 5.0 K6131 Macaron Hỗ Trợ Thẻ Nhớ, Dây 3.5mm",
+      description: "Tai nghe hiphop",
+      detail: `
+      Tai nghe Bluetooth K6131 được thiết kế nhỏ gọn, màu sắc trẻ trung cá tính thích hợp cho các bạn trẻ cá tính, năng động<br>
+      Phần đệm tai dày và êm ái để bạn có thể nghe nhạc trong thời gian dài mà vẫn cảm thấy dễ chịu. Bên cạnh đó, thiết kế đệm tai còn giúp âm thanh được giữ kín, âm bass thật sâu và trầm, tạo hiệu ứng âm thanh tốt hơn cho bạn
+      `,
       img: "/assets/img/headphone.png",
-      price: "569000",
+      price: "320000",
     },
     {
       id: "24",
       type: "headphone",
-      name: "tai nghe cho người điếc",
-      description: "tai nghe magaming",
-      detail: ``,
-      img: "/assets/img/headphone.png",
-      price: "569000",
+      name: "Tai Nghe Chụp Tai Bluetooth Chống Ồn GS-H3",
+      description: "Tai nghe magaming",
+      detail: `
+      Loại sản phẩm: Tai nghe Bluetooth <br>
+      Phiên bản Bluetooth: V4.2<br>
+      Hỗ trợ chế độ Bluetooth: A2DP 1.2, AVRCP 1.0, HSP, HSF 1.5<br>
+      Tần số: 2.402 đến 2.480GHz, dải ISM 2.4G<br>
+      Hiệu suất RF: nhận độ nhạy cảm: 84dBm, truyền tải điện lên đến 4dBm<br>
+      Phản hồi tần số: 20 Hz đến 20 KHz<br>
+      Tỉ số tín hiệu đến tiếng ồn (SNR): 70Db;<br>
+      `,
+      img: "/assets/img/tainghe2.png",
+      price: "215000",
     },
     {
       id: "25",
@@ -357,7 +381,7 @@ else {
     Hơn thế nữa trên chiếc bàn phím bán cơ bàn tay được thiết kế một tay với phần bố trí vị trí phù hợp cho sự di chuyển linh hoạt ở các ngón tay nên tạo điều kiện thuận tiện cho bạn chơi thoải mái với các game hot nhất thị trường.<br>
     Hơn thế nữa trên chiếc bàn phím bán cơ FREE WOLF K15 còn trang bị thêm LED background giúp làm nổi bật hệ thống bàn phím khi chơi trong điều kiện thiếu ánh sáng và tốt cho đôi mắt của người chơi trong thời gian lâu dài.<br>
     `,
-      img: "/assets/img/keyboard.jpg",
+      img: "/assets/img/622f03e09e1dbaa5b3d96506236f5a84.png.webp",
     },
     {
       id: "26",
@@ -383,13 +407,13 @@ else {
       name: "Bàn Phím Có Dây ROBOT RK20 Bàn Phím Máy Tính Văn Phòng - Hàng Chính Hãng",
       description: "Keyboard for gamer",
       detail: `
-    Loại sản phẩm: Bàn phím có dây văn phòng <br>
-    - Kích thước sản phẩm: 445,1 (L) x166 ((W) x26,5 (H) mm<br>
-    - Trọng lượng sản phẩm: 498g ± 5%<br>
-    - Số phím: 104: phím<br>
-    - Giao diện dây: USB<br>
-    - Chiều dài dây: 1.5M<br>`,
-      img: "/assets/img/keyboard.jpg",
+      Loại sản phẩm: Bàn phím có dây văn phòng <br>
+      - Kích thước sản phẩm: 445,1 (L) x166 ((W) x26,5 (H) mm<br>
+      - Trọng lượng sản phẩm: 498g ± 5%<br>
+      - Số phím: 104: phím<br>
+      - Giao diện dây: USB<br>
+      - Chiều dài dây: 1.5M<br>`,
+      img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
       price: "179000",
     },
     {
@@ -445,20 +469,31 @@ else {
     {
       id: "31",
       type: "headphone",
-      name: "tai nghe vjp pro cho dân quẩy",
-      description: "tai nghe hiphop",
-      detail: ``,
-      img: "/assets/img/headphone.png",
-      price: "569000",
+      name: "Tai nghe chụp tai Bluetooth Gaming Sony INZONE H9 WH-G900N",
+      description: "Tai nghe hiphop",
+      detail: `
+      Sản phẩm chính hãng Sony <br>
+      Thiết kế tinh tế, thời trang<br>
+      Công nghệ không dây tiên tiến<br>
+      Phát hiện mục tiêu chính xác với công nghệ 360 Spatial Sound<br>
+      Tinh chỉnh với phần mềm PC INZONE Hub<br>
+      Âm thanh đối xứng và sống động<br>
+      Vật liệu co giãn với khả năng cách âm và thoải mái<br>
+      Công nghệ cảm biến tiếng ồn kép chống ồn hiệu quả<br>
+      Thời gian sử dụng lên đến 32 giờ<br>
+      Sản phẩm bao gồm: Tai nghe, cáp sạc, sách hướng dẫn,<br>
+      `,
+      img: "/assets/img/tainghe4.jpg",
+      price: "6199000",
     },
     {
       id: "32",
       type: "headphone",
-      name: "tai nghe cho người điếc",
-      description: "tai nghe magaming",
-      detail: ``,
-      img: "/assets/img/headphone.png",
-      price: "569000",
+      name: "Tai Nghe Có Dây Nhét Tai Sennheiser IE 80 S ",
+      description: "Tai nghe magaming",
+      detail: `Tai Nghe Có Dây Nhét Tai Sennheiser IE 80 S - Hàng Chính Hãng ấn tượng với thiết kế thẩm mĩ và và tính năng chuyên nghiệp ở 1 đẳng cấp mới. Tinh tế về mọi góc độ, tai nghe Sennheiser IE 80S có âm thanh trung thực tuyệt vời, độ chi tiết cao và chính xác vượt trội.`,
+      img: "/assets/img/tainghe5.jpg",
+      price: "12990000",
     },
     {
       id: "33",
@@ -480,117 +515,155 @@ else {
     id: '34',
     type: 'Laptop',
     name: "Laptop Gaming GIGABYTE G5 GD-51VN123SO i5-11400H/16GB/512GB/RTX3050/15.6",
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/08/image-removebg-preview-24.png',
+    description: 'Laptop Gaming',
+    detail: `
+    Tốc độ CPU: Intel Core i3-1125G4 (4C / 8T, 2.0 / 3.7GHz, 8MB) <br>
+
+    Dung lượng ổ cứng: 256GB PCIe NVMe M.2 SSD<br>
+
+    Bộ nhớ RAM: 4GB DDR4<br>
+
+    pin : 3 Cell<br>
+
+    Màn hình: 14" FHD<br>
+
+    Card màn hình: Intel UHD Graphics<br>
+
+    Hệ điều hành: Windows 11 Home<br>
+
+    Tính năng khác: Wireless, Bluetooth, Webcam, HDMI<br>
+    `,
+    img: '/assets/img/laptop1.png',
     price: '18490000'
   },
   {
     id: '35',
     type: 'Laptop',
     name: 'Laptop HP Envy 16-h0033TX 6K7F9PA-i9-12900H/16GB/512GB/RTX3060/16.0120Hz',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/10/image-removebg-preview-3.png',
+    description: 'Laptop Gaming',
+    detail: `
+    RAM chuẩn DDR4 2 khe với tốc độ Bus RAM lên đến 3200 MHz cho khả năng đa nhiệm mượt mà nhiều tác vụ cùng lúc, vừa học tập, làm việc trên phần mềm Office 365 vừa lướt web và nghe nhạc giải trí mà không lo giật lag máy.<br>
+    Dung lượng SSD M2 NVMe PCIe cung cấp không gian lưu trữ đáp ứng tốt cho nhu cầu của bạn, đồng thời tăng tốc độ khởi động máy, truy xuất dữ liệu nhanh hơn, giảm thời gian phản hồi.`,
+    img: '/assets/img/laptop2.png',
     price: '56890000'
   },
   {
-    id: '36',
-    type: 'Laptop',
-    name: 'Laptop Gaming MSI Katana GF66 12UCK-699VN (i5-12450H/8GB/512GB/RTX3050',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/27/laptop-gaming-msi-katana-gf66-12uc-699vn-removebg-preview.png',
-    price: '22790000'
+    id: "36",
+    type: "headphone",
+    name: "Tai nghe chụp tai bluetooth chống ồn GS-H3 cao cấp",
+    description: "Tai nghe hiphop",
+    detail: `
+    Tai nghe Sony WH-1000XM4 chính hãng <br>
+    Mới đây, Sony vừa công bố thế hệ thứ 4 của dòng tai nghe chụp đầu chống ồn cao cấp: WH1000XM4. Sony WH-1000XM4 có thiết kế tương tự như người đàn anh của mình, và cũng được trang bị bộ xử lý chống ồn QN1, thứ giúp cho Sony WH-1000XM3 trở thành một trong những tai nghe không dây tốt nhất trong phân khúc chống ồn chủ động.
+    `,
+    img: "/assets/img/tainghe1.jpg",
+    price: "239000",
   },
   {
     id: '37',
     type: 'Laptop',
     name: 'Laptop HP Envy 16-h0034TX 6K7G0PA-i7-12700H/16GB/512GB/RTX 3060 6GB/16 Inch',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/22/image-removebg-preview-28.png',
+    description: 'Laptop văn phòng',
+    detail: `Tấm nền IPS mang đến góc nhìn rộng mở lên đến 178 độ, đảm bảo chất lượng hình ảnh luôn được giữ nguyên hình dạng ban đầu, không bị bóp méo dù nhìn từ hướng nghiêng, đồng thời cho tác dụng chống lóa, chống bóng gương, bảo vệ mắt khi sử dụng ở nơi ánh sáng cao nhờ công nghệ chống chói Anti Glare.`,
+    img: '/assets/img/laptop3.png',    
     price: '47890000'
   },
   {
     id: '38',
     type: 'Laptop',
     name: 'Laptop Lenovo Legion 5 15ACH6 - 82JW00JPVN- R5 5600H/8GB/256GB/GTX1650',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/27/image-removebg-preview-20.png',
+    description: 'Laptop văn phòng',
+    detail: `Được thiết kế dành cho doanh nghiệp, khiến đây là lựa chọn thông minh cho các startup tham vọng, những tổ chức giáo dục uy tín và các công ty đang phát triển ở mọi quy mô. Sản phẩm tự hào với hiệu suất cao, độ bền đạt chuẩn quân đội và các tùy chọn mở rộng giúp tăng cường trang bị cho doanh nghiệp bạn. Ngoài ra, sản phẩm này còn có thể tự tin xử lý mọi tác vụ công việc với đầy đủ các cổng I/O, WiFi 6 tốc độ cao và công nghệ khử tiếng ồn AI. ExpertBook B1400 rút gọn quy trình làm việc giúp bạn luôn duy trì năng suất.`,
+    img: '/assets/img/laptop5.png',    
     price: '20490000'
   },
   {
-    id: '39',
-    type: 'Laptop',
-    name: 'Laptop Gaming Lenovo Legion 5 15ARH7 - 82RE002VVN - R5 6600H/8GB/512GB',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/28/image-removebg-preview-4_637946022325170031.png',
-    price: '28790000'
+    id: "39",
+    type: "headphone",
+    name: "Tai nghe Blutooth Mèo Cao Cấp headphone Hoco W27",
+    description: "Tai nghe hiphop",
+    detail: `Tai nghe chụp tai chống ồn ANC Remax RB-800HB âm thanh sống động, siêu nhẹ, khử ồn. Ưu đãi 10% khi đặt hàng tại iCybernet. <br>
+    Tích hợp chống ồn chủ động ANC<br>
+    Chụp tai bọc da PU êm ái, ôm khít tai<br>
+    Âm thanh sống động: bass mạnh mẽ; âm trong trẻo<br>`,
+    img: "/assets/img/tainghe3.jpg",
+    price: "1220000",
   },
   {
     id: '40',
     type: 'Laptop',
     name: 'Laptop Gaming Lenovo Legion 5 15ARH7- 82RE0035VN- R7 6800H/8GB/512GB',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/28/image-removebg-preview-4_637946022325170031.png',
+    description: 'Laptop sexy',
+    detail: `Là phiên bản nâng cấp của T440s với thiết kế vẫn rất sexy, mỏng nhẹ, hoàn thiện cao cấp, bền bỉ và cấu hình được nâng cấp. Điểm nhấn của T450s là chất liệu chế tạo bằng carbon và magnesium, nhẹ nhưng rất chắc chắn, màn hình có độ tương phản cao và bàn phím cho cảm giác gõ rất tốt.`,
+    img: '/assets/img/laptop2.png',    
     price: '29490000'
   },
   {
     id: '41',
     type: 'Laptop',
     name: 'Laptop ASUS TUF Gaming A15 FA507RC-HN051W,R7-6800H/8GB/512GB/15.6FHD144Hz/',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/05/image-removebg-preview-26.png',
+    description: 'Laptop hiphop',
+    detail: 'được thiết kế đơn giản, sang trọng với  vỏ ngoài được phủ sơn màu đen và các cạnh bên được vát mỏng, các đường nét góc cạnh được bo tròn gọn gàng, mặt lưng trơn in nổi logo Dell. Ngoài tính thẩm mĩ, Dell cũng đảm bảo độ bền bỉ, chắc chắn và tính di động để có thể đồng hành với bạn trong mọi hành trình lâu dài. Khung máy chắc chắn, bền bỉ giúp bảo vệ linh kiện tối đa trước tác động bên ngoài.',
+    img: '/assets/img/laptop4.png',    
     price: '22990000'
   },
   {
     id: '42',
     type: 'Laptop',
     name: 'Laptop Gaming Acer Nitro 5 Eagle AN515-57-54MV (i5-11400H/8GB/512GB PCIE)',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/16/image-removebg-preview-2022-09-16t144349-595.png',
+    description: 'Laptop gaming',
+    detail: `Laptop HP 14s-cf2527TU 4K4A1PA mang tới cho người dùng một hiệu năng ổn định nhờ được trang bị dòng CPU Core i thế hệ 10 giúp chạy mượt mà các ứng dụng office hoặc lướt web nhanh chóng, cho trải nghiệm xem phim, nghe nhạc tốt…<br>
+
+    Máy có nhiều tùy chọn RAM khác nhau và có khả năng nâng cấp dễ dàng giúp đa nhiệm mượt mà. Bên cạnh đó ổ cứng SSD đáp ứng đủ các nhu cầu lưu trữ tài liệu đồng thời đảm bảo tốc độ khởi động và truy xuất dữ liệu mà không hệ giật, lag hay là đứng màn hình.<br>`,
+    img: '/assets/img/laptop1.png',    
     price: '21690000'
   },
   {
-    id: '43',
-    type: 'Laptop',
-    name: 'Laptop Gaming Acer Aspire 7 A715-42G-R05G (R5-5500U/8GB/512GB PCIE)',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/10/14/image-removebg-preview-39.png',
-    price: '16490000'
+    id: "43",
+    type: "headphone",
+    name: "Tai nghe bluetooth chụp tai dáng đẹp nghe hay CDHPBT01",
+    description: "Tai nghe magaming",
+    detail: `- Thiết kế nổi bật, phong cách và sang trọng, tai nghe chụp tai Bluetooth gây ấn tượng với lớp vỏ ngoài độc đáo và thời trang. Tai nghe được phủ một lớp màu matte khiến cho các đường nét càng trở nên sắc sảo, cá tính. <br>
+    - Cũng như hầu hết các loại tai nghe hiện nay, tai nghe chụp tai Bluetooth P47 cũng bao gồm các nút tùy chỉnh phố biến như: Nút nguồn, nút chỉnh âm lượng, nút chuyển bài hát và nhận cuộc gọi (khi có kết nối Bluetooth với điện thoại). Nhờ vậy bạn có thể sử dụng tai nghe một cách thoải mái với giao diện thân thiện.  <br>
+    - Tai nghe kết nối không dây với các thiết bị Bluetooth, nghe đài FM với âm thanh radio high-quality stereo. - Sạc thông qua USB, pin sạc, thuận tiện và thiết thực.  <br>
+    - Thời gian Playing lên đến 6 giờ, và tiếp tục thời gian thoại lên đến 5-6 giờ, thời gian chờ lên đến 150 giờ.`,
+    img: "/assets/img/tainghe5.jpg",
+    price: "99000",
   },
   {
     id: '44',
     type: 'Laptop',
     name: 'Laptop ASUS TUF Gaming FX506HM-HN366W, i7-11800H/8GB/512GB/RTX3060/15.6FHD1',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/09/05/image-removebg-preview-34.png',
+    description: 'Laptop cho văn phòng',
+    detail: 'Laptop HP 14S-CF2527TU 4K4A1PA được thiết kế khá mềm mại và tinh tế nhờ các đường bo viền. Lớp vỏ nhựa màu sắc trang nhã, trọng lượng nhẹ, độ mỏng tối ưu sẽ mang tới khả năng di động vô cùng ấn tượng.',
+    img: '/assets/img/laptop3.png',    
     price: '27890000'
   },
   {
     id: '45',
     type: 'Laptop',
     name: 'Macbook Pro M2 13" 2022 - 256GB - Chính hãng Apple Việt Nam ',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/07/macbook-pro-m2-silver-3.png',
+    description: 'Laptop văn phòng',
+    detail: `
+    Chip Apple M1 mang đến một bước đột phá về hiệu năng máy học, CPU và GPU <br>
+    CPU 8 lõi cho hiệu năng nhanh hơn đến 3.5x, xử lý công việc nhanh chóng hơn bao giờ hết(2)<br>
+    GPU lên đến 8 lõi cho hiệu năng nhanh hơn đến 5x cho các ứng dụng đòi hỏi cao về đồ hoạ(2)<br>
+    `,
+    img: '/assets/img/laptop3.png',    
     price: '30490000'
   },
   {
     id: '46',
     type: 'Laptop',
     name: 'Macbook Pro M2 13" 2022 - 16GB/256GB - Chính hãng Apple Việt Nam',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/07/macbook-pro-m2-silver-3.png',
+    description: 'Macbook cho dân quẩy',
+    detail: `
+    Neural Engine 16 lõi cho công nghệ máy học hiện đại <br>
+    Tăng thời gian sử dụng với thời lượng pin lên đến 18 giờ(1)<br>
+    Bộ nhớ thống nhất 8GB hoặc 16GB giúp bạn làm việc gì cũng nhanh chóng và trôi chảy<br>
+    Màn hình Retina 13.3 inch với dải màu rộng P3 cho hình ảnh sống động và chi tiết ấn tượng(3)<br>
+    `,
+    img: '/assets/img/laptop5.png',    
     price: '36990000'
   },
   {
@@ -598,62 +671,80 @@ else {
     type: 'Laptop',
     name: 'Laptop Gaming Asus Rog Strix G15 G513RC HN038W - R7-6800H/8GB/512GB',
     description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/10/image-removebg-preview-3_637957422088528878.png',
+    detail: `
+    Cho phép bạn kết nối, chia sẻ và sáng tạo hơn bao giờ hết, sử dụng các Phím Tắt để làm bài nhanh hơn và chọn chế độ Tập Trung để tránh bị sao nhãng <br>
+    Ổ lưu trữ SSD siêu nhanh giúp mở các ứng dụng và tập tin chỉ trong tích tắc<br>
+    Thiết kế không quạt giảm tối đa tiếng ồn khi sử dụng<br>
+    Camera FaceTime HD với bộ xử lý tín hiệu hình ảnh tiên tiến cho các cuộc gọi video đẹp hình, rõ tiếng hơn<br>
+    `,
+    img: '/assets/img/laptop2.png',    
     price: '24490000'
   },
   {
-    id: '48',
-    type: 'Laptop',
-    name: 'Laptop HP Gaming VICTUS 16 - d0198TX - 4R0U0PA -i7-11800H/8GB RAM/512GB SSD',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/11/11/laptop-hp-gaming-victus-16-d0197tx-2.png',
-    price: '26890000'
+    id: "48",
+    type: "headphone",
+    name: "Tai Nghe Chụp Tai Bluetooth Chống Ồn GS-H3",
+    description: "Tai nghe magaming",
+    detail: `
+    Loại sản phẩm: Tai nghe Bluetooth <br>
+    Phiên bản Bluetooth: V4.2<br>
+    Hỗ trợ chế độ Bluetooth: A2DP 1.2, AVRCP 1.0, HSP, HSF 1.5<br>
+    Tần số: 2.402 đến 2.480GHz, dải ISM 2.4G<br>
+    Hiệu suất RF: nhận độ nhạy cảm: 84dBm, truyền tải điện lên đến 4dBm<br>
+    Phản hồi tần số: 20 Hz đến 20 KHz<br>
+    Tỉ số tín hiệu đến tiếng ồn (SNR): 70Db;<br>
+    `,
+    img: "/assets/img/tainghe2.png",
+    price: "515000",
   },
   {
     id: '49',
     type: 'Laptop',
     name: 'Laptop HP Gaming VICTUS 16 - e0168AX - 4R0U6PA  (R7-5800H/8GD4/512GB SSD',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2021/11/11/laptop-hp-gaming-victus-16-d0197tx-2.png',
+    description: 'Laptop văn phòng',
+    detail: 'Xuất hiện liên tục với các laptop siêu mỏng nhẹ với chứng chỉ Evo của Intel, Tiger Lake 11 sử dụng tiến trình mới với SuperFin 10nm. Với nâng cấp này thì các máy thuộc dòng Dell Latitude nói chung và 3520 nói riêng sẽ mang lại tốc độ xung nhịp cao hơn, hiệu suất tăng 20% so với chính thế hệ tiền nhiệm (Ice Lake) cùng khả năng hỗ trợ đồ họa tăng gấp đôi so với Iris Xe.',
+    img: '/assets/img/laptop5.png',    
     price: '21890000'
   },
   {
     id: '50',
     type: 'Laptop',
     name: 'Laptop HP VICTUS 16-d0294TX- 5Z9R5PA - i5-11400H/8GB/512GB/ RTX 3050Ti 4GB',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/08/01/image-removebg-preview.png',
+    description: 'Laptop văn phòng',
+    detail: `
+    Máy sở hữu màn hình 11,6 inch với độ phân giải HD mang lại khả năng hiển thị sắc nét và trung thực. Màn hình này được thiết kế với viền siêu mỏng ở hai cạnh bên giúp góc nhìn được mở rộng hơn.<br>
+    Chiếc laptop được thiết kế bàn phím rộng rãi với hành trình phím nông, độ đàn hồi cao cho cảm giác gõ vô cùng thoải mái. Touchpad được thiết kế khá rộng với bề mặt phủ nhám mịn, dễ di chuyển.<br>
+    `,
+    img: '/assets/img/laptop3.png',    
     price: '18990000'
   },
   {
     id: '51',
     type: 'Laptop',
     name: 'Laptop Acer Gaming Aspire 7 A715-43G-R8GA (R5-5625U/8GB/512GB/15.6FHD144HZ',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/10/18/image-removebg-preview-52_638017091789031630.png',
+    description: 'Laptop Gaming',
+    detail: 'Laptop Acer TravelMate B3 TMB311-31-C2HB cho hiệu năng hoạt động ổn định với con chip Intel Celeron C-N4020 cùng dung lượng RAM 4GB. Với cấu hình này, máy có thể hoạt động tốt ở các tác vụ văn phòng như word, excel point power, hay chỉnh thao tác sửa hình ảnh đơn giản với Photoshop.',
+    img: '/assets/img/laptop4.png',    
     price: '19390000'
   },
   {
-    id: '52',
-    type: 'Laptop',
-    name: 'Laptop ASUS TUF Gaming Dash F15 FX517ZE-HN045W (i5-12450H/8GB/512GB/3050Ti)',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/07/05/gaming-tuf-dash-f15-fx517ze-hn045w-1.png',
-    price: '24190000'
+    id: "52",
+    type: "headphone",
+    name: "Tai nghe bluetooth chụp tai pangpai p800 / P88 version 4.2",
+    description: "Tai nghe magaming",
+    detail: `
+    Tai nghe nhẹ, thoáng khí này chỉ nặng 185 gram và đủ thoải mái để đeo cả ngày, với đệm tai bằng mút hoạt tính mềm mại và thiết kế có thể điều chỉnh. <br>
+    Điều chỉnh âm phụ, mức âm lượng mic và EQ để có trải nghiệm âm thanh ưa thích của bạn bằng ứng dụng Logi Tune trên máy tính để bàn hoặc thiết bị di động`,
+    img: "/assets/img/tainghe2.png",
+    price: "159000",
   },
   {
     id: '53',
     type: 'Laptop',
     name: 'Laptop MSi Gaming GF63 11UC 443VN - Chính hãng - I5-11400H/8GB/512GB PCIE',
-    description: 'none',
-    detail: 'none',
-    img: 'https://cdn.hoanghamobile.com/i/productlist/ts/Uploads/2022/06/18/msi-gaming-gf63-12.png',
+    description: 'Laptop gaming',
+    detail: 'Bộ vi xử lý CPU Intel Core i5-1135G7 (upto 4.20 GHz, 8MB) cung cấp nhiều lợi ích đa phương tiện để bạn giải trí và làm việc cả ngày. Cùng với bộ nhớ DDR4 có dung lượng 8GB, bạn có thể dễ dàng thực hiện đa nhiệm và chuyển đổi giữa các ứng dụng đang mở. Ổ cứng SSD 512GB SSD PCIe NVMe cung cấp hiệu suất nhanh hơn và yên tĩnh hơn. Ngoài ra, bằng việc trang bị card đồ họa  Intel Iris Xe Graphics giúp bạn dễ dàng thực hiện các công việc đồ họa hoặc chơi các tựa game yêu thích.',
+    img: '/assets/img/laptop1.png',    
     price: '21790000'
   },
 {
@@ -806,7 +897,7 @@ else {
     - Kích thước nhỏ gọn, kết nối đơn giản  
     `,
     img: '/assets/img/Microlab B56 (2.0).webp',
-    price: '310000đ'
+    price: '310000'
   },
   {
     id: '65',
@@ -821,7 +912,7 @@ else {
  
     `,
     img: '/assets/img/Loa bluetooth 2.1 Microlab M106BT.webp',
-    price: '600000đ'
+    price: '600000'
   },
   {
     id: '66',
@@ -845,7 +936,7 @@ else {
     - Lưu ý:  Cổng USB </br>
     `, 
     img: '/assets/img/chuot-khong-day-gaming-dareu-em901x-pink-01.jpg',
-    price: '715000đ'
+    price: '715000'
   },
   {
     id: '67',
@@ -866,7 +957,7 @@ else {
       - Trọng lượng: 88g<br>
     `, 
     img: '/assets/img/chuot-khong-day-gaming-dareu-a950-triple-mode-sieu-nhe-01-768x768.jpg',
-    price: '969000đ'
+    price: '969000'
   },
   {
     id: '68',
@@ -887,7 +978,7 @@ else {
       - Kích thước: 59*107*38mm<br>
     `, 
     img: '/assets/img/chuot-khong-day-lm115h-white-01-768x768.png',
-    price: '125000đ'
+    price: '125000'
   },
   {
     id: '69',
@@ -908,7 +999,7 @@ else {
       - Kích thước: 59*107*38mm<br>
     `, 
     img: '/assets/img/chuot-khong-day-dareu-lm115g-monkey-01-768x768.jpg',
-    price: '249000đ'
+    price: '249000'
   },
   {
     id: '70',
@@ -928,7 +1019,7 @@ else {
       - Kích thước: 118*61*38.4mm<br>
     `, 
     img: '/assets/img/chuot-dareu-led-rgb-lm130s-01-768x768.png',
-    price: '119000đ'
+    price: '119000'
   },
   {
     id: '71',
@@ -947,7 +1038,7 @@ else {
       - Kích thước: 107.5*59.15*38.29mm<br>
     `, 
     img: '/assets/img/chuot-khong-day-dareu-lm118b-black-01-768x768.jpg',
-    price: '249000đ'
+    price: '249000'
   },
   {
     id: '72',
@@ -966,7 +1057,7 @@ else {
       - Kích thước: 125.5*68.6*39.6mm<br>
     `, 
     img: '/assets/img/chuot-khong-day-gaming-dareu-em905-pink-01-768x768.jpg',
-    price: '649000đ'
+    price: '649000'
   },
 
   {
@@ -986,7 +1077,7 @@ else {
       - Kích thước: 125.5*68.6*39.6mm<br>
     `, 
     img: '/assets/img/chuot-khong-day-dareu-lm115g-cat-01-768x768.jpg',
-    price: '249000đ'
+    price: '249000'
   },
 
   {
@@ -1006,7 +1097,7 @@ else {
       - Kích thước: 40*122*67mm<br>
     `, 
     img: '/assets/img/13552-768x768.png',
-    price: '299000đ'
+    price: '299000'
   },
   {
     id: '75',
@@ -1025,7 +1116,67 @@ else {
       - Kích thước: 59*107*38mm<br>
     `, 
     img: '/assets/img/chuot-khong-day-dareu-lm115g-lion-01-768x768.jpg',
-    price: '249000đ'
+    price: '249000'
+  },
+  {
+    id: "76",
+    type: "keyboard",
+    name: "Bàn Phím Có Dây ROBOT RK20 Bàn Phím Máy Tính Văn Phòng - Hàng Chính Hãng",
+    description: "Keyboard for gamer",
+    detail: `
+    Loại sản phẩm: Bàn phím có dây văn phòng <br>
+    - Kích thước sản phẩm: 445,1 (L) x166 ((W) x26,5 (H) mm<br>
+    - Trọng lượng sản phẩm: 498g ± 5%<br>
+    - Số phím: 104: phím<br>
+    - Giao diện dây: USB<br>
+    - Chiều dài dây: 1.5M<br>`,
+    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    price: "179000",
+  },
+  {
+    id: "77",
+    type: "keyboard",
+    name: "Bàn Phím Có Dây ROBOT RK20 Bàn Phím Máy Tính Văn Phòng - Hàng Chính Hãng",
+    description: "Keyboard for gamer",
+    detail: `
+    Loại sản phẩm: Bàn phím có dây văn phòng <br>
+    - Kích thước sản phẩm: 445,1 (L) x166 ((W) x26,5 (H) mm<br>
+    - Trọng lượng sản phẩm: 498g ± 5%<br>
+    - Số phím: 104: phím<br>
+    - Giao diện dây: USB<br>
+    - Chiều dài dây: 1.5M<br>`,
+    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    price: "179000",
+  },
+  {
+    id: "78",
+    type: "keyboard",
+    name: "Bàn Phím Có Dây ROBOT RK20 Bàn Phím Máy Tính Văn Phòng - Hàng Chính Hãng",
+    description: "Keyboard for gamer",
+    detail: `
+    Loại sản phẩm: Bàn phím có dây văn phòng <br>
+    - Kích thước sản phẩm: 445,1 (L) x166 ((W) x26,5 (H) mm<br>
+    - Trọng lượng sản phẩm: 498g ± 5%<br>
+    - Số phím: 104: phím<br>
+    - Giao diện dây: USB<br>
+    - Chiều dài dây: 1.5M<br>`,
+    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    price: "179000",
+  },
+  {
+    id: "79",
+    type: "keyboard",
+    name: "Bàn Phím Có Dây ROBOT RK20 Bàn Phím Máy Tính Văn Phòng - Hàng Chính Hãng",
+    description: "Keyboard for gamer",
+    detail: `
+    Loại sản phẩm: Bàn phím có dây văn phòng <br>
+    - Kích thước sản phẩm: 445,1 (L) x166 ((W) x26,5 (H) mm<br>
+    - Trọng lượng sản phẩm: 498g ± 5%<br>
+    - Số phím: 104: phím<br>
+    - Giao diện dây: USB<br>
+    - Chiều dài dây: 1.5M<br>`,
+    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    price: "179000",
   },
   ];
   localStorage.setItem("product", JSON.stringify(product));
