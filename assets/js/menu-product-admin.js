@@ -5,7 +5,7 @@ const deleteProductTable = document.querySelector(".delete-product-container");
 const deleteItemContainer = document.querySelector(".delete-item-container");
 // const contantContainer = document.querySelector(".container-content");
 let containerContentAdmin = document.getElementById("container-content")
-
+let orderDetailContainer = document.getElementById("orderDetailContainer");
 document.querySelector("span.dropdown-select").innerHTML = localStorage.getItem("adminSignedin");
 
 let lastPageIs = 0;     // check xem trang cuối của sản phẩm là trang bao nhiêu
@@ -14,11 +14,93 @@ let item = "";          // dùng để chứa các html product-items
 
 isAdmin = true;
 
-function openAddProductTable()
-{
-  console.log("mở bảng thêm sản phẩm!");
-  addProductContainer.style.display = "flex";
+function hideOrderDetails() {
+  orderDetailContainer.style.display ="none";
 }
+
+function showOrderDetails() {
+  orderDetailContainer.style.display ="block";
+}
+
+function stopPropagating(e) {
+  e.stopPropagation();
+}
+function renderDetailsOrder(idCurrentOrderForm) {
+  let orderFormArr = JSON.parse(localStorage.getItem("orderForm"));
+  let tmporderDetailContainer ='';
+  orderDetailContainer.innerHTML='';
+  console.log(orderFormArr);
+  tmporderDetailContainer=`
+  <div id="orderDetailContainer-content" onclick="stopPropagating(event)">
+        <div class="iconClose" onclick="hideOrderDetails()">
+          <i class="fa-solid fa-xmark"></i>
+        </div>`
+  for (let i = 0; i < orderFormArr.length; i++) {
+    if(orderFormArr[i].idOrderForm == idCurrentOrderForm) {
+      tmporderDetailContainer+=`
+      <div class="orderDetailContainer-content-date">Ngày đặt hàng: ${orderFormArr[i].dateOrder}</div>
+        <div class="orderDetailContainer-content-list-products">
+          `
+          for (let j = 0; j < orderFormArr[i].arrProductId.length; j++) {
+            
+            tmporderDetailContainer +=`
+            <div class="orderDetailContainer-content-product">
+            
+              <div class="view-order-container-bottom-product-img">
+                <img src="${orderFormArr[i].arrProductId[j].img}" alt="">
+              </div>
+              <div class="view-order-container-bottom-product-name">
+                <div class="view-order-container-bottom-product-name-title">
+                  ${orderFormArr[i].arrProductId[j].name}
+                </div>
+                <div class="view-order-container-bottom-product-name-label">
+                  ${orderFormArr[i].arrProductId[j].description}
+                </div>
+              </div>
+              <div class="view-order-container-bottom-product-quantity">
+                x<input type="number" value="${orderFormArr[i].arrProductId[j].quantity}" class="view-order-container-bottom-product-quantity-adjust" disabled>
+              </div>
+              <div class="view-order-container-bottom-product-price">
+                <span class="view-order-container-bottom-product-priceNumber">${formatCurrecy(orderFormArr[i].arrProductId[j].price)}</span> 
+                <span class="view-order-container-bottom-product-priceIcon">₫</span>
+              </div>
+
+            </div>`
+          }
+          tmporderDetailContainer +=`
+          </div>
+
+
+        <div class="view-order-container-bottom-product-detail orderDetailContainer-content-total">`
+
+        if(orderFormArr[i].status == true) {
+
+          tmporderDetailContainer +=`
+          <div class="view-order-container-bottom-product-detail-total-title" >Tình trạng : <span style="color:green;">Đã xử lí</span></div>`
+        } else {
+          tmporderDetailContainer +=`
+          <div class="view-order-container-bottom-product-detail-total-title" >Tình trạng : <span style="color:red;">Chưa xử lí</span></div>`
+        
+        }
+
+        tmporderDetailContainer +=`
+          <div class="view-order-container-bottom-product-detail-total">
+            <div class="view-order-container-bottom-product-detail-total-title">Tổng tiền :</div>
+            <div class="view-order-container-bottom-product-detail-total-money">${formatCurrecy(orderFormArr[i].totalPrice)}</div>
+            <div class="view-order-container-bottom-product-detail-total-priceIcon">₫</div>
+          </div>
+        </div>
+      </div>
+      
+      `
+      break;
+    }
+    
+  }
+  orderDetailContainer.innerHTML=tmporderDetailContainer;
+
+}
+
 
 function addProductToProductArray(event)
 {
@@ -219,6 +301,7 @@ function processOrder(orderId)
         <input type="checkbox" checked class="status" disabled onclick="processOrder(${orderForm[i].idOrderForm})"> 
         `
         console.log("đã xử lý");
+        alert("Đơn hàng có mã " + orderForm[i].idOrderForm + " đã được xử lí!");
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(orderForm);
@@ -335,10 +418,10 @@ function renderOrder(orderArray)
     <div class="order-item">
     <div class="order-id">${orderArray[i].idOrderForm}</div>
     <div class="order-userid">${orderArray[i].idUser}</div>
-    <div class="order-product">
-    ${productName}
+    <div class="order-product" onclick="renderDetailsOrder(${orderArray[i].idOrderForm});showOrderDetails()">
+    Chi tiết đơn hàng
     </div>
-    <div class="order-date">${getDate()}</div>
+    <div class="order-date">${orderArray[i].dateOrder}</div>
     <div class="total-price">${formatPrice(orderArray[i].totalPrice)} ₫</div>
     
     `
@@ -411,6 +494,7 @@ function lockAccount(accountId)
         Chưa khóa
         <input type="checkbox" class="status" onclick="lockAccount(${account[i].id})"> 
        `
+       alert("Bạn đã mở khóa tài khoản " + account[i].username);
       }
       else
       {
@@ -422,7 +506,7 @@ function lockAccount(accountId)
         <input type="checkbox" checked class="status" onclick="lockAccount(${account[i].id})"> 
        
         `
-
+        alert("Bạn đã khóa tài khoản " + account[i].username);
       }
       // cập nhật lại trạng thái trong mảng đơn hàng
       console.log(account);
@@ -661,15 +745,19 @@ function closeEditAccountTable(event)
     ].join('/');
   }
   
-  function dangXuatAdmin() {
-    localStorage.setItem("isSignedin", "false");
-    localStorage.removeItem("adminSignedin");
-    window.location.href = "/index.html";
-}
+  
 
-  function formatCurrecy(currency)
+  function dangXuatAdmin()
   {
-    return currency.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    localStorage.setItem("isSignedin","false");
+    localStorage.removeItem("adminSignedin");
+    localStorage.removeItem("textSpan");
+    window.location.href = "/index.html";
+  }
+  
+  function formatCurrecy(currency)
+{
+    return currency.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
 function preventKeyPressNotNumber(e) {
@@ -692,7 +780,7 @@ function renderProductManage() {
         <div>
           <div class="container-nav-header-right-filter-type">
             <label for="typeProducts">Chọn loại:</label>
-            <select name="typeProducts" id="typeProducts">
+            <select name="typeProducts" id="typeProducts" onchange="filterProductsInAdmin()">
               <option value="all">Tất cả</option>
               <option value="keyboard">Bàn phím</option>
               <option value="mouse">Chuột</option>
@@ -704,9 +792,9 @@ function renderProductManage() {
           <div class="container-nav-header-right-filter-price">
             <span>Giá : </span>
             <span>Từ</span>
-            <input type="number" value="0" placeholder="000.000" id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
+            <input type="number" value="0" min="1" placeholder="000.000"  id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫   đến  </span>
-            <input type="number" value="99999999" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
+            <input type="number" value="99999999" max="1000000000" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫ </span>
           </div>
           <button class="btnFilterProduct" onclick="filterProductsInAdmin()">Lọc</button>
@@ -831,6 +919,10 @@ function searchEngineAdmin(event)
       if(product[i].name.toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(product[i]);
+      } 
+      else if(product[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(product[i]);
       }
     }
     showProductTable(tmpProduct); 
@@ -843,6 +935,10 @@ function searchEngineAdmin(event)
       {
         tmpProduct.push(account[i]);
       }
+      else if(account[i].id.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(account[i]);
+      }
     }
     
     renderAccount(tmpProduct);
@@ -851,6 +947,10 @@ function searchEngineAdmin(event)
     for(let i=0; i<orderForm.length; i++)
     {
       if(orderForm[i].idUser.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      {
+        tmpProduct.push(orderForm[i]);
+      }
+      else if(orderForm[i].idOrderForm.toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(orderForm[i]);
       }

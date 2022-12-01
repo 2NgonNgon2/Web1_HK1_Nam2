@@ -7,7 +7,6 @@
 .card-products {
   background: #f1f1f1;
   padding: 50px 60px 50px 10px;
-  margin-top: 160px;
   height: 1000px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -240,7 +239,7 @@
 }
 
 .menuToggle.active~.menu-toggle {
-  width: 650px;
+  width: 700px;
   height: 70px;
   z-index: 1;
   transform: translateY(-100px);
@@ -253,7 +252,7 @@
   justify-content: space-evenly;
   align-items: center;
 
-  height: 80px;
+  height: 70px;
   gap: 10px;
 }
 .menu-toggle ul li{

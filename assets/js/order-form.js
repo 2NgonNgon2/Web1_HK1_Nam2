@@ -80,7 +80,7 @@ function showViewOrderFormWithIdUser() {
               ${orderForm[i].arrProductId[j].name}
             </div>
             <div class="view-order-container-bottom-product-name-label">
-              Keyboard for gamer
+              ${orderForm[i].arrProductId[j].description}
             </div>
           </div>
           <div class="view-order-container-bottom-product-quantity">

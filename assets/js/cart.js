@@ -19,7 +19,8 @@ $(document).keydown(function(evt) {
 
 // chặn keypress của user
 function preventKeyPress(e) {
-  e.preventDefault();  
+  e.stopImmediatePropagation(); 
+  return false;
 }
 
 
@@ -187,6 +188,7 @@ function buyProductInCart() {
   localStorage.setItem('cart',JSON.stringify(arrCart));
   alert("Bạn đã mua hàng thành công");
   showProductsInCart();
+  hideCart();
 }
 
 
@@ -218,7 +220,7 @@ function showProductsInCart() {
           </div>
         </div>
         <div class="cart-container-middle-product-quantity">
-          <input type="number" value="${arrCart[i].quantity}" class="cart-container-middle-product-quantity-adjust" min="1" onkeypress="preventKeyPress(event)" onchange="updateEventchangeTotal(this.value,${arrCart[i].id})">
+          <input type="number" value="${arrCart[i].quantity}" class="cart-container-middle-product-quantity-adjust" min="1" onkeypress="preventKeyPress(event)" onchange="updateEventchangeTotal(this.value,${arrCart[i].id})" >
         </div>
         <div class="cart-container-middle-product-price">
           <span class="cart-container-middle-product-priceNumber">${formatPrice(arrCart[i].price)}</span> 
