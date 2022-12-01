@@ -68,7 +68,7 @@ function Find(str) {
 }
 
 /* HIỂN THỊ BẢNG THỐNG KÊ  (Statistical)*/
-$(".nav-header-left-list-business-statistics").click(function () {
+$("#nav-header-left-list-business-statistics").click(function () {
     let today = new Date();
     containerContentAdmin.innerHTML = `
     <div class="title">BẢNG THỐNG KÊ ${today.getFullYear()}</div>
