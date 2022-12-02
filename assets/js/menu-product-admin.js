@@ -263,10 +263,13 @@ function openOrderManageTable()
   <div class="title">DANH SÁCH ĐƠN HÀNG</div>
   
   <form class="date-filter" onsubmit="filterOrder(event)">
+  <div>
   <label for="date" class="date-start">TỪ NGÀY</label>
   <input type="date" class="date-start-input" value="2022-01-01">
   <label for="date" class="date-end">ĐẾN NGÀY</label>
   <input type="date" class="date-end-input" value="2022-12-31">
+  </div>
+  
   <button type="submit" class="filter">LỌC</button>
   </form>
   
@@ -956,7 +959,7 @@ function searchEngineAdmin(event)
       {
         tmpProduct.push(orderForm[i]);
       }
-      else if(orderForm[i].idOrderForm.toLowerCase().match(search_inp.value.toLowerCase()) != null)
+      else if(orderForm[i].idOrderForm.toString().toLowerCase().match(search_inp.value.toLowerCase()) != null)
       {
         tmpProduct.push(orderForm[i]);
       }
