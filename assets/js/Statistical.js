@@ -24,7 +24,7 @@ function checkSl(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = i + 1; j < arr.length; j++) {
             if (arr[i].id === arr[j].id) {
-                arr[i].quantity++;
+                arr[i].quantity = parseInt(arr[i].quantity)+parseInt(arr[j].quantity);
                 arr.splice(j, 1);
             }
         }
