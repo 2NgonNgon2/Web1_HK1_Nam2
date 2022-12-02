@@ -77,22 +77,6 @@
     .slider-content-top-container {
       border-radius: 0;
     }
-
-    .slider-content-left {
-      width: 100%;
-      height: 380px;
-    }
-    .slider-content-left-top img {
-      height: 350px;
-    }
-
-    .slider-content-left-bottom {
-      height: 80px;
-    }
-
-    .slider-content-right {
-      display: none;
-    }
     .slider-content-bottom{
       height: 110px;
     }
