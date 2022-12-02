@@ -54,15 +54,19 @@ function fdk() {
           <div class="form-user-name">
               <input type="text" class="form-input" placeholder="Name" id="form-Name">
           </div>
+          <div class="check-error" id="error-username""> </div>
           <div class="form-password">
               <input type="password" class="form-input" placeholder="Password" id="form-Password">
           </div>
+          <div id="error-pass" class="check-error"> </div>
           <div class="form-phone">
             <input type="text" class="form-input" placeholder="Phone" id="form-Phone">
           </div>
+          <div id="error-phone"  class="check-error" > </div>
           <div class="form-email">
               <input type="text" class="form-input" placeholder="E-mail" id="form-Email">
           </div>
+          <div id="error-email"  class="check-error"> </div>
           <div >
               <button type="submit" class="form-submit">
                   <span class="form-submit-text" >Sign up</span>             
