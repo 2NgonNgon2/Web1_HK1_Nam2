@@ -451,3 +451,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.back-to-top {
+    right: 20px;
+    bottom: 20px;
+}
