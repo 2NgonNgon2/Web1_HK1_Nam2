@@ -75,7 +75,7 @@ function openStatistical() {
     <form class="date-filter" onsubmit="filterStatistical(event)">
       <div class="container-nav-header-right-filter-type">
       <label for="typeProducts">Chọn loại:</label>
-      <select name="typeProducts" id="typeProducts">
+      <select name="typeProducts" id="typeProducts" onchange="filterStatistical(event)">
           <option value="all">Tất cả</option>
           <option value="keyboard">Bàn phím</option>
           <option value="mouse">Chuột</option>
