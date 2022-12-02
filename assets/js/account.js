@@ -105,33 +105,78 @@ function createAcc(event) {
         var email = document.getElementById("form-Email").value;
         var arr = JSON.parse(localStorage.getItem("arr-account"));
         var found = false;
-       if ( username == ""){
-                found = true;
-                alert("Vui lòng nhập tên đăng nhập!");
-                event.preventDefault(); 
-            }
-            else if ( password == "" || password.length<6){
-                found = true;
-                alert("Vui lòng nhập mật khẩu (ít nhất 6 kí tự)!");
-                event.preventDefault(); 
-                
-            }
-            else if ( phone == "" || phone.length !=10 ){
-                found = true;
-                alert("Vui lòng nhập số điện thoại (10 chữ số)!");
-                event.preventDefault(); 
-                
-            }
-            else if ( email == "" || ValidateEmail(email)==false){
-                found = true;
-                alert("Vui lòng nhập đúng định dạng email!");   
-                event.preventDefault();   
-            }
+        var error_username="";
+        var error_pass="";
+        var error_phone="";
+        var error_email="";
+
+        if (username == ""){
+            found = true;
+            username.className="error_username";
+            error_username +="Tên đăng nhập không được bỏ trống !";
+        }
+        if ( password == "" || password.length<6){
+            found = true;
+            username.className="error_pass";
+            error_pass +="Mật khẩu không được bỏ trống (ít nhất 6 kí tự) !";
+            
+        }
+        if ( phone == "" || phone.length !=10 || is_PhoneNumber(phone)!=true){
+            found = true;
+            username.className="error_phone";
+            error_phone +="Số điện thoại không được bỏ trống (10 chữ số) !";
+            
+        }
+        if ( email == "" || ValidateEmail(email)==false){
+            found = true;
+            username.className="error_email";
+            error_email +="Email không được bỏ trống, nhập đúng định dạng !";
+        }
+
+
+        if(error_username!=""){
+            document.getElementById('error-username').innerHTML=error_username;
+            event.preventDefault(); 
+        }
+        else{
+            document.getElementById('error-username').innerHTML="";
+        }
+        if(error_pass!=""){
+            document.getElementById('error-pass').innerHTML=error_pass;
+            event.preventDefault(); 
+        }
+        else{
+            document.getElementById('error-pass').innerHTML="";
+        }
+        if(error_phone!=""){
+            document.getElementById('error-phone').innerHTML=error_phone;
+            event.preventDefault(); 
+        }
+        else{
+            document.getElementById('error-phone').innerHTML="";
+        }
+        if(error_email!=""){
+            document.getElementById('error-email').innerHTML=error_email;
+            event.preventDefault(); 
+        }
+        else{
+            document.getElementById('error-email').innerHTML="";
+        }
+
         arr.forEach(element => {
             if (element.username === username) {
-                alert("Tên đăng nhập đã tồn tại!");
                 found = true;
+                username.className="error_username";
+                error_username +="Tên đăng nhập đã tồn tại! !";
+                if(error_username!=""){
+                    document.getElementById('error-username').innerHTML=error_username;
+                    event.preventDefault(); 
+                }
+                else{
+                    document.getElementById('error-username').innerHTML="";
+                }
             }
+            
         });
         if (found == false) {
             var id = arr.length + 1 + "";
