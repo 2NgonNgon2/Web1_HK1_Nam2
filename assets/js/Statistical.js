@@ -1,5 +1,5 @@
 
-var tmpOrderForm = JSON.parse(localStorage.getItem("orderForm")); // mảng hóa đơn
+
 
 
 
@@ -24,9 +24,10 @@ function checkSl(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = i + 1; j < arr.length; j++) {
             if (arr[i].id === arr[j].id) {
-                arr[i].quantity = parseInt(arr[i].quantity)+parseInt(arr[j].quantity);
+                arr[i].quantity = parseInt(arr[i].quantity) + parseInt(arr[j].quantity);
                 arr.splice(j, 1);
             }
+
         }
     }
     return arr;
@@ -47,11 +48,13 @@ function get(date) {
                 id: i.id
             }
             tmpItems.push(item);
+            checkSl(tmpItems);
         });
     });
-    return checkSl(tmpItems);
+    return tmpItems;
 }
 function FitlerByMonth(date) {
+    let tmpOrderForm = JSON.parse(localStorage.getItem("orderForm")); // mảng hóa đơn
     let tmpArr = [];
     tmpOrderForm.forEach(element => {
         if (Find(element.dateOrder) == date && element.status) {
