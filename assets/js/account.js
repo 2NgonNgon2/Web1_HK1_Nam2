@@ -105,21 +105,27 @@ function createAcc(event) {
         var email = document.getElementById("form-Email").value;
         var arr = JSON.parse(localStorage.getItem("arr-account"));
         var found = false;
-        if ( username == ""){
+       if ( username == ""){
+                found = true;
                 alert("Vui lòng nhập tên đăng nhập!");
-                found = true;
+                event.preventDefault(); 
             }
-            else if ( password == "" || password.lenght<6){
-                alert("Vui lòng nhập mật khẩu (ít nhất 6 kí tự)!");
+            else if ( password == "" || password.length<6){
                 found = true;
+                alert("Vui lòng nhập mật khẩu (ít nhất 6 kí tự)!");
+                event.preventDefault(); 
+                
             }
             else if ( phone == "" || phone.length !=10 ){
-                alert("Vui lòng nhập số điện thoại (10 chữ số)!");
                 found = true;
+                alert("Vui lòng nhập số điện thoại (10 chữ số)!");
+                event.preventDefault(); 
+                
             }
             else if ( email == "" || ValidateEmail(email)==false){
-                alert("Vui lòng nhập đúng định dạng email!");
                 found = true;
+                alert("Vui lòng nhập đúng định dạng email!");   
+                event.preventDefault();   
             }
         arr.forEach(element => {
             if (element.username === username) {
@@ -140,7 +146,7 @@ function createAcc(event) {
             }
             arr.push(user);
             localStorage.setItem("arr-account", JSON.stringify(arr));
-            alert("Dang ki thanh cong");
+            alert("Đăng kí thành công");
         }
 
     } catch (err) {
