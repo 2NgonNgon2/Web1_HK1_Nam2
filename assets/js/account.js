@@ -135,32 +135,32 @@ function createAcc(event) {
 
 
         if(error_username!=""){
-            document.getElementById('error-username').innerHTML=error_username;
+            document.getElementById('error-username').innerText=error_username;
             event.preventDefault(); 
         }
         else{
-            document.getElementById('error-username').innerHTML="";
+            document.getElementById('error-username').innerText="";
         }
         if(error_pass!=""){
-            document.getElementById('error-pass').innerHTML=error_pass;
+            document.getElementById('error-pass').innerText=error_pass;
             event.preventDefault(); 
         }
         else{
-            document.getElementById('error-pass').innerHTML="";
+            document.getElementById('error-pass').innerText="";
         }
         if(error_phone!=""){
-            document.getElementById('error-phone').innerHTML=error_phone;
+            document.getElementById('error-phone').innerText=error_phone;
             event.preventDefault(); 
         }
         else{
-            document.getElementById('error-phone').innerHTML="";
+            document.getElementById('error-phone').innerText="";
         }
         if(error_email!=""){
-            document.getElementById('error-email').innerHTML=error_email;
+            document.getElementById('error-email').innerText=error_email;
             event.preventDefault(); 
         }
         else{
-            document.getElementById('error-email').innerHTML="";
+            document.getElementById('error-email').innerText="";
         }
 
         arr.forEach(element => {
@@ -169,11 +169,11 @@ function createAcc(event) {
                 username.className="error_username";
                 error_username +="Tên đăng nhập đã tồn tại! !";
                 if(error_username!=""){
-                    document.getElementById('error-username').innerHTML=error_username;
+                    document.getElementById('error-username').innerText=error_username;
                     event.preventDefault(); 
                 }
                 else{
-                    document.getElementById('error-username').innerHTML="";
+                    document.getElementById('error-username').innerText="";
                 }
             }
             
