@@ -203,6 +203,14 @@ function ValidateEmail(mail)
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value)) return (true)
     return (false)
 }
-
+function is_PhoneNumber(phone_number) {
+  var phone_no = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+  if(phone_number.match(phone_no)) {
+    return true;
+  }  
+  else {  
+    return false;
+  }
+}
 
 
