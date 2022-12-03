@@ -12,7 +12,7 @@
   display: revert;
 }
 
-/* Preferred box-sizing value */
+/* Preferred box-sizing value */  
 *,
 *::after {
   box-sizing:border-box;
