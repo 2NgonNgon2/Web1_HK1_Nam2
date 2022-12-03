@@ -45,10 +45,10 @@ function fdk() {
     $("#sigin-background").html(`
     <div class="signin" id="create">
         <a class="signin-icon" onclick="displaySignMenu('none')">X</a>
-        <h2 class="signin-heading" >Create account</h2>
+        <h2 class="signin-heading" >Tạo tài khoản</h2>
         <p class="signin-already" id="signin-already">
-          Already have an account ? 
-          <a href="#" class="signin-link-underline" onclick="fdn()">Login now</a>
+          Bạn đã có tài khoản ? 
+          <a href="#" class="signin-link-underline" onclick="fdn()">Đăng nhập ngay </a>
         </p>
         <form onsubmit="createAcc(event)">
           <div class="form-user-name">
@@ -69,7 +69,7 @@ function fdk() {
           <div id="error-email"  class="check-error"> </div>
           <div >
               <button type="submit" class="form-submit">
-                  <span class="form-submit-text" >Sign up</span>             
+                  <span class="form-submit-text" >Đăng kí</span>             
                   <i class="fa fa-long-arrow-right form-submit-icon"></i>      
                 </button>
           </div>
@@ -86,10 +86,10 @@ function fdn() {
     <div class="signin" id="login">
       <a class="signin-icon" onclick="displaySignMenu('none')">
         <i class="fa-solid fa-xmark"></i></a>
-      <h2 class="signin-heading">Log in</h2>
+      <h2 class="signin-heading">Đăng nhập</h2>
       <p class="signin-already" id="signin-already">
-        You don't have an account?
-        <a href="#" class="signin-link-underline" onclick="fdk()">Create now</a>
+        Bạn chưa có tài khoản?
+        <a href="#" class="signin-link-underline" onclick="fdk()">Hãy tạo ngay</a>
       </p>
       <form onsubmit="dangnhap(event)" >
         <div class="form-user-name">
@@ -100,7 +100,7 @@ function fdn() {
         </div>
         <div>
           <button type="submit" class="form-submit">
-            <span class="form-submit-text">Sign in</span>
+            <span class="form-submit-text">Đăng nhập</span>
             <i class="fa fa-long-arrow-right form-submit-icon"></i>
           </button>
         </div>

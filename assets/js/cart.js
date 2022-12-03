@@ -19,7 +19,7 @@ $(document).keydown(function(evt) {
 
 // chặn keypress của user
 function preventKeyPress(e) {
-  e.stopImmediatePropagation(); 
+  e.preventDefault(); 
   return false;
 }
 

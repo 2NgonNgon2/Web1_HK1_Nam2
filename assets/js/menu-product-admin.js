@@ -101,6 +101,10 @@ function renderDetailsOrder(idCurrentOrderForm) {
 
 }
 
+function openAddProductTable(productId)
+{
+  addProductContainer.style.display = "flex" ;
+}
 
 function addProductToProductArray(event)
 {
@@ -795,7 +799,7 @@ function renderProductManage() {
           <div class="container-nav-header-right-filter-price">
             <span>Giá : </span>
             <span>Từ</span>
-            <input type="number" value="0" min="1" placeholder="000.000"  id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)">
+            <input type="number" value="0" min="1" placeholder="000.000"  id="container-nav-header-right-filter-price-start" onkeypress="preventKeyPressNotNumber(event)" >
             <span> ₫   đến  </span>
             <input type="number" value="99999999" max="1000000000" placeholder="999.999" id="container-nav-header-right-filter-price-end" onkeypress="preventKeyPressNotNumber(event)">
             <span> ₫ </span>

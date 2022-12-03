@@ -350,7 +350,7 @@ else {
       Tai nghe Bluetooth K6131 được thiết kế nhỏ gọn, màu sắc trẻ trung cá tính thích hợp cho các bạn trẻ cá tính, năng động<br>
       Phần đệm tai dày và êm ái để bạn có thể nghe nhạc trong thời gian dài mà vẫn cảm thấy dễ chịu. Bên cạnh đó, thiết kế đệm tai còn giúp âm thanh được giữ kín, âm bass thật sâu và trầm, tạo hiệu ứng âm thanh tốt hơn cho bạn
       `,
-      img: "/assets/img/headphone.png",
+      img: "/assets/img/tainghe2.png",
       price: "320000",
     },
     {
@@ -413,7 +413,7 @@ else {
       - Số phím: 104: phím<br>
       - Giao diện dây: USB<br>
       - Chiều dài dây: 1.5M<br>`,
-      img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+      img: "/assets/img/622f03e09e1dbaa5b3d96506236f5a84.png.webp",
       price: "179000",
     },
     {
@@ -1130,7 +1130,7 @@ else {
     - Số phím: 104: phím<br>
     - Giao diện dây: USB<br>
     - Chiều dài dây: 1.5M<br>`,
-    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    img: "/assets/img/622f03e09e1dbaa5b3d96506236f5a84.png.webp",
     price: "179000",
   },
   {
@@ -1145,7 +1145,7 @@ else {
     - Số phím: 104: phím<br>
     - Giao diện dây: USB<br>
     - Chiều dài dây: 1.5M<br>`,
-    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    img: "/assets/img/622f03e09e1dbaa5b3d96506236f5a84.png.webp",
     price: "179000",
   },
   {
@@ -1160,7 +1160,7 @@ else {
     - Số phím: 104: phím<br>
     - Giao diện dây: USB<br>
     - Chiều dài dây: 1.5M<br>`,
-    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    img: "/assets/img/622f03e09e1dbaa5b3d96506236f5a84.png.webp",
     price: "179000",
   },
   {
@@ -1175,7 +1175,7 @@ else {
     - Số phím: 104: phím<br>
     - Giao diện dây: USB<br>
     - Chiều dài dây: 1.5M<br>`,
-    img: "/assets/img/Chuột gaming Logitech G502 HERO.webp",
+    img: "/assets/img/622f03e09e1dbaa5b3d96506236f5a84.png.webp",
     price: "179000",
   },
   ];
