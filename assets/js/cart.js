@@ -98,7 +98,7 @@ function addProductToCartByInforProduct(id) {
       if (product[i].id == id && existInCart(id) == true) {
         for (let j = 0; j < arrCart.length; j++) {
           if(parseInt(arrCart[j].id) == id)
-            arrCart[j].quantity += parseInt(quantityProduct.value);
+            arrCart[j].quantity = parseInt(arrCart[j].quantity) + parseInt(quantityProduct.value);
         }
       } else if(product[i].id == id && existInCart(id) == false) {
         let tmpCartArr = product[i];
@@ -136,7 +136,7 @@ function addProductToCartByCardProduct(id) {
       if (product[i].id == id && existInCart(id) == true) {
         for (let j = 0; j < arrCart.length; j++) {
           if(parseInt(arrCart[j].id) == id)
-            arrCart[j].quantity += 1;
+            arrCart[j].quantity = parseInt(arrCart[j].quantity) + 1;
         }
       // còn nếu false thì thêm sản phẩm mới vào giỏ hàng
       } else if(product[i].id == id && existInCart(id) == false) {
