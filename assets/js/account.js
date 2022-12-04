@@ -136,28 +136,28 @@ function createAcc(event) {
 
         if(error_username!=""){
             document.getElementById('error-username').innerText=error_username;
-            event.preventDefault(); 
+             
         }
         else{
             document.getElementById('error-username').innerText="";
         }
         if(error_pass!=""){
             document.getElementById('error-pass').innerText=error_pass;
-            event.preventDefault(); 
+             
         }
         else{
             document.getElementById('error-pass').innerText="";
         }
         if(error_phone!=""){
             document.getElementById('error-phone').innerText=error_phone;
-            event.preventDefault(); 
+             
         }
         else{
             document.getElementById('error-phone').innerText="";
         }
         if(error_email!=""){
             document.getElementById('error-email').innerText=error_email;
-            event.preventDefault(); 
+             
         }
         else{
             document.getElementById('error-email').innerText="";
@@ -170,7 +170,7 @@ function createAcc(event) {
                 error_username +="Tên đăng nhập đã tồn tại! !";
                 if(error_username!=""){
                     document.getElementById('error-username').innerText=error_username;
-                    event.preventDefault(); 
+                     
                 }
                 else{
                     document.getElementById('error-username').innerText="";

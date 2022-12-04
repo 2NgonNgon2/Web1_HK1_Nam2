@@ -366,12 +366,13 @@ function renderOrder(orderArray)
   <div class="header">
   <div class="order-id">ID</div>
   <div class="order-userid">USER ID</div>
-  <div class="order-product">
-  SẢN PHẨM
-  </div>
+  
   <div class="order-date">NGÀY</div>
   <div class="total-price">TỔNG GIÁ</div>
   <div class="status">TÌNH TRẠNG</div>
+  <div class="order-product">
+  Chi tiết đơn hàng
+  </div>
   </div>
   `
   
@@ -425,9 +426,6 @@ function renderOrder(orderArray)
     <div class="order-item">
     <div class="order-id">${orderArray[i].idOrderForm}</div>
     <div class="order-userid">${orderArray[i].idUser}</div>
-    <div class="order-product" onclick="renderDetailsOrder(${orderArray[i].idOrderForm});showOrderDetails()">
-    Chi tiết đơn hàng
-    </div>
     <div class="order-date">${orderArray[i].dateOrder}</div>
     <div class="total-price">${formatPrice(orderArray[i].totalPrice)} ₫</div>
     
@@ -441,7 +439,6 @@ function renderOrder(orderArray)
       Đã xử lí
       <input type="checkbox" checked disabled class="status" onclick="processOrder(${orderArray[i].idOrderForm})"> 
       </label>
-      </div>     
       `
     }
     else
@@ -452,9 +449,14 @@ function renderOrder(orderArray)
       Chưa xử lí
       <input type="checkbox" class="status" onclick="processOrder(${orderArray[i].idOrderForm})"> 
       </label>
-      </div>      
+          
       `
     }
+    orderItem +=`
+    <div class="order-product" onclick="renderDetailsOrder(${orderArray[i].idOrderForm});showOrderDetails()">
+      <i class="fa-solid fa-circle-info"></i>
+      </div>
+      </div>  `
   }
   order.innerHTML = orderItem;
 }
