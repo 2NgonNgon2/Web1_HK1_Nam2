@@ -109,30 +109,49 @@ function createAcc(event) {
         var error_pass="";
         var error_phone="";
         var error_email="";
-
-        if (username == ""){
+        if (username == "" || username.match("\\s+")){
             found = true;
             username.className="error_username";
             error_username +="Tên đăng nhập không được bỏ trống !";
         }
-        if ( password == "" || password.length<6){
+        if (password.length<6){
             found = true;
             username.className="error_pass";
-            error_pass +="Mật khẩu không được bỏ trống (ít nhất 6 kí tự) !";
+            error_pass +="Mật khẩu phải có ít nhất 6 kí tự !";
             
         }
-        if ( phone == "" || phone.length !=10 || is_PhoneNumber(phone)!=true){
+        else if(password == "" || password.match("\\s+")) {
+            found = true;
+            username.className="error_pass";
+            error_pass +="Mật khẩu không được bỏ trống !";
+            
+        }
+        if ( phone == "" || phone.match("\\s+")  ){
             found = true;
             username.className="error_phone";
-            error_phone +="Số điện thoại không được bỏ trống (10 chữ số) !";
+            error_phone +="Số điện thoại không được bỏ trống !";
             
         }
-        if ( email == "" || ValidateEmail(email)==false){
+        else if(phone.length !=10 ) {
+            found = true;
+            username.className="error_phone";
+            error_phone +="Số điện thoại phải có 10 chữ số !";
+        }
+        else if(is_PhoneNumber(phone)!=true) {
+            found = true;
+            username.className="error_phone";
+            error_phone +="Số điện thoại không đúng định dạng !";
+        }
+        if ( email == "" || email.match("\\s+")){
             found = true;
             username.className="error_email";
-            error_email +="Email không được bỏ trống, nhập đúng định dạng !";
+            error_email +="Email không được bỏ trống !";
         }
-
+        else if( ValidateEmail(email)==false) {
+            found = true;
+            username.className="error_email";
+            error_email +="Email không đúng định dạng !";
+        }
 
         if(error_username!=""){
             document.getElementById('error-username').innerText=error_username;
